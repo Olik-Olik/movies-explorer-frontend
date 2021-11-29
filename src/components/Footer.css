@@ -1,0 +1,75 @@
+
+.footer{
+    background-color: #202020;
+    max-width: 1280px;
+    height: 172px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.footer__title{
+/*    Учебный проект Яндекс.Практикум х BeatFilm.*/
+    color: #8B8B8B;
+    max-width: 320px;
+    line-height: 16px;
+    font-style: normal;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer__line{
+    margin-top:20px;
+    max-width: 1140px;
+    background-color: yellow;
+  /*  background-color: #424242;*/
+   /* flex-direction: column;*/
+    display: flex;
+    height: 1px;
+    align-items: center;
+}
+.footer__data{
+   font-style:normal;
+   font-size: 13px;
+   line-height: 16px;
+    max-width:48px;
+    max-height:16px;
+    margin-top:136px;
+    margin-left: 70px;
+    align-items: flex-start;
+    color: #FFFFFF;
+}
+.footer__insideall{
+/*    padding-top: 0;
+    flex-direction: column-reverse;
+    display: flex;*/
+}
+.footer__links{
+    display: flex;
+    flex-direction: row;
+}
+
+.linkYandex{
+    color:#FFFFFF;
+    max-width: 120px;
+    line-height: 16px;
+    margin: 20px;
+}
+.linkYandex:hover{
+    opacity: 0.8;
+    /*не нашла где*/
+}
+
+.linkFacebook{
+    color:#FFFFFF;
+    max-width: 120px;
+    line-height: 16px;
+    margin: 20px;
+}
+.linkGitHub{
+    color:#FFFFFF;
+    max-width: 120px;
+    line-height: 16px;
+    margin: 20px 20px 70px 20px;
+}
+
