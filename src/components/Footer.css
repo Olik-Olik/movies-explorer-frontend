@@ -47,6 +47,7 @@
 .footer__links{
     display: flex;
     flex-direction: row;
+    text-decoration: none;
 }
 
 .linkYandex{
@@ -54,9 +55,10 @@
     max-width: 120px;
     line-height: 16px;
     margin: 20px;
+    text-decoration: none;
 }
 .linkYandex:hover{
-    opacity: 0.8;
+   /* opacity: 0.8;*/
     /*не нашла где*/
 }
 
@@ -65,11 +67,13 @@
     max-width: 120px;
     line-height: 16px;
     margin: 20px;
+    text-decoration: none;
 }
 .linkGitHub{
     color:#FFFFFF;
     max-width: 120px;
     line-height: 16px;
     margin: 20px 20px 70px 20px;
+    text-decoration: none;
 }
 

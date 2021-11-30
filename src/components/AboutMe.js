@@ -1,12 +1,14 @@
 import React from 'react';
 import '../components/AboutMe.css';
 import fotoMe from '../images/AboutMe/fotoMe.JPG';
+import line from '../images/line.svg';
 
 function AboutMe(props) {
     return (
         <>
             <h2 className='whoIS'>Студент</h2>
-            <div className='line'/>
+            <img className="lineSimple" src={line} alt="Линия"/>
+           {/* <div className='line'/>*/}
             <div className='myName'>OLIK</div>
             <div className='aboutMeTitleWork'>Фронтенд-разработчик, 99 лет</div>
             <div className= 'descriptionFoto'>
