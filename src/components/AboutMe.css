@@ -1,0 +1,138 @@
+
+.whoIS{
+ /*   width: 100%;*/
+  /*  max-width: 600px;*/
+    max-height: 27px;
+    background-color: #073042;
+    margin: 0;
+    padding-top: 110px;
+    display: flex;
+    padding-left: 70px;
+    padding-bottom: 23px;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: left;
+   /* vertical-align: Top;*/
+     color: #FFFFFF;
+}
+
+.myName{
+    background-color: #073042;
+    color: #FFFFFF;
+    font-size: 58px;
+    margin: 0;
+    display: flex;
+    padding-left: 70px;
+    padding-top: 66px;
+    padding-bottom: 18px;
+}
+.line{
+    color: #DADADA;
+    max-width: 1140px;
+    line-height: 1px;
+    display: flex;
+}
+.aboutMeLinks{
+    display: flex;
+    flex-direction: column;
+}
+
+.descriptionFoto{
+    display: flex;
+    background-color: #073042;
+    justify-content: space-between;
+}
+
+
+
+.links{
+    flex-direction: row;
+    display: flex;
+    background-color: #073042;
+    ;
+}
+.imgfotoMe{
+   /* width: 270px;*/
+    height: 327px;
+    border-radius: 10px;
+
+}
+.aboutMeTitleWork{
+    background-color: #073042;
+    padding-top: 18px;
+    padding-left: 70px;
+    margin: 0;
+    display: flex;
+  /*  background-color: #073042;*/
+    font-weight: 500;
+    font-style: normal;
+    size: 18px;
+    line-height: 20px;
+   /* max-width: 600px;*/
+    max-height: 20px;
+    color: #FFFFFF;
+}
+.aboutMeTitleAbout{
+    padding-left: 70px;
+    padding-top: 26px;
+    margin: 0;
+
+    max-width: 600px;
+    max-height: 88px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+.aboutMelinks{
+    margin-top: 99px;
+    margin-right: 70px;
+    flex-direction: row;
+    display: flex;
+    font-size: 30px;
+}
+.lineSimple{
+    background-color: #073042;
+  /*  color: #DADADA;*/
+  /*  max-width: 1140px;*/
+    line-height: 1px;
+    padding-left: 70px;
+    color: #424242;
+    display: flex;
+}
+.aboutMeLinkStatic{
+
+ /*   max-width: 880px;*/
+    max-height: 50px;
+ /*   background-color: #073042;*/
+    color:#FFFFFF;
+    line-height: 16px;
+    padding-left: 70px;
+    font-size: 30px;
+    text-decoration: none;
+    padding-bottom: 19px;
+}
+.aboutMeLinkAdaptive{
+  /*  max-width: 880px;*/
+    max-height: 50px;
+  /*  background-color: #073042;*/
+    color:#FFFFFF;;
+    line-height: 16px;
+    /* padding-bottom: 18px;*/
+    font-size: 30px;
+    text-decoration: none;
+    padding-left: 70px;
+    padding-top: 20px;
+    padding-bottom: 19px;
+}
+
+.aboutMeLinkLanding{
+ /*   max-width: 880px;*/
+    max-height: 50px;
+  /*  background-color: #073042;*/
+    color:#FFFFFF;
+    line-height: 16px;
+    padding-top: 20px;
+    padding-bottom: 125px;
+    font-size: 30px;
+    text-decoration: none;
+    padding-left: 70px;
+}
