@@ -57,14 +57,19 @@ import Image_world from "../images/Image_world.svg";
 function Header(props) {
     return (
         <header className="header">
-            <div className='headerLogoS'>
-                <img className="headerLogo" src={logo} alt="Logotipchik"/>
+            <div className='header__logo'>
+                <img className="headerLogo" src={logo} alt="Logo"/>
             </div>
+
+            <span className="header__exit">Выйти</span>
+            <span className="header__auth">Регистрация</span>
+
             <div>
-                <span className="header__exit">Выйти</span>
-                <span className="header__auth">Регистрация</span>
                 <div className="header__description">
                     Учебный проект студента факультета Веб-разработки.
+                </div>
+                <div className="header__content">
+                    Листайте ниже, чтобы узнать больше про этот проект и его создателя.
                 </div>
 
                 <div className='aboutMeFoto'>
@@ -72,10 +77,12 @@ function Header(props) {
                 </div>
 
                 {/* <img src={image_world} className="image_world" alt="непонятная картинка" />*/}
-                <div className="header__content">
-                    Листайте ниже, чтобы узнать больше про этот проект и его создателя.
-                </div>
-                <button className="header__button" onClick={'{/* пока нету такого*/}'}>Узнать больше</button>
+
+                <button className="header__button" onClick={'{/* пока нету такого*/}'}>
+                    <p>Узнать больше</p>
+                </button>
+
+
             </div>
         </header>);
 }
