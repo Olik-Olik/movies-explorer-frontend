@@ -47,20 +47,40 @@ export default Header;
                         </Link>
                     </Route>
                 </Switch>*!/}
-
-
-
-
 */
 
 import React from "react";
 import './Header.css';
+import logo from '../images/logo.svg';
+import Image_world from "../images/Image_world.svg";
+
 function Header(props) {
     return (
-        <header className="header">sssssss
+        <header className="header">
+            <div className='headerLogoS'>
+                <img className="headerLogo" src={logo} alt="Logotipchik"/>
+            </div>
+            <div>
+                <span className="header__exit">Выйти</span>
+                <span className="header__auth">Регистрация</span>
+                <div className="header__description">
+                    Учебный проект студента факультета Веб-разработки.
+                </div>
 
+                <div className='aboutMeFoto'>
+                    <img className="imgfotoMe" src={Image_world} alt="Фотка"/>
+                </div>
+
+                {/* <img src={image_world} className="image_world" alt="непонятная картинка" />*/}
+                <div className="header__content">
+                    Листайте ниже, чтобы узнать больше про этот проект и его создателя.
+                </div>
+                <button className="header__button" onClick={'{/* пока нету такого*/}'}>Узнать больше</button>
+            </div>
         </header>);
 }
+
 //rel="noopener noreferrer"
-// улучшают безопасность веб-сайта, но некоторые люди хотят игнорировать их, потому что думают, что они повлияют на поисковую оптимизацию их веб-сайта, но это всего лишь миф
+// улучшают безопасность веб-сайта
 export default Header;
+

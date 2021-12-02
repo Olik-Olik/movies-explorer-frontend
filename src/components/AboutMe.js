@@ -2,6 +2,7 @@ import React from 'react';
 import '../components/AboutMe.css';
 import fotoMe from '../images/AboutMe/fotoMe.JPG';
 import line from '../images/line.svg';
+import Image_world from '../images/Image_world.svg';
 
 function AboutMe(props) {
     return (
@@ -18,9 +19,15 @@ function AboutMe(props) {
                     книжки, с 2021г.
                     После того, как прошёл курс по веб-разработке,
                     начал заниматься фриланс-заказами.</div>
+                {/*<div className='aboutMeFoto'>
+                    <img className="imgfotoMe" src={fotoMe} alt="Фотка"/>
+                </div>*/}
                 <div className='aboutMeFoto'>
                     <img className="imgfotoMe" src={fotoMe} alt="Фотка"/>
                 </div>
+                {/*<div className='aboutMeFoto'>
+                    <img className="imgfotoMe" src={Image_world} alt="Фотка"/>
+                </div>*/}
             </div>
 
 
@@ -28,13 +35,18 @@ function AboutMe(props) {
                     <div className="aboutMeLinks">
                         <a target="_blank" rel="noopener noreferrer" className="aboutMeLinkStatic"
                            href={"https://www.facebook.com/profile.php?id=100000879196200"}>Статичный сайт</a>
+                        <img className="lineSimple" src={line} alt="Линия"/>
                         <a target="_blank" rel="noopener noreferrer" className="aboutMeLinkAdaptive"
                            href={"https://www.facebook.com/profile.php?id=100000879196200"}>Адаптивный сайт</a>
+                        <img className="lineSimple" src={line} alt="Линия"/>
                         <a target="_blank" rel="noopener noreferrer" className="aboutMeLinkLanding"
                            href={"https://github.com/Olik-Olik"}>Одностраничное
                             приложение</a>
-
+                       {/* <div className='aboutMeFoto'>
+                            <img className="imgfotoMe" src={fotoMe} alt="Фотка"/>
+                        </div>*/}
                 </div>
+
             </div>
         </>
 
