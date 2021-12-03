@@ -8,10 +8,10 @@ function AboutMe(props) {
     return (
         <>
             <h2 className='whoIS'>Студент</h2>
-            <img className="lineSimple" src={line} alt="Линия"/>
+            <img className="aboutMe__line" src={line} alt="Линия"/>
            {/* <div className='line'/>*/}
             <div className='myName'>OLIK</div>
-            <div className='aboutMeTitleWork'>Фронтенд-разработчик, 99 лет</div>
+            <div className='aboutMe__work'>Фронтенд-разработчик, 99 лет</div>
             <div className= 'descriptionFoto'>
                 <div className='aboutMeTitleAbout'>Я родился и живу в Москве,
                     закончил МИФИ. Я не люблю слушать музыку,она мешает сосредоточиться. Сейчас увлекаюсь пирожными,

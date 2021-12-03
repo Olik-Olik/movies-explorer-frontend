@@ -14,9 +14,10 @@
     color: #FFFFFF;
     font-weight: 400;
     letter-spacing: -.04em;
+/*    border-bottom: 1px solid #424242;*/
 }
 .lineSimple{
-    background-color: #202020;
+   /* background-color: #202020;*/
     color: #DADADA;
     line-height: 1px;
     padding-left: 70px;

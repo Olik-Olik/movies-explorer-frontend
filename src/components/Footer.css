@@ -1,79 +1,71 @@
 
 .footer{
     background-color: #202020;
-    max-width: 1280px;
+   /* max-width: 1280px; кто учитывать по 70 будет???*/
+    max-width: 1140px;
     height: 172px;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    padding: 79px 70px 20px;
+    width: 100%;
+
 }
 .footer__title{
+    border-bottom: 1px solid #424242;
+    padding-bottom: 20px;
+    padding-top: 20px;
 /*    Учебный проект Яндекс.Практикум х BeatFilm.*/
     color: #8B8B8B;
-    max-width: 320px;
+    width: 100%;
+    max-width: 1140px;
+    text-align: center;
     line-height: 16px;
     font-style: normal;
     font-size: 13px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
-.footer__line{
-    margin-top:20px;
-    max-width: 1140px;
-    background-color: yellow;
-  /*  background-color: #424242;*/
-   /* flex-direction: column;*/
-    display: flex;
-    height: 1px;
-    align-items: center;
-}
+
 .footer__data{
-   font-style:normal;
    font-size: 13px;
    line-height: 16px;
-    max-width:48px;
-    max-height:16px;
-    margin-top:136px;
-    margin-left: 70px;
+    padding: 20px 0 20px;
     align-items: flex-start;
     color: #FFFFFF;
 }
-.footer__insideall{
-/*    padding-top: 0;
-    flex-direction: column-reverse;
-    display: flex;*/
-}
-.footer__links{
+.footer__container{
     display: flex;
-    flex-direction: row;
-    text-decoration: none;
-}
-
-.linkYandex{
-    color:#FFFFFF;
-    max-width: 120px;
-    line-height: 16px;
+    justify-content: flex-end;
+    font-size: 13px;
+   line-height: 16px;
+    align-items: flex-end;
     margin: 20px;
     text-decoration: none;
 }
-.linkYandex:hover{
-   /* opacity: 0.8;*/
+
+.footer__yandex{
+    width: 100%;
+    color:#FFFFFF;
+    max-width: 120px;
+    line-height: 16px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+.footer__yandex:hover{
+   /* opacity: ;*/
     /*не нашла где*/
 }
 
-.linkFacebook{
+.footer__gitHub{
+    width: 100%;
     color:#FFFFFF;
-    max-width: 120px;
+    max-width: 42px;
     line-height: 16px;
-    margin: 20px;
+    padding-right: 20px;
     text-decoration: none;
 }
-.linkGitHub{
+.footer__facebook {
+    width: 100%;
     color:#FFFFFF;
-    max-width: 120px;
+    max-width: 61px;
     line-height: 16px;
-    margin: 20px 20px 70px 20px;
     text-decoration: none;
 }
-

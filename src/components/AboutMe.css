@@ -26,7 +26,7 @@
     padding-top: 66px;
     padding-bottom: 18px;
 }
-.line{
+.lineSimple{
     color: #DADADA;
     max-width: 1140px;
     line-height: 1px;
@@ -61,7 +61,7 @@
     border-radius: 10px;
 
 }
-.aboutMeTitleWork{
+.aboutMe__work{
     width: 100%;
     background-color: #073042;
     padding-top: 18px;
@@ -95,15 +95,22 @@
     display: flex;
     font-size: 30px;
 }
-.lineSimple{
+.aboutMe__line{
+
     width: 100%;
     background-color: #073042;
   /*  color: #DADADA;*/
   /*  max-width: 1140px;*/
     line-height: 1px;
     padding-left: 70px;
-    color: #424242;
+    /*color: #424242;*/
     display: flex;
+
+    color: #DADADA;
+
+    /* color: #424242;*/
+
+
 }
 .aboutMeLinkStatic{
     width: 100%;
