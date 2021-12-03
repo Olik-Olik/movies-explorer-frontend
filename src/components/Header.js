@@ -57,13 +57,24 @@ import Image_world from "../images/Image_world.svg";
 function Header(props) {
     return (
         <header className="header">
-            <div className='header__logo'>
+            <div className="header__logo_auth_exit">
+                <div className="header__logo">
                 <img className="headerLogo" src={logo} alt="Logo"/>
-            </div>
+                </div>
+<div className="header__all">
+              <div  className="header__button">
+        <button className="header__auth" onClick={' Регистрация '}>Регистрация
+        </button></div>
 
-            <span className="header__exit">Выйти</span>
-            <span className="header__auth">Регистрация</span>
+            <div  className="header__button">
+                <button className="header__exit" onClick={' Выйти-Войти '}>Войти
+           </button></div>
+</div>
 
+</div>
+
+
+<div className="header__container">
             <div>
                 <div className="header__description">
                     Учебный проект студента факультета Веб-разработки.
@@ -71,20 +82,18 @@ function Header(props) {
                 <div className="header__content">
                     Листайте ниже, чтобы узнать больше про этот проект и его создателя.
                 </div>
-
-                <div className='aboutMeFoto'>
-                    <img className="imgfotoMe" src={Image_world} alt="Фотка"/>
-                </div>
-
+            </div>
+                <img className="header__foto" src={Image_world} alt="Фотка"/>
+                {/*     </div>*/}
+            </div>
                 {/* <img src={image_world} className="image_world" alt="непонятная картинка" />*/}
 
                 <button className="header__button" onClick={'{/* пока нету такого*/}'}>
                     <p>Узнать больше</p>
                 </button>
 
-
-            </div>
         </header>);
+
 }
 
 //rel="noopener noreferrer"
