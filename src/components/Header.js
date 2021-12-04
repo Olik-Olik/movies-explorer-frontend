@@ -53,6 +53,7 @@ import React from "react";
 import './Header.css';
 import logo from '../images/logo.svg';
 import Image_world from "../images/Image_world.svg";
+import '../index.css';
 
 function Header(props) {
     return (
@@ -88,7 +89,7 @@ function Header(props) {
             </div>
                 {/* <img src={image_world} className="image_world" alt="непонятная картинка" />*/}
 
-                <button className="header__button" onClick={'{/* пока нету такого*/}'}>
+                <button className="header__button_down" onClick={'{/* пока нету такого*/}'}>
                     <p>Узнать больше</p>
                 </button>
 

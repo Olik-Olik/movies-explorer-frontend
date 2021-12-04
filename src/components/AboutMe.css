@@ -1,12 +1,14 @@
 
-.whoIS{
+.aboutMe__whoIS{
     width: 100%;
+    padding: 0 70px;
+
     max-height: 27px;
     background-color: #073042;
     margin: 0;
     padding-top: 110px;
     display: flex;
-    padding-left: 70px;
+
     padding-bottom: 23px;
     font-size: 22px;
     line-height: 27px;
@@ -15,8 +17,9 @@
      color: #FFFFFF;
 }
 
-.myName{
+.aboutMe__myName{
     width: 100%;
+    padding: 0 70px;
     background-color: #073042;
     color: #FFFFFF;
     font-size: 58px;
@@ -39,33 +42,68 @@
     width: 100%;
 }
 
-.descriptionFoto{
+.aboutMe__descriptionFoto{
+    width: 100%;
+    padding: 0 70px;
+
     display: flex;
     background-color: #073042;
     justify-content: space-between;
 }
 
-
-
 .links{
     width: 100%;
+    padding: 0 70px 50px;
+    margin: 0;
+
     flex-direction: row;
     display: flex;
     background-color: #073042;
-    ;
 }
 .imgfotoMe{
     background-color:#073042;
     width: 270px;
     height: 327px;
     border-radius: 10px;
-
+}
+.aboutMe__connect{
+    width: 100%;
+    display: flex;
+    background-color: #073042;
+   padding: 99px 70px 100px 70px;
+  /*  justify-content: flex-start;*/
+   /*   font-style: medium;*/
+    font-size: 14px;
+    line-height: 17px;
+    color:#FFFFFF;
+}
+.aboutMe__gitHub{
+    color:#FFFFFF;
+    width: 100%;
+    padding-right: 20px;
+    text-decoration: none;
+}
+.aboutMe__facebook{
+    color:#FFFFFF;
+    width: 100%;
+    text-decoration: none;
+}
+.aboutMe__portfolio{
+    width: 100%;
+    padding:  0 70px 50px;
+    margin: 0;
+background-color: #073042;
+    color:#8B8B8B;
+    font-size: 18px;
+    line-height: 20px;
 }
 .aboutMe__work{
     width: 100%;
+    padding: 0 70px;
+
     background-color: #073042;
     padding-top: 18px;
-    padding-left: 70px;
+
     margin: 0;
     display: flex;
     font-weight: 500;
@@ -78,12 +116,11 @@
 .aboutMeTitleAbout{
     padding-right: 270px;
     width: 100%;
-    padding-left: 70px;
     padding-top: 26px;
     margin: 0;
     background-color: #073042;
     max-width: 600px;
-    max-height: 88px;
+  /*  height: 88px;*/
     color: #FFFFFF;
     font-size: 14px;
 }
@@ -95,22 +132,15 @@
     display: flex;
     font-size: 30px;
 }
-.aboutMe__line{
-
+.aboutMe__lineSimple{
     width: 100%;
     background-color: #073042;
   /*  color: #DADADA;*/
-  /*  max-width: 1140px;*/
-    line-height: 1px;
-    padding-left: 70px;
-    /*color: #424242;*/
+    max-width: 1140px;
+    height: 1px;
+   /* padding-left: 70px;*/
+    color: #424242;
     display: flex;
-
-    color: #DADADA;
-
-    /* color: #424242;*/
-
-
 }
 .aboutMeLinkStatic{
     width: 100%;
@@ -120,7 +150,7 @@
     background-color: #073042;
     color:#FFFFFF;
     line-height: 16px;
-    padding-left: 70px;
+  /*  padding-left: 70px;*/
     font-size: 30px;
     text-decoration: none;
     padding-bottom: 19px;
@@ -135,7 +165,7 @@
     /* padding-bottom: 18px;*/
     font-size: 30px;
     text-decoration: none;
-    padding-left: 70px;
+  /*  padding-left: 70px;*/
     padding-top: 20px;
     padding-bottom: 19px;
 }
@@ -151,5 +181,5 @@
     padding-bottom: 125px;
     font-size: 30px;
     text-decoration: none;
-    padding-left: 70px;
+ /*   padding-left: 70px;*/
 }

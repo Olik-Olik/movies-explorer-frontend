@@ -1,8 +1,11 @@
 
 .footer{
+  /*  width: 100%;
+    padding: 0 70px;*/
+    margin: 0;
     background-color: #202020;
    /* max-width: 1280px; кто учитывать по 70 будет???*/
-    max-width: 1140px;
+   /* max-width: 1140px;*/
     height: 172px;
     display: flex;
     flex-direction: column;
@@ -11,12 +14,15 @@
 
 }
 .footer__title{
+ /*   width: 100%;*/
+    padding: 0 70px;
+    margin: 0;
     border-bottom: 1px solid #424242;
     padding-bottom: 20px;
     padding-top: 20px;
 /*    Учебный проект Яндекс.Практикум х BeatFilm.*/
     color: #8B8B8B;
-    width: 100%;
+
     max-width: 1140px;
     text-align: center;
     line-height: 16px;
@@ -32,6 +38,7 @@
     color: #FFFFFF;
 }
 .footer__container{
+
     display: flex;
     justify-content: flex-end;
     font-size: 13px;

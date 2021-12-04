@@ -3,7 +3,7 @@ import logo from './images/logo.svg';
 import image_world from './images/Image_world.svg'
 import './components/App.css';
 import Main from './components/Main';
-
+import './index.css';
 
 function App(props) {
   return (

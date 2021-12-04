@@ -5,9 +5,12 @@
 
 }
 .aboutProject__title{
+    width: 100%;
+    padding: 0 70px 50px;
+    margin: 0;
     background-color: #202020;
     padding-top: 110px;
-    padding-left: 70px;
+ /*   padding-left: 70px;*/
     padding-bottom: 23px;
     font-size: 22px;
     line-height: 27px;
@@ -16,18 +19,30 @@
     letter-spacing: -.04em;
 /*    border-bottom: 1px solid #424242;*/
 }
-.lineSimple{
+.aboutProject__lineSimple{
+    width: 100%;
+    padding: 0 70px;
+
+    background-color: #073042;
+    /* color: #DADADA; */
+    max-width: 1140px;
+    height: 1px;
+    /* padding-left: 70px; */
+
    /* background-color: #202020;*/
     color: #DADADA;
     line-height: 1px;
-    padding-left: 70px;
+  /*  padding-left: 70px;*/
    /* color: #424242;*/
+
     display: flex;
 }
 /*///////////////////////////////////////////////////////////////////*/
 /*  общее для титлов*/
 .aboutProject__1stolb{
-    padding-right: 70px;
+    width: 100%;
+    padding: 0 70px 50px;
+    margin: 0;
     display: flex;
     justify-content: space-between;
     background-color: #202020;
@@ -66,15 +81,21 @@
 /*///////////////////////////////////////////////////////////////////*/
 /* вторая строчка*/
 .aboutProject__2stolb{
+    width: 100%;
+    padding: 0 70px 50px;
+    margin: 0;
 /*    display: flex;
     justify-content: space-between;
     background-color: #202020;*/
     display: flex;
-    padding-right: 70px;
+
     justify-content: space-between;
     background-color: #202020;
 }
 .aboutProject__process2stolb {
+    width: 100%;
+    padding: 0 70px 50px;
+    margin: 0;
     background-color: #202020;
     padding-bottom: 110px;
     color: #FFFFFF;
@@ -103,9 +124,11 @@
 
 /*/////////псевдокнопки 1 неделя и 4 недели*/
 .aboutProject__button{
+    width: 100%;
+    padding: 0 70px 50px;
+
     display: flex;
-    padding-right: 70px;
-    padding-left: 70px;
+
     justify-content: normal;
     background-color: #202020;
     text-decoration: none;

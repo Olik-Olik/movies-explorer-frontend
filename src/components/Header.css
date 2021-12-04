@@ -1,11 +1,11 @@
 
 
 .header {
-    padding-left: 70px;
-    padding-right: 70px;
+    width: 100%;
+    padding: 0 70px;
+    margin: 0;
     padding-bottom: 18px;
     padding-top: 18px;
-    width: 100%;
     max-width: 1140px;
     background-color: #073042 ;
     height: 100vh;
@@ -14,10 +14,10 @@
     align-items: flex-start;
     justify-content: space-between;
     color: white;
-
     font-style: normal;
     font-weight: 400;
 }
+
 .header__logo_auth_exit{
     display: flex;
    /* justify-content: flex-end;*/
@@ -31,7 +31,6 @@
 }
 
 .header__button {
-
     display: flex;
     background-color: #073042;
     color: #FFFFFF;
@@ -40,6 +39,16 @@
  /*   Opacity: 60%;*/
 /*    line-height: 16px;
     margin-bottom: 110px;*/
+}
+
+.header__button_down{
+    display: flex;
+    background-color: #073042;
+    color: #FFFFFF;
+    border: 1px;
+    border-style: solid;
+   Opacity: 60%;
+
 }
 
 .p{  font-size: 12px;
@@ -56,6 +65,7 @@
     justify-content: space-around;
 }
 .header__description{
+    max-height: 174px;
     color: #FFFFFF;
     padding-top: 75px;
     padding-bottom:36px ;
@@ -89,6 +99,7 @@
 
 .header__foto{
     padding-top: 75px;
+    padding-left: 190px;
 }
 /* ровняет картинку и тексты */
 .header__container{

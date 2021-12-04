@@ -3,13 +3,13 @@ import './AboutProject.css';
 import line from "../images/line.svg";
 import header_button_1_week from "../images/header_button_1_week.svg";
 import button_4_week from "../images/button_4_week.svg";
-
+import '../index.css';
 function AboutProject(props) {
     return (
         <aboutProject className="aboutProject">
             <div className="aboutProject__title">О проекте
             </div>
-            <img className="lineSimple" src={line} alt="Линия"/>
+            <img className="aboutProject__lineSimple" src={line} alt="Линия"/>
             <div className="aboutProject__all__stolb">
                 {/*титлы в 2-ух столбцах*/}
                 <div className="aboutProject__1stolb">
