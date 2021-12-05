@@ -1,0 +1,72 @@
+.card__container{
+    width: 100%;
+    padding: 0 70px;
+font-family: Inter;
+    font-weight: 500;
+    background-color:#202020;
+}
+.card__image{
+    padding-top: 20px;
+    padding-bottom: 0;
+    background: url('../../images/kino.svg') no-repeat center 25px;
+    width: 270px;
+    height: 151px;
+}
+.card__container_name_like{
+    display: flex;
+}
+.card__container_name{
+    padding-bottom: 29px;
+    padding-top: 14px;
+    width: 226px;
+    height: 16px;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-style:normal;
+    Size:13px;
+    Line-height:15.73px;
+    background-color: transparent;
+}
+
+.card__container_like_passive{
+    color: #FFFFFF;
+    width: 24px;
+    height: 24px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 0;
+    padding-right: 20px;
+   /* background-color: transparent;*/
+    background: url('../../images/like_passive.svg') no-repeat center;
+}
+.card__container_like_active{
+    color: #FFFFFF;
+    width: 24px;
+    height: 24px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 0;
+    padding-right: 20px;
+/*    background-color: transparent;*/
+    background: url('../../images/like_active.svg') no-repeat center ;
+}
+
+.card__container_time_line{
+
+}
+.card__container_time{
+    display: contents;
+    width: 34px;
+    color: #8B8B8B;
+    Font-family: Inter;
+    Font-style: normal;
+Font-size: 11px;
+Line-height: 13px;
+}
+.card__container_line{
+    background: url('../../images/line_time_duration.svg') no-repeat center ;
+    color: #FFFFFF;
+    width: 270px;
+    height: 1px;
+    padding-bottom: 6px;
+}
