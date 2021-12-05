@@ -2,7 +2,7 @@ import React from 'react';
 import '../components/AboutMe.css';
 import fotoMe from '../images/AboutMe/fotoMe.JPG';
 import line from '../images/line.svg';
-import Image_world from '../images/Image_world.svg';
+import strelka from '../images/strelka.svg';
 import '../index.css';
 
 function AboutMe(props) {
@@ -35,20 +35,25 @@ function AboutMe(props) {
 
             <div className='links'>
                     <div className="aboutMeLinks">
+                        <div className="a">
                         <a target="_blank" rel="noopener noreferrer" className="aboutMeLinkStatic"
-                           href={"https://www.facebook.com/profile.php?id=100000879196200"}>Статичный сайт</a>
+                           href={"https://www.facebook.com/profile.php?id=100000879196200"}>Статичный сайт
+                            <img className="aboutMe__strelka" src={strelka} alt="Стрелка"/></a>
+                    </div>
+                <div>
                         <img className="aboutMe__lineSimple" src={line} alt="Линия"/>
                         <a target="_blank" rel="noopener noreferrer" className="aboutMeLinkAdaptive"
-                           href={"https://www.facebook.com/profile.php?id=100000879196200"}>Адаптивный сайт</a>
+                           href={"https://www.facebook.com/profile.php?id=100000879196200"}>Адаптивный сайт
+                            <img className="aboutMe__strelka" src={strelka} alt="Стрелка"/></a>
+                </div>
+                    <div>
                         <img className="aboutMe__lineSimple" src={line} alt="Линия"/>
                         <a target="_blank" rel="noopener noreferrer" className="aboutMeLinkLanding"
                            href={"https://github.com/Olik-Olik"}>Одностраничное
-                            приложение</a>
-                       {/* <div className='aboutMeFoto'>
-                            <img className="imgfotoMe" src={fotoMe} alt="Фотка"/>
-                        </div>*/}
+                            приложение
+                        <img className="aboutMe__strelka" src={strelka} alt="Стрелка" /> </a>
+                    </div>
                 </div>
-
             </div>
         </>
 
@@ -56,32 +61,3 @@ function AboutMe(props) {
 }
 
 export default AboutMe;
-/*  export default function Navbar(props)
-  {
-  /!*extends
-      React.Component
-      {
-          render()
-          {
-              const {location} = this.props;
-              const AboutMeTitleStaticWeb = location.pathname === 'https://www.facebook.com/profile.php?id=100000879196200' ? "active" : "";
-              const AboutMeTitleAdaptiveWeb = location.pathname === 'https://www.facebook.com/profile.php?id=100000879196200' ? "active" : "";
-              const AboutMeTitleLanding = location.pathname === 'https://www.facebook.com/profile.php?id=100000879196200' ? "active" : "";
-              const AboutMeTitlePortfolio = location.pathname === 'https://www.facebook.com/profile.php?id=100000879196200' ? "active" : "";
-              return (*!/
-                  <div>
-                      <ul className="nav navbar-nav navbar-right">
-                          <li className='AboutMeTitlePortfolio'><Link
-                              to="https://www.facebook.com/profile.php?id=100000879196200">Портфолио</Link></li>
-                          <li className='AboutMeTitleStaticWeb'><Link
-                              to=" https://www.facebook.com/profile.php?id=100000879196200">Статичный сайт</Link></li>
-                          <li className='AboutMeTitleAdaptiveWeb'><Link
-                              to="https://www.facebook.com/profile.php?id=100000879196200">Адаптивный сайт</Link></li>
-                          <li className='AboutMeTitleLanding'><Link
-                              to=" https://www.facebook.com/profile.php?id=100000879196200">Одностраничное
-                              приложение</Link></li>
-                      </ul>
-                  </div>
-          }
-  }
-*/

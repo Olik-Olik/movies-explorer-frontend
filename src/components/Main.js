@@ -11,12 +11,14 @@ import AboutMe from  '../components/AboutMe';
 import Footer from  '../components/Footer';
 import AboutProject from  '../components/AboutProject';
 import NotFound_404 from './NotFound_404';
+import Result_Main_Search from '../components/Result_Main/Result_Main_Search';
 import '../components/Techs.css'
 import '../components/Header.css'
 import '../components/Footer.css';
 import '../components/Main.css';
 import '../components/AboutMe.css';
 import '../components/AboutProject.css';
+import '../components/Result_Main/Result_Main_Search.css'
 import '../index.css';
 
  function Main(props){
@@ -29,7 +31,8 @@ import '../index.css';
     <Footer>
     </Footer>
     <NotFound_404/>
-
+    <Result_Main_Search>
+    </Result_Main_Search>
 </>)}
 export default Main;
 

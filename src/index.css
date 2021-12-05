@@ -3,3 +3,6 @@
 @import url('components/Main.css');
 @import url('components/App.css');
 @import url('components/Footer.css');
+@import url('components/Result_Main/Result_Main_Search.css');
+@import url('components/Result_Main/Result_Main.css');
+@import url('components/Result_Main/Result_Main_More.css');

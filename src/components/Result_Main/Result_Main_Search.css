@@ -1,0 +1,97 @@
+.result_main_search__conteiner{
+    width: 100%;
+    background-color: #202020;
+}
+
+.result_main_search{
+    width: 100%;
+    max-Width:1739px;
+    Height:222px;
+    Top:74px;
+    background-color: #202020;
+    box-sizing: border-box;
+    padding: 0 70px;
+}
+/*Строка поиска*/
+.result_main_search__conteiner{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1140px;
+    height: 72px;
+    border-radius: 9px;
+    box-sizing: border-box;
+    background-color: #2F2F2F;
+}
+/*Лупа и "Фильм"*/
+.result_main_search_icon {
+    display: flex;
+}
+.result_main_search_icon__lupa{
+    background: url('../../images/icon__lupa.svg') no-repeat center 25px;
+    color: #C4C4C4;
+    box-sizing: border-box;
+    width: 60px;
+    height: 22px;
+    padding: 25px 10px;
+
+}
+.result_main_search_icon_film{
+    color: #8B8B8B;
+    box-sizing: border-box;
+    width: 60px;
+    height: 22px;
+  /*  padding: 25px 10px;*/
+    padding-top: 25px;
+}
+
+.result_main_search_icon_smalltube{
+    background: url('../../images/smalltumb.svg') no-repeat center 25px;
+   /* color: #C4C4C4;*/
+    box-sizing: border-box;
+    width: 60px;
+    height: 22px;
+    padding: 25px 10px;
+}
+.result_main_search_icon_shortfilm{
+    color: #FFFFFF;
+            Font-style: normal;
+Font-size: 13px;
+Line-height: 18px;
+    width: 117px;
+  padding: 27px 4px 30px;
+
+}
+.result_main_search__value{}
+
+{/*Линия между смоллтубом и Найти*/}
+.result_main_search_icon_line{
+    background: url('../../images/line_between_find.svg') no-repeat center;
+    color: #424242;
+    box-sizing: border-box;
+    border: none;
+    width: 1px;
+   /* height: 40px;*/
+    top: 20px;
+
+}
+
+/*Голубая кнопка Найти*/
+.result_main_search__button_find{
+    width: 80px;
+  /*  height: 34px;*/
+    position: relative;
+    background: url('../../images/find.svg') no-repeat center;
+    box-sizing: border-box;
+    border: none;
+    left: 21.35px;
+    padding: 8px 10.35px;
+  /*  font-family: Inter;*/
+ /*  font-style: medium;*/
+   font-size: 11px;
+    line-height: 18px;
+  /*  Line height: 135%*/
+    align-items: Center;
+    vertical-align: Top;
+
+}

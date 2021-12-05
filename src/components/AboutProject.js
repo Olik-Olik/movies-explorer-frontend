@@ -1,8 +1,7 @@
 import React from "react";
 import './AboutProject.css';
 import line from "../images/line.svg";
-import header_button_1_week from "../images/header_button_1_week.svg";
-import button_4_week from "../images/button_4_week.svg";
+
 import '../index.css';
 function AboutProject(props) {
     return (
