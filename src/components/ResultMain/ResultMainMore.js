@@ -1,10 +1,10 @@
 import React from 'react';
-import '../Result_Main/Result_Main_More.css';
-import '../Result_Main/Result_Main_Search.css';
+import './ResultMainMore.css';
+import './ResultMainSearch.css';
 
 import '../../index.css';
 
-function Result_Main_More(props){
+function ResultMainMore(props){
     return(
         <form className="result_main_search result_main_more" /*onChange={handleFormChange}*/>
 
@@ -17,4 +17,4 @@ function Result_Main_More(props){
 
     )
 }
-export default Result_Main_More;
+export default ResultMainMore;

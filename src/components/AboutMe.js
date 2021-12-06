@@ -10,16 +10,20 @@ function AboutMe(props) {
         <>
             <h2 className='aboutMe__whoIS'>Студент</h2>
             <img className="aboutMe__lineSimple" src={line} alt="Линия"/>
-           {/* <div className='line'/>*/}
-            <div className='aboutMe__myName'>OLIK</div>
-            <div className='aboutMe__work'>Фронтенд-разработчик, 99 лет</div>
+        {/*    <div className='line'/>*/}
+
             <div className= 'aboutMe__descriptionFoto'>
-                <div className='aboutMeTitleAbout'>Я родился и живу в Москве,
-                    закончил МИФИ. Я не люблю слушать музыку,она мешает сосредоточиться. Сейчас увлекаюсь пирожными,
-                    шоколадом и сгущенкой. А еще люблю море и все красивое.Недавно начал кодить и читать полезные
+
+          <div>{/*3 вместе*/}
+          <div className='aboutMe__myName'>Олик</div>
+            <div className='aboutMe__work'>Фронтенд-разработчик</div>
+            <div className='aboutMeTitleAbout'>Я родился и живу в Москве,
+                    закончил МИФИ. Я не люблю слушать музыку,она мешает сосредоточиться. Люблю удобные стулья.Сейчас увлекаюсь пирожными,
+                    шоколадом и сгущенкой. А еще люблю море и все красивое. Недавно начал кодить и читать полезные
                     книжки, с 2021г.
                     После того, как прошёл курс по веб-разработке,
                     начал заниматься фриланс-заказами.</div>
+          </div>
 
                 <div className='aboutMeFoto'>
                     <img className="imgfotoMe" src={fotoMe} alt="Фотка"/>
@@ -35,23 +39,25 @@ function AboutMe(props) {
 
             <div className='links'>
                     <div className="aboutMeLinks">
-                        <div className="a">
-                        <a target="_blank" rel="noopener noreferrer" className="aboutMeLinkStatic"
-                           href={"https://www.facebook.com/profile.php?id=100000879196200"}>Статичный сайт
-                            <img className="aboutMe__strelka" src={strelka} alt="Стрелка"/></a>
+
+                        <div className="aboutMe__strelka-resurs">
+                           <a className="aboutMeLinkStatic" href={"https://www.facebook.com/profile.php?id=100000879196200"}>Статичный сайт</a>
+                            <img className="aboutMe__strelka" src={strelka} alt="Стрелка"/>
                     </div>
                 <div>
-                        <img className="aboutMe__lineSimple" src={line} alt="Линия"/>
-                        <a target="_blank" rel="noopener noreferrer" className="aboutMeLinkAdaptive"
-                           href={"https://www.facebook.com/profile.php?id=100000879196200"}>Адаптивный сайт
-                            <img className="aboutMe__strelka" src={strelka} alt="Стрелка"/></a>
+                       {/* <img className="aboutMe__lineSimple" src={line} alt="Линия"/>*/}
+                    <div className="aboutMe__strelka-resurs">
+                        <a  className="aboutMeLinkAdaptive" href={"https://www.facebook.com/profile.php?id=100000879196200"}>Адаптивный сайт</a>
+                        <img className="aboutMe__strelka" src={strelka} alt="Стрелка"/>
+                </div>
+
                 </div>
                     <div>
-                        <img className="aboutMe__lineSimple" src={line} alt="Линия"/>
-                        <a target="_blank" rel="noopener noreferrer" className="aboutMeLinkLanding"
-                           href={"https://github.com/Olik-Olik"}>Одностраничное
-                            приложение
-                        <img className="aboutMe__strelka" src={strelka} alt="Стрелка" /> </a>
+                        <div className="aboutMe__strelka-resurs">
+                   {/*     <img className="aboutMe__lineSimple" src={line} alt="Линия"/>*/}
+                        <a  className="aboutMeLinkLanding" href={"https://github.com/Olik-Olik"}>Одностраничноеприложение</a>
+                        <img className="aboutMe__strelka" src={strelka} alt="Стрелка" />
+                    </div>
                     </div>
                 </div>
             </div>

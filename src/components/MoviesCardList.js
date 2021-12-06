@@ -1,9 +1,13 @@
 import React from "react";
-import  './MoviesCard.css';
+import  './ResultMain/Card.css';
+import './MoviesCardList.css'
+import kino from '../images/kino.svg';
 function MoviesCardList(props){
-/*return(
-
-)*/
+return(
+    <section className="moviesCard_list">
+        <div className="movies-grid"> </div>
+    </section>
+)
 }
 
 export default MoviesCardList;

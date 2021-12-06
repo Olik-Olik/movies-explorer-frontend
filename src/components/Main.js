@@ -12,10 +12,10 @@ import AboutMe from  '../components/AboutMe';
 import Footer from  '../components/Footer';
 import AboutProject from  '../components/AboutProject';
 import NotFound_404 from './NotFound_404';
-import Result_Main_Search from '../components/Result_Main/Result_Main_Search';
-import Result_Main_More from '../components/Result_Main/Result_Main_More';
-import Card from '../components/Result_Main/Card';
-import Movies from '../components/Result_Main/Movies';
+import ResultMainSearch from '../components/ResultMain/ResultMainSearch';
+import ResultMainMore from '../components/ResultMain/ResultMainMore';
+import Card from './ResultMain/Card';
+import Movies from '../components/ResultMain/Movies';
 import MoviesCardList from '../components/MoviesCardList';
 import '../components/MoviesSearch';
 import '../components/HeaderInwork.css';
@@ -25,10 +25,10 @@ import '../components/Footer.css';
 import '../components/Main.css';
 import '../components/AboutMe.css';
 import '../components/AboutProject.css';
-import '../components/Result_Main/Result_Main_Search.css';
-import '../components/Result_Main/Result_Main_More.css';
+import '../components/ResultMain/ResultMainSearch.css';
+import '../components/ResultMain/ResultMainMore.css';
 import '../components/Preloader.css';
-/*import '../components/MoviesCardList.css';*/
+import '../components/MoviesCardList.css';
 import '../components/MoviesSearch.css';
 import '../index.css';
 
@@ -42,24 +42,19 @@ import '../index.css';
     <Footer>
     </Footer>
     <NotFound_404/>
-    <Result_Main_Search>
-    </Result_Main_Search>
-    <Result_Main_More/>
+    <ResultMainSearch>
+    </ResultMainSearch>
+    <ResultMainMore/>
     <Card/>
     <Movies/>
-   {/* <MoviesCardList> </MoviesCardList>*/}
+
     <Preloader> </Preloader>
    <HeaderInwork> </HeaderInwork>
+    <MoviesCardList>
+        <Card/>
+    </MoviesCardList>
    {/* <Login>
     </Login>*/}
 
 </>)}
 export default Main;
-
-    {/*   <Promo> </Promo>
-    <NavTab></NavTab>
-    <AboutProject></AboutProject>
-    <Techs></Techs>
-    <AboutMe></AboutMe>
-     <Portfolio></Portfolio>*/}
-

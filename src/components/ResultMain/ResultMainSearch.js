@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Result_Main/Result_Main_Search.css';
+import './/ResultMainSearch.css';
 import lupa from '../../images/icon__lupa.svg';
 import smalltumb from '../../images/smalltumb.svg';
 import find from '../../images/find.svg';
@@ -7,7 +7,7 @@ import line_between_find from '../../images/line_between_find.svg';
 
 import '../../index.css';
 
-function Result_Main_Search(props){
+function ResultMainSearch(props){
     return(
         <form className="result_main_search" /*onChange={handleFormChange}*/>
 
@@ -32,4 +32,4 @@ function Result_Main_Search(props){
 
     )
 }
-export default Result_Main_Search;
+export default ResultMainSearch;

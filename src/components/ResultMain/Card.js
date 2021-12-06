@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Result_Main/Card.css';
+import './/Card.css';
 import kino from '../../images/kino.svg';
 import smalltumb from '../../images/smalltumb.svg';
 import find from '../../images/find.svg';
