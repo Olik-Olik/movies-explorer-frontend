@@ -1,8 +1,9 @@
-/*
 import React from "react";
 import  './MoviesCard.css';
-const MoviesCardList(){
+function MoviesCardList(props){
+/*return(
 
+)*/
 }
 
-export default MoviesCardList;*/
+export default MoviesCardList;

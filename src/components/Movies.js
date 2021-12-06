@@ -9,6 +9,9 @@ function Movies(props){
           </NavTab>*/}
       </Header>
 
+
+
+
     <Footer>
     </Footer>
       </>

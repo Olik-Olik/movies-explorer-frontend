@@ -1,0 +1,52 @@
+.header_inwork{
+    max-width: 1280px;
+    max-height: 74px;
+    font-family: Inter;
+    font-weight: 500;
+    display: flex;
+    Font-size: 13px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+.header__akkaunt{
+   border-radius: 20px;
+    max-width: 100px;
+    max-height: 32px;
+    Font-size: 14px;
+    top:21px;
+    padding-top: 3px;
+
+    padding-bottom: 3px;
+    background-color: #8B8B8B;
+    /*Line-height: 16px;*/
+    color: #FFFFFF;
+/*   font-family: Inter;
+   font-weight: 500;*/
+
+}
+.header__name_saved-film{
+    padding-left: 44px;
+    padding-right: 16px;
+
+    padding-top: 10px;
+    max-width: 54px;
+    max-height: 18px;
+    color: #FFFFFF;
+    font-weight: 500;
+    justify-content: flex-start;
+    display: flex;
+}
+.header__film-saved_film{
+    align-items: baseline;
+    Font-size: 13px;
+    display: flex;
+    font-weight: 400;
+  /*  justify-content: space-between;*/
+}
+.header__films-akkaunt{
+    display: flex;
+    align-items: baseline;
+
+    align-content: space-between;
+}

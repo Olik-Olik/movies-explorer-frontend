@@ -25,7 +25,6 @@ function Card(props){
                    <div className= "card__container_line"> </div>
                    <div className= "card__container_time">1ч 42м </div>
 
-
         </form>
 
     )
