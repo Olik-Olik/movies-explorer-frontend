@@ -17,6 +17,10 @@ import ResultMainMore from '../components/ResultMain/ResultMainMore';
 import Card from './ResultMain/Card';
 import Movies from '../components/ResultMain/Movies';
 import MoviesCardList from '../components/MoviesCardList';
+import Profile from '../components/Profile';
+import RezultRegister from '../components/RezultRegister';
+import HeaderRezultRegisterWelcome from '../components/HeaderRezultRegisterWelcome';
+import HeaderRezultLoginWelcome from '../components/HeaderResultLoginWelcome';
 import '../components/MoviesSearch';
 import '../components/HeaderInwork.css';
 import '../components/Techs.css';
@@ -30,6 +34,10 @@ import '../components/ResultMain/ResultMainMore.css';
 import '../components/Preloader.css';
 import '../components/MoviesCardList.css';
 import '../components/MoviesSearch.css';
+import '../components/Profile.css'
+import  '../components/RezultRegister.css'
+import  '../components/HeaderRezultRegisterWelcome.css';
+import  '../components/HeaderResultLoginWelcome.css';
 import '../index.css';
 
  function Main(props){
@@ -53,8 +61,17 @@ import '../index.css';
     <MoviesCardList>
         <Card/>
     </MoviesCardList>
+    <Profile>
+
+    </Profile>
    {/* <Login>
     </Login>*/}
+    <RezultRegister>
+    </RezultRegister>
+<HeaderRezultRegisterWelcome>
+</HeaderRezultRegisterWelcome>
+    <HeaderRezultLoginWelcome>
 
+    </HeaderRezultLoginWelcome>
 </>)}
 export default Main;

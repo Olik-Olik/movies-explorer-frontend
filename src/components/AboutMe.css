@@ -20,6 +20,14 @@
 .aboutMe__strelka-resurs{
     display: flex;
     width: 880px;
+    height: 50px;
+    color: #FFFFFF;
+    font-family: Inter;
+    font-Weight:400;
+    font-Style:normal;
+    font-Size:30px;
+    Line-height:60px;
+
 }
 .aboutMe__myName{
     padding-top: 62px;
@@ -56,9 +64,8 @@
     padding: 0 70px;
     display: flex;
     background-color: #073042;
-  /*  justify-content: space-between;*/
-
 }
+
 .imgfotoMe{
     padding-top: 66px;
     background-color:#073042;
@@ -66,10 +73,12 @@
     height: 327px;
     border-radius: 10px;
 }
+
 .a{
     grid-template-rows: repeat(1, 29px);
     grid-template-columns: repeat(2, 231px);
 }
+
 .links{
     font-family: 'Inter';
     font-weight: 400;
@@ -102,10 +111,15 @@
     text-decoration: none;
 }
 .aboutMe__portfolio{
+    Font-family:Inter;
+    Font-Weight:
+    400;
+    Font-Style:
+    normal;
     width: 100%;
     padding:  0 70px 50px;
     margin: 0;
-background-color: #073042;
+    background-color: #073042;
     color:#8B8B8B;
     font-size: 18px;
     line-height: 20px;
@@ -139,14 +153,16 @@ background-color: #073042;
 }
 .aboutMelinks{
     width: 100%;
-    margin-top: 99px;
+    max-width: 880px;
+    /*margin-top: 99px;
     margin-right: 70px;
     flex-direction: row;
     display: flex;
-    font-size: 30px;
-    border: 1px solid white;
+    font-size: 30px;*/
+   /* border: 1px solid white*/;
 }
 .aboutMe__lineSimple{
+    font-family: 'Inter';
   /*  padding: 0 70px;*/
     width: 100%;
     background-color: #073042;
@@ -156,49 +172,53 @@ background-color: #073042;
     display: flex;
 }
 .aboutMeLinkStatic{
+    letter-spacing: -0.04em;
     width: 100%;
     max-height: 50px;
     background-color: #073042;
     color:#FFFFFF;
     line-height: 16px;
-  /*  padding-left: 70px;*/
     font-size: 30px;
     text-decoration: none;
-    padding-bottom: 19px;
-
+    padding: 20px 0;
 }
+
 .aboutMe__strelka{
-  /*  display: flex;*/
+
     width: 29px;
     height: 60px;
-
 }
+
+/*
 .aboutMeLinkAdaptive{
-    padding-top: 10px;
+   !* padding-top: 10px;*!
     width: 100%;
-  /*  max-width: 880px;*/
+  !*  max-width: 880px;*!
     max-height: 50px;
     background-color: #073042;
     color:#FFFFFF;;
     line-height: 16px;
-    /* padding-bottom: 18px;*/
+    !* padding-bottom: 18px;*!
     font-size: 30px;
     text-decoration: none;
-  /*  padding-left: 70px;*/
-   /* padding-top: 20px;*/
-    padding-bottom: 19px;
+  !*  padding-left: 70px;*!
+   !* padding-top: 20px;*!
+    letter-spacing: -0.04em;
+    padding: 38px 0;
 }
 
 .aboutMeLinkLanding{
+    letter-spacing: -0.04em;
     width: 100%;
- /*   max-width: 880px;*/
+ !*   max-width: 880px;*!
     max-height: 50px;
     background-color: #073042;
     color:#FFFFFF;
     line-height: 16px;
-    padding-top: 20px;
-    padding-bottom: 125px;
+    padding: 19px 0;
+    padding-bottom: 105px;
     font-size: 30px;
     text-decoration: none;
- /*   padding-left: 70px;*/
+ !*   padding-left: 70px;*!
 }
+*/

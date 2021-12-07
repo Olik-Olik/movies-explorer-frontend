@@ -42,21 +42,24 @@ function AboutMe(props) {
 
                         <div className="aboutMe__strelka-resurs">
                            <a className="aboutMeLinkStatic" href={"https://www.facebook.com/profile.php?id=100000879196200"}>Статичный сайт</a>
-                            <img className="aboutMe__strelka" src={strelka} alt="Стрелка"/>
+                           {/* <img className="aboutMe__strelka" src={strelka} alt="Стрелка"/>*/}
+                            <p className="aboutMe__strelka">↗</p>
                     </div>
                 <div>
                        {/* <img className="aboutMe__lineSimple" src={line} alt="Линия"/>*/}
                     <div className="aboutMe__strelka-resurs">
-                        <a  className="aboutMeLinkAdaptive" href={"https://www.facebook.com/profile.php?id=100000879196200"}>Адаптивный сайт</a>
-                        <img className="aboutMe__strelka" src={strelka} alt="Стрелка"/>
+                        <a  className="aboutMeLinkStatic" href={"https://www.facebook.com/profile.php?id=100000879196200"}>Адаптивный сайт</a>
+                      {/*  <img className="aboutMe__strelka" src={strelka} alt="Стрелка"/>*/}
+                        <p className="aboutMe__strelka">↗</p>
                 </div>
 
                 </div>
                     <div>
                         <div className="aboutMe__strelka-resurs">
                    {/*     <img className="aboutMe__lineSimple" src={line} alt="Линия"/>*/}
-                        <a  className="aboutMeLinkLanding" href={"https://github.com/Olik-Olik"}>Одностраничноеприложение</a>
-                        <img className="aboutMe__strelka" src={strelka} alt="Стрелка" />
+                        <a  className="aboutMeLinkStatic" href={"https://github.com/Olik-Olik"}>Одностраничноеприложение</a>
+                       {/* <img className="aboutMe__strelka" src={strelka} alt="Стрелка" />*/}
+                            <p className="aboutMe__strelka">↗</p>
                     </div>
                     </div>
                 </div>
@@ -65,5 +68,7 @@ function AboutMe(props) {
 
     )
 }
+
+
 
 export default AboutMe;
