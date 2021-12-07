@@ -71,13 +71,35 @@
     display: flex;
     font-family: Inter;
     font-weight: 500;
+
+    align-items: center;
     font-size: 13px;
-    line-height: 16px;
+    text-decoration: none;
+    position: relative;
+    margin: 0 auto;
+    flex-direction: column;
+    background: none;
+    border-style: none;
+    justify-content: center;
+
 }
 .profile__exit{
    color: #EE3465;
     padding-top: 20px;
     display: flex;
+
+    width: 410px;
+    align-items: center;
+    font-size: 13px;
+    line-height: 16px;
+    text-decoration: none;
+    position: relative;
+    margin: 0 auto;
+    flex-direction: column;
+    background: none;
+    border-style: none;
+    justify-content: center;
+    font-weight: 400;
 }
 
 .profile__input-email{

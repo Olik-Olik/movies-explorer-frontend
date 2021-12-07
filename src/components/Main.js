@@ -1,8 +1,4 @@
 import React from 'react';
-/*import Promo from '../components/
-import NavTab from  '../components/
-
-*/
 import Login from '../components/Login';
 import Preloader from  '../components/Preloader';
 import Techs from  '../components/Techs';
@@ -19,6 +15,7 @@ import Movies from '../components/ResultMain/Movies';
 import MoviesCardList from '../components/MoviesCardList';
 import Profile from '../components/Profile';
 import RezultRegister from '../components/RezultRegister';
+import Register from '../components/Register';
 import HeaderRezultRegisterWelcome from '../components/HeaderRezultRegisterWelcome';
 import HeaderRezultLoginWelcome from '../components/HeaderResultLoginWelcome';
 import '../components/MoviesSearch';
@@ -38,6 +35,7 @@ import '../components/Profile.css'
 import  '../components/RezultRegister.css'
 import  '../components/HeaderRezultRegisterWelcome.css';
 import  '../components/HeaderResultLoginWelcome.css';
+import '../components/Register.css';
 import '../index.css';
 
  function Main(props){
@@ -55,14 +53,12 @@ import '../index.css';
     <ResultMainMore/>
     <Card/>
     <Movies/>
-
     <Preloader> </Preloader>
    <HeaderInwork> </HeaderInwork>
     <MoviesCardList>
         <Card/>
     </MoviesCardList>
     <Profile>
-
     </Profile>
    {/* <Login>
     </Login>*/}
@@ -70,8 +66,12 @@ import '../index.css';
     </RezultRegister>
 <HeaderRezultRegisterWelcome>
 </HeaderRezultRegisterWelcome>
-    <HeaderRezultLoginWelcome>
 
+    <HeaderRezultLoginWelcome>
     </HeaderRezultLoginWelcome>
+
+    <Register>
+    </Register>
+
 </>)}
 export default Main;

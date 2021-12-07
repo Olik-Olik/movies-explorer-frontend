@@ -6,7 +6,7 @@ import './Header.css';
 import '../index.css';
 import logo from "../images/logo.svg";
 
-function RezultRegisterWelcome(props) {
+function HeaderRezultRegisterWelcome(props) {
 
     return (
         <header className="header">
@@ -20,4 +20,4 @@ function RezultRegisterWelcome(props) {
 
     )
 }
-export default RezultRegisterWelcome;
+export default HeaderRezultRegisterWelcome;
