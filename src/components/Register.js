@@ -10,6 +10,7 @@ import './Footer.css';
 import './HeaderResultLoginWelcome.css';
 import '../components/HeaderRezultRegisterWelcome';
 import '../index.css';
+import '../components/Register.css';
 import HeaderRezultRegisterWelcome from './HeaderRezultRegisterWelcome';
 import logo from "../images/logo.svg";
 
@@ -17,18 +18,8 @@ import logo from "../images/logo.svg";
 function Register(props){
     return(
         <>
-  {/*
-        <HeaderRezultRegisterWelcome/> лучше компоненту вставить*/}
 
-            <header className="header">
-                <div className="header__logo header__logo_welcome">
-                    <img className="headerLogo" src={logo} alt="Logo"/>
-                </div>
-                <p className="header__welcome">Добро пожаловать!
-                </p>
-            </header>
-
-
+        <HeaderRezultRegisterWelcome/>
 {/*            function Register(props) {
             const [email, setEmail] = useState('');
             const [password, setPassword] = useState('');
@@ -51,7 +42,7 @@ function Register(props){
 
 
             <div className="auth">
-            <p className="auth__login-welcome">Регистрация</p>
+          {/*  <p className="auth__login-welcome">Регистрация</p>*/}
 
      {/*       <form onSubmit={handleSubmitRegister}
             className="auth__form-login">
@@ -83,7 +74,7 @@ function Register(props){
 
                 <div className="auth__form-login">
                     <div className="profile__name">Имя</div>
-                    <div className= " profile__name profile__input-name">Вася</div>
+                    <div className= "profile__input-name">Вася</div>
                 </div>
                 <div className="profile__email-email ">
                     <div className= "profile__email ">E-mail</div>
@@ -97,9 +88,12 @@ function Register(props){
                     type="submit">Зарегистрироваться
             </button>
 
+               <div className="auth__login-signup-container">
                 <div className="auth__login-signup-Do_Register auth__signup-link">
-                    Уже зарегистрированы? Войти</div>
-            </div>
+                    Уже зарегистрированы?</div>
+                <p className="auth__login-signup-Do_Register auth__signup-link auth__signup-link-color" >Войти
+                </p>
+            </div></div>
             </>
     )
 }

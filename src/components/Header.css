@@ -6,7 +6,7 @@
     padding-top: 18px;
    /* max-width: 1140px;*/
     max-width: 1280px;
-    background-color: #073042 ;
+    background-color:  #202020; ;
   /*  height: 100vh;*/
     display: flex;
     flex-direction: column;
@@ -14,6 +14,7 @@
     color: white;
     font-style: normal;
     font-weight: 400;
+
 }
 
 .header__logo_auth_exit{
