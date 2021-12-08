@@ -11,7 +11,6 @@ return (
            <button className="notFound_404__button" onClick={'{/* пока нету такого*/}'}>Назад</button>
             </notFound_404>
             </>
-
     );
 }
 export default NotFound_404;

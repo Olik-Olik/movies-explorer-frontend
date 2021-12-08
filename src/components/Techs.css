@@ -21,6 +21,7 @@
     display: flex;
     border-bottom: 1px solid #DADADA;
     padding-bottom:  23px;
+    letter-spacing: -0.04em;
 }
 .techs__title{
     width: 100%;
@@ -39,6 +40,7 @@
     padding-top: 90px;
     padding-bottom:  26px;
     margin: 0;
+    letter-spacing: -0.04em;
 }
 .techs__body{
     font-size: 14px;

@@ -18,6 +18,11 @@ import RezultRegister from '../components/RezultRegister';
 import Register from '../components/Register';
 import HeaderRezultRegisterWelcome from '../components/HeaderRezultRegisterWelcome';
 import HeaderRezultLoginWelcome from '../components/HeaderResultLoginWelcome';
+import ButtonKnowMore from '../components/ButtonKnowMore';
+import BeginPage from '../components/BeginPage';
+import Logo from './Logo';
+import Burger from '../components/Burger';
+import Project from '../components/Project';
 import '../components/MoviesSearch';
 import '../components/HeaderInwork.css';
 import '../components/Techs.css';
@@ -36,11 +41,22 @@ import  '../components/RezultRegister.css'
 import  '../components/HeaderRezultRegisterWelcome.css';
 import  '../components/HeaderResultLoginWelcome.css';
 import '../components/Register.css';
+import '../components/Logo.css';
+import '../components/Project.css';
+import '../components/ButtonKnowMore.css';
+import '../components/BeginPage.css';
 import '../index.css';
+import '../components/BeginPage.css';
+import '../components/Burger.css';
 
  function Main(props){
          return (
-<>
+             <>
+             <Burger> </Burger>
+<Project/>
+    <BeginPage> </BeginPage>
+    <Logo/>
+    <ButtonKnowMore> </ButtonKnowMore>
     <Header/>
     <AboutMe/>
     <Techs> </Techs>

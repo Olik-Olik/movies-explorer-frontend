@@ -1,0 +1,12 @@
+
+.button__main{
+    border-radius: 3px;
+    display: flex;
+    background-color: #073042;
+    color: #FFFFFF;
+    border: 1px;
+    border-style: solid;
+    Opacity: 60%;
+    position: relative;
+
+}

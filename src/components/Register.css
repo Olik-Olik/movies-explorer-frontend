@@ -24,7 +24,6 @@
     border-bottom: 1px solid #424242;
 }
 
-
 .auth__login-welcome {
 /*Заголовок*/
     display: flex;
@@ -36,7 +35,6 @@
     font-style: normal;
     font-weight: 900;
     font-size: 24px;
-    /* identical to box height */
     justify-content: center;
     text-align: center;
     color: #FFFFFF;
@@ -50,13 +48,6 @@
     line-height: 17px;
     font-size: 14px;
     flex-direction: column;
-/*
-    margin: 0 auto;
-    justify-content: center;
-    margin-bottom: 0;
-    justify-content: center;
-    align-items: center;*/
-
 }
 
 @media screen and (max-width: 320px) {
@@ -86,8 +77,6 @@
     background: transparent;
     list-style-type: none;
     text-decoration: none;
-  /*  border-style: none;*/
- /* !*  border-bottom: 1px solid white;*!*/
     padding: 0 0 10px 0;
 }
 .profile__email-email {
@@ -114,11 +103,9 @@
     display: flex;
     margin: 0 auto;
     background: transparent;
-
     list-style-type: none;
     text-decoration: none;
     cursor: pointer;
-
     padding: 0 0 13px 0;
 }
 /*Пароль и Почта*/
@@ -140,10 +127,6 @@
     line-height: 12px;
 }
 
-/*.auth__form-login-input-password {
-    font-weight: 500;
-    color: #EE3465;
-}*/
 .auth__form-login-submit-button {
     width: 396px;
     height: 45px;
@@ -162,11 +145,6 @@
     align-items: center;
     justify-content: center;
 }
-
-/*.auth__form-login-submit-button:hover {
-    Opacity: %;
-    cursor: pointer;
-}*/
 
 .auth__signup-link-Do-Register {
     color: #FFFFFF;
@@ -204,7 +182,6 @@
     justify-content: center;
     font-weight: 400;
 
-
 }
 .auth__signup-link {
     /*зарегистрироваться*/
@@ -216,7 +193,6 @@
     text-decoration: none;
     color: #8B8B8B;
     position: relative;
- /*   margin: 0 auto;*/
     display: flex;
     flex-direction: column;
     background: none;
@@ -225,8 +201,6 @@
     font-weight: 400;
     font-family: Inter;
     font-style: normal;
-
-
 }
 
 .auth__signup-link-color{
@@ -239,5 +213,9 @@
     display:flex;
     align-items: center;
     justify-content: center;
-
 }
+
+@media screen and (max-width: 768px){
+    .auth {
+        max-width: 768px;
+}}
