@@ -1,5 +1,5 @@
 .notFound_404{
-    width: 100%;
+  /*  width: 100%;*/
     padding: 0 70px;
     margin: 0;
     background-color: #202020;
@@ -13,32 +13,24 @@
 .notFound_404__main{
     max-width: 400px;
     max-height: 169px;
-    /*color: #FFFFFF;*/
     font-style: normal;
     font-size: 140px;
      line-height: 169px;
-    /*align-items: center;*/
- /*   margin-top: 246px;*/
     margin:  0  auto ;
     padding-left: 0;
     padding-top: 246px;
     padding-right: 0;
-/*Line height: 100%*/
 }
 
 .notFound_404__title{
-  /*  Font family: Inter*/
+    Font-family: Inter;
    font-style: normal;
    font-size: 16px;
    line-height: 19px;
-/*Line height: 100%*/
- /*  align-items: Center;*/
    vertical-align: Top;
-  /*  color: #FFFFFF;*/
     margin:  0  auto ;
     padding-left: 0;
     padding-top: 5px;
-    padding-bottom: 285px;
 }
 .notFound_404__button{
     color: #4285F4;
@@ -52,24 +44,36 @@
     line-height: 17px;
     max-width: 42px;
     max-height: 17px;
-   /* align-items: Center;*/
     display: flex;
 }
 @media screen and (max-width: 1023px){
     .notFound_404{
-        padding-left: 44px;
-        padding-right: 44px;
+        padding-left: 184px;
+        padding-right: 184px;
     }
 }
-@media screen and (max-width: 768px){
+@media screen  and(max-width: 768px){
     .notFound_404{
-        padding-left: 186px;
-        padding-right: 186px;
+        padding-left: 184px;
+        padding-right: 184px;
+        padding-top: 408px;
+    }
+    .notFound_404__button{
+        padding-bottom: 246px;
+
     }
 }
-@media screen and (max-width: 320px){
+@media screen and  (max-width: 320px) {
     .notFound_404{
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .notFound_404__main{
+        font-size: 80px;
+        padding-top: 329px;
+    }
+    .notFound_404__button{
+        padding-top: 284px;
+        margin: 0;
     }
 }

@@ -119,17 +119,17 @@
 
 @media screen and (max-width: 320px){
     .header{
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 14px;
+        padding-right: 14px;
     }
 }
-@media screen and (max-width: 768px){
+/*@media screen and (max-width: 768px){
     .header{
 
          padding-left: 186px;
          padding-right: 186px;
     }
-}
+}*/
 @media screen and (max-width: 1023px){
     .header{
          padding-left: 50px;
