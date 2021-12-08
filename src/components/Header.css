@@ -1,11 +1,13 @@
-
 .header {
     display: flex;
     width: 100%;
+    display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     max-width: 1420px;
     padding: 18px 70px;
+    width: 100%;
     padding: 0 70px;
     margin: 0;
     padding-bottom: 18px;
@@ -30,7 +32,7 @@
 
 .header__button {
     display: flex;
-    background-color: #073042;
+    background-color: #202020;
     color: #FFFFFF;
 }
 
@@ -130,9 +132,8 @@
 }
 @media screen and (max-width: 1023px){
     .header{
-
-         padding-left: 44px;
-         padding-right: 44px;
+         padding-left: 50px;
+         padding-right: 50px;
     }
 }
 
