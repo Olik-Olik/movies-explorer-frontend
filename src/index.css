@@ -1,4 +1,4 @@
-@import url('components/AboutMe.css');
+@import url('components/AboutPage/AboutMe/AboutMe.css');
 @import url('components/Header.css');
 @import url('components/Main.css');
 @import url('components/App.css');
@@ -10,3 +10,4 @@
 @import url('components/ResultMain/Movies.css');
 @import url('components/ResultMain/Card.css');
 @import url('components/MoviesCardList.css');
+@import url('components/AboutPage/Tech/Techs.css');

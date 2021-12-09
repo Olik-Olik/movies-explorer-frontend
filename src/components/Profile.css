@@ -36,6 +36,7 @@
     border-bottom: 1px solid white;
 }
 .profile__email{
+/*color:yellow;*/
     padding-top: 16px;
     max-width:288px;
     max-height: 14px;
@@ -62,7 +63,23 @@
 .profile__email-email{
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+
+    width: 396px;
+    font-size: 14px;
+    align-items: flex-start;
+    cursor: pointer;
+    padding: 0 0 10px 0;
+}
+.profile__email-password{
+    color: #EE3465;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #424242;
+    width: 396px;
+    font-size: 14px;
+    align-items: flex-start;
+    cursor: pointer;
+    padding: 0 0 10px 0;
 }
 .profile__edit{
     padding-top: 220px;
@@ -71,17 +88,7 @@
     display: flex;
     font-family: Inter;
     font-weight: 500;
-
-    align-items: center;
     font-size: 13px;
-    text-decoration: none;
-    position: relative;
-    margin: 0 auto;
-    flex-direction: column;
-    background: none;
-    border-style: none;
-    justify-content: center;
-
 }
 .profile__exit{
    color: #EE3465;

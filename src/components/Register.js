@@ -80,7 +80,7 @@ function Register(props){
                     <div className= "profile__email ">E-mail</div>
                     <div className= "auth__form-login-input-email">pochta@newtree.ru</div>
                 </div>
-                <div className="profile__email-email ">
+                <div className="profile__email-email  profile__email-password">
                     <div className= "profile__email ">Пароль</div>
                     <div className= "auth__form-login-input-password">pochta@newtree.ru</div>
                 </div>

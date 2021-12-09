@@ -1,15 +1,15 @@
 import React from 'react';
-import '../components/AboutMe.css';
-import fotoMe from '../images/AboutMe/fotoMe.JPG';
-import line from '../images/line.svg';
-import strelka from '../images/strelka.svg';
-import '../index.css';
+import '../AboutMe/AboutMe.css';
+import fotoMe from '../../../images/AboutMe/fotoMe.JPG';
+import line from '../../../images/line.svg';
+import strelka from '../../../images/strelka.svg';
+import '../../../index.css';
 
 function AboutMe(props) {
     return (
         <>
             <h2 className='aboutMe__whoIS'>Студент</h2>
-            <img className="aboutMe__lineSimple" src={line} alt="Линия"/>
+           {/* <img className="aboutMe__lineSimple" src={line} alt="Линия"/>*/}
         {/*    <div className='line'/>*/}
 
             <div className= 'aboutMe__descriptionFoto'>
@@ -31,8 +31,8 @@ function AboutMe(props) {
             </div>
 
             <div className="aboutMe__connect">
-            <a target="_blank" rel="noopener noreferrer" className="aboutMe__gitHub" href={ "https://github.com/Olik-Olik"}>GitHub</a>
-            <a target="_blank" rel="noopener noreferrer" className="aboutMe__facebook" href={ "https://www.facebook.com/profile.php?id=100000879196200"}>Facebook</a>
+            <a target="_blank" rel="noopener noreferrer" className="aboutMe__gitHub" href={ "https://github.com/Olik-Olik"}>Facebook</a>
+            <a target="_blank" rel="noopener noreferrer" className="aboutMe__facebook" href={ "https://www.facebook.com/profile.php?id=100000879196200"}>GitHub</a>
             </div>
 
              <p className="aboutMe__portfolio">Портфолио</p>
@@ -65,10 +65,7 @@ function AboutMe(props) {
                 </div>
             </div>
         </>
-
     )
 }
-
-
 
 export default AboutMe;

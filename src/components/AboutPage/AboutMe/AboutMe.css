@@ -9,14 +9,16 @@
     margin: 0;
     padding-top: 110px;
     display: flex;
-/*    border: 1px solid white;*/
     padding-bottom: 23px;
     font-size: 22px;
     line-height: 27px;
     text-align: left;
-   /* vertical-align: Top;*/
-     color: #FFFFFF;
-}
+    color: #FFFFFF;
+    border-bottom: 1px solid #DADADA;}
+
+
+
+
 .aboutMe__strelka-resurs{
     display: flex;
     width: 880px;
@@ -44,7 +46,7 @@
     margin: 0;
     display: flex;
 }
-.lineSimple{
+/*.lineSimple{
     font-family: 'Inter';
     font-weight: 400;
     color: #DADADA;
@@ -52,7 +54,7 @@
     line-height: 1px;
     display: flex;
     width: 100%;
-}
+}*/
 .aboutMeLinks{
     display: flex;
     flex-direction: column;
@@ -154,12 +156,6 @@
 .aboutMelinks{
     width: 100%;
     max-width: 880px;
-    /*margin-top: 99px;
-    margin-right: 70px;
-    flex-direction: row;
-    display: flex;
-    font-size: 30px;*/
-   /* border: 1px solid white*/;
 }
 .aboutMe__lineSimple{
     font-family: 'Inter';
@@ -167,7 +163,6 @@
     width: 100%;
     background-color: #073042;
     max-width: 1140px;
- /*   height: 1px;*/
     color: #424242;
     display: flex;
 }
@@ -184,7 +179,6 @@
 }
 
 .aboutMe__strelka{
-
     width: 29px;
     height: 60px;
 }

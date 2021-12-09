@@ -1,15 +1,12 @@
 .header {
     display: flex;
     width: 100%;
-    display: flex;
-    align-items: center;
+/*    align-items: center;*/
     justify-content: space-between;
-    width: 100%;
     max-width: 1420px;
-    padding: 18px 70px;
-    width: 100%;
-    padding: 0 70px;
-    margin: 0;
+ /*   padding: 18px 70px;*/
+  /*  padding: 0 70px;*/
+    margin: 0 auto;
     padding-bottom: 18px;
     padding-top: 18px;
     background-color:  #202020; ;
@@ -132,10 +129,11 @@
 }*/
 @media screen and (max-width: 1023px){
     .header{
-         padding-left: 50px;
-         padding-right: 50px;
+      /*   padding-left: 186px;
+         padding-right: 186px;*/
     }
 }
+
 
 /*
 .auth__correct-logo-exit-email {

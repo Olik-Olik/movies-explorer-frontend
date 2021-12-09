@@ -2,12 +2,12 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 100%;
-    max-width: 1280px;
-    padding: 0 70px;
+   /* width: 100%;*/
+  /*  max-width: 1280px;*/
+   /* padding: 0 70px;*/
     margin: 0 auto;
     color: #FFFFFF;
-    background-color: #202020;;
+    background-color: #202020;
 }
 
 .profile__name{
@@ -56,17 +56,12 @@
     }
 }
 .auth__form-login-input-email {
-    font-weight: 500;
     color: #FFFFFF;
     cursor: pointer;
-}
-
-.auth__form-login-input-email {
     border-bottom: 1px solid #4285F4;
     width: 396px;
     font-size: 14px;
     align-items: flex-start;
-    cursor: pointer;
     line-height: 17px;
     font-style: normal;
     font-weight: 400;
@@ -83,15 +78,8 @@
     display: flex;
     flex-direction: column;}
 
-.auth__form-login-input-email {
-    font-weight: 500;
-    color: #FFFFFF;
-    cursor: pointer;
-}
+
 .auth__form-login-input-password {
-    border-bottom: 1px solid #424242;
-    /*буквицы во вводе пароля*/
-    width: 396px;
     font-size: 14px;
     line-height: 17px;
     font-style: normal;
@@ -101,7 +89,6 @@
     flex-direction: column;
     justify-content: center;
     display: flex;
-    margin: 0 auto;
     background: transparent;
     list-style-type: none;
     text-decoration: none;
@@ -112,7 +99,7 @@
 .profile__email {
     padding-top: 24px;
     padding-bottom: 5px;
-   color: #8B8B8B;
+    color: #8B8B8B;
     font-family: Inter;
     font-weight: 400;
     font-size: 10px;
@@ -135,13 +122,13 @@
     font-style: normal;
     font-weight: 400;
     border-style: none;
-    margin: 152px auto 103px;
+    margin-top: 152px;
+    margin-bottom: 103px;
     cursor: pointer;
     color: white;
     background: #4285F4;
     font-size: 14px;
     display: flex;
-
     align-items: center;
     justify-content: center;
 }
@@ -214,8 +201,35 @@
     align-items: center;
     justify-content: center;
 }
+@media screen and (max-width: 1024px){
+    .auth__form-login-input-email{
+      /*  max-width: 260px;*/
+    }
+    .auth__form-login-input-password{
+  /*      max-width: 260px;*/
+    }
+}
 
-@media screen and (max-width: 768px){
+@media screen and (min-width: 620px) and(max-width: 768px){
+    .auth__form-login-input-email{
+      /*  max-width: 260px;*/
+    }
+    .auth__form-login-input-password{
+     /*   max-width: 260px;*/
+    }
+}
+
+ @media screen and (min-width: 320px) and(max-width: 620px){
     .auth {
-        max-width: 768px;
-}}
+     /*   max-width: 320px;*/
+}
+     .auth__form-login-input-email{
+     /*    max-width: 260px;*/
+     }
+     .auth__form-login-input-password{
+
+     }
+ }
+
+
+

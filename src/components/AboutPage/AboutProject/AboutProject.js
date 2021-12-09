@@ -1,8 +1,8 @@
 import React from "react";
 import './AboutProject.css';
-import line from "../images/line.svg";
+import line from "../../../images/line.svg";
 
-import '../index.css';
+import '../../../index.css';
 function AboutProject(props) {
     return (
         <aboutProject className="aboutProject">

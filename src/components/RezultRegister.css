@@ -1,0 +1,127 @@
+.result{
+    background-color: #202020;
+    width: 100%;
+    max-width: 1280px;
+    height: 626px;
+    display: flex;
+    justify-content: center;
+    padding: 0 70px;
+   /* margin: 0 auto;*/
+}
+
+.result__title{
+    display: flex;
+    width: 100%;
+    max-width: 204px;
+    color: white;
+    font-style: normal;
+    font-weight: 500;
+    Font-family: 'Inter';
+Font-size: 24px;
+Line-height: 29px;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+}
+/*имя*/
+.result__name{
+    max-width:141px;
+    max-height: 14px;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: left;
+    vertical-align: Top;
+    color:#FFFFFF;
+    padding-top: 123px;
+    padding-bottom: 16px;
+   /* padding-right: 147px;*/
+  /*  border-bottom: 1px solid #424242;*/
+
+}
+.result__email{
+    /*color:yellow;*/
+    padding-top: 16px;
+    max-width:288px;
+    max-height: 14px;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: left;
+    vertical-align: Top;
+    color:#FFFFFF;
+    padding-bottom: 16px;
+
+}
+
+.result__name-name{
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    width: 396px;
+    font-size: 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #424242;
+}
+.result__email-email{
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    width: 396px;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0 0 16px 0;
+}
+.result__email-password{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #424242;
+    width: 396px;
+    font-size: 14px;
+    align-items: flex-start;
+    cursor: pointer;
+    padding: 0 0 16px 0;
+}
+.result__edit{
+    padding-top: 220px;
+    padding-bottom: 16px;
+    width: 410px;
+    line-height: 16px;
+    display: flex;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 13px;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+}
+.result__exit{
+    color: #EE3465;
+    display: flex;
+    width: 410px;
+    font-size: 13px;
+    line-height: 16px;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 400;
+    padding-top: 0;
+    padding-bottom: 102px;
+}
+
+.result__input-email{
+    font-size: 11px;
+
+}
+.result__input-name{
+padding-bottom: 16px;
+}
+
+
+
