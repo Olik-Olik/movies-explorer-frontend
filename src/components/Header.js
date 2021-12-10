@@ -6,7 +6,7 @@ import Image_world from "../images/Image_world.svg";*/
 import {Link, Route, Switch} from "react-router-dom";
 import '../index.css';
 import Logo from "./Logo";
-import Project from "./Project";
+import Project from "./AboutPage/ProjectPage/Project";
 
 
 

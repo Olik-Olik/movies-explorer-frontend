@@ -5,10 +5,11 @@ import line from "../../../images/line.svg";
 import '../../../index.css';
 function AboutProject(props) {
     return (
+        <section className="main">
         <aboutProject className="aboutProject">
             <div className="aboutProject__title">О проекте
             </div>
-            <img className="aboutProject__lineSimple" src={line} alt="Линия"/>
+
             <div className="aboutProject__all__stolb">
                 {/*титлы в 2-ух столбцах*/}
                 <div className="aboutProject__1stolb">
@@ -27,27 +28,20 @@ function AboutProject(props) {
             </div>
             {/* Сами титлы 1 и 4 неделя*/}
                 <div  className="aboutProject__button">
-                    <button className="aboutProject__button_first" onClick={'{/* не тыкабельна зеленая */}'}>1
-                    неделя</button>
+                    <div className="aboutProject__button_first" onClick={'{/* не тыкабельна зеленая */}'}>1
+                    неделя</div>
 
-                    <button className="aboutProject__button_second" onClick={'{/* не тыкабельна серая*/}'}>4
-                    неделя</button>
-                    {/*<img className="aboutProject__button__title2stolb" alt="Кнопка серая" src={button_4_week}/>4 недели*/}
+                    <div className="aboutProject__button_second" onClick={'{/* не тыкабельна серая*/}'}>4
+                    неделя</div>
 
                              </div>
             {/* Надписи под 1 и 4 неделями*/}
             <div  className="aboutProject__button">
-            <button className="aboutProject__button_first_down" onClick={'{/* не тыкабельна зеленая */}'}>Front-end</button>
-            <button className="aboutProject__button_second_down" onClick={'{/* не тыкабельна серая*/}'}>Back-end</button>
+            <p className="aboutProject__button_first_down" onClick={'{/* не тыкабельна зеленая */}'}>Front-end</p>
+            <p className="aboutProject__button_second_down" onClick={'{/* не тыкабельна серая*/}'}>Back-end</p>
             </div>
-
-            {/*<div className="aboutProject__button__description">
-
-                 <div className="aboutProject__button__process2stolb">Front-end</div>
-                 <div className="aboutProject__button__process1stolb">Back-end</div>
-                 </div>
-*/}
-        </aboutProject>);
+        </aboutProject>
+        </section>);
 }
 
 export default AboutProject;

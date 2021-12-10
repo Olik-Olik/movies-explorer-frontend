@@ -1,14 +1,9 @@
 .header {
     display: flex;
     width: 100%;
-/*    align-items: center;*/
     justify-content: space-between;
-    max-width: 1420px;
- /*   padding: 18px 70px;*/
-  /*  padding: 0 70px;*/
+    padding: 18px 70px;
     margin: 0 auto;
-    padding-bottom: 18px;
-    padding-top: 18px;
     background-color:  #202020; ;
     flex-direction: column;
     align-items: flex-start;
@@ -116,55 +111,13 @@
 
 @media screen and (max-width: 320px){
     .header{
-        padding-left: 14px;
-        padding-right: 14px;
+        padding: 14px 18px;
     }
 }
-/*@media screen and (max-width: 768px){
+@media screen and (max-width: 768px){
     .header{
-
-         padding-left: 186px;
-         padding-right: 186px;
-    }
-}*/
-@media screen and (max-width: 1023px){
-    .header{
-      /*   padding-left: 186px;
-         padding-right: 186px;*/
-    }
+ padding: 18px 30px;
+          }
 }
+@media screen and (max-width: 1023px){}
 
-
-/*
-.auth__correct-logo-exit-email {
-    display: flex;
-    text-decoration: none;
-    align-items: center;
-}
-.auth__header-email {
-    font-size: 18px;
-    line-height: 22px;
-    text-align: end;
-    color: #FFFFFF;
-    display: flex;
-    flex-direction: row;
-    margin-right: 24px;
-    !* cursor: pointer;*!
-    text-decoration: none;
-}
-.auth__header-exit {
-    font-size: 18px;
-    line-height: 22px;
-    text-align: end;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    cursor: pointer;
-    align-items: flex-end;
-    text-decoration: none;
-    color: #FFFFFF;
-}
-
-.auth__header-exit:hover {
-    cursor: pointer;
-}*/

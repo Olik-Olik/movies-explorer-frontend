@@ -1,12 +1,10 @@
 .techs{
     background-color: #272727;
     width: 100%;
-   /* padding: 0 70px;*/
+    padding: 0 70px;
     padding-top: 100px;
     font-family: 'Inter';
     padding-bottom: 16px;
-    padding-left: 70px;
-    padding-right: 70px;
 }
 .techs__title_small{
     width: 100%;
@@ -93,7 +91,7 @@
     justify-content: center;
     gap: 10px;
 }
-@media screen and (max-width: 1023px){
+@media screen and (max-width: 768px){
     .techs{
         padding-left: 50px;
         padding-right: 50px;

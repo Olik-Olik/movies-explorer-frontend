@@ -14,7 +14,7 @@ export default function App(props) {
     return (
         /*  который предоставит объект истории, который вы ищете, через ловушку.*/
             <>
-                <Header/>
+               {/* <Header/>*/}
                 <AboutPage/>
 
             <Footer/>

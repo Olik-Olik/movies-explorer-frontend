@@ -8,10 +8,8 @@ import '../../../index.css';
 function AboutMe(props) {
     return (
         <>
+       {/*    <section className="main">*/}
             <h2 className='aboutMe__whoIS'>Студент</h2>
-           {/* <img className="aboutMe__lineSimple" src={line} alt="Линия"/>*/}
-        {/*    <div className='line'/>*/}
-
             <div className= 'aboutMe__descriptionFoto'>
 
           <div>{/*3 вместе*/}
@@ -42,28 +40,24 @@ function AboutMe(props) {
 
                         <div className="aboutMe__strelka-resurs">
                            <a className="aboutMeLinkStatic" href={"https://www.facebook.com/profile.php?id=100000879196200"}>Статичный сайт</a>
-                           {/* <img className="aboutMe__strelka" src={strelka} alt="Стрелка"/>*/}
                             <p className="aboutMe__strelka">↗</p>
                     </div>
                 <div>
-                       {/* <img className="aboutMe__lineSimple" src={line} alt="Линия"/>*/}
                     <div className="aboutMe__strelka-resurs">
                         <a  className="aboutMeLinkStatic" href={"https://www.facebook.com/profile.php?id=100000879196200"}>Адаптивный сайт</a>
-                      {/*  <img className="aboutMe__strelka" src={strelka} alt="Стрелка"/>*/}
                         <p className="aboutMe__strelka">↗</p>
                 </div>
 
                 </div>
                     <div>
                         <div className="aboutMe__strelka-resurs">
-                   {/*     <img className="aboutMe__lineSimple" src={line} alt="Линия"/>*/}
-                        <a  className="aboutMeLinkStatic" href={"https://github.com/Olik-Olik"}>Одностраничноеприложение</a>
-                       {/* <img className="aboutMe__strelka" src={strelka} alt="Стрелка" />*/}
+                        <a  className="aboutMeLinkStatic" href={"https://github.com/Olik-Olik"}>Одностраничное приложение</a>
                             <p className="aboutMe__strelka">↗</p>
                     </div>
                     </div>
                 </div>
             </div>
+      {/*     </section>*/}
         </>
     )
 }

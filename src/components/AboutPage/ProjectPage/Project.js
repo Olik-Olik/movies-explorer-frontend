@@ -1,8 +1,8 @@
 import React from "react";
-import './Header.css';
-import Image_world from "../images/Image_world.svg";
-import '../index.css';
-import ButtonKnowMore from './ButtonKnowMore';
+import '../../Header.css';
+import Image_world from "../../../images/Image_world.svg";
+import '../../../index.css';
+import ButtonKnowMore from '../../ButtonKnowMore';
 
 function Project(props){
 
