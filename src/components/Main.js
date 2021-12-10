@@ -14,10 +14,10 @@ import Card from './ResultMain/Card';
 import Movies from '../components/ResultMain/Movies';
 import MoviesCardList from './MoviesPage/MoviesCardList/MoviesCardList';
 import Profile from '../components/Profile';
-import RezultRegister from '../components/RezultRegister';
-import Register from '../components/Register';
-import HeaderRezultRegisterWelcome from '../components/HeaderRezultRegisterWelcome';
-import HeaderRezultLoginWelcome from '../components/HeaderResultLoginWelcome';
+import SignUp from './ProfilePage/RezultRegister';
+import Register from './SignUpPage/Register';
+import SignUpHeader from './SignUpPage/SignUpHeader';
+import HeaderRezultLoginWelcome from './SignInPage/SignInHeader';
 import ButtonKnowMore from './AboutPage/ButtonKnowMore/ButtonKnowMore';
 import BeginPage from './AboutPage/BeginPage/BeginPage';
 import Logo from './Logo';
@@ -37,10 +37,10 @@ import '../components/Preloader.css';
 import './MoviesPage/MoviesCardList/MoviesCardList.css';
 import '../components/MoviesSearch.css';
 import '../components/Profile.css'
-import  '../components/RezultRegister.css'
-import  '../components/HeaderRezultRegisterWelcome.css';
-import  '../components/HeaderResultLoginWelcome.css';
-import '../components/Register.css';
+import  './ProfilePage/ProfileSummaryPage.css'
+import  './SignUpPage/SignUpHeader.css';
+import  './SignInPage/SignInHeader.css';
+import './SignUpPage/Register.css';
 import '../components/Logo.css';
 import './AboutPage/ProjectPage/Project.css';
 import './AboutPage/ButtonKnowMore/ButtonKnowMore.css';
@@ -78,10 +78,10 @@ import './AboutPage/BeginPage/BurgerMenu/Burger.css';
     </Profile>
    {/* <Login>
     </Login>*/}
-    <RezultRegister>
-    </RezultRegister>
-<HeaderRezultRegisterWelcome>
-</HeaderRezultRegisterWelcome>
+    <SignUpHeader>
+    </SignUpHeader>
+<SignUpHeader>
+</SignUpHeader>
 
     <HeaderRezultLoginWelcome>
     </HeaderRezultLoginWelcome>

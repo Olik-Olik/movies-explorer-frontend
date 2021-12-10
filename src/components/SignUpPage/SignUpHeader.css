@@ -1,4 +1,6 @@
-
+.header__signup{
+    background-color: #202020;
+}
 .header__logo_welcome{
     margin: 0 auto;
   /*  position: absolute;*/

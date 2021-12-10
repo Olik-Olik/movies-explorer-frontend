@@ -1,15 +1,15 @@
 import React from "react";
-import './RezultRegister.css';
-import './HeaderRezultRegisterWelcome.css';
-import './Header.css';
+import '../ProfilePage/ProfileSummaryPage.css';
+import './SignUpHeader.css';
+/*import '../Header.css';*/
 
-import '../index.css';
-import logo from "../images/logo.svg";
+import '../../index.css';
+import logo from "../../images/logo.svg";
 
-function HeaderRezultRegisterWelcome(props) {
+function SignUpHeader(props) {
 
     return (
-        <header className="header">
+        <header className="header header__signup">
 
                 <div className="header__logo header__logo_welcome">
                     <img className="headerLogo" src={logo} alt="Logo"/>
@@ -20,4 +20,4 @@ function HeaderRezultRegisterWelcome(props) {
 
     )
 }
-export default HeaderRezultRegisterWelcome;
+export default SignUpHeader;

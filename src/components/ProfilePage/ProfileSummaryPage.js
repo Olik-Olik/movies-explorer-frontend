@@ -1,13 +1,13 @@
 import React from "react";
-import './RezultRegister.css';
-import './Profile.css';
-import './HeaderRezultRegisterWelcome.css';
-import './Header.css';
-import './Footer.css';
+import './/ProfileSummaryPage.css';
+import '../Profile.css';
+import '../SignUpPage/SignUpHeader.css';
+import '../Header.css';
+import '../Footer.css';
 
-import '../index.css';
+import '../../index.css';
 
-function RezultRegister(props) {
+function ProfileSummaryPage(props) {
         return(
             <form className="result">
                 <div className="result__title">Привет Я!
@@ -27,4 +27,4 @@ function RezultRegister(props) {
             </form>
         )
     }
-export default RezultRegister;
+export default ProfileSummaryPage;

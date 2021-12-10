@@ -2,7 +2,6 @@
     background-color: #202020;
     width: 100%;
     max-width: 1280px;
-  /*  height: 626px;*/
     display: flex;
     justify-content: center;
     padding: 74px 70px 70px 70px;
@@ -107,12 +106,12 @@ justify-content: center;
     line-height: 16px;
     align-items: center;
     position: relative;
-  /*  margin: 0 auto;*/
+    padding-bottom: 0;
     flex-direction: column;
     justify-content: center;
     font-weight: 400;
     padding-top: 0;
-    padding-bottom: 102px;
+   /* padding-bottom: 102px;*/
 }
 
 .result__input-email{

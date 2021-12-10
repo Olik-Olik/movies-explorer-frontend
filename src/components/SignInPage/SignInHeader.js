@@ -1,13 +1,13 @@
 import React from "react";
-import './RezultRegister.css';
-import './HeaderRezultRegisterWelcome.css';
-//import './HeaderRezultLoginWelcome.css';
-import './Header.css';
+import '../ProfilePage/ProfileSummaryPage.css';
+import '../SignUpPage/SignUpHeader.css';
+import './SignInHeader.css';
+import '../Header.css';
 
-import '../index.css';
-import logo from "../images/logo.svg";
+import '../../index.css';
+import logo from "../../images/logo.svg";
 
-function HeaderRezultLoginWelcome(props) {
+function SignInHeader(props) {
 
     return (
         <header className="header">
@@ -21,4 +21,4 @@ function HeaderRezultLoginWelcome(props) {
 
     )
 }
-export default HeaderRezultLoginWelcome;
+export default SignInHeader;
