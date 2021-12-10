@@ -7,7 +7,9 @@ import Footer from "./components/Footer";
 import AboutPage from "./components/AboutPage/AboutPage";
 import MoviesPage from "./components/MoviesPage/MoviesPage";
 import NotFound_404 from "./components/NotFoundError/NotFound_404";
-
+import SavedMoviesPages from "./components/SavedMoviesPage/SavedMoviesPage";
+import RezultRegister from "./components/RezultRegister";
+/*import SingInPage from */
 
 export default function App(props) {
 
@@ -15,11 +17,14 @@ export default function App(props) {
 
     return (
             <>
+                <RezultRegister/>
                {/* <Header/>*/}
                 <AboutPage/>
                 <MoviesPage/>
                 <NotFound_404/>
-
+                <SavedMoviesPages/>
+               {/* <SingInPage/>
+                <SingUpPage/>*/}
             <Footer/>
             </>
     )

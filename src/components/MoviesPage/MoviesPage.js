@@ -13,10 +13,12 @@ import Header from "../Header";
 function MoviesPages(props){
     return (
         <>
-            <ResultMainMore/>
+           {/* <ResultMainMore/>*/}
             <ResultMainSearch/>
-            <Card/>
+         {/*   <Card/>*/}
             <MoviesCardList/>
+            <ResultMainMore/>
+            <Footer/>
         </>
     )}
 export default MoviesPages;
