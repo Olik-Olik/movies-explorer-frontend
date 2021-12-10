@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import AboutPage from "./components/AboutPage/AboutPage";
+import MoviesPage from "./components/MoviesPage/MoviesPage";
+import NotFound_404 from "./components/NotFoundError/NotFound_404";
 
 
 export default function App(props) {
@@ -12,10 +14,11 @@ export default function App(props) {
     //const history = useHistory(); /////
 
     return (
-        /*  который предоставит объект истории, который вы ищете, через ловушку.*/
             <>
                {/* <Header/>*/}
                 <AboutPage/>
+                <MoviesPage/>
+                <NotFound_404/>
 
             <Footer/>
             </>

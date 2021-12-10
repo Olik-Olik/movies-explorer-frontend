@@ -1,12 +1,12 @@
 
 import React from "react";
 import './HeaderInwork.css'
-import './Header.css';
-import logo from '../images/logo.svg';
-import Image_world from "../images/Image_world.svg";
-import '../index.css';
+import '../../Header.css';
+import logo from '../../../images/logo.svg';
+import Image_world from "../../../images/Image_world.svg";
+import '../../../index.css';
 
-function HeaderInwork(props) {
+function HeaderSavedFilms(props) {
     return (
         <div className="header header_inwork">
          <div className="header__logo">
@@ -25,5 +25,5 @@ function HeaderInwork(props) {
 
 }
 
-export default HeaderInwork;
+export default HeaderSavedFilms;
 

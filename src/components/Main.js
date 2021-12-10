@@ -3,25 +3,25 @@ import Login from '../components/Login';
 import Preloader from  '../components/Preloader';
 import Techs from './AboutPage/Tech/Techs';
 import Header from '../components/Header';
-import HeaderInwork from '../components/HeaderInwork';
+import HeaderSavedFilms from '../components/HeaderInwork';
 import AboutMe from './AboutPage/AboutMe/AboutMe';
 import Footer from  '../components/Footer';
 import AboutProject from './AboutPage/AboutProject/AboutProject';
-import NotFound_404 from './NotFound_404';
-import ResultMainSearch from '../components/ResultMain/ResultMainSearch';
-import ResultMainMore from '../components/ResultMain/ResultMainMore';
+import NotFound_404 from './NotFoundError/NotFound_404';
+import ResultMainSearch from './MoviesPage/ResultMainSearch/ResultMainSearch';
+import ResultMainMore from './MoviesPage/ResultMainMore/ResultMainMore';
 import Card from './ResultMain/Card';
 import Movies from '../components/ResultMain/Movies';
-import MoviesCardList from '../components/MoviesCardList';
+import MoviesCardList from './MoviesPage/MoviesCardList/MoviesCardList';
 import Profile from '../components/Profile';
 import RezultRegister from '../components/RezultRegister';
 import Register from '../components/Register';
 import HeaderRezultRegisterWelcome from '../components/HeaderRezultRegisterWelcome';
 import HeaderRezultLoginWelcome from '../components/HeaderResultLoginWelcome';
-import ButtonKnowMore from '../components/ButtonKnowMore';
+import ButtonKnowMore from './AboutPage/ButtonKnowMore/ButtonKnowMore';
 import BeginPage from './AboutPage/BeginPage/BeginPage';
 import Logo from './Logo';
-import Burger from '../components/Burger';
+import Burger from './AboutPage/BeginPage/BurgerMenu/Burger';
 import Project from './AboutPage/ProjectPage/Project';
 import '../components/MoviesSearch';
 import '../components/HeaderInwork.css';
@@ -31,10 +31,10 @@ import '../components/Footer.css';
 import '../components/Main.css';
 /*import './AboutPage/AboutMe/AboutMe.css';*/
 import './AboutPage/AboutProject/AboutProject.css';
-import '../components/ResultMain/ResultMainSearch.css';
-import '../components/ResultMain/ResultMainMore.css';
+import './MoviesPage/ResultMainSearch/ResultMainSearch.css';
+import './MoviesPage/ResultMainMore/ResultMainMore.css';
 import '../components/Preloader.css';
-import '../components/MoviesCardList.css';
+import './MoviesPage/MoviesCardList/MoviesCardList.css';
 import '../components/MoviesSearch.css';
 import '../components/Profile.css'
 import  '../components/RezultRegister.css'
@@ -43,11 +43,11 @@ import  '../components/HeaderResultLoginWelcome.css';
 import '../components/Register.css';
 import '../components/Logo.css';
 import './AboutPage/ProjectPage/Project.css';
-import '../components/ButtonKnowMore.css';
+import './AboutPage/ButtonKnowMore/ButtonKnowMore.css';
 import './AboutPage/BeginPage/BeginPage.css';
 import '../index.css';
 import './AboutPage/BeginPage/BeginPage.css';
-import '../components/Burger.css';
+import './AboutPage/BeginPage/BurgerMenu/Burger.css';
 
  function Main(props){
          return (
@@ -70,7 +70,7 @@ import '../components/Burger.css';
     <Card/>
     <Movies/>
     <Preloader> </Preloader>
-   <HeaderInwork> </HeaderInwork>
+   <HeaderSavedFilms> </HeaderSavedFilms>
     <MoviesCardList>
         <Card/>
     </MoviesCardList>

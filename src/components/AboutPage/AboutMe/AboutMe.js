@@ -8,7 +8,7 @@ import '../../../index.css';
 function AboutMe(props) {
     return (
         <>
-       {/*    <section className="main">*/}
+           <section className="main">
             <h2 className='aboutMe__whoIS'>Студент</h2>
             <div className= 'aboutMe__descriptionFoto'>
 
@@ -57,7 +57,7 @@ function AboutMe(props) {
                     </div>
                 </div>
             </div>
-      {/*     </section>*/}
+           </section>
         </>
     )
 }

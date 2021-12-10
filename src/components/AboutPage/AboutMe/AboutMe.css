@@ -1,8 +1,10 @@
-
+.main{
+    box-sizing: border-box;
+}
 
 .aboutMe__whoIS{
     width: 100%;
-    padding: 0 70px;
+  /*  padding: 0 70px;*/
     font-family: 'Inter';
     font-weight: 400;
     max-height: 27px;
@@ -52,7 +54,7 @@
 
 .aboutMe__descriptionFoto{
     width: 100%;
-    padding: 0 70px;
+/*    padding: 0 70px;*/
     display: flex;
     background-color: #202020;
 }
@@ -72,9 +74,10 @@
 
 .links{
     font-family: 'Inter';
+    box-sizing: border-box;
     font-weight: 400;
     width: 100%;
-    padding: 0 70px;
+  /*  padding: 0 70px;*/
     margin: 0;
     padding-bottom: 125px;
     flex-direction: row;
@@ -89,6 +92,7 @@
     font-size: 14px;
     line-height: 17px;
     color:#FFFFFF;
+    box-sizing: border-box;
 }
 .aboutMe__gitHub{
     color:#FFFFFF;
@@ -102,6 +106,7 @@
     text-decoration: none;
 }
 .aboutMe__portfolio{
+    box-sizing: border-box;
     Font-family:Inter;
     Font-Weight:
     400;

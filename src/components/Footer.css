@@ -1,16 +1,16 @@
 
 .footer{
-  /*  width: 100%;
-    padding: 0 70px;*/
-    margin: 0;
+   /* padding: 0 70px;*/
     background-color: #202020;
-   /* max-width: 1280px; кто учитывать по 70 будет???*/
-   /* max-width: 1140px;*/
     height: 172px;
     display: flex;
     flex-direction: column;
-    padding: 79px 70px 20px;
+    padding: 79px 70px 20px 70зч;
     width: 100%;
+    font-family: Inter;
+
+    box-sizing: border-box;
+
 
 }
 .footer__title{

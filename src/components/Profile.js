@@ -4,7 +4,7 @@ import './HeaderInwork.css';
 import './Header.css';
 import './Footer.css';
 import '../index.css';
-import HeaderInwork from "./HeaderInwork";
+import HeaderSavedFilms from "./HeaderInwork";
 
 
 function Profile(props){
@@ -31,7 +31,7 @@ function Profile(props){
 }*/
 
 <>
-    <HeaderInwork></HeaderInwork>
+    <HeaderSavedFilms></HeaderSavedFilms>
     <form className="profile auth">Привет,Олюсик!
 
 <div className="auth">

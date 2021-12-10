@@ -1,6 +1,6 @@
 import React from "react";
 import './NotFound_404.css';
-import '../index.css';
+import '../../index.css';
 function NotFound_404(){
 return (
         <>

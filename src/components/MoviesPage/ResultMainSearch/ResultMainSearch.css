@@ -1,9 +1,11 @@
 .result_main_search__conteiner{
     width: 100%;
+    box-sizing: border-box;
     background-color: #202020;
 }
 
 .result_main_search{
+    box-sizing: border-box;
     width: 100%;
     max-Width:1739px;
     Height:222px;
@@ -27,7 +29,7 @@
     display: flex;
 }
 .result_main_search_icon__lupa{
-    background: url('../../images/icon__lupa.svg') no-repeat center 25px;
+    background: url('../../../images/icon__lupa.svg') no-repeat center 25px;
     color: #C4C4C4;
     box-sizing: border-box;
     width: 60px;
@@ -45,7 +47,7 @@
 }
 
 .result_main_search_icon_smalltube{
-    background: url('../../images/smalltumb.svg') no-repeat center 25px;
+    background: url('../../../images/smalltumb.svg') no-repeat center 25px;
    /* color: #C4C4C4;*/
     box-sizing: border-box;
     width: 60px;
@@ -65,7 +67,7 @@ Line-height: 18px;
 
 {/*Линия между смоллтубом и Найти*/}
 .result_main_search_icon_line{
-    background: url('../../images/line_between_find.svg') no-repeat center;
+    background: url('../../../images/line_between_find.svg') no-repeat center;
     color: #424242;
     box-sizing: border-box;
     border: none;
@@ -80,7 +82,7 @@ Line-height: 18px;
     width: 80px;
   /*  height: 34px;*/
     position: relative;
-    background: url('../../images/find.svg') no-repeat center;
+    background: url('../../../images/find.svg') no-repeat center;
     box-sizing: border-box;
     border: none;
     left: 21.35px;

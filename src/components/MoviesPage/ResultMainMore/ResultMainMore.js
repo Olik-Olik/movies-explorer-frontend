@@ -1,8 +1,8 @@
 import React from 'react';
 import './ResultMainMore.css';
-import './ResultMainSearch.css';
+import '../ResultMainSearch/ResultMainSearch.css';
 
-import '../../index.css';
+import '../../../index.css';
 
 function ResultMainMore(props){
     return(

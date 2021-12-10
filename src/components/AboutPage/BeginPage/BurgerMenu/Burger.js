@@ -1,6 +1,6 @@
 import React from "react";
 import './Burger.css';
-import '../index.css';
+import '../../../../index.css';
 
 function Burger(props){
     return(

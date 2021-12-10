@@ -10,6 +10,7 @@
     color: white;
     font-style: normal;
     font-weight: 400;
+    box-sizing: border-box;
 }
 
 .header__logo_auth_exit{

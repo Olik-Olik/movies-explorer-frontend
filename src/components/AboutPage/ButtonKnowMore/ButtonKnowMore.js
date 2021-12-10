@@ -1,7 +1,7 @@
 import React from "react";
 import './ButtonKnowMore.css';
-import './AboutPage/ProjectPage/Project.css';
-import '../index.css';
+import '../ProjectPage/Project.css';
+import '../../../index.css';
 
 function ButtonKnowMore(props){
 

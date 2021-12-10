@@ -2,7 +2,7 @@ import React from "react";
 import '../../Header.css';
 import Image_world from "../../../images/Image_world.svg";
 import '../../../index.css';
-import ButtonKnowMore from '../../ButtonKnowMore';
+import ButtonKnowMore from '../ButtonKnowMore/ButtonKnowMore';
 
 function Project(props){
 

@@ -4,10 +4,10 @@
 @import url('components/App.css');
 @import url('components/Profile.css');
 @import url('components/Footer.css');
-@import url('components/ResultMain/ResultMainSearch.css');
-@import url('components/ResultMain/ResultMain.css');
-@import url('components/ResultMain/ResultMainMore.css');
+@import url('components/MoviesPage/ResultMainSearch/ResultMainSearch.css');
+/*@import url('components/ResultMain/');*/
+@import url('components/MoviesPage/ResultMainMore/ResultMainMore.css');
 @import url('components/ResultMain/Movies.css');
 @import url('components/ResultMain/Card.css');
-@import url('components/MoviesCardList.css');
+@import url('components/MoviesPage/MoviesCardList/MoviesCardList.css');
 @import url('components/AboutPage/Tech/Techs.css');

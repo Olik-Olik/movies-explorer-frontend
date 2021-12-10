@@ -2,7 +2,7 @@ import React from 'react';
 import './/Movies.css';
 import './/Card.css';
 import '../Preloader.css';
-import '../MoviesCardList.css';
+import '../MoviesPage/MoviesCardList/MoviesCardList.css';
 import '../MoviesSearch.css';
 import kino from '../../images/kino.svg';
 import smalltumb from '../../images/smalltumb.svg';

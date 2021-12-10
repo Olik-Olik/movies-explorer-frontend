@@ -3,7 +3,8 @@
     max-height:648px ;
 }*/
 .movies-grid {
-background: url('../images/kino.svg');
+/*background: url('../../../images/kino.svg');*/
+    box-sizing: border-box;
 max-width: 1280px;
     padding: 0 70px;
 height: 648px;
