@@ -1,3 +1,5 @@
+@import url('vendor/inter.css');
+@import url('vendor/normalize.css');
 @import url('components/AboutPage/AboutMe/AboutMe.css');
 @import url('components/Header.css');
 @import url('components/Main.css');
@@ -8,7 +10,7 @@
 @import url('components/ProfilePage/ProfileSummaryPage.css');
 @import url('components/MoviesPage/ResultMainMore/ResultMainMore.css');
 @import url('components/ResultMain/Movies.css');
-@import url('components/ResultMain/Card.css');
+@import url('components/MoviesPage/Card/Card.css');
 @import url('components/MoviesPage/MoviesCardList/MoviesCardList.css');
 @import url('components/AboutPage/Tech/Techs.css');
 @import url('components/SignUpPage/Register.css');

@@ -1,7 +1,10 @@
 .result{
     background-color: #202020;
+}
+.result{
+    background-color: #202020;
     width: 100%;
-    max-width: 1280px;
+  /*  max-width: 1280px;*/
     display: flex;
     justify-content: center;
     padding: 74px 70px 70px 70px;

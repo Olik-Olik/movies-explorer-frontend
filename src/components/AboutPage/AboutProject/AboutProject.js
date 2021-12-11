@@ -1,6 +1,6 @@
 import React from "react";
 import './AboutProject.css';
-import line from "../../../images/line.svg";
+import line from "../../images/line.svg";
 
 import '../../../index.css';
 function AboutProject(props) {

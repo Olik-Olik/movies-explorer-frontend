@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('ular.woff2') format("woff2"),
+    url("ular.woff2") format("woff");
+}
+/*
+
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("ium.woff2") format("woff2"),
+    url("ium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url("ck.woff2") format("woff2"),
+    url("ck.woff") format("woff");
+}*/

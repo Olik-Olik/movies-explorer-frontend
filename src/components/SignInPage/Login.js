@@ -25,18 +25,26 @@ function Login(props) {
                     <div className="auth__form-login-input-password">pochta@newtree.ru</div>
                 </div>
                 {/*auth__form-login-submit-button-enter для верного роута*/}
+                {/*sign in*/}
+                 <form action = "/movies" >
                 <button className="auth__form-login-submit-button auth__form-login-submit-button-enter"
                         type="submit">Войти
                 </button>
+                 </form>
 
                 {/*для верного роута  auth__login-signup-Do_Register-enter*/}
                 <div className="auth__login-signup-container">
+
+                    {/*sign-up*/}
+                    <a href = "/sign-up">
                     <div className="auth__login-signup-Do_Register auth__signup-link auth__login-signup-Do_Register-enter ">
                         Еще не зарегистрированы?
-                    </div>
+                    </div></a>
                     {/*для верного роута  auth__login-signup-Do_Register-enter*/}
+                    <a href = "/sign-up">
                     <p className="auth__login-signup-Do_Register auth__signup-link auth__signup-link-color auth__login-signup-Do_Register-enter">Регистрация
                     </p>
+                    </a>
                 </div>
             </div>
         </>

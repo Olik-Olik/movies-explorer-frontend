@@ -1,9 +1,9 @@
 import React from 'react';
 import './ResultMainSearch.css';
-import lupa from '../../../images/icon__lupa.svg';
-import smalltumb from '../../../images/smalltumb.svg';
-import find from '../../../images/find.svg';
-import line_between_find from '../../../images/line_between_find.svg';
+import lupa from '../../images/icon__lupa.svg';
+import smalltumb from '../../images/smalltumb.svg';
+import find from '../../images/find.svg';
+import line_between_find from '../../images/line_between_find.svg';
 
 import '../../../index.css';
 

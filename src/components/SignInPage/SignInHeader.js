@@ -5,16 +5,18 @@ import './SignInHeader.css';
 import '../Header.css';
 
 import '../../index.css';
-import logo from "../../images/logo.svg";
+import logo from "../images/logo.svg";
 
 function SignInHeader(props) {
 
     return (
-        <header className="header">
+        <header className="header header__signin">
+            <a href = "/" className="header__logo_welcome">
+            <div className="header__logo ">
 
-            <div className="header__logo header__logo_welcome">
-                <img className="headerLogo" src={logo} alt="Logo"/>
+                    <img className="headerLogo " src={logo} alt="Logo"/>
             </div>
+            </a>
             <p className="header__welcome">Рады видеть!
             </p>
         </header>

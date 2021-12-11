@@ -2,7 +2,7 @@ import React from "react";
 import './BeginPage.css';
 import '../../../index.css';
 //import '../components/Project.css'
-import landing from '../../../images/landing.svg';
+import landing from '../../images/landing.svg';
 
 
 

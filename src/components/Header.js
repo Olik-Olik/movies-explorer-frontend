@@ -47,12 +47,25 @@ function Header(props) {
 
 <div className="header__all">
               <div  className="header__button">
-        <button className="header__auth" onClick={' Регистрация '}>Регистрация
-        </button></div>
+
+        {/* <form action = "/sign-up" target="_blank">
+             <button className="header__auth" >Регистрация*/}
+                  <a href = "/sign-in" className="header__auth" >Регистрация</a>
+            {/* </button>*/}
+       {/*  </form>*/}
+         </div>
 
             <div  className="header__button">
-                <button className="header__exit" onClick={' Выйти-Войти '}>Войти
-           </button></div>
+                <form action="/sign-in" >
+                <button className="header__exit" >Войти
+           </button>
+                </form>
+                </div>
+
+
+{/*    <a href = "/sign-up" className="header__exit" >Войти</a>
+     </button>*/}
+
 </div>
 
 </div>

@@ -17,5 +17,6 @@ function AboutPage(props){
             <AboutMe/>
             <AboutProject/>
             <Techs/>
+            <Footer/>
             </>)}
 export default AboutPage;
