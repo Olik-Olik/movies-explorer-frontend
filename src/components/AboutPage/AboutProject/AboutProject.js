@@ -5,7 +5,7 @@ import line from "../../images/line.svg";
 import '../../../index.css';
 function AboutProject(props) {
     return (
-        <section className="main">
+        <section className="aboutMe__main">
         {/*<aboutProject className="aboutProject">*/}
             <div className="aboutProject__title">О проекте
             </div>

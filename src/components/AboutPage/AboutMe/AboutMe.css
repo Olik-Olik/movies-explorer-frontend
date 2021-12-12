@@ -1,4 +1,4 @@
-.main{
+.aboutMe__main{
     box-sizing: border-box;
     padding-bottom: 0;
 }
@@ -26,7 +26,7 @@
     font-family: Inter;
     font-Weight:400;
     font-Style:normal;
-    font-Size:30px;
+    font-Size: 29px;
     Line-height:60px;
 }
 .aboutMe__myName{
@@ -177,3 +177,81 @@
     width: 29px;
     height: 60px;
 }
+@media screen and (min-width: 600px) and (max-width: 920px){
+    .aboutMe__whoIS{
+        Font-family: 'Inter';
+        Font-weight: 400;
+        Font-size: 22px;
+        Line-height: 27px;
+        Letter-spacing: -0.04em;
+        padding-bottom: 23px;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 620px) {
+.aboutMe__descriptionFoto {
+    flex-direction: column-reverse;
+}
+.aboutMe__main{
+  padding-left: 14px;
+  padding-right: 14px;
+}
+.aboutMe__whoIS{
+    Font-family: 'Inter';
+    Font-weight: 400;
+Font-size: 18px;
+Line-height: 22px;
+Letter-spacing: -0.04em;
+    padding-bottom: 28px;
+}
+.imgfotoMe{
+    width: 292px;
+    height: 352px;
+    padding-bottom: 40px;
+    padding-top: 60px;
+}
+    .aboutMe__descriptionFoto{
+        border-radius: 10px;
+    }
+.aboutMe__myName{
+    Font-weight: 400;
+    Font-size: 30px;
+    Line-height: 36px;
+    Letter-spacing: -0.04em;
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+.aboutMe__work{
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+.aboutMeTitleAbout{
+    width: 292px;
+    height: 112px;
+    padding-right: 0;
+    Font-family: Inter;
+    font-weight: 400;
+    Font-size: 11px;
+    Line-height: 16px;
+    padding-bottom: 40px;
+}
+.aboutMe__connect{
+    padding: 0
+}
+.aboutMe__portfolio{
+    padding-top: 69px;
+    padding-right: 0;
+    padding-left: 0;
+}
+    .aboutMeLinkStatic {
+        Font-family: Inter;
+        font-weight: 400;
+        letter-spacing: -0.04em;
+        max-height: 50px;
+        line-height: 28px;
+        font-size: 18px;
+}
+    .aboutMe__strelka-resurs {
+        font-Size: 18px;
+        Line-height: 28px;
+}}

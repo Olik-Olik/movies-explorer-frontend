@@ -1,4 +1,4 @@
-.main{
+.aboutMe__main{
 padding: 110px 70px;
 background-color: #202020;
 }
@@ -161,7 +161,7 @@ background-color: #202020;
     justify-content: center;
 }
 @media screen and (min-width: 600px) and (max-width: 920px){
-.main {
+.aboutMe__main {
     padding-left: 50px;
     padding-right: 50px;
 }
@@ -194,7 +194,7 @@ background-color: #202020;
 }
 
 @media screen and (min-width: 200px) and (max-width: 620px) {
-    .main {
+    .aboutMe__main {
         padding-left: 18px;
         padding-right: 18px;
     }
@@ -246,7 +246,7 @@ background-color: #202020;
     .aboutProject__2stolb{
         padding-bottom: 60px;
     }
-    .main{
+    .aboutMe__main{
         padding-bottom: 56px;
     }
 }

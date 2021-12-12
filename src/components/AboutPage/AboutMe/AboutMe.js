@@ -8,7 +8,7 @@ import '../../../index.css';
 function AboutMe(props) {
     return (
         <>
-           <section className="main">
+           <section className="aboutMe__main">
             <h2 className='aboutMe__whoIS'>Студент</h2>
             <div className= 'aboutMe__descriptionFoto'>
 
@@ -19,8 +19,7 @@ function AboutMe(props) {
                     закончил МИФИ. Я не люблю слушать музыку,она мешает сосредоточиться. Люблю удобные стулья.Сейчас увлекаюсь пирожными,
                     шоколадом и сгущенкой. А еще люблю море и все красивое. Недавно начал кодить и читать полезные
                     книжки, с 2021г.
-                    После того, как прошёл курс по веб-разработке,
-                    начал заниматься фриланс-заказами.</div>
+                    </div>
           </div>
 
                 <div className='aboutMeFoto'>
