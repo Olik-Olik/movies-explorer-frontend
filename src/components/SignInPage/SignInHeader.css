@@ -1,3 +1,6 @@
 .header__signin{
     background-color: #202020;
 }
+.auth__login-signup-nonDecoration{
+    text-decoration: none;
+}

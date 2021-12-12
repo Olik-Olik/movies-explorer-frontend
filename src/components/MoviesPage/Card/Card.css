@@ -1,12 +1,10 @@
 .card__container{
     width: 100%;
     /*box-sizing: border-box;*/
-   /* padding: 0 70px;*/
     font-family: Inter;
     font-weight: 500;
     background-color:#202020;
-    max-width: 361px;
-
+    max-width: 270px;
 }
 
 .card__image{

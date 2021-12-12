@@ -5,14 +5,15 @@ function Footer(props) {
     return (
             <footer className="footer">
             <div className="footer__title">Учебный проект Яндекс.Практикум х BeatFilm.</div>
-                <div className="footer__container">
+                <div className= "footer__container-data">
+                    <p className="footer__data">  ©  {new Date().getFullYear()} </p>
+                 <div className="footer__container">
                     <a  target="_blank" rel="noopener noreferrer" className="footer__yandex" href = { "https://www.facebook.com/profile.php?id=100000879196200"}>Яндекс.Практикум</a>
                     <a target="_blank" rel="noopener noreferrer" className="footer__gitHub" href={ "https://github.com/Olik-Olik"}>GitHub</a>
                     <a target="_blank" rel="noopener noreferrer" className="footer__facebook" href={ "https://www.facebook.com/profile.php?id=100000879196200"}>Facebook</a>
-
+                    </div>
 
                 </div>
-            <p className="footer__data">  ©  {new Date().getFullYear()} </p>
             </footer>);}
         export default Footer;
 

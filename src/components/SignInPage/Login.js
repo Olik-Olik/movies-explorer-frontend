@@ -10,6 +10,7 @@ import '../Footer.css';
 import '../../index.css';
 
 
+
 function Login(props) {
     return (
         <>
@@ -36,12 +37,12 @@ function Login(props) {
                 <div className="auth__login-signup-container">
 
                     {/*sign-up*/}
-                    <a href = "/sign-up">
+                    <a href = "/sign-up" className="auth__login-signup-nonDecoration">
                     <div className="auth__login-signup-Do_Register auth__signup-link auth__login-signup-Do_Register-enter ">
                         Еще не зарегистрированы?
                     </div></a>
                     {/*для верного роута  auth__login-signup-Do_Register-enter*/}
-                    <a href = "/sign-up">
+                    <a href = "/sign-up" className="auth__login-signup-nonDecoration">
                     <p className="auth__login-signup-Do_Register auth__signup-link auth__signup-link-color auth__login-signup-Do_Register-enter">Регистрация
                     </p>
                     </a>

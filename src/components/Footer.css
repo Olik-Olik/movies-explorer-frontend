@@ -24,6 +24,12 @@
     font-size: 13px;
 }
 
+.footer__container-data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
 .footer__data{
    font-size: 13px;
    line-height: 16px;

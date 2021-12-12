@@ -1,7 +1,7 @@
 .header_inwork{
+    align-items: stretch;
     background-color: #202020;
-    padding-top: 18px;
-    padding: 0 70px;
+    padding: 18px 70px;
     max-width: 1280px;
     max-height: 74px;
     font-family: Inter;
@@ -10,7 +10,7 @@
     Font-size: 13px;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: baseline;
+
 }
 .header__akkaunt{
    border-radius: 20px;

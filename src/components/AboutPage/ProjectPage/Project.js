@@ -8,20 +8,22 @@ function Project(props){
 
 return(
     <>
-<div className="project">
-    <div>
+<div className="project" >
+    <div  className="dd"  > {/*###*/}
+    <div   className="ddd"> {/*###*/}
         <div className="project__description">
             Учебный проект студента факультета Веб-разработки.
         </div>
         <div className="project__content">
             Листайте ниже, чтобы узнать больше про этот проект и его создателя.
         </div>
+
+</div>
         <ButtonKnowMore/>
-    </div>
- {/*   <img className="project__foto" src={Image_world} alt="Фотка"/>*/}
-<img src={Image_world} className="project__foto" alt="непонятная картинка" />
 </div>
 
+        <img src={Image_world} className="project__foto" alt="непонятная картинка" />
+</div>
 </>
 
     )}

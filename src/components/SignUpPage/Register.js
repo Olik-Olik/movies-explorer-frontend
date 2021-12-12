@@ -28,7 +28,7 @@ function Register(props) {
                     <div className="profile__email ">Пароль</div>
                     <div className="auth__form-login-input-password">pochta@newtree.ru</div>
                 </div>
-                <a href = "/sign-in">
+                <a href = "/sign-in" className="auth__login-signin">
                 <button className="auth__form-login-submit-button"
                         type="submit">Зарегистрироваться
                 </button>
@@ -36,7 +36,7 @@ function Register(props) {
 
                 <div className="auth__login-signup-container">
 
-                    <a href = "/sign-in">
+                    <a href = "/sign-in" className="auth__login-signin">
                     <div className="auth__login-signup-Do_Register auth__signup-link">
                         Уже зарегистрированы?
                     </div>

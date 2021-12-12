@@ -50,7 +50,7 @@ function Header(props) {
 
         {/* <form action = "/sign-up" target="_blank">
              <button className="header__auth" >Регистрация*/}
-                  <a href = "/sign-in" className="header__auth" >Регистрация</a>
+                  <a href = "/sign-up" className="header__auth" >Регистрация</a>
             {/* </button>*/}
        {/*  </form>*/}
          </div>

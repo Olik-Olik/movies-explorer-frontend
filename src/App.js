@@ -28,9 +28,6 @@ export default function App(props) {
             <Route exact={true} path="/sign-up"
                 component={SignUpPage}/>
 
-            <Route exact={true} path="/"
-                       component={AboutPage}/>
-
             <Route exact={true}  path="/movies"
                   component={MoviesPage}/>
 
@@ -42,7 +39,7 @@ export default function App(props) {
 
 
             </>
-        <Footer/>
+    {/*    <Footer/>*/}
     </CurrentUserContext.Provider>
 </BrowserRouter>)
 

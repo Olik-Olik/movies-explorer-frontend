@@ -1,15 +1,43 @@
+.header__name_saved-film-movies{
+    text-decoration: none;
+    Font-size: 13px;
+    Line-height: 18px;
+    font-family: 'Inter';
+    font-weight: 400;
+}
+.header__name_saved-film-movies{
+    text-decoration: none;
+    Font-size: 13px;
+    Line-height: 18px;
+    font-family: 'Inter';
+    font-weight: 500;
+}
+.header__akkaunt-profile{
+    text-decoration: none;
+    Font-size: 14px;
+    Line-height: 16px;
+    font-family: 'Inter';
+    font-weight: 500;
+}
 .header_inwork{
-    padding-top: 18зч;
+    padding-top: 18px;
     padding: 0 70px;
     max-width: 1280px;
     max-height: 74px;
     font-family: Inter;
     font-weight: 500;
-    display: flex;
+/*    display: flex;*/
     Font-size: 13px;
     flex-direction: row;
     justify-content: flex-start;
     align-items: baseline;
+    display:grid;
+    justify-items: start;
+    grid-column-gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 2fr));
+
+   /* max-width: 1140px;*/
+    text-decoration: none;
 }
 .header__akkaunt{
    border-radius: 20px;
@@ -46,8 +74,6 @@
   /*  justify-content: space-between;*/
 }
 .header__films-akkaunt{
-    display: flex;
-    align-items: baseline;
 
-    align-content: space-between;
+
 }

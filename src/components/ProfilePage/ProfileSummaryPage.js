@@ -19,11 +19,11 @@ function ProfileSummaryPage(props) {
                         <div className= "result__email ">E-mail</div>
                         <div className= "result__input-name result__input-email">pochta@newtree.ru</div>
                     </div>
-                    <a href = "/sign-in">
+                    <a href = "/sign-in" className= "result__edit-nondecoration">
                     <div className="result__edit">Редактировать</div>
                 </a>
-                    <a href = "/">
-                    <div className= "result__exit result__edit"> Выйти из аккаунта</div>
+                    <a href = "/" className= "result__edit-nondecoration">
+                    <div className= "result__exit "> Выйти из аккаунта</div>
                     </a>
 
                 </div>

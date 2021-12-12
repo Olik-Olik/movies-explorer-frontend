@@ -1,7 +1,9 @@
 .p{ font-size: 12px;
     top: 156px;
     width: 89px;
-    height: 16px;
+    line-height: 16px;
+    Font-family: Inter;
+    font-weight: 500;
 }
 .header{
  background-color: #073042;
@@ -12,16 +14,25 @@ background-color: #073042;
 
 .project{
     display: flex;
+    flex-direction: row;
     background-color: #073042;
-   /* max-width: 1280px;*/
-    margin: 0 auto;
-  /*  padding:75px 70px 30px 70px;*/
+    padding-top: 0;
+    padding-left: 70px;
+    padding-right: 70px;
     padding-bottom: 30px;
+    margin: 0 auto;
     align-content: center;
     justify-content: space-around;
     align-items: center;
 }
-
+.dd{
+    display: grid;
+    text-align: center;
+}
+.ddd{
+    display: grid;
+    text-align: center;
+}
 /*Титл*/
 .project__description{
     max-width: 640px;
@@ -31,9 +42,11 @@ background-color: #073042;
     font-weight: 400;
     font-style: normal;
     font-size: 50px;
-    Line-height: 96%;
-    font-family: 'Inter', serif;
+    Line-height: 58px;
+    font-family: 'Inter';
     box-sizing: border-box;
+    text-align: left;}
+/* display: flex;
 }
 /*Текст*/
 .project__content{
@@ -54,6 +67,39 @@ background-color: #073042;
     height: 304px;
 }
 
+@media screen and (max-width: 768px){
+    .project{
+        padding-left: 44px;
+        padding-right: 44px;
+        display: flex;
+        background-color: #073042;
+        padding-top: 0;
+        padding-bottom: 30px;
+        margin: 0 auto;
+        align-content: center;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+    .project__description{
+        font-weight: 400;
+        Font-size: 40px;
+       Line-height: 50px;
+        justify-content: center;
+        text-align: center;
+    }
+    .project__content{
+        Font-size: 13px;
+        Line-height: 16px;
+        align-items: center;
+        text-align:center;
+        min-width: 260px;
+        min-height: 32px;
+        justify-content: center;
+
+    }
+}
+
 /*
 @media screen and (max-width: 320px){
     .project{
@@ -61,13 +107,7 @@ background-color: #073042;
 
     }
 }
-@media screen and (max-width: 768px){
-    .project{
 
-        padding-left: 0;
-
-    }
-}
 @media screen and (max-width: 1023px){
     .project{
 

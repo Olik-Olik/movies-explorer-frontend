@@ -9,7 +9,10 @@
     color: #FFFFFF;
     background-color: #202020;
 }
-
+.auth__login-signin{
+    text-decoration: none;
+    display: flex;
+}
 .profile__name{
      padding-top: 0;
     border-bottom: none;
@@ -114,7 +117,9 @@
     font-size: 10px;
     line-height: 12px;
 }
-
+.auth__login-signup-Do_Register{
+    text-decoration: none;
+}
 .auth__form-login-submit-button {
     width: 396px;
     height: 45px;
@@ -132,13 +137,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 
 .auth__signup-link-Do-Register {
+
+    text-decoration: none;
     color: #FFFFFF;
     align-self: flex-end;
     background: #FFFFFF;
-    width: 358px;
+    width: 176px;
     height: 17px;
     align-content: space-between;
     font-style: normal;
@@ -150,16 +158,18 @@
 
 .auth__signup-link-Do-Register {
     cursor: pointer;
+    text-decoration: none;
+
 }
 
 .auth__signin-link {
-    width: 358px;
+    text-decoration: none;
+    max-width: 180px;
     height: 14px;
     bottom: 150px;
     align-items: center;
     font-size: 14px;
     line-height: 17px;
-    text-decoration: none;
     color: #FFFFFF;
     position: relative;
     margin: 0 auto;
@@ -172,35 +182,37 @@
 
 }
 .auth__signup-link {
+    justify-content: center;
+    text-decoration: none;
     /*зарегистрироваться*/
-    width: 358px;
+    max-width: 300px;
+    align-items: normal;
     bottom: 100px;
-    align-items: center;
+
     font-size: 14px;
     line-height: 17px;
-    text-decoration: none;
     color: #8B8B8B;
     position: relative;
     display: flex;
     flex-direction: column;
     background: none;
     border-style: none;
-    justify-content: center;
     font-weight: 400;
     font-family: Inter;
     font-style: normal;
 }
 
 .auth__signup-link-color{
+
     color:#4285F4;
-    align-items: flex-start;
-    width: 60px;
 }
+
 /*Зарегистрироваться и Войти слепить вместе*/
 .auth__login-signup-container{
     display:flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 @media screen and (max-width: 1024px){
     .auth__form-login-input-email{
