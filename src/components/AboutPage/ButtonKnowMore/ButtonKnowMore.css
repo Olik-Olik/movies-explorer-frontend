@@ -13,5 +13,12 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-
 }
+@media screen and (min-width: 200px) and (max-width: 500px) {
+    .button__main {
+        Font-family: 'Inter';
+        font-weight: 500;
+    Font-size: 12px;
+    Line-height: 16px;
+    }
+    }

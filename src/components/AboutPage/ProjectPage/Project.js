@@ -9,8 +9,8 @@ function Project(props){
 return(
     <>
 <div className="project" >
-    <div  className="dd"  > {/*###*/}
-    <div   className="ddd"> {/*###*/}
+    <div  className="project__content-container"  > {/*###*/}
+    <div   className="project__button-container"> {/*###*/}
         <div className="project__description">
             Учебный проект студента факультета Веб-разработки.
         </div>

@@ -25,13 +25,15 @@ background-color: #073042;
     justify-content: space-around;
     align-items: center;
 }
-.dd{
+.project__content-container{
     display: grid;
     text-align: center;
+  /*  justify-items: center;*/
 }
-.ddd{
+.project__button-container{
     display: grid;
     text-align: center;
+ /*   justify-items: center;*/
 }
 /*Титл*/
 .project__description{
@@ -98,21 +100,38 @@ background-color: #073042;
         justify-content: center;
 
     }
-}
-
-/*
-@media screen and (max-width: 320px){
-    .project{
-        padding-left: 0;
-
+    .project__content-container{
+        display: grid;
+        text-align: center;
+        justify-items: center;
+    }
+    .project__button-container{
+        display: grid;
+        text-align: center;
+        justify-items: center;
     }
 }
 
-@media screen and (max-width: 1023px){
-    .project{
 
-        padding-left: 0;
-     ;
+@media screen and (min-width: 200px) and (max-width: 500px) {
+    .project {
+
+
     }
-}*/
+
+    .project__description {
+        font-weight: 400;
+        Font-size: 30px;
+        Line-height: 38px;
+    }
+
+    .project__foto {
+        width: 210px;
+        height: 206px;
+    }
+
+    .project__content {
+        padding-bottom: 80px;
+    }
+}
 
