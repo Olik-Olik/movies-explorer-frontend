@@ -236,7 +236,7 @@ Letter-spacing: -0.04em;
     padding-bottom: 40px;
 }
 .aboutMe__connect{
-    padding: 0
+    padding: 0;
 }
 .aboutMe__portfolio{
     padding-top: 69px;
@@ -254,4 +254,6 @@ Letter-spacing: -0.04em;
     .aboutMe__strelka-resurs {
         font-Size: 18px;
         Line-height: 28px;
-}}
+}
+    .links{padding-bottom: 14px;}
+}

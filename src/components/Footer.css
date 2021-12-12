@@ -75,3 +75,39 @@
     line-height: 16px;
     text-decoration: none;
 }
+@media screen and (min-width: 200px) and (max-width: 620px) {
+.footer__title{
+    Font-size: 12px;
+    Line-height: 15px;
+    padding-right: 0;
+    padding-left: 0;
+
+}
+.footer{
+    padding-top: 79px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.footer__container-data {
+    flex-direction: column-reverse;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+.footer__container{
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.footer__gitHub{
+    padding-bottom: 12px;
+    padding-right: 0;
+}
+.footer__yandex{
+    padding-bottom: 12px;
+    padding-right: 0;
+}
+}
