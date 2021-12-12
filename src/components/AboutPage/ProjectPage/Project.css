@@ -5,9 +5,11 @@
     Font-family: Inter;
     font-weight: 500;
 }
+
 .header{
  background-color: #073042;
 }
+
 .header__button{
 background-color: #073042;
 }
@@ -115,8 +117,8 @@ background-color: #073042;
 
 @media screen and (min-width: 200px) and (max-width: 500px) {
     .project {
-
-
+          padding-left: 10px;
+          padding-right: 10px;
     }
 
     .project__description {

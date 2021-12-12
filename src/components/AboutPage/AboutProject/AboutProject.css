@@ -26,8 +26,8 @@ background-color: #202020;
     width: 100%;
   /*  padding: 0 70px 50px;*/
     margin: 0;
-    display: flex;
-    justify-content: space-between;
+ /*   display: flex;
+    justify-content: space-between;*/
     background-color: #202020;
 }
 
@@ -45,16 +45,13 @@ background-color: #202020;
     font-size: 20px;
     letter-spacing: -.04em;
     Font-family: 'Inter';
+
 }
 
 .aboutProject__title2stolb{
     max-width: 550px;
     max-height: 24px;
-  /*  display: flex;*/
-    padding-top: 70px;
-    padding-left: 70px;
     padding-bottom: 26px;
-    justify-content: space-between;
     background-color: #202020;
     color: #FFFFFF;
     font-weight: 400;
@@ -66,39 +63,37 @@ background-color: #202020;
 /*///////////////////////////////////////////////////////////////////*/
 /* вторая строчка*/
 .aboutProject__2stolb{
-
     max-height: 40px;
     width: 100%;
     Font-family: 'Inter';
-    display: flex;
-    justify-content: space-between;
+   /* display: flex;
+    justify-content: space-between;*/
 
 }
 .aboutProject__process2stolb {
     Font-family: 'Inter';
     width: 100%;
-   padding-top: 26px;
+    padding-top: 26px;
+    max-width: 550px;
     background-color: #202020;
     color: #FFFFFF;
-  /*  display: flex;*/
-    justify-content: space-between;
     line-height: 20px;
     font-weight: 400;
     font-size: 14px;
-    letter-spacing: -.04em;
+    /*letter-spacing: -.04em;*/
+
 }
 .aboutProject__process1stolb{
-
     Font-family: 'Inter';
     width: 100%;
     background-color: #202020;
     padding-top: 26px;
     color: #FFFFFF;
-    justify-content: space-between;
+ max-width: 550px;
     line-height: 20px;
     font-weight: 400;
     font-size: 14px;
-    letter-spacing: -.04em;
+    /*letter-spacing: -.04em;*/
 }
 
 
@@ -109,18 +104,19 @@ background-color: #202020;
     justify-content: normal;
     background-color: #202020;
     text-decoration: none;
-    vertical-align: middle;
-    horiz-align: center;
+ /*   horiz-align: center;*/
 
 }
 .aboutProject__all__stolb{
     padding-bottom: 110px;
+    display: flex;
+    align-items: baseline;
 }
 .aboutProject__button_first{
     width: 228px;
     height: 36px;
     background: #3DDC84;  /* цвет фона */
-    color: white; /* Белые буквы */
+    color: #202020; /* Белые буквы */
     font-size: 14px;
     border: 0;
     display: flex;
@@ -164,8 +160,90 @@ background-color: #202020;
     align-content: center;
     justify-content: center;
 }
-@media screen and (max-width: 768px){
+@media screen and (min-width: 600px) and (max-width: 920px){
 .main {
     padding-left: 50px;
     padding-right: 50px;
-}}
+}
+    .aboutProject__title {
+        Font-family: 'Inter';
+        font-weight: 400;
+        Font-size: 22px;
+        Line-height: 27px;
+    }
+
+    .aboutProject__title1stolb{
+        Font-size: 24px;
+        Line-height: 20px;
+    }
+    .aboutProject__title2stolb{
+        Font-size: 24px;
+        Line-height: 20px;
+    }
+    .aboutProject__process1stolb {
+        Font-size: 12px;
+        Line-height: 18px;
+        max-width: 319px;
+    }
+    .aboutProject__process2stolb{
+        Font-size: 12px;
+        Line-height: 18px;
+        max-width: 319px;
+    }
+
+}
+
+@media screen and (min-width: 200px) and (max-width: 620px) {
+    .main {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+    .aboutProject__all__stolb{
+        padding-bottom: 110px;
+        display: block;
+
+    }
+
+.aboutProject__title {
+    Font-family: 'Inter';
+    font-weight: 400;
+    Font-size: 18px;
+    Line-height: 22px;
+}
+    .aboutProject__title1stolb{
+        Font-size: 18px;
+        Line-height: 22px;
+        padding-bottom: 0;
+       /* margin-bottom: 0;*/
+    }
+    .aboutProject__title2stolb{
+        Font-size: 18px;
+        Line-height: 22px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+
+        padding-top: 38px;
+    }
+    .aboutProject__process1stolb {
+        Font-size: 11px;
+        Line-height: 16px;
+        max-width: 284px;
+        padding-bottom: 5px;
+    /*    margin-top: 0;*/
+    }
+    .aboutProject__process2stolb{
+        Font-size: 11px;
+        Line-height: 16px;
+        max-width: 284px;
+    /*    margin-top: 0;*/
+        padding-top: 16px;
+
+    }
+    .aboutProject__1stolb{
+        flex-direction: column;
+
+    }
+    .aboutProject__2stolb{
+        padding-bottom: 60px;
+    }
+}
