@@ -14,7 +14,7 @@ background-color: #202020;
     line-height: 27px;
     color: #FFFFFF;
     font-weight: 400;
-    letter-spacing: -.04em;
+    letter-spacing: -0.04em;
     Font-family: 'Inter';
     border-bottom: 1px solid #DADADA;
 
@@ -43,7 +43,7 @@ background-color: #202020;
     justify-content: space-between;
     font-weight: 400;
     font-size: 20px;
-    letter-spacing: -.04em;
+    letter-spacing: -0.04em;
     Font-family: 'Inter';
 
 }
@@ -245,5 +245,8 @@ background-color: #202020;
     }
     .aboutProject__2stolb{
         padding-bottom: 60px;
+    }
+    .main{
+        padding-bottom: 56px;
     }
 }
