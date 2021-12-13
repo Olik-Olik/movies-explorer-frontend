@@ -19,10 +19,14 @@ function Login(props) {
 
                 <div className="profile__email-email ">
                     <div className="profile__email ">E-mail</div>
+                    {/*input*/}
+
+
                     <div className="auth__form-login-input-email">pochta@newtree.ru</div>
                 </div>
                 <div className="profile__email-email  profile__email-password">
                     <div className="profile__email ">Пароль</div>
+                    {/*input*/}
                     <div className="auth__form-login-input-password">pochta@newtree.ru</div>
                 </div>
                 {/*auth__form-login-submit-button-enter для верного роута*/}

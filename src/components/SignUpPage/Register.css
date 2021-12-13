@@ -19,13 +19,18 @@
     padding-bottom: 5px;
 }
 
+/*форма input name*/
 .profile__input-name{
+    width: 396px;
+    background-color: #202020;
+    color: #FFFFFF;
     font-family: Inter;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     padding-bottom: 10px;
     border-bottom: 1px solid #424242;
+
 }
 
 .auth__login-welcome {
@@ -62,7 +67,8 @@
 .auth__form-login-input-email {
     color: #FFFFFF;
     cursor: pointer;
-    border-bottom: 1px solid #4285F4;
+   /* border-bottom: 1px solid #4285F4;*/
+    border-bottom: 1px solid #424242;
     width: 396px;
     font-size: 14px;
     align-items: flex-start;
@@ -82,7 +88,10 @@
     display: flex;
     flex-direction: column;}
 
-
+/*!*форма input name*!
+.profile__input-name{
+    background-color: #202020;
+}*/
 .auth__form-login-input-password {
     font-size: 14px;
     line-height: 17px;
