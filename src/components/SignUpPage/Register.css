@@ -30,6 +30,7 @@
     line-height: 17px;
     padding-bottom: 10px;
     border-bottom: 1px solid #424242;
+    border-right-width: 0px;
 
 }
 
@@ -65,6 +66,7 @@
     }
 }
 .auth__form-login-input-email {
+    border-right-width: 0;
     color: #FFFFFF;
     cursor: pointer;
    /* border-bottom: 1px solid #4285F4;*/
@@ -107,6 +109,9 @@
     text-decoration: none;
     cursor: pointer;
     padding: 0 0 13px 0;
+    border: 0;
+    -webkit-text-security: disc;
+    text-decoration: none;
 }
 /*Пароль и Почта*/
 .profile__email {
