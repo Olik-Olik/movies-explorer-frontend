@@ -22,7 +22,7 @@ function Register(props) {
                  {/*   <div className="profile__name">Имя</div>*/}
 
                     <form name="form__input_name">
-                    <input type = 'text' className="profile__input-name" name="name" value="Василий Иванович " required
+                    <input type = 'text' className="profile__input-name" name="name" defaultValue="Василий Иванович" required
                            maxLength="30" minLength="2" />
                 </form>
 
@@ -32,9 +32,9 @@ function Register(props) {
                    {/* <div className="profile__email ">E-mail</div>*/}
                     {/*input*/}
 
-                    <form name="profile__input-name">
+                    <form name="profile__input-email">
 
-                    <input type = 'text' className="auth__form-login-input-email" name="email" value="pochta@newtree.ru" required
+                    <input type = 'text' className="auth__form-login-input-email" name="email" defaultValue="pochta@newtree.ru" required
                            maxLength="30" minLength="2" /> </form>
 
                       {/*  <div className="auth__form-login-input-email">pochta@newtree.ru</div>*/}
@@ -46,7 +46,7 @@ function Register(props) {
 
                     <form name="profile__input-password">
 
-                    <input  type = 'text' name= "password" className="auth__form-login-input-password" value="qwerty" required
+                    <input  type = 'text' name= "password" className="auth__form-login-input-password" defaultValue="qwerty" required
                             maxLength="8" minLength="2" /> </form>
                     {/*input*/}
                    {/* <div className="auth__form-login-input-password">pochta@newtree.ru</div>*/}

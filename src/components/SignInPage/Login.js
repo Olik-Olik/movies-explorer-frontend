@@ -18,16 +18,23 @@ function Login(props) {
             <div className="auth">
 
                 <div className="profile__email-email ">
-                    <div className="profile__email ">E-mail</div>
+                    <label className="profile__email ">E-mail</label>
                     {/*input*/}
-
-
-                    <div className="auth__form-login-input-email">pochta@newtree.ru</div>
+              {/*      <label className= "label__input profile__email">E-mail</label>*/}
+                    <form name="profile__input-email">
+                        <input type = 'text' className="auth__form-login-input-email" name="email" defaultValue="byka@newtree.ru" required
+                               maxLength="30" minLength="2" /> </form>
+                 {/*   <div className="auth__form-login-input-email">pochta@newtree.ru</div>*/}
                 </div>
+
+
                 <div className="profile__email-email  profile__email-password">
-                    <div className="profile__email ">Пароль</div>
+
+                    <label className="profile__email ">Пароль</label>
                     {/*input*/}
-                    <div className="auth__form-login-input-password">pochta@newtree.ru</div>
+                    <form name="profile__input-password">
+                        <input type = 'text' className="auth__form-login-input-password" name="password" defaultValue="qwerty" required
+                               maxLength="8" minLength="2"/> </form>
                 </div>
                 {/*auth__form-login-submit-button-enter для верного роута*/}
                 {/*sign in*/}

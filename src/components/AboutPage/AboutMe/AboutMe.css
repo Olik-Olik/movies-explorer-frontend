@@ -24,7 +24,7 @@
     align-items: baseline;
     height: 50px;
     color: #FFFFFF;
-    font-family: Inter;
+    font-family: 'Inter';
     font-Weight: 400;
     font-Style: normal;
     font-Size: 29px;
@@ -87,9 +87,10 @@
 }
 
 .aboutMe__connect {
+   /* padding-left: 0;*/
     width: 100%;
     background-color: #202020;
-    padding: 0 70px 100px 70px;
+    padding: 0 70px 100px 0;
     font-size: 14px;
     line-height: 17px;
     color: #FFFFFF;
@@ -115,7 +116,7 @@
     Font-Weight: 400;
     Font-Style: normal;
     width: 100%;
-    padding: 0 70px;
+    padding: 0 /*70px*/;
     margin: 0;
     background-color: #202020;
     color: #8B8B8B;
@@ -265,6 +266,7 @@
     }
 
     .aboutMe__strelka-resurs {
+        font-family: 'Inter';
         font-Size: 18px;
         Line-height: 28px;
     }

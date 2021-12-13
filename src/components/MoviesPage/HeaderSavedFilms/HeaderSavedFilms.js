@@ -8,7 +8,11 @@ import '../../../index.css';
 
 function HeaderSavedFilms(props) {
     return (
-        <div className="header header_inwork">
+        <div className="header__logo-akkaunt">
+        <div className="header__logo-films">
+        <div className="header header-color"
+  /*      header__inwork" */
+        >
             <a href = "/">
          <div className="header__logo">
            <img className="headerLogo" src={logo} alt="Logo"/>
@@ -21,8 +25,10 @@ function HeaderSavedFilms(props) {
              <a href = "/saved-movies" className= "header__name_saved-film-movies">
           <div className="header__auth">Сохраненные фильмы</div></a>
          </div>
+</div> {/*header__logo-films*/}
+        </div>
     <a href = "/profile" className= "header__akkaunt-profile">
-       <div className="header__akkaunt">Аккаунт
+       <div className="header__user">Аккаунт
        </div>
     </a>
         </div>

@@ -1,16 +1,27 @@
-.header__name_saved-film-movies{
+/*.header__name_saved-film-movies{
+    display: flex;
     text-decoration: none;
     Font-size: 13px;
     Line-height: 18px;
     font-family: 'Inter';
     font-weight: 400;
-}
-.header__name_saved-film-movies{
+    justify-content: space-between;
+    align-items: center;
+   !* font-weight: 500;*!
+   !* height: 74px;*!
+}*/
+.header-color{
+    background-color:#202020;
     text-decoration: none;
-    Font-size: 13px;
-    Line-height: 18px;
-    font-family: 'Inter';
-    font-weight: 500;
+}
+/*отделить аккаунт от фильмов сохраненных фильмов лого*/
+.header__logo-films{
+    align-items: center;
+    padding-right: 70px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #202020;
+    text-decoration: none;
 }
 .header__akkaunt-profile{
     text-decoration: none;
@@ -18,15 +29,29 @@
     Line-height: 16px;
     font-family: 'Inter';
     font-weight: 500;
+
 }
-.header_inwork{
-    padding-top: 18px;
+/*
+.header__inwork{
+    display: flex;
+    text-decoration: none;
+    Font-size: 13px;
+    Line-height: 18px;
+    font-family: 'Inter';
+    font-weight: 400;
+    justify-content: space-between;
+    align-items: center;
+    !* font-weight: 500;*!
+!*     height: 74px;*!
+}*/
+/*.header_inwork{
     padding: 0 70px;
+    padding-top: 18px;
     max-width: 1280px;
     max-height: 74px;
     font-family: Inter;
     font-weight: 500;
-/*    display: flex;*/
+!*  display: flex;*!
     Font-size: 13px;
     flex-direction: row;
     justify-content: flex-start;
@@ -34,30 +59,26 @@
     display:grid;
     justify-items: start;
     grid-column-gap: 40px;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 2fr));
-
-   /* max-width: 1140px;*/
+    grid-template-columns: repeat(auto-fit, minmax(500px, 2fr));*!
+   !* max-width: 1140px;*!
     text-decoration: none;
-}
-.header__akkaunt{
+}*/
+.header__user{
    border-radius: 20px;
-    max-width: 100px;
-    max-height: 32px;
+    width: 100px;
+    height: 32px;
     Font-size: 14px;
-    top:21px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    background-color: #8B8B8B;
-    /*Line-height: 16px;*/
+    background-color: #313131;
+    Line-height: 16px;
     color: #FFFFFF;
-/*   font-family: Inter;
-   font-weight: 500;*/
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .header__name_saved-film{
     padding-left: 44px;
     padding-right: 16px;
-
     padding-top: 10px;
     max-width: 54px;
     max-height: 18px;
@@ -66,14 +87,9 @@
     justify-content: flex-start;
     display: flex;
 }
-.header__film-saved_film{
+.header__film-saved_film {
     align-items: baseline;
     Font-size: 13px;
     display: flex;
     font-weight: 400;
-  /*  justify-content: space-between;*/
-}
-.header__films-akkaunt{
-
-
 }
