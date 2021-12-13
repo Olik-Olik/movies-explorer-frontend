@@ -3,7 +3,7 @@ import React from "react";
 import './HeaderSavedFilms.css'
 import '../../Header.css';
 import logo from '../../images/logo.svg';
-
+import icon_header from '../../images/icon_header.svg';
 import '../../../index.css';
 
 function HeaderSavedFilms(props) {
@@ -30,6 +30,7 @@ function HeaderSavedFilms(props) {
     <a href = "/profile" className= "header__akkaunt-profile">
        <div className="header__user">Аккаунт
        </div>
+        <img className="headerIcon" src={icon_header} alt="Решетка"/>
     </a>
         </div>
         </div>);

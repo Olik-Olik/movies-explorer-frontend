@@ -1,6 +1,13 @@
 .header__signin{
     background-color: #202020;
+    display: flex;
+    flex-direction: column;
 }
+
 .auth__login-signup-nonDecoration{
     text-decoration: none;
+}
+
+@media  {
+
 }

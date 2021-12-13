@@ -8,7 +8,6 @@
 .result{
     background-color: #202020;
     width: 100%;
-  /*  max-width: 1280px;*/
     display: flex;
     justify-content: center;
     padding: 74px 70px 70px 70px;
@@ -128,6 +127,54 @@ justify-content: center;
 .result__input-name{
 padding-bottom: 16px;
 }
+
+.result__input-name{
+    background-color: #202020;
+    color: #FFFFFF;
+    border: none;
+    text-align: end;
+}
+.result__input-email{
+    background-color: #202020;
+    color: #FFFFFF;
+    border: none;
+    text-align: end;
+}
+
+@media  (min-width: 320px) and (max-width: 900px){
+    .header__name_saved-film{
+        visibility: hidden;
+    }
+    .header__film-saved_film{
+        visibility: hidden;
+    }
+    .header__user{
+        visibility: hidden;
+    }
+
+    .header__logo{
+        color: #FFFFFF;
+        width: 44px;
+        height: 44px;
+    }
+    .result{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .result__name-name{
+        max-width: 250px;
+    }
+    .result__email-email{
+        max-width: 250px;
+    }
+    .result__edit{
+        max-width: 250px;
+    }
+    .result__exit{
+        max-width: 250px;
+    }
+}
+
 
 
 

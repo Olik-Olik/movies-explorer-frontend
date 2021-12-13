@@ -12,6 +12,10 @@
     justify-content: flex-start;
 
 }
+.icon_header{
+    width: 44px;
+    height: 44px;
+}
 .header__akkaunt{
    border-radius: 20px;
     max-width: 100px;

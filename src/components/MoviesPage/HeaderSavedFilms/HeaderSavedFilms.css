@@ -10,12 +10,17 @@
    !* font-weight: 500;*!
    !* height: 74px;*!
 }*/
+
+.header__name_saved-film-movies{
+    text-decoration: none;
+}
 .header-color{
     background-color:#202020;
     text-decoration: none;
 }
 /*отделить аккаунт от фильмов сохраненных фильмов лого*/
 .header__logo-films{
+
     align-items: center;
     padding-right: 70px;
     display: flex;
@@ -77,6 +82,7 @@
 }
 
 .header__name_saved-film{
+    text-decoration: none;
     padding-left: 44px;
     padding-right: 16px;
     padding-top: 10px;
@@ -88,8 +94,31 @@
     display: flex;
 }
 .header__film-saved_film {
+    text-decoration: none;
     align-items: baseline;
     Font-size: 13px;
     display: flex;
     font-weight: 400;
+
 }
+.headerIcon{
+    visibility: hidden;
+}
+
+@media  (min-width: 320px) and (max-width: 800px ) {
+    .header__logo-films {
+        padding-right: 70px;
+        display: flex;
+        background-color: #202020;
+        text-decoration: none;
+        justify-content: space-between;
+        align-content: stretch;
+        flex-direction: row;
+        align-items: flex-start;
+
+    }
+    .headerIcon{
+        visibility: initial;
+    }
+}
+
