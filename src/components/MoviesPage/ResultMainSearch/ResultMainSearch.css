@@ -1,10 +1,10 @@
-.result_main_search__conteiner{
+.result_main_search__conteiner {
     width: 100%;
     box-sizing: border-box;
     background-color: #202020;
 }
 
-.result_main_search{
+.result_main_search {
     box-sizing: border-box;
     width: 100%;
     Height: 152px;
@@ -13,8 +13,9 @@
     padding: 0 70px;
 
 }
+
 /*Строка поиска*/
-.result_main_search__conteiner{
+.result_main_search__conteiner {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -23,11 +24,13 @@
     box-sizing: border-box;
     background-color: #2F2F2F;
 }
+
 /*Лупа и "Фильм"*/
 .result_main_search_icon {
     display: flex;
 }
-.result_main_search_icon__lupa{
+
+.result_main_search_icon__lupa {
     background: url('../../images/icon__lupa.svg') no-repeat center 25px;
     color: #C4C4C4;
     box-sizing: border-box;
@@ -36,66 +39,80 @@
     padding: 25px 10px;
 
 }
-.result_main_search_icon__lupa:hover{
+
+.result_main_search_icon__lupa:hover {
     cursor: pointer;
 }
-.result_main_search__button_find:hover{
+
+.result_main_search__button_find:hover {
     cursor: pointer;
 }
-.result_main_search_icon_smalltube:hover{
+
+.result_main_search_icon_smalltube:hover {
     cursor: pointer;
 }
+
 /*.result_main_search_icon_shortfilm:hover{
     cursor: pointer;
 }*/
 
-.result_main_search_icon_film:hover{
+.result_main_search_icon_film:hover {
     cursor: pointer;
 }
-.result_main_search_icon_film{
+
+.result_main_search_icon_film {
     display: flex;
     background-color: #2F2F2F;
     color: #8B8B8B;
     box-sizing: border-box;
     border: none;
- /*   width: 60px;*/
-   /* height: 22px;*/
-  /*  padding: 25px 10px;*/
+    /*   width: 60px;*/
+    /* height: 22px;*/
+    /*  padding: 25px 10px;*/
     padding-top: 25px;
 }
-.lupa-film{
+
+.lupa-film {
     display: flex;
 
 }
-.icon-shortfilm{
+
+.icon-shortfilm {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.result_main_search_icon_smalltube{
+
+.result_main_search_icon_smalltube {
     background: url('../../images/smalltumb.svg') no-repeat center;
-   /* color: #C4C4C4;*/
-   /* box-sizing: border-box;*/
+    /* color: #C4C4C4;*/
+    /* box-sizing: border-box;*/
     width: 36px;
     height: 20px;
     padding: 25px 10px;
 }
-.result_main_search_icon_shortfilm{
+
+.result_main_search_icon_shortfilm {
     color: #FFFFFF;
-            Font-style: normal;
-Font-size: 13px;
-Line-height: 18px;
+    Font-style: normal;
+    Font-size: 13px;
+    Line-height: 18px;
     width: 117px;
-  /*  padding-right: 30px;*/
-    padding: 27px 30px 30px 0 ;
+
+    padding: 27px 30px 30px 0;
 
 }
-.result_main_search__value{}
-.correct{
+
+.result_main_search__value {
+}
+
+.correct {
     display: flex;
 }
-{/*Линия между смоллтубом и Найти*/}
-.result_main_search_icon_line{
+
+{ /*Линия между смоллтубом и Найти*/
+}
+.result_main_search_icon_line {
     background: url('../../images/line_between_find.svg') no-repeat center;
     color: #424242;
     box-sizing: border-box;
@@ -108,24 +125,26 @@ Line-height: 18px;
     top: 20px;
 
 }
-.find-line-icon{
+
+.find-line-icon {
     display: flex;
 }
+
 /*Голубая кнопка Найти*/
-.result_main_search__button_find{
+.result_main_search__button_find {
     width: 80px;
-  /*  height: 34px;*/
+    /*  height: 34px;*/
     position: relative;
     background: url('../../images/find.svg') no-repeat center;
     box-sizing: border-box;
     border: none;
     left: 21.35px;
     padding: 8px 10.35px;
-  /*  font-family: Inter;*/
- /*  font-style: medium;*/
-   font-size: 11px;
+    /*  font-family: Inter;*/
+    /*  font-style: medium;*/
+    font-size: 11px;
     line-height: 18px;
-  /*  Line height: 135%*/
+    /*  Line height: 135%*/
     align-items: Center;
     vertical-align: Top;
 
