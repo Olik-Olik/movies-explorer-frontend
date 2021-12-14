@@ -8,12 +8,14 @@ import '../../index.css';
 
 import Footer from "../Footer";
 import Header from "../Header";
+import HeaderSavedFilms from "./HeaderSavedFilms/HeaderSavedFilms";
 
 
 function MoviesPages(props){
     return (
         <>
            {/* <ResultMainMore/>*/}
+            <HeaderSavedFilms/>
             <ResultMainSearch/>
          {/*   <Card/>*/}
             <MoviesCardList/>

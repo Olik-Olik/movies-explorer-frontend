@@ -7,18 +7,17 @@
 .result_main_search{
     box-sizing: border-box;
     width: 100%;
-    max-Width:1739px;
-    Height:222px;
-    Top:74px;
+    Height: 152px;
+    Top: 74px;
     background-color: #202020;
     padding: 0 70px;
+
 }
 /*Строка поиска*/
 .result_main_search__conteiner{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 1140px;
     height: 72px;
     border-radius: 9px;
     box-sizing: border-box;
@@ -37,21 +36,48 @@
     padding: 25px 10px;
 
 }
+.result_main_search_icon__lupa:hover{
+    cursor: pointer;
+}
+.result_main_search__button_find:hover{
+    cursor: pointer;
+}
+.result_main_search_icon_smalltube:hover{
+    cursor: pointer;
+}
+/*.result_main_search_icon_shortfilm:hover{
+    cursor: pointer;
+}*/
+
+.result_main_search_icon_film:hover{
+    cursor: pointer;
+}
 .result_main_search_icon_film{
+    display: flex;
+    background-color: #2F2F2F;
     color: #8B8B8B;
     box-sizing: border-box;
-    width: 60px;
-    height: 22px;
+    border: none;
+ /*   width: 60px;*/
+   /* height: 22px;*/
   /*  padding: 25px 10px;*/
     padding-top: 25px;
 }
+.lupa-film{
+    display: flex;
 
+}
+.icon-shortfilm{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 .result_main_search_icon_smalltube{
-    background: url('../../images/smalltumb.svg') no-repeat center 25px;
+    background: url('../../images/smalltumb.svg') no-repeat center;
    /* color: #C4C4C4;*/
-    box-sizing: border-box;
-    width: 60px;
-    height: 22px;
+   /* box-sizing: border-box;*/
+    width: 36px;
+    height: 20px;
     padding: 25px 10px;
 }
 .result_main_search_icon_shortfilm{
@@ -60,11 +86,14 @@
 Font-size: 13px;
 Line-height: 18px;
     width: 117px;
-  padding: 27px 4px 30px;
+  /*  padding-right: 30px;*/
+    padding: 27px 30px 30px 0 ;
 
 }
 .result_main_search__value{}
-
+.correct{
+    display: flex;
+}
 {/*Линия между смоллтубом и Найти*/}
 .result_main_search_icon_line{
     background: url('../../images/line_between_find.svg') no-repeat center;
@@ -72,11 +101,16 @@ Line-height: 18px;
     box-sizing: border-box;
     border: none;
     width: 1px;
-   /* height: 40px;*/
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 29px;
+    padding-left: 29px;
     top: 20px;
 
 }
-
+.find-line-icon{
+    display: flex;
+}
 /*Голубая кнопка Найти*/
 .result_main_search__button_find{
     width: 80px;

@@ -22,6 +22,7 @@
 }
 .card__container_name_like{
     display: flex;
+    justify-content: space-between;
 }
 .card__container_name{
     padding-bottom: 29px;
@@ -51,10 +52,12 @@
     color: #FFFFFF;
     width: 24px;
     height: 24px;
-    padding-left: 20px;
     padding-top: 20px;
-    padding-bottom: 0;
-    padding-right: 20px;
+ /*   padding-right: 20px;
+    padding-left: 20px;
+
+    padding-bottom: 0;*/
+
 /*    background-color: transparent;*/
     background: url('../../images/like_active.svg') no-repeat center ;
 }

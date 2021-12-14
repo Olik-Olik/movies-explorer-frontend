@@ -11,6 +11,6 @@ function SignUpPage(props){
         <>
             <SignUpHeader/>
             <Register/>
-<Footer/>
+{/*<Footer/>*/}
         </>)}
 export default SignUpPage;
