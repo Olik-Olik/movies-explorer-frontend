@@ -36,38 +36,7 @@
     font-weight: 500;
 
 }
-/*
-.header__inwork{
-    display: flex;
-    text-decoration: none;
-    Font-size: 13px;
-    Line-height: 18px;
-    font-family: 'Inter';
-    font-weight: 400;
-    justify-content: space-between;
-    align-items: center;
-    !* font-weight: 500;*!
-!*     height: 74px;*!
-}*/
-/*.header_inwork{
-    padding: 0 70px;
-    padding-top: 18px;
-    max-width: 1280px;
-    max-height: 74px;
-    font-family: Inter;
-    font-weight: 500;
-!*  display: flex;*!
-    Font-size: 13px;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: baseline;
-    display:grid;
-    justify-items: start;
-    grid-column-gap: 40px;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 2fr));*!
-   !* max-width: 1140px;*!
-    text-decoration: none;
-}*/
+
 .header__user{
    border-radius: 20px;
     width: 100px;
@@ -104,6 +73,15 @@
 .headerIcon{
     visibility: hidden;
 }
+@media  (min-width: 801px) and (max-width: 899px ) {
+    .headerIcon{
+        visibility: initial;
+    }
+.header__user{
+    width: 0;
+    height: 0;
+}
+}
 
 @media  (min-width: 320px) and (max-width: 800px ) {
     .header__logo-films {
@@ -120,5 +98,38 @@
     .headerIcon{
         visibility: initial;
     }
+    .header__akkaunt-profile{
+        width: 0.1vW;
+    }
+
+}
+@media  (min-width: 769px) and (max-width: 800px ) {
+   /* .header__akkaunt-profile{
+        width: 0.1vW;
+    }*/
 }
 
+@media  (min-width: 320px) and (max-width: 596px ) {
+
+   /* */
+    .find-line-icon{
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+    .result_main_search_icon_line{
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+    .result_main_search__button_find {
+        right: 0;
+        left: 0;
+        padding-left: 0;
+        padding-right: 0;
+        width: 140px;
+    }
+    .result_main_search_icon_film{
+
+    }
+}

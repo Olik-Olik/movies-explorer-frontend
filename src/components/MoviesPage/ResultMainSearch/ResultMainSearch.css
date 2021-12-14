@@ -52,9 +52,6 @@
     cursor: pointer;
 }
 
-/*.result_main_search_icon_shortfilm:hover{
-    cursor: pointer;
-}*/
 
 .result_main_search_icon_film:hover {
     cursor: pointer;
@@ -123,29 +120,57 @@
     padding-right: 29px;
     padding-left: 29px;
     top: 20px;
-
 }
 
 .find-line-icon {
     display: flex;
 }
-
 /*Голубая кнопка Найти*/
 .result_main_search__button_find {
     width: 80px;
-    /*  height: 34px;*/
     position: relative;
     background: url('../../images/find.svg') no-repeat center;
     box-sizing: border-box;
     border: none;
     left: 21.35px;
     padding: 8px 10.35px;
-    /*  font-family: Inter;*/
-    /*  font-style: medium;*/
     font-size: 11px;
     line-height: 18px;
-    /*  Line height: 135%*/
     align-items: Center;
     vertical-align: Top;
+}
+@media screen and (min-width: 594px) and (max-width: 768px){
+    .result_main_search{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .result_main_search_icon_line{
+        padding-right: 19px;
+        padding-left: 19px;
+    }
+}
+@media screen and (max-width: 593px){
+    .result_main_search{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .result_main_search_icon_line{
+        visibility: hidden;
+    }
+    .result_main_search_icon_line{
+        visibility: hidden;
+    }
+    .result_main_search__button_find{
+    padding-left: 0;
+    padding-right: 0;
+    left: auto;
+}
+    .find-line-icon {
+        display: flex;
+        padding-top: 46px;
+    }
 
 }
+
+
+

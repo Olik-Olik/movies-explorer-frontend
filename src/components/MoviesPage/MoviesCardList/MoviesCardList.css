@@ -19,7 +19,7 @@
     gap:20px;
     box-sizing: border-box;
 }
-
+/*@media  (min-width: 501px) and (max-width: 1024px) {*/
 
 @media  (min-width: 501px) and (max-width: 1024px) {
     .movies-grid {
@@ -34,3 +34,6 @@
         padding: 0 16px 0 16px;
     }
 }
+/*.moviesCard_list{
+    padding: 0;
+}*/
