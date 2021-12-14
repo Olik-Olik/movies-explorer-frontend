@@ -15,9 +15,7 @@ function SavedMoviesPages(props){
         <>
             <HeaderSavedFilms/>
             <ResultMainSearch/>
-            {/*<Card/>*/}
             <MoviesCardList/>
-            <ResultMainMore/>
             <Footer/>
         </>
     )}

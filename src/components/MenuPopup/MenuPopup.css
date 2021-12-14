@@ -1,0 +1,77 @@
+.popup {
+    position: fixed; /*для подложки прячу попап на видимой части сверху*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .3);
+    padding: 0;
+    z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.popup__combine-image {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.popup_opened {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+.popup__close-button {
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/src/components/images/krest.svg');
+    width: 56px;
+    height: 56px;
+    background-color: transparent;
+    left: 230px;
+    padding: 0;
+    border: none;
+    top: auto;
+    bottom: 180px;
+    z-index: 1500;
+}
+
+.popup__close-button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.popup__close-button-no-rel {
+    position: static;
+}
+
+@media screen and (min-width: 320px) and (max-width: 500px) {
+    .popup__close-button {
+        width: 36px;
+        height: 36px;
+        left: 120px;
+    }
+}
+.popup__combine-word {
+    display: flex;
+    flex-direction: column;
+}
+.popup__container-image {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

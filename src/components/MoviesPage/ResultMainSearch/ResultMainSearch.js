@@ -38,8 +38,12 @@ function ResultMainSearch(props) {
                 </div>
                 </div>
             </div>
-        </form>
 
+<div className="icon-shortfilm mobile">
+    <div className="result_main_search_icon_smalltube mobile"> </div>
+    <div className="result_main_search_icon_shortfilm mobile">Короткометражки</div>
+</div>
+        </form>
     )
 }
 
