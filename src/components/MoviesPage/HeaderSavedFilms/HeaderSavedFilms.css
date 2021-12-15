@@ -20,9 +20,8 @@
 }
 /*отделить аккаунт от фильмов сохраненных фильмов лого*/
 .header__logo-films{
-
     align-items: center;
-    padding-right: 70px;
+  /*  padding-right: 70px;*/
     display: flex;
     justify-content: space-between;
     background-color: #202020;
@@ -34,7 +33,6 @@
     Line-height: 16px;
     font-family: 'Inter';
     font-weight: 500;
-
 }
 
 .header__user{
@@ -73,7 +71,7 @@
 .headerIcon{
     visibility: hidden;
 }
-@media  (min-width: 801px) and (max-width: 899px ) {
+@media  (min-width: 769px) and (max-width: 899px ) {
     .headerIcon{
         visibility: initial;
     }
@@ -83,17 +81,13 @@
 }
 }
 
-@media  (min-width: 320px) and (max-width: 800px ) {
+@media  (min-width: 320px) and (max-width: 768px ) {
     .header__logo-films {
-        padding-right: 70px;
         display: flex;
         background-color: #202020;
-        text-decoration: none;
+        max-height:74px;
         justify-content: space-between;
-        align-content: stretch;
-        flex-direction: row;
         align-items: flex-start;
-
     }
     .headerIcon{
         visibility: initial;
@@ -103,15 +97,9 @@
     }
 
 }
-@media  (min-width: 769px) and (max-width: 800px ) {
-   /* .header__akkaunt-profile{
-        width: 0.1vW;
-    }*/
-}
+
 
 @media  (min-width: 320px) and (max-width: 596px ) {
-
-   /* */
     .find-line-icon{
         width: 0;
         height: 0;

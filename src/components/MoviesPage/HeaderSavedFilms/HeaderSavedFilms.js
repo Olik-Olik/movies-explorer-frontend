@@ -22,9 +22,7 @@ function HeaderSavedFilms(props) {
     return (
         <div className="header__logo-akkaunt">
             <div className="header__logo-films">
-                <div className="header header-color"
-                    /*      header__inwork" */
-                >
+                <div className="header header-color">
                     <a href="/">
                         <div className="header__logo">
                             <img className="headerLogo" src={logo} alt="Logo"/>

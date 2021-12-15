@@ -2,9 +2,8 @@
     position: fixed; /*для подложки прячу попап на видимой части сверху*/
     top: 0;
     bottom: 0;
-    left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, .3);
+    background-color: #202020;
     padding: 0;
     z-index: 20;
     opacity: 0;
@@ -13,7 +12,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 70vw;
     min-height: 100vh;
     transition: visibility 0.5s, opacity 0.5s linear;
 }
@@ -23,6 +22,7 @@
     flex-direction: column;
     align-items: flex-end;
 }
+
 .popup_opened {
     display: flex;
     flex-direction: column;
@@ -31,13 +31,14 @@
     opacity: 1;
     transition: visibility 0s, opacity 0.5s linear;
 }
+
 .popup__close-button {
+    width: 22px;
+    height: 22px;
     position: relative;
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url('/src/components/images/krest.svg');
-    width: 56px;
-    height: 56px;
     background-color: transparent;
     left: 230px;
     padding: 0;
@@ -56,22 +57,87 @@
     position: static;
 }
 
-@media screen and (min-width: 320px) and (max-width: 500px) {
-    .popup__close-button {
-        width: 36px;
-        height: 36px;
-        left: 120px;
-    }
+.mobile-visibility {
+    visibility: initial;
+    font-family: 'Inter';
+    text-decoration: none;
+    /* margin-top: 12px; */
+    /* margin-bottom: 39px; */
+    /* margin-right: 30px; */
+    /* background-color: transparent; */
+    border: none;
+    /* font-size: 18px; */
+    color: #FFFFFF;
+    visibility: initial;
 }
-.popup__combine-word {
+
+.mobile-main {
+
+}
+
+.mobile-akkaunt {
+    height: 32px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 629px;
+    border-radius: 20px;
+    /* max-width: 100px;
+     max-height: 32px;*/
+    Font-size: 14px;
+    /* top: 21px; */
+    font-family: 'Inter';
+    font-weight: 500;
+    background-color: #313131;
+    Line-height: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+/*.header__name_saved-film{
+    padding-top: 0;
+}*/
+
+.popup__container-image {
     display: flex;
     flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
-.popup__container-image {
-    padding: 0;
-    margin: 0;
-    position: relative;
+
+.popup-correct {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+
+@media screen and (min-width: 320px) and (max-width: 500px) {
+    .popup__close-button {
+        left: 120px;
+    }
+}
+@media screen  and (max-width: 320px) {
+.popup {
+    width: 100vw;
+    max-width: 320px;
+    max-height: 780px;
+}
+}
+
+/*
+.popup__combine-word {
+display: flex;
+flex-direction: column;
+}
+.popup__container-image {
+padding: 0;
+margin: 0;
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+*/

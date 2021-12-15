@@ -109,10 +109,7 @@
     Font-family: Inter;
    font-weight: 500;
 Font-size: 12px;
-Line-height: 16px;
-   background-color: rgba(0, 0, 0, 0.2);
-
-
+ /*  background-color: rgba(0, 0, 0, 0.2);*/
     width: 76px;
     height: 32px;
     line-height: 16px;
@@ -130,10 +127,10 @@ Line-height: 16px;
         padding: 14px 18px;
     }
 }
-@media screen and (max-width: 768px){
+/*@media screen and (max-width: 768px){
     .header{
  padding: 18px 30px;
           }
-}
+}*/
 @media screen and (max-width: 1023px){}
 
