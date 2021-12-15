@@ -6,15 +6,17 @@
     color: #FFFFFF;
 }
 .result{
+
     background-color: #202020;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 74px 70px 70px 70px;
+    padding: 50px 70px 70px 70px;
     box-sizing: border-box;
 }
 
 .result__title{
+  /*  padding-top: 160px;*/
 display: flex;
 width: 100%;
 max-width: 204px;
@@ -39,13 +41,9 @@ justify-content: center;
     font-size: 11px;
     line-height: 13px;
     text-align: left;
-    vertical-align: Top;
     color:#FFFFFF;
-    padding-top: 123px;
+    padding-top: 120px;
     padding-bottom: 16px;
-   /* padding-right: 147px;*/
-  /*  border-bottom: 1px solid #424242;*/
-
 }
 .result__email{
     /*color:yellow;*/
@@ -92,7 +90,7 @@ justify-content: center;
     padding: 0 0 16px 0;
 }
 .result__edit{
-    padding-top: 220px;
+    padding-top: 185px;
     padding-bottom: 16px;
     width: 410px;
     line-height: 16px;
@@ -144,21 +142,28 @@ padding-bottom: 16px;
 
 @media  (min-width: 768px) and (max-width: 900px){
     .header{
-        padding-top: 0;
+        padding-top: 18px;
         padding-left: 30px;
     }
     .result__title{
         padding-top: 160px;
+
+    }
+    .result__name{
+        padding-top: 93px;
+
     }
 
     .result__name-name{
         max-width: 410px;
+
     }
     .result__email-email{
         max-width: 410px;
     }
     .result__edit{
         max-width: 410px;
+        padding-top: 180px;
     }
     .result__exit{
         max-width: 410px;

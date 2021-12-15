@@ -1,19 +1,21 @@
 .header {
-   /* height: 74px;*/
+    height: 74px;
+
     display: flex;
     font-family: 'Inter';
-    justify-content: space-between;
     padding: 18px 70px;
     background-color:  #202020; ;
-    align-items: center;
     color: white;
     font-style: normal;
     font-weight: 400;
      text-decoration: none;
       Font-size: 13px;
      Line-height: 18px;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    flex-direction: row;
 }
-
 
 .header__logo_auth_exit{
     display: flex;
@@ -127,10 +129,10 @@ Font-size: 12px;
         padding: 14px 18px;
     }
 }
-/*@media screen and (max-width: 768px){
+@media screen and (max-width: 768px){
     .header{
  padding: 18px 30px;
           }
-}*/
+}
 @media screen and (max-width: 1023px){}
 

@@ -20,6 +20,7 @@ function HeaderSavedFilms(props) {
     }
 
     return (
+
         <div className="header__logo-akkaunt">
             <div className="header__logo-films">
                 <div className="header header-color">
@@ -28,6 +29,7 @@ function HeaderSavedFilms(props) {
                             <img className="headerLogo" src={logo} alt="Logo"/>
                         </div>
                     </a>
+           {/**/}{/*   <div>*/}
                     <div className="header__films-akkaunt">
                         <div className="header__film-saved_film">
                             <a href="/movies" className="header__name_saved-film-movies">
@@ -40,8 +42,8 @@ function HeaderSavedFilms(props) {
                     </div>
                     {/*header__logo-films*/}
                 </div>
-                    <div className="header__user">Аккаунт
-                    </div>
+                    <div className="header__user">Аккаунт</div>
+         {/**/}     {/*  </div>*/}
                     <img className="headerIcon" src={icon_header} alt="Решетка" onClick={ handleMenuOpenClick } />
             </div>
             <MenuPopup isOpen={isMenuOpen}

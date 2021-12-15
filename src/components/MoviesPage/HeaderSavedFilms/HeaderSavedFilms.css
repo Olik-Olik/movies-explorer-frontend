@@ -1,15 +1,3 @@
-/*.header__name_saved-film-movies{
-    display: flex;
-    text-decoration: none;
-    Font-size: 13px;
-    Line-height: 18px;
-    font-family: 'Inter';
-    font-weight: 400;
-    justify-content: space-between;
-    align-items: center;
-   !* font-weight: 500;*!
-   !* height: 74px;*!
-}*/
 
 .header__name_saved-film-movies{
     text-decoration: none;
@@ -20,12 +8,12 @@
 }
 /*отделить аккаунт от фильмов сохраненных фильмов лого*/
 .header__logo-films{
-    align-items: center;
-  /*  padding-right: 70px;*/
     display: flex;
-    justify-content: space-between;
     background-color: #202020;
     text-decoration: none;
+    justify-content: space-between;
+    align-items: baseline;
+    max-width: 1280px;
 }
 .header__akkaunt-profile{
     text-decoration: none;
@@ -36,7 +24,7 @@
 }
 
 .header__user{
-   border-radius: 20px;
+    border-radius: 20px;
     width: 100px;
     height: 32px;
     Font-size: 14px;

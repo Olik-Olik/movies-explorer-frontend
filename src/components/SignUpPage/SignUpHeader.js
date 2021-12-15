@@ -8,9 +8,9 @@ import logo from "../images/logo.svg";
 function SignUpHeader(props) {
 
     return (
-        <header className="header header__signup">
+        <header className=" header__signup header__signin">
             <a href = "/" className=" header__logo_welcome">
-                <div className="header__logo">
+                <div className="header__logo {/*header__logo_welcome*/}">
 
                         <img className="headerLogo" src={logo} alt="Logo"/>
                 </div></a>

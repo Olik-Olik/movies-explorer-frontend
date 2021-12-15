@@ -10,7 +10,7 @@ import logo from "../images/logo.svg";
 function SignInHeader(props) {
 
     return (
-        <header className="header header__signin">
+        <header className=" header__signin header__signup">
             <a href = "/" className="header__logo_welcome">
             <div className="header__logo ">
 
