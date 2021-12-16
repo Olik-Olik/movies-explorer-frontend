@@ -1,7 +1,7 @@
 import React from 'react';
 import './ResultMainSearch.css';
-
 import '../../../index.css';
+import Checkbox from "../../Checkbox/Checkbox";
 
 function ResultMainSearch(props) {
     return (
@@ -32,7 +32,8 @@ function ResultMainSearch(props) {
                     {/*Смоллтуб*/}
                     <div className="icon-shortfilm">
                         {/*  <div className= "result_main_search_icon_smalltube"> </div>*/}
-                        <div className="result_main_search_icon_smalltube"></div>
+                       {/* <div className="result_main_search_icon_smalltube"> </div>*/}
+                        <div className="result_main_search_icon_smalltube"><Checkbox/> </div>
                         <div className="result_main_search_icon_shortfilm">Короткометражки</div>
                     </div>
                 </div>
@@ -40,7 +41,7 @@ function ResultMainSearch(props) {
             </div>
 
 <div className="icon-shortfilm mobile">
-    <div className="result_main_search_icon_smalltube mobile"> </div>
+    <div className="result_main_search_icon_smalltube mobile"><Checkbox/> </div>
     <div className="result_main_search_icon_shortfilm mobile">Короткометражки</div>
 </div>
         </form>

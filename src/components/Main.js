@@ -3,14 +3,14 @@ import Login from '../components/Login';
 import Preloader from  '../components/Preloader';
 import Techs from './AboutPage/Tech/Techs';
 import Header from '../components/Header';
-import HeaderSavedFilms from '../components/HeaderInwork';
+import HeaderSavedFilms from '../components/ProfilePage/HeaderSavedFilms';
 import AboutMe from './AboutPage/AboutMe/AboutMe';
 import Footer from  '../components/Footer';
 import AboutProject from './AboutPage/AboutProject/AboutProject';
 import NotFound_404 from './NotFoundError/NotFound_404';
 import ResultMainSearch from './MoviesPage/ResultMainSearch/ResultMainSearch';
 import ResultMainMore from './MoviesPage/ResultMainMore/ResultMainMore';
-import Card from './ResultMain/Card';
+import Card from './ResultMain/Movies';
 import Movies from '../components/ResultMain/Movies';
 import MoviesCardList from './MoviesPage/MoviesCardList/MoviesCardList';
 import Profile from '../components/Profile';
@@ -21,6 +21,7 @@ import HeaderRezultLoginWelcome from './SignInPage/SignInHeader';
 import ButtonKnowMore from './AboutPage/ButtonKnowMore/ButtonKnowMore';
 import BeginPage from './AboutPage/BeginPage/BeginPage';
 import Logo from './Logo';
+import Checkbox from './Checkbox/Checkbox';
 import Burger from './AboutPage/BeginPage/BurgerMenu/Burger';
 import Project from './AboutPage/ProjectPage/Project';
 import '../components/MoviesSearch';
@@ -29,6 +30,7 @@ import './AboutPage/Tech/Techs.css';
 import '../components/Header.css';
 import '../components/Footer.css';
 import '../components/Main.css';
+import '../components/Checkbox/Checkbox.css';
 /*import './AboutPage/AboutMe/AboutMe.css';*/
 import './AboutPage/AboutProject/AboutProject.css';
 import './MoviesPage/ResultMainSearch/ResultMainSearch.css';
@@ -69,10 +71,10 @@ import './AboutPage/BeginPage/BurgerMenu/Burger.css';
     <ResultMainMore/>
     <Card/>
     <Movies/>
-    <Preloader> </Preloader>
-   <HeaderSavedFilms> </HeaderSavedFilms>
+    <Preloader/>
+   <HeaderSavedFilms/>
     <MoviesCardList>
-        <Card/>
+    <Card/>
     </MoviesCardList>
     <Profile>
     </Profile>
@@ -82,12 +84,12 @@ import './AboutPage/BeginPage/BurgerMenu/Burger.css';
     </SignUpHeader>
 <SignUpHeader>
 </SignUpHeader>
-
     <HeaderRezultLoginWelcome>
     </HeaderRezultLoginWelcome>
 
     <Register>
     </Register>
+    <Checkbox/>
 
 </>)}
 export default Main;

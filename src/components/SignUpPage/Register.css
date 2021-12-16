@@ -51,6 +51,7 @@
 }
 /* основная форма cо словами  password email*/
 .auth__form-login {
+    color: #8B8B8B;
     display: flex;
     width: 396px;
     background: none;

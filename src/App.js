@@ -13,12 +13,14 @@ import SignUpPage from "./components/SignUpPage/SignUpPage";
 import SignInPage from "./components/SignInPage/SignInPage";
 import SignInHeader from "./components/SignInPage/SignInHeader";
 import HeaderSavedFilms from "./components/ProfilePage/HeaderSavedFilms";
+import Checkbox from "./components/Checkbox/Checkbox";
 
 export default function App(props) {
     //const history = useHistory(); /////
     return (<BrowserRouter>
         <CurrentUserContext.Provider>
             <>
+                <Switch>
             <Route exact={true} path="/"
                     component={AboutPage}/>
 
@@ -37,18 +39,13 @@ export default function App(props) {
             <Route exact={true}  path="/profile"
                        component={ProfilePage}/>
 
-           <Route exact={true}  path="*"
-                       component={NotFound_404}/>
 
+           <Route  path=''
+                       component={NotFound_404}/>
+                    </Switch>
             </>
     {/*    <Footer/>*/}
+
     </CurrentUserContext.Provider>
 </BrowserRouter>)
-
-     {/*
-        <NotFound_404/>
-
-        */}}
-
-
-
+}

@@ -22,7 +22,9 @@
     font-family: 'Inter';
     font-weight: 500;
 }
-
+.header__logo-akkaunt{
+    background-color: #202020;
+}
 .header__user{
     border-radius: 20px;
     width: 100px;
@@ -73,7 +75,7 @@
     .header__logo-films {
         display: flex;
         background-color: #202020;
-        max-height:74px;
+        max-height:110px;
         justify-content: space-between;
         align-items: flex-start;
     }
@@ -105,7 +107,20 @@
         padding-right: 0;
         width: 140px;
     }
+    .result_main_search__button_find{
+        width: 80px;
+        padding-right: 0px;
+        /* border-right-width: 10px; */
+        /* margin-right: 10px; */
+        padding-top: 0px;
+        padding-bottom: 0px
+    }
     .result_main_search_icon_film{
-
+    }
+    .result_main_search_icon_shortfilm{
+        padding-top: 0;
+    }
+    .result_main_search_icon_smalltube{
+        padding-top: 0;
     }
 }

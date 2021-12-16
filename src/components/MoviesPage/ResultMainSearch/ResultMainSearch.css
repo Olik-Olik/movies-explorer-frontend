@@ -81,7 +81,7 @@
 }
 
 .result_main_search_icon_smalltube {
-    background: url('../../images/smalltumb.svg') no-repeat center;
+/*    background: url('../../images/smalltumb.svg') no-repeat center;*/
     /* color: #C4C4C4;*/
     /* box-sizing: border-box;*/
     width: 36px;
@@ -104,7 +104,12 @@
 .correct {
     display: flex;
 }
-
+.result_main_search_icon_smalltube{
+  /*  padding-top: 46px;*/
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+}
 { /*Линия между смоллтубом и Найти*/
 }
 .result_main_search_icon_line {
@@ -180,8 +185,14 @@
         visibility: initial;
         justify-content: center;
         padding-top: 46px;
-    }
 
+    }
+.result_main_search_icon_smalltube{
+    padding-top: 46px;
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+}
 }
 
 

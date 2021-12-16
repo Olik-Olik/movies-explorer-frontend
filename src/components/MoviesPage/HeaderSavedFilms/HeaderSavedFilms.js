@@ -42,7 +42,8 @@ function HeaderSavedFilms(props) {
                     </div>
                     {/*header__logo-films*/}
                 </div>
-                    <div className="header__user">Аккаунт</div>
+                <a href="/profile">
+                    <div className="header__user">Аккаунт</div></a>
          {/**/}     {/*  </div>*/}
                     <img className="headerIcon" src={icon_header} alt="Решетка" onClick={ handleMenuOpenClick } />
             </div>

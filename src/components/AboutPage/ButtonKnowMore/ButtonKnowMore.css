@@ -13,6 +13,7 @@
     text-align: center;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 @media screen and (min-width: 200px) and (max-width: 500px) {
     .button__main {

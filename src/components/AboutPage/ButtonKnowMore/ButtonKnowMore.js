@@ -6,9 +6,11 @@ import '../../../index.css';
 function ButtonKnowMore(props){
 
     return(
-
-            <button className="button__main" onClick={' пока нету такого'}>
+        /* без понятия куда отправлять может на кино? отправлю сюда или сюда надо profile */
+<a href="/movies">
+            <button className="button__main" >
                 <p>Узнать больше</p>
             </button>
+</a>
     )}
 export default ButtonKnowMore;

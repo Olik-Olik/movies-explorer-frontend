@@ -1,7 +1,7 @@
 import React from "react";
 import '../ProfilePage/ProfileSummaryPage.css';
 import './SignUpHeader.css';
-/*import '../Header.css';*/
+
 import '../../index.css';
 import logo from "../images/logo.svg";
 
