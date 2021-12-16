@@ -37,6 +37,8 @@ export default function App(props) {
             <Route exact={true}  path="/profile"
                        component={ProfilePage}/>
 
+           <Route exact={true}  path="*"
+                       component={NotFound_404}/>
 
             </>
     {/*    <Footer/>*/}

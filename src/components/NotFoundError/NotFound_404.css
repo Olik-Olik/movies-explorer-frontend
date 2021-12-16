@@ -27,7 +27,7 @@
    font-style: normal;
    font-size: 16px;
    line-height: 19px;
-   vertical-align: Top;
+  /* vertical-align: Top;*/
     margin:  0  auto ;
     padding-left: 0;
     padding-top: 5px;
@@ -45,6 +45,7 @@
     max-width: 42px;
     max-height: 17px;
     display: flex;
+    cursor: pointer;
 }
 @media screen and (max-width: 1023px){
     .notFound_404{
@@ -71,9 +72,18 @@
     .notFound_404__main{
         font-size: 80px;
         padding-top: 329px;
+        line-height: 97px;
+        padding-bottom: 10px;
+    }
+    .notFound_404__title{
+        margin-bottom: 284px;
+        font-size: 12px;
+        line-height: 15px;
     }
     .notFound_404__button{
         padding-top: 284px;
         margin: 0;
+        font-size: 12px;
+        line-height: 15px;
     }
 }
