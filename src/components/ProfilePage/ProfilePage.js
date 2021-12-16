@@ -5,7 +5,6 @@ import ProfileSummaryPage from "./ProfileSummaryPage";
 import "../Profile.css";
 import "../Header.css";
 
-
 import '../../index.css';
 import Footer from "../Footer";
 import SignInHeader from "../SignInPage/SignInHeader";

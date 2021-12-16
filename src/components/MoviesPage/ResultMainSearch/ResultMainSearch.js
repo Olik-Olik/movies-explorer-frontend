@@ -33,7 +33,7 @@ function ResultMainSearch(props) {
                     <div className="icon-shortfilm">
                         {/*  <div className= "result_main_search_icon_smalltube"> </div>*/}
                        {/* <div className="result_main_search_icon_smalltube"> </div>*/}
-                        <div className="result_main_search_icon_smalltube"><Checkbox/> </div>
+                        <div className="result_main_search_icon_smalltube "><Checkbox/> </div>
                         <div className="result_main_search_icon_shortfilm">Короткометражки</div>
                     </div>
                 </div>

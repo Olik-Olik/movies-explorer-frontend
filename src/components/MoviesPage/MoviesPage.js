@@ -1,5 +1,5 @@
 import React from "react";
-//import MoviesPages from "./MoviesPages/MoviesPages";
+/*import MoviesPages from "./MoviesPages/MoviesPages";*/
 import ResultMainMore from "./ResultMainMore/ResultMainMore";
 import Card from "./Card/Card";
 import ResultMainSearch from "./ResultMainSearch/ResultMainSearch";

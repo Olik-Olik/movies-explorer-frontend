@@ -84,9 +84,9 @@
 /*    background: url('../../images/smalltumb.svg') no-repeat center;*/
     /* color: #C4C4C4;*/
     /* box-sizing: border-box;*/
-    width: 36px;
+/*    width: 36px;
     height: 20px;
-    padding: 25px 10px;
+    padding: 25px 10px;*/
 }
 
 .result_main_search_icon_shortfilm {
@@ -164,6 +164,7 @@
 
     .result_main_search_icon_line {
         visibility: hidden;
+
     }
 
     .result_main_search_icon_line {
