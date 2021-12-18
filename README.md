@@ -1,3 +1,23 @@
+
+diplomfront.nomoredomains.work
+В README.md файл добавьте ссылку на 
+ваш сгенерированный макет 
+
+
+и домен, где лежит проект.
+
+diplomfront.nomoredomains.work
+diplomback.nomoredomains.work
+
+https://domain.nomoreparties.site/
+
+
+
+
+
+
+
+
 <<<<<<< HEAD
 # movies-explorer-frontend
 =======

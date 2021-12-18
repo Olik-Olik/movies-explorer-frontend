@@ -1,9 +1,8 @@
-
+/*
 class Api {
     constructor(arr) {
         this._address = arr.address;
         this._headers = arr.headers;
-    //    this._authTocken = null;
     }
 
     handleToken(){
@@ -131,19 +130,19 @@ class Api {
 
 }
 
-/*
+/!*
 const api = new Api({
     address: 'https://mesto.nomoreparties.co/v1/cohort-26',
     headers: {
         authorization: 'b12ac09d-a522-46ec-9026-b6918737b3ea'
     }
 });
-*/
+*!/
 
 const api = new Api({
-    /*  address: 'https://mesto.nomoreparties.co/v1/cohort-26',*/
+    /!*  address: 'https://mesto.nomoreparties.co/v1/cohort-26',*!/
     address: 'https://back.nomoredomains.work',
-   /* address: 'http://localhost:3624',*/
+   /!* address: 'http://localhost:3624',*!/
     headers: {
         // authorization: 'b12ac09d-a522-46ec-9026-b6918737b3ea'
     }
@@ -155,7 +154,7 @@ export default api;
 
 
 
-/*    setUserInfo(inputNameUserInfo, inputAboutUserInfo) {
+/!*    setUserInfo(inputNameUserInfo, inputAboutUserInfo) {
         console.log(inputNameUserInfo);
         console.log(inputAboutUserInfo);
       //  this.handleToken();
@@ -169,4 +168,5 @@ export default api;
             })
         })
             .then((response) => this._handleResponse(response));
-    }*/
+    }*!/
+*/

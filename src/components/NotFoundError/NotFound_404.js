@@ -1,10 +1,15 @@
 import React from "react";
 import './NotFound_404.css';
 import {useHistory}  from "react-router-dom";
+/*import { useNavigate } from 'react-router-dom';*/
 import '../../index.css';
 
 function NotFound_404(){
+   /* const history = useNavigate();*/
+
     const history = useHistory();
+  /*  react-router-dom v6 useHistory() is replaced by useNavigate().*/
+
 return (
         <>
             <notFound_404 className="notFound_404">
