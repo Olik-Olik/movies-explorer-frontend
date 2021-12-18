@@ -1,5 +1,7 @@
 import React from 'react';
 import '../AboutMe/AboutMe.css';
+import  facebook_url from 'constants';
+import  github_url from 'constants';
 import fotoMe from '../../images/AboutMe/fotoMe.JPG';
 import line from '../../images/line.svg';
 import strelka from '../../images/strelka.svg';
@@ -28,8 +30,8 @@ function AboutMe(props) {
             </div>
 
             <div className="aboutMe__connect">
-            <a target="_blank" rel="noopener noreferrer" className="aboutMe__gitHub" href= {"https://www.facebook.com/profile.php?id=100000879196200"}>Facebook</a>
-            <a target="_blank" rel="noopener noreferrer" className="aboutMe__facebook" href= {"https://github.com/Olik-Olik"}>GitHub</a>
+            <a target="_blank" rel="noopener noreferrer" className="aboutMe__facebook " href= { "https://www.facebook.com/profile.php?id=100000879196200" }>Facebook</a>
+            <a target="_blank" rel="noopener noreferrer" className="aboutMe__gitHub" href= {"https://github.com/Olik-Olik"}>GitHub</a>
             </div>
 
              <p className="aboutMe__portfolio">Портфолио</p>
@@ -38,13 +40,13 @@ function AboutMe(props) {
                     <div className="aboutMeLinks">
 
                         <div className="aboutMe__strelka-resurs">
-                            <a target="_blank" rel="noopener noreferrer" className="aboutMeLinkStatic" href={"https://www.facebook.com/profile.php?id=100000879196200"}>Статичный сайт</a>
+                            <a target="_blank" rel="noopener noreferrer" className="aboutMeLinkStatic" href={"https://github.com/Olik-Olik"}>Статичный сайт</a>
                             <p className="aboutMe__strelka">↗</p>
 
                     </div>
                 <div>
                     <div className="aboutMe__strelka-resurs">
-                        <a target="_blank" rel="noopener noreferrer"  className="aboutMeLinkStatic" href={"https://www.facebook.com/profile.php?id=100000879196200"}>Адаптивный сайт</a>
+                        <a target="_blank" rel="noopener noreferrer"  className="aboutMeLinkStatic" href={"https://github.com/Olik-Olik"}>Адаптивный сайт</a>
                         <p className="aboutMe__strelka">↗</p>
                 </div>
 

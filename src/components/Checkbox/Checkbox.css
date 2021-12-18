@@ -10,6 +10,7 @@ body {
 
 }
 input[type="checkbox"]{
+ /*   bottom:10px;*/
     cursor: pointer;
     position: relative;
     width: 36px;
@@ -38,7 +39,10 @@ input:checked[type="checkbox"]:before{
     left:18px;
 }
 
-/*
-@media  (min-width: 320px) and (max-width: 596px ){
 
-}*/
+@media  (min-width: 320px) and (max-width: 596px ){
+input[type="checkbox"]{
+    bottom:10px;
+
+}
+}

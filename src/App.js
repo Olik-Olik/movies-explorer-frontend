@@ -15,12 +15,17 @@ import SignInPage from "./components/SignInPage/SignInPage";
 import HeaderSavedFilms from "./components/ProfilePage/HeaderSavedFilms";
 import Checkbox from "./components/Checkbox/Checkbox";*/
 
+//import apiAuth from "./utils/MainApi";
+
+
+
 export default function App(props) {
     //const history = useHistory(); /////
     return (<BrowserRouter>
         <CurrentUserContext.Provider>
-            <><Switch>
-              {/*  <Routes>*/}
+            <>
+                <Switch>
+             {/*   <Routes>*/}
             <Route exact={true} path="/"
                     component={AboutPage}/>
 
@@ -43,6 +48,7 @@ export default function App(props) {
            <Route  path=''
                        component={NotFound_404}/>
             </Switch>
+             {/*   </Routes>*/}
             </>
     {/*    <Footer/>*/}
 

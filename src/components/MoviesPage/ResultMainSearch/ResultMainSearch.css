@@ -105,9 +105,11 @@
     display: flex;
 }
 .result_main_search_icon_smalltube{
+    height: 0;
+    padding-left: 16px;
   /*  padding-top: 46px;*/
     padding-right: 0;
-    padding-left: 0;
+   /* padding-left: 0;*/
     padding-bottom: 0;
 }
 { /*Линия между смоллтубом и Найти*/

@@ -20,8 +20,9 @@
 }
 
 .aboutMe__strelka-resurs {
+    align-items: stretch;
     display: flex;
-    align-items: baseline;
+    /*align-items: baseline;*/
     height: 50px;
     color: #FFFFFF;
     font-family: 'Inter';
@@ -105,6 +106,7 @@
 }
 
 .aboutMe__facebook {
+    padding-right: 20px;
     color: #FFFFFF;
     width: 100%;
     text-decoration: none;
@@ -170,7 +172,7 @@
 
 .aboutMeLinkStatic {
     Font-family: Inter;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: -0.04em;
     width: 100%;
     max-height: 50px;
@@ -180,11 +182,13 @@
     font-size: 30px;
     text-decoration: none;
    /* padding: 20px 0;*/
-    padding-bottom: 30px;
-    border-bottom: 1px solid white;
+    padding-bottom: 19px;
+    padding-top: 20px;
+    border-bottom: 1px solid #424242;
 }
 
 .aboutMe__strelka {
+    display: contents;
     width: 29px;
     height: 60px;
 }
@@ -269,6 +273,7 @@
         font-family: 'Inter';
         font-Size: 18px;
         Line-height: 28px;
+        align-items: baseline;
     }
 
     .links {
