@@ -176,6 +176,31 @@ export default function App(props) {
 
     }
 
+    /*function handleCardLike(card) {
+        // Снова проверяем, есть ли уже лайк на этой карточке
+        const isLiked = card.likes.some(i => i === currentUser._id);
+        if (isLiked) {
+            // Отправляем запрос в API и получаем обновлённые данные карточки
+            apiMovies.card__container_like_passive(card._id)
+                .then((newCard) => {
+                    setCards((cards) => cards.map((c) => c._id === card._id ? newCard : c));
+                })
+                .catch((err) => {
+                    console.log('MAMA!!! DisLike: ' + err.toString())
+                })
+
+        } else {
+            apiMovies.card__container_like_active(card._id)
+                .then((newCard) => {
+                    setCards((cards) => cards.map((c) => c._id === card._id ? newCard : c));
+                })
+                .catch((err) => {
+                    console.log('MAMA!!! Like: ' + err.toString())
+                })
+        }
+    }
+*/
+
     /*function handleLogin(password, emmail) {
         return auth
             .login(password, emmail)

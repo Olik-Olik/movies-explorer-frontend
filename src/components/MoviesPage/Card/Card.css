@@ -11,14 +11,8 @@
     box-sizing: content-box;
     aspect-ratio: initial;
     width: 100%;
-    height: 100%;
-    min-height: 151px;
-    /*max-height: 151px;*/
-    /*
-    padding-top: 20px;
-    padding-bottom: 0;
-    */
-    /*background: url('../../images/kino.svg') no-repeat center;*/
+    height: 151px;
+    cursor: pointer;
 }
 .card__container_name_like{
     display: flex;
@@ -37,28 +31,21 @@
     background-color: transparent;
 }
 
+
 .card__container_like_passive{
     color: #FFFFFF;
     width: 24px;
     height: 24px;
-    padding-left: 20px;
     padding-top: 20px;
-    padding-bottom: 0;
-    padding-right: 20px;
-   /* background-color: transparent;*/
     background: url('../../images/like_passive.svg') no-repeat center;
+    cursor: pointer;
 }
 .card__container_like_active{
     color: #FFFFFF;
     width: 24px;
     height: 24px;
     padding-top: 20px;
- /*   padding-right: 20px;
-    padding-left: 20px;
-
-    padding-bottom: 0;*/
-
-/*    background-color: transparent;*/
+    cursor: pointer;
     background: url('../../images/like_active.svg') no-repeat center ;
 }
 
