@@ -1,17 +1,21 @@
 class ApiMovies {
     constructor(arr) {
         this._address = arr.address;
-        this._headers = arr.headers;
+      /*  this._headers = arr.headers;*/
     }
 
+    _handleResponse(response) {
+        if (response.ok) {
+            return response.json()
+        } else {
+            return Promise.reject("Ошибка, УПС! " + response.status + ":" + response.statusText);
+        }
+    }
 //получение карточек с сервера внешний метод
     getAllAboutMovies() {
-        this.handleToken();
+    //    this.handleToken();
         return fetch(this._address /*+ '/movies'*/,
             {
-                headers: {
-                    'Authorization': this._headers.Authorization,
-                },
                 method: 'GET',
             })
             .then((response) => this._handleResponse(response));

@@ -10,14 +10,17 @@ import line_time_duration from '../../images/line_time_duration.svg';
 import '../../../index.css';
 
 function Card(props){
+    const urlAllFilm = 'https://api.nomoreparties.co';
+
     return(
         /**/
         <form className="card__container" /*onChange={handleFormChange}*/>
 {/*сама картинка*/}
-            <div className="card__image"> </div>
+
+                <img  className="card__image" src={urlAllFilm + props.cardData.image.url} />
                 {/*контейнер название и лайк*/}
                 <div className= "card__container_name_like">
-                    <div className= "card__container_name">Констатация фактов </div>
+                    <div className= "card__container_name">{props.cardData.nameRU}</div>
                     <div className= "card__container_like_active"> </div>
                 </div>
                 {/*длительность кино линия и время*/}

@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'http://localhost:3627';
     class MainApi {
         constructor(arr) {
 
@@ -18,8 +18,7 @@ const BASE_URL = 'http://localhost:3000';
         return fetch(`${this._address}/users/me`, {
             method: 'GET',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
+                ...this._headers ,
                 'Authorization': `Bearer ${token}`,
             }
         })
@@ -30,8 +29,7 @@ const BASE_URL = 'http://localhost:3000';
         return fetch(`${this._address}/users/me`, {
             method: 'PATCH',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
+                ...this._headers,
                 'Authorization': `Bearer ${token}`,
             },
             body: JSON.stringify({
@@ -45,9 +43,8 @@ const BASE_URL = 'http://localhost:3000';
 
     register = (name, password, email) => {
         return fetch(`${this._address}/signup`, {
-            headers: {
+            headers: { ...this._headers,
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
             },
             method: 'POST',
             body: JSON.stringify({
@@ -63,8 +60,8 @@ const BASE_URL = 'http://localhost:3000';
         return fetch(`${this._address}/signin`, {
             method: 'POST',
             headers: {
+                ... this._headers,
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 password: password,
@@ -79,8 +76,7 @@ const BASE_URL = 'http://localhost:3000';
         return fetch(`${this._address}/movies`, {
             method: 'GET',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
+               ... this._headers,
                 'Authorization': `Bearer ${token}`,
             }
         })
@@ -103,9 +99,8 @@ const BASE_URL = 'http://localhost:3000';
         return fetch(`${this._address}/saved-movies`, {
             method: 'POST',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-             /*   'Authorization': `Bearer ${token}`,*/
+              ... this._headers,
+                   'Authorization': `Bearer ${token}`,
             },
             body: JSON.stringify({
                     country: country,
@@ -129,8 +124,7 @@ const BASE_URL = 'http://localhost:3000';
         return fetch(`${this._address}/saved-movies/${id}`, {
             method: 'DELETE',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
+              ... this._headers,
                 'Authorization': `Bearer ${token}`,
             }
         })
@@ -138,7 +132,7 @@ const BASE_URL = 'http://localhost:3000';
     }
 }
     const apiAuth = new MainApi({
-        address: 'https://api.nomoreparties.co/beatfilm-movies',
+        address: BASE_URL,
         headers: {'Content-Type': 'application/json'}
     });
 
