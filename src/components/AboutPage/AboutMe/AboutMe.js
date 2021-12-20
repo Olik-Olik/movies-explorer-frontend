@@ -53,7 +53,7 @@ function AboutMe(props) {
                 </div>
                     <div>
                         <div className="aboutMe__strelka-resurs">
-                            <a target="_blank" rel="noopener noreferrer" className="aboutMeLinkStatic" href={"https://github.com/Olik-Olik"}>Одностраничное приложение</a>
+                            <a target="_blank" rel="noopener noreferrer" className="aboutMeLinkStatic  aboutMeLinkStaticAnotherStyle" href={"https://github.com/Olik-Olik"}>Одностраничное приложение</a>
                             <p className="aboutMe__strelka" >↗</p>
                     </div>
                     </div>

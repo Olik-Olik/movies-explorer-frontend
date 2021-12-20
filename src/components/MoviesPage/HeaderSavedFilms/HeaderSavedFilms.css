@@ -2,12 +2,16 @@
 .header__name_saved-film-movies{
     text-decoration: none;
 }
+.combo{
+    padding-right: 70px;
+}
 .header-color{
     background-color:#202020;
     text-decoration: none;
 }
 /*отделить аккаунт от фильмов сохраненных фильмов лого*/
 .header__logo-films{
+   /* padding-right: 70px;*/
     display: flex;
     background-color: #202020;
     text-decoration: none;
@@ -26,6 +30,7 @@
     background-color: #202020;
 }
 .header__user{
+   /* margin-right: 70px;*/
     border-radius: 20px;
     width: 100px;
     height: 32px;
@@ -60,15 +65,17 @@
 
 }
 .headerIcon{
-    visibility: hidden;
+    display: none;
+   /* visibility: hidden;
+    display: none;!*aaaaaaaaaa*!*/
 }
 @media  (min-width: 769px) and (max-width: 899px ) {
     .headerIcon{
         visibility: initial;
+        display: block;
     }
 .header__user{
-    width: 0;
-    height: 0;
+  display: none;
 }
 }
 
@@ -82,6 +89,7 @@
     }
     .headerIcon{
         visibility: initial;
+        display: block;
     }
     .header__akkaunt-profile{
         width: 0.1vW;
@@ -91,15 +99,19 @@
 
 
 @media  (min-width: 320px) and (max-width: 596px ) {
+    .combo{
+        padding-right: 0px;
+    }
     .find-line-icon{
         width: 0;
         height: 0;
         visibility: hidden;
     }
     .result_main_search_icon_line{
-        width: 0;
+        display: none;
+      /*  width: 0;
         height: 0;
-        visibility: hidden;
+        visibility: hidden;*/
     }
     .result_main_search__button_find {
         right: 0;
@@ -128,5 +140,9 @@
 }
 @media  screen and (max-width:320px ){
     .result_main_search__button_find{
-    margin:0 ;}}
+    margin:0 ;}
+    .combo{
+        padding-right: 0px;
+    }
+}
 

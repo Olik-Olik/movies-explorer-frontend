@@ -171,7 +171,8 @@
 }
 
 .aboutMeLinkStatic {
-    Font-family: Inter;
+    height: 10px;
+    Font-family: 'Inter', serif;
     font-weight: 400;
     letter-spacing: -0.04em;
     width: 100%;
@@ -181,12 +182,13 @@
     line-height: 16px;
     font-size: 30px;
     text-decoration: none;
-   /* padding: 20px 0;*/
     padding-bottom: 19px;
     padding-top: 20px;
     border-bottom: 1px solid #424242;
 }
-
+.aboutMeLinkStaticAnotherStyle{
+   border-bottom: none;
+}
 .aboutMe__strelka {
     display: contents;
     width: 29px;
@@ -263,6 +265,7 @@
     }
 
     .aboutMeLinkStatic {
+      /*  height: 10px;*/
         Font-family: Inter;
         font-weight: 400;
         letter-spacing: -0.04em;

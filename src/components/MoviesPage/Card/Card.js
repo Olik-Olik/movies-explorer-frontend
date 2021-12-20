@@ -8,9 +8,9 @@ import like_passive from '../../images/like_passive.svg';
 import line_time_duration from '../../images/line_time_duration.svg';
 import TimeConvert from '../../../utils/TimeConvert/TimeConvert';
 import '../../../index.css';
-
+/*
 const Card = ({ idSavedMovies,
-                  isDeleteMovies,movie,saveId}) => {
+                  isDeleteMovies, movie, saveId}) => {
 const {
     country,
     director,
@@ -23,8 +23,8 @@ const {
     trailer,
     thumbnail,
     image,
-   /* idSavedMovies,
-    isDeleteMovies,*/
+   /!* idSavedMovies,
+    isDeleteMovies,*!/
 } = movie;
 
     const [isLiked, setIsLiked] =useState(false);
@@ -52,10 +52,10 @@ const handleLikeSaveFilm =(props) => {
         image:image
     })
     }
-const  handleDeleteFilm = (props) =>{
-    isDeleteMovies({movieId})
-}
+const  handleDeleteFilm = () =>{
+    isDeleteMovies({movieId})*/
 
+function Card(props){
     const urlAllFilm = 'https://api.nomoreparties.co';
 
     return(

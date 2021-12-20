@@ -46,3 +46,17 @@ input[type="checkbox"]{
 
 }
 }
+
+@media (min-width: 320px) and (max-width: 596px) {
+/*    input[type="checkbox"]:before {
+        width: 0;
+        height: 0;
+        padding: 0;
+    }
+    input[type="checkbox"] {
+        width: 0;
+        height: 0;
+        padding: 0;
+    }*/
+
+}

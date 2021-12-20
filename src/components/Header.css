@@ -108,10 +108,8 @@
     cursor: pointer;
 }
 .header__exit{
-    Font-family: Inter;
+    Font-family: 'Inter', serif;
    font-weight: 500;
-Font-size: 12px;
- /*  background-color: rgba(0, 0, 0, 0.2);*/
     width: 76px;
     height: 32px;
     line-height: 16px;
@@ -120,19 +118,20 @@ Font-size: 12px;
     margin-bottom: 39px;
     border: none;
     font-size: 16px;
-    font-weight: 500;
     background: #3DDC84;
 }
-
-@media screen and (max-width: 320px){
+@media screen and (max-width: 1023px){}
+@media screen and (max-width: 768px){
+    .header{
+        padding: 18px 30px;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .header__exit{
+        Font-size: 12px;
+        margin-right: 20px;
+    }
     .header{
         padding: 14px 18px;
     }
 }
-@media screen and (max-width: 768px){
-    .header{
- padding: 18px 30px;
-          }
-}
-@media screen and (max-width: 1023px){}
-
