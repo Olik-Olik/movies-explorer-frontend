@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import '../Card/Card.css';
 import kino from '../../images/kino.svg';
 import smalltumb from '../../images/smalltumb.svg';
@@ -9,30 +9,77 @@ import line_time_duration from '../../images/line_time_duration.svg';
 import TimeConvert from '../../../utils/TimeConvert/TimeConvert';
 import '../../../index.css';
 
-function Card(props){
+const Card = ({ idSavedMovies,
+                  isDeleteMovies,movie,saveId}) => {
+const {
+    country,
+    director,
+    duration,
+    year,
+    description,
+    movieId,
+    nameRU,
+    nameEN,
+    trailer,
+    thumbnail,
+    image,
+   /* idSavedMovies,
+    isDeleteMovies,*/
+} = movie;
+
+    const [isLiked, setIsLiked] =useState(false);
+
+useEffect(() =>{
+    if (cardData.savedId.include(movieId)){
+        setIsLiked(true);}
+    else {
+        setIsLiked(false);
+    }},[savedId, setIsLiked]
+
+)
+const handleLikeSaveFilm =(props) => {
+    isSavedMovies({
+        country:country,
+        director:director,
+        duration:duration,
+        year:year,
+        description:description,
+        movieId:movieId,
+        nameRU:nameRU,
+        nameEN:nameEN,
+        trailer:trailer,
+        thumbnail:thumbnail,
+        image:image
+    })
+    }
+const  handleDeleteFilm = (props) =>{
+    isDeleteMovies({movieId})
+}
+
     const urlAllFilm = 'https://api.nomoreparties.co';
 
     return(
-        /**/
         <form className="card__container" >
-{/*сама картинка*/}
             <a target="_blank" rel="noopener noreferrer"
                className="card__image" href = { props.cardData.trailerLink} >
-                <img  className="card__image" src={urlAllFilm + props.cardData.image.url} /></a>
-
+                <img alt="Постер киношки" className="card__image" src={urlAllFilm + props.cardData.image.url} /></a>
               {/*  <img  className="card__image" src={urlAllFilm + props.cardData.image.url} />*/}
-
                 {/*контейнер название и лайк*/}
+
                 <div className= "card__container_name_like">
+                    <div className= "card__container_name">{props.cardData.nameRU || props.cardData.nameEN }</div>
+
+                    <button className= "card__container_like_passive"
+                   /*  onClick={!isLiked ? handleLikeSaveFilm : handleDeleteFilm}*/
+                    >
+                    </button>
 
 
-                    <div className= "card__container_name">{props.cardData.nameRU}</div>
-                    <div className= "card__container_like_passive"> </div>
                 </div>
                 {/*длительность кино линия и время*/}
                 <div className="card__container_time_line"> </div>
                    <div className= "card__container_line"> </div>
-                   <div className= "card__container_time">{TimeConvert(props.cardData.duration)}</div>
+                   <p className= "card__container_time">{TimeConvert(props.cardData.duration)}</p>
 
         </form>
 

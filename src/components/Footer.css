@@ -5,7 +5,7 @@
     flex-direction: column;
     padding: 79px 70px 20px 70px;
     width: 100%;
-    font-family: 'Inter';
+    font-family: 'Inter', serif;
     box-sizing: border-box;
 }
 .footer__title{
@@ -77,6 +77,7 @@
 }
 @media screen and (min-width: 200px) and (max-width: 620px) {
 .footer__title{
+    padding-top: 0;
     Font-size: 12px;
     Line-height: 15px;
     padding-right: 0;
@@ -88,6 +89,8 @@
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
+  /*  border-top: 1px solid #424242;*/
+
 }
 
 .footer__container-data {

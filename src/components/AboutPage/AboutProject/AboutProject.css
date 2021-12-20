@@ -15,7 +15,7 @@ background-color: #202020;
     color: #FFFFFF;
     font-weight: 400;
     letter-spacing: -0.04em;
-    Font-family: 'Inter';
+    font-family: 'Inter', serif;
     border-bottom: 1px solid #DADADA;
 
 }
@@ -44,7 +44,7 @@ background-color: #202020;
     font-weight: 400;
     font-size: 20px;
     letter-spacing: -0.04em;
-    Font-family: 'Inter';
+    font-family: 'Inter', serif;
 
 }
 
@@ -58,20 +58,20 @@ background-color: #202020;
     font-size: 20px;
     line-height: 24px;
     letter-spacing: -.04em;
-    Font-family: 'Inter';
+    font-family: 'Inter', serif;
 }
 /*///////////////////////////////////////////////////////////////////*/
 /* вторая строчка*/
 .aboutProject__2stolb{
     max-height: 40px;
     width: 100%;
-    Font-family: 'Inter';
+    font-family: 'Inter', serif;
    /* display: flex;
     justify-content: space-between;*/
 
 }
 .aboutProject__process2stolb {
-    Font-family: 'Inter';
+    font-family: 'Inter', serif;
     width: 100%;
     padding-top: 26px;
     max-width: 550px;
@@ -84,7 +84,7 @@ background-color: #202020;
 
 }
 .aboutProject__process1stolb{
-    Font-family: 'Inter';
+    font-family: 'Inter', serif;
     width: 100%;
     background-color: #202020;
     padding-top: 26px;
@@ -113,6 +113,7 @@ background-color: #202020;
     align-items: baseline;
 }
 .aboutProject__button_first{
+    align-items: center;
     width: 228px;
     height: 36px;
     background: #3DDC84;  /* цвет фона */
@@ -125,6 +126,7 @@ background-color: #202020;
 }
 
 .aboutProject__button_second{
+    align-items: center;
     width: 912px;
     height: 36px;
     background: #303030;
@@ -138,6 +140,7 @@ background-color: #202020;
 /* Надписи под 1 и 4 неделями*/
 
 .aboutProject__button_first_down{
+    align-items: center;
     width: 228px;
     height: 36px;
     background: #202020;  /* цвет фона */
@@ -150,6 +153,7 @@ background-color: #202020;
 }
 
 .aboutProject__button_second_down{
+    align-items: center;
     width: 912px;
     height: 36px;
     background: #202020;
@@ -166,18 +170,18 @@ background-color: #202020;
     padding-right: 50px;
 }
     .aboutProject__title {
-        Font-family: 'Inter';
+        font-family: 'Inter', serif;
         font-weight: 400;
         Font-size: 22px;
         Line-height: 27px;
     }
 
     .aboutProject__title1stolb{
-        Font-size: 24px;
+        Font-size: 20px;
         Line-height: 20px;
     }
     .aboutProject__title2stolb{
-        Font-size: 24px;
+        Font-size: 20px;
         Line-height: 20px;
     }
     .aboutProject__process1stolb {
@@ -205,7 +209,7 @@ background-color: #202020;
     }
 
 .aboutProject__title {
-    Font-family: 'Inter';
+    font-family: 'Inter', serif;
     font-weight: 400;
     Font-size: 18px;
     Line-height: 22px;
@@ -247,6 +251,8 @@ background-color: #202020;
         padding-bottom: 60px;
     }
     .aboutMe__main{
-        padding-bottom: 56px;
+        padding-top: 10px;
+      /*  padding-bottom: 56px;*/
+        padding-bottom: 70px;
     }
 }

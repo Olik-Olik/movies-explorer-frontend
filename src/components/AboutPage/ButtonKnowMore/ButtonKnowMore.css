@@ -17,7 +17,7 @@
 }
 @media screen and (min-width: 200px) and (max-width: 500px) {
     .button__main {
-        Font-family: 'Inter';
+        font-family: 'Inter', serif;
         font-weight: 500;
     Font-size: 12px;
     Line-height: 16px;

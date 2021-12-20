@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 /*import MoviesPages from "./MoviesPages/MoviesPages";*/
 import ResultMainMore from "./ResultMainMore/ResultMainMore";
 import Card from "./Card/Card";
@@ -10,6 +10,7 @@ import '../../index.css';
 import Footer from "../Footer";
 import Header from "../Header";
 import HeaderSavedFilms from "./HeaderSavedFilms/HeaderSavedFilms";
+import {render} from "react-dom";
 
 /*
 class MoviesPages extends Component {
@@ -22,27 +23,40 @@ class MoviesPages extends Component {
     }
     render() {
         return(
-            this.state.isLoading ?  <Preloader/> : <MoviesCardList/>
+            { this.state.isLoading ? ( <Preloader/> ): <MoviesCardList/>}
             <HeaderSavedFilms/>
-
             <ResultMainSearch/>
-            {/!*    </Suspense>*!/}
-            {/!* <Preloader/>*!/}
             <MoviesCardList/>
             <ResultMainMore/>
             <Footer/>
     }
-        )
     }
 export default MoviesPages;*/
 
 function MoviesPages(props){
+    const [isLoading, setLoading] = useState(false);
+
+  /*  useEffect(() => {
+        console.log("Load finished!");
+        //setLoading(false);
+    }, [isLoading]);*/
+
+    useEffect(() => {
+        const loading = () =>{
+            setLoading(false);}
+        window.addEventListener("load", loading )
+    }, [])
+
+
     return (
         <>
-            <ResultMainMore/>
+            <HeaderSavedFilms/>
             <ResultMainSearch/>
-            {/*<Card/>*/}
-            <MoviesCardList/>
+
+            {isLoading ? (
+                <Preloader/>) : (<MoviesCardList loading = {setLoading} />)}
+            <ResultMainMore/>
         </>
     )}
+
 export default MoviesPages;

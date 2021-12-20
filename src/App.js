@@ -15,6 +15,7 @@ import SignInPage from "./components/SignInPage/SignInPage";
 import HeaderSavedFilms from "./components/ProfilePage/HeaderSavedFilms";
 import Checkbox from "./components/Checkbox/Checkbox";*/
 import apiMovies from "./utils/MoviesApi";
+import Preloader from "./components/Preloader";
 //import apiAuth from "./utils/MainApi";
 
 
@@ -249,7 +250,7 @@ export default function App(props) {
     return (<BrowserRouter>
         <CurrentUserContext.Provider>
             <>
-                {!isLoading &&
+          {/*      {!isLoading &&*/}
                 <Switch>
                     {/*   <Routes>*/}
                     <Route exact={true} path="/"
@@ -261,8 +262,11 @@ export default function App(props) {
                     <Route exact={true} path="/sign-up"
                            component={SignUpPage}/>
 
+                  {/*  {isLoading ? (
+                        <Preloader/>) : (*/}
                     <Route exact={true} path="/movies"
                            component={MoviesPage}/>
+              {/*      )}*/}
 
                     <Route exact={true} path="/saved-movies"
                            component={SavedMoviesPages}/>
@@ -274,7 +278,7 @@ export default function App(props) {
                     <Route path=''
                            component={NotFound_404}/>
                 </Switch>
-                }
+
                 {/*   </Routes>*/}
             </>
             {/*    <Footer/>*/}

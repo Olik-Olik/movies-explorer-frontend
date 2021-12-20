@@ -26,7 +26,7 @@
         gap: 16px;
         padding: 0 24px 0 24px;
     }
-}
+}.result_main_search_icon_film
 
 @media (min-width: 320px) and (max-width: 500px){
     .movies-grid {
@@ -35,5 +35,5 @@
     }
 }
 .moviesCard_list{
-     padding: 10px 70px 50px 10px;
+     padding: 0;
 }

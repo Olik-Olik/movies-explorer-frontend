@@ -12,8 +12,11 @@ import like_passive from '../images/like_passive.svg';
 import line_time_duration from '../images/line_time_duration.svg';
 
 import '../../index.css';
+import HeaderSavedFilms from "../MoviesPage/HeaderSavedFilms/HeaderSavedFilms";
+import Header from "../Header";
 
 function Movies(props){
+ /* <Header/>*/
     return(
         <form className="result_main_search">
 

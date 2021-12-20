@@ -63,15 +63,12 @@
     color: #8B8B8B;
     box-sizing: border-box;
     border: none;
-    /*   width: 60px;*/
-    /* height: 22px;*/
-    /*  padding: 25px 10px;*/
-    padding-top: 25px;
+    padding-top: 10px;
 }
 
 .lupa-film {
     display: flex;
-
+    align-items: center;
 }
 
 .icon-shortfilm {
@@ -132,13 +129,16 @@
 }
 /*Голубая кнопка Найти*/
 .result_main_search__button_find {
+    cursor: pointer;
+    right: 60px;
+    left: 0px;
+    margin-right: 0px;
     width: 80px;
     position: relative;
     background: url('../../images/find.svg') no-repeat center;
     box-sizing: border-box;
     border: none;
-    left: 21.35px;
-    padding: 8px 10.35px;
+  /*  left: 21.35px;*/
     font-size: 11px;
     line-height: 18px;
     align-items: Center;
@@ -159,6 +159,8 @@
 }
 @media screen and (max-width: 593px) {
     .result_main_search {
+        padding-top: 90px;
+        padding-bottom: 200px;
         padding-left: 10px;
         padding-right: 10px;
       /*  height: 70px;*/
@@ -198,4 +200,12 @@
 }
 }
 
+@media screen and (max-width: 344px) {
+.result_main_search__button_find{
 
+}
+    .find-line-icon{
+        width: 0px;
+        height: 0px;
+        padding-top: 0px;}
+}

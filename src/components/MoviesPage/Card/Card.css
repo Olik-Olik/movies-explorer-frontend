@@ -33,6 +33,17 @@
 
 
 .card__container_like_passive{
+    border-bottom-width: 0px;
+    border-top-width: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    border-left-width: 0px;
+    padding-right: 0px;
+    border-right-width: 0px;
+    padding-bottom: 0px;
+    /* top: 20px; */
+    bottom: 20px;
+    margin-top: 10px;
     color: #FFFFFF;
     width: 24px;
     height: 24px;
@@ -41,6 +52,17 @@
     cursor: pointer;
 }
 .card__container_like_active{
+    border-bottom-width: 0px;
+    border-top-width: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    border-left-width: 0;
+    padding-right: 0;
+    border-right-width: 0;
+    padding-bottom: 0;
+    /* top: 20px; */
+    bottom: 20px;
+    margin-top: 10px;
     color: #FFFFFF;
     width: 24px;
     height: 24px;
