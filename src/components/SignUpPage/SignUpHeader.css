@@ -69,7 +69,7 @@
 }
       @media screen and (max-width: 620px){
           .header__welcome {
-              Font-family: Inter;
+              font-family: 'Inter', serif;;
              font-weight: 500  ;
              Font-size: 24px;
              Line-height: 29px;
@@ -97,7 +97,7 @@
 
 
               padding-left: 30px;
-              padding-right: 0px;
+              padding-right: 0;
           }
       }
 /*

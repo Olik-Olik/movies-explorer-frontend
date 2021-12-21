@@ -114,7 +114,7 @@
 
 .aboutMe__portfolio {
     box-sizing: border-box;
-    Font-family: Inter;
+    font-family: 'Inter', serif;;
     Font-Weight: 400;
     Font-Style: normal;
     width: 100%;
@@ -245,7 +245,7 @@
         width: 292px;
         height: 112px;
         padding-right: 0;
-        Font-family: Inter;
+        font-family: 'Inter', serif;;
         font-weight: 400;
         Font-size: 11px;
         Line-height: 16px;
@@ -266,7 +266,7 @@
 
     .aboutMeLinkStatic {
       /*  height: 10px;*/
-        Font-family: Inter;
+        font-family: 'Inter', serif;;
         font-weight: 400;
         letter-spacing: -0.04em;
         max-height: 50px;
@@ -330,7 +330,7 @@
         padding-bottom: 30px;
     }
     /*.aboutMeLinkStatic {
-        Font-family: Inter;
+        font-family: 'Inter', serif;;
         font-weight: 400;
         letter-spacing: -0.04em;
         line-height: 50px;

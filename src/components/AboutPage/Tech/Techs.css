@@ -11,7 +11,7 @@
 .techs__title_small{
     width: 100%;
     max-width: 1140px;
-    font-family: Inter, serif;
+    font-family: 'Inter', serif;
     font-weight: 400;
     font-style: normal;
     font-size: 22px;
@@ -28,7 +28,7 @@
     text-align: center;
     width: 100%;
     max-width: 1140px;
-    font-family: Inter, serif;
+    font-family: 'Inter', serif;
     font-weight: 400;
     font-style: normal;
     font-size: 50px;
@@ -45,7 +45,7 @@
 .techs__body{
     text-align: center;
     width: 100%;
-    font-family: Inter, serif;
+    font-family: 'Inter', serif;
     font-weight: 400;
     font-style: normal;
     vertical-align: Top;

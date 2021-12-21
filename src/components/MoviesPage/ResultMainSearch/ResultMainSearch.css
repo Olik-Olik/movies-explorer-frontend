@@ -131,8 +131,8 @@
 .result_main_search__button_find {
     cursor: pointer;
     right: 60px;
-    left: 0px;
-    margin-right: 0px;
+    left: 0;
+    margin-right: 0;
     width: 80px;
     position: relative;
     background: url('../../images/find.svg') no-repeat center;
@@ -215,7 +215,7 @@
 
 }
   /*  .find-line-icon{
-        width: 0px;
-        height: 0px;
-        padding-top: 0px;}*/
+        width: 0;
+        height: 0;
+        padding-top: 0;}*/
 }

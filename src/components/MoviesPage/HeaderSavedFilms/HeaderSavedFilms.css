@@ -77,6 +77,9 @@
 .header__user{
   display: none;
 }
+.combo{
+/*    padding-right: 70px;*/
+}
 }
 
 @media  (min-width: 320px) and (max-width: 768px ) {
@@ -94,13 +97,19 @@
     .header__akkaunt-profile{
         width: 0.1vW;
     }
-
+    .combo{
+        width: 44px;
+        height: 44px;
+        padding-right: 30px;
+    }
 }
-
 
 @media  (min-width: 320px) and (max-width: 596px ) {
     .combo{
-        padding-right: 0px;
+        /*padding-right: 0;*/
+        padding-right: 20px;
+        width: 44px;
+        height: 44px;
     }
     .find-line-icon{
         width: 0;
@@ -142,7 +151,7 @@
     .result_main_search__button_find{
     margin:0 ;}
     .combo{
-        padding-right: 0px;
+        padding-right: 0;
     }
 }
 

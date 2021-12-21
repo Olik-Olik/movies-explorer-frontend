@@ -6,7 +6,6 @@
     background-color:#202020;
     max-width: 270px;
 }
-
 .card__image{
     box-sizing: content-box;
     aspect-ratio: initial;
@@ -31,16 +30,16 @@
     background-color: transparent;
 }
 
-
-.card__container_like_passive:hover{
-    border-bottom-width: 0px;
-    border-top-width: 0px;
-    padding-top: 0px;
-    padding-left: 0px;
-    border-left-width: 0px;
-    padding-right: 0px;
-    border-right-width: 0px;
-    padding-bottom: 0px;
+.card__container_like_passive{
+/*.like[type="checkbox"]{*/
+    border-bottom-width: 0;
+    border-top-width: 0;
+ /*   padding-top: 0;*/
+    padding-left: 0;
+    border-left-width: 0;
+    padding-right: 0;
+    border-right-width: 0;
+    padding-bottom: 0;
     /* top: 20px; */
     bottom: 20px;
     margin-top: 10px;
@@ -52,10 +51,11 @@
     cursor: pointer;
 }
 .card__container_like_active{
-    border-bottom-width: 0px;
-    border-top-width: 0px;
-    padding-top: 0px;
-    padding-left: 0px;
+/*.like:checked[type="checkbox"]{*/
+    border-bottom-width: 0;
+    border-top-width: 0;
+  /*  padding-top: 0;*/
+    padding-left: 0;
     border-left-width: 0;
     padding-right: 0;
     border-right-width: 0;
@@ -71,8 +71,9 @@
     background: url('../../images/like_active.svg') no-repeat center ;
 
 }
-/*для сохраненных фильмов*/
-.card__delete/*:checked[type="checkbox"]*/{
+/*для сохраненных фильмов delete*/
+/*.like[type="checkbox"]:before{*/
+.card__delete{
     width: 24px;
     height: 24px;
     cursor: pointer;
@@ -80,13 +81,7 @@
     background: url('../../images/delete.svg') no-repeat center;
 }
 
-.card__delete/*:checked[type="checkbox"]*/{
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    background-color: #313131;
-    background: url('../../images/delete.svg') no-repeat center;
-}
+
 .card__container_time{
     display: contents;
     width: 34px;
@@ -103,4 +98,31 @@
     width: 270px;
     height: 1px;
     padding-bottom: 6px;
+}
+
+input[type="checkbox"]{
+    /*   bottom:10px;*/
+    cursor: pointer;
+    position: relative;
+    width: 36px;
+    height: 20px;
+    -webkit-appearance: none; /*для отображения элемента*/
+    background:  #202020;
+    border-radius: 16px;
+    transition: .01s; /*ненавижу долгие переключения*/
+}
+input:checked[type="checkbox"]{
+    background: #202020;
+}
+input[type="checkbox"]:before{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    top:0;
+    left:0;
+    background:#3DDC84;
+    transition: 0.01s;
+    transform: scale(1.1); /*, без сжатий и увеличений*/
 }
