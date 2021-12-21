@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 /*import MoviesPages from "./MoviesPages/MoviesPages";*/
 import ResultMainMore from "./ResultMainMore/ResultMainMore";
-import Card from "./Card/Card";
+import MovieCard from "./Card/MovieCard";
 import ResultMainSearch from "./ResultMainSearch/ResultMainSearch";
 import MoviesCardList from "./MoviesCardList/MoviesCardList";
 import Preloader from "../Preloader";
@@ -51,11 +51,13 @@ function MoviesPages(props){
     return (
         <>
             <HeaderSavedFilms/>
+            <main>
             <ResultMainSearch/>
 
             {isLoading ? (
-                <Preloader/>) : (<MoviesCardList loading = {setLoading} />)}
+             <Preloader/>) : (<MoviesCardList loading = {setLoading} />)}
             <ResultMainMore/>
+            </main>
         </>
     )}
 

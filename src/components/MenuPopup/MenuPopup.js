@@ -19,15 +19,15 @@ function MenuPopup(props) {
                     <div className="popup__container-image">
 
                         <a href="/">
-                            <div className="{header__akkaunt  mobile-main mobile-visibility">Главная
+                            <div className="{popup__akkaunt  mobile-main mobile-visibility">Главная
                             </div>
                         </a>
-                        <a href="/movies" className="header__name_saved-film">
-                            <div className="header__name_saved-film mobile-visibility">Фильмы</div>
+                        <a href="/movies" className="popup__name_saved-film popup__film ">
+                            <div className="popup__name_saved-film mobile-visibility ">Фильмы</div>
                         </a>
 
                         <a href="/saved-movies">
-                            <div className="header__auth mobile-visibility mobile-saved-films">Сохраненные фильмы</div>
+                            <div className="popup__auth mobile-visibility mobile-saved-films ">Сохраненные фильмы</div>
                         </a>
                     </div>
                 </div>

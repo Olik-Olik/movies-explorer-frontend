@@ -10,7 +10,9 @@ function SignUpPage(props){
     return (
         <>
             <SignUpHeader/>
+            <main>
             <Register/>
-{/*<Footer/>*/}
+            </main>
+            {/*<Footer/>*/}
         </>)}
 export default SignUpPage;

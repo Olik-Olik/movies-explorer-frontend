@@ -16,7 +16,9 @@ function ProfilePage(props) {
           {/*  <SignInHeader/>*/}
        {/*     <Header/>*/}
         <HeaderSavedFilms/>
+        <main>
         <ProfileSummaryPage/>
+        </main>
         </>
     )
 }

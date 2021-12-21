@@ -29,58 +29,80 @@
     Line-height:15.73px;
     background-color: transparent;
 }
+.combini{
+    display: flex;
+    justify-content: space-between;
+}
+.like{
+    cursor: pointer;
 
-.card__container_like_passive{
-/*.like[type="checkbox"]{*/
+    display: flex;
+    background: url('../../images/like_active.svg') no-repeat center ;
+    width: 24px;
+    height: 24px;
     border-bottom-width: 0;
     border-top-width: 0;
- /*   padding-top: 0;*/
     padding-left: 0;
     border-left-width: 0;
     padding-right: 0;
     border-right-width: 0;
     padding-bottom: 0;
-    /* top: 20px; */
     bottom: 20px;
     margin-top: 10px;
     color: #FFFFFF;
-    width: 24px;
-    height: 24px;
     padding-top: 20px;
+}
+.like:hover{
+    transition: 0.01s;
+    transform: scale(2) perspective(2px);
+}
+.card__container_like_passive{
+/*.card__like[type="checkbox"]{*/
+
+    opacity: 0.5;
     background: url('../../images/like_passive.svg') no-repeat center;
     cursor: pointer;
 }
 .card__container_like_active{
-/*.like:checked[type="checkbox"]{*/
-    border-bottom-width: 0;
-    border-top-width: 0;
-  /*  padding-top: 0;*/
-    padding-left: 0;
-    border-left-width: 0;
-    padding-right: 0;
+ /*   padding-right: 0;
     border-right-width: 0;
     padding-bottom: 0;
-    /* top: 20px; */
     bottom: 20px;
     margin-top: 10px;
-    color: #FFFFFF;
-    width: 24px;
-    height: 24px;
     padding-top: 20px;
-    cursor: pointer;
+    cursor: pointer;*/
+    opacity: 0.5;
+    border: none;
     background: url('../../images/like_active.svg') no-repeat center ;
+}
+.card__container_like_passive:hover{
 
+/* transform: scale(2) rotate(0.5turn) perspective(10px);*/}
+
+.card__container_like_passive:before{
+    border: none;
+    content: "";
+    position: absolute;
+}
+.card__container_like_passive:hover{
+    cursor: pointer;
+    transition: 0.01s;
+    transform: scale(1.1);
 }
 /*для сохраненных фильмов delete*/
-/*.like[type="checkbox"]:before{*/
-.card__delete{
+.like__delete{
+/*.card__like[type="checkbox"]:before{*/
+    border: none;
+    opacity: 0.5;
     width: 24px;
     height: 24px;
     cursor: pointer;
     background-color: #313131;
     background: url('../../images/delete.svg') no-repeat center;
 }
+.like__delete:hover{
 
+}
 
 .card__container_time{
     display: contents;
@@ -99,17 +121,18 @@
     height: 1px;
     padding-bottom: 6px;
 }
+/*
 
 input[type="checkbox"]{
-    /*   bottom:10px;*/
+    !*   bottom:10px;*!
     cursor: pointer;
     position: relative;
     width: 36px;
     height: 20px;
-    -webkit-appearance: none; /*для отображения элемента*/
+    -webkit-appearance: none; !*для отображения элемента*!
     background:  #202020;
     border-radius: 16px;
-    transition: .01s; /*ненавижу долгие переключения*/
+    transition: .01s; !*ненавижу долгие переключения*!
 }
 input:checked[type="checkbox"]{
     background: #202020;
@@ -124,5 +147,5 @@ input[type="checkbox"]:before{
     left:0;
     background:#3DDC84;
     transition: 0.01s;
-    transform: scale(1.1); /*, без сжатий и увеличений*/
-}
+    transform: scale(1.1); !*, без сжатий и увеличений*!
+}*/

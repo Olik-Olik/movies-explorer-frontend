@@ -13,10 +13,12 @@ function AboutPage(props){
     return (
         <>
             <Header/>
+            <main>
             <ProjectPage/>
             <AboutProject/>
             <Techs/>
              <AboutMe/>
+            </main>
             <Footer/>
             </>)}
 export default AboutPage;

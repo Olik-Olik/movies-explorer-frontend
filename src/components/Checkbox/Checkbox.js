@@ -4,8 +4,11 @@ import '../../index.css';
 
 function Checkbox() {
 return(
-<div className ="tumb">
-    <input type="checkbox"/>
+<div className ="tumb" >
+    <input type="checkbox"
+           className="tumb__checkbox"
+       /*  onChange={(evt.target.check) => }*/
+    />
 </div>
 )
 }

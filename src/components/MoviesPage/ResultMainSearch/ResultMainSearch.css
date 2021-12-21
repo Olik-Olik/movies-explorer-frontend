@@ -35,13 +35,16 @@
     color: #C4C4C4;
     box-sizing: border-box;
     width: 60px;
-    height: 22px;
+    height: 65px;
     padding: 25px 10px;
 
 }
 
 .result_main_search_icon__lupa:hover {
     cursor: pointer;
+    transition: 0.01s;
+    transform: scale(2) perspective(1px);
+
 }
 
 .result_main_search__button_find:hover {

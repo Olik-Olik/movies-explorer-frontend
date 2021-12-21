@@ -1,9 +1,10 @@
 import React, {useEffect, useState,}  from "react";
 import  '../../MoviesPage/Card/Card.css';
 import './MoviesCardList.css'
-import '../../MoviesPage/Card/Card';
+import '../Card/MovieCard';
 //import kino from '../../../images/kino.svg';
-import Card from "../Card/Card";
+
+import MovieCard from "../Card/MovieCard";
 import apiMovies from "../../../utils/MoviesApi";
 function MoviesCardList(props){
         const [cards, setCards] = useState([]);
@@ -34,7 +35,7 @@ function MoviesCardList(props){
 
       {cards &&
         cards.map(card => (
-            <Card cardData={card}/>))}
+            <MovieCard cardData={card}/>))}
     </section>
 )
 }

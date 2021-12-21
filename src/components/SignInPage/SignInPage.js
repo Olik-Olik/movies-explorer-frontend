@@ -19,7 +19,9 @@ function SignInPage(props){
     return (
         <>
             <SignInHeader/>
+            <main>
             <Login/>
-<Footer/>
+            </main>
+            <Footer/>
         </>)}
 export default SignInPage;

@@ -1,7 +1,7 @@
 import React from "react";
 //import MoviesPages from "./MoviesPages/MoviesPages";
 /*import ResultMainMore from "../MoviesPage/ResultMainMore/ResultMainMore";
-import Card from "../MoviesPage/Card/Card";*/
+import MovieCard from "../MoviesPage/MovieCard/MovieCard";*/
 import ResultMainSearch from "../MoviesPage/ResultMainSearch/ResultMainSearch";
 import MoviesCardList from "../MoviesPage/MoviesCardList/MoviesCardList";
 import '../../index.css';
@@ -14,8 +14,10 @@ function SavedMoviesPages(props){
     return (
         <>
             <HeaderSavedFilms/>
+          <main>
             <ResultMainSearch/>
             <MoviesCardList/>
+          </main>
             <Footer/>
         </>
     )}

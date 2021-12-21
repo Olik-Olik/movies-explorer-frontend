@@ -1,6 +1,6 @@
 import React from 'react';
 import './/Movies.css';
-import './/Card.css';
+import './/MovieCard.css';
 import '../Preloader.css';
 import '../MoviesPage/MoviesCardList/MoviesCardList.css';
 import '../MoviesSearch.css';
