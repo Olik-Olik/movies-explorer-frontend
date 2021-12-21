@@ -69,9 +69,10 @@ function Card(props){
                 <div className= "card__container_name_like">
                     <div className= "card__container_name">{props.cardData.nameRU || props.cardData.nameEN }</div>
 
-                    <button className= "card__container_like_passive"
-                   /*  onClick={!isLiked ? handleLikeSaveFilm : handleDeleteFilm}*/
-                    >
+                    <button className= "card__container_like_passive card__delete card__container_like_active" >
+
+             { /*       onClick={!isLiked ? handleLikeSaveFilm : handleDeleteFilm}*/}
+
                     </button>
 
 
