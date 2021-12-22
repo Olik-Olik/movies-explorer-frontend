@@ -250,32 +250,31 @@ export default function App(props) {
     return (<BrowserRouter>
         <CurrentUserContext.Provider>
             <>
-          {/*      {!isLoading &&*/}
-                <Switch>
-                    {/*   <Routes>*/}
-                    <Route exact={true} path="/"
-                           component={AboutPage}/>
+                {!isLoading &&
+                    <Switch>
+                        {/*   <Routes>*/}
+                        <Route exact={true} path="/"
+                               component={AboutPage}/>
 
-                    <Route exact={true} path="/sign-in"
-                           component={SignInPage}/>
+                        <Route exact={true} path="/sign-in"
+                               component={SignInPage}/>
 
-                    <Route exact={true} path="/sign-up"
-                           component={SignUpPage}/>
+                        <Route exact={true} path="/sign-up"
+                               component={SignUpPage}/>
 
-                    <Route exact={true} path="/movies"
-                           component={MoviesPage}/>
+                        <Route exact={true} path="/movies"
+                               component={MoviesPage}/>
 
-                    <Route exact={true} path="/saved-movies"
-                           component={SavedMoviesPages}/>
+                        <Route exact={true} path="/saved-movies"
+                               component={SavedMoviesPages}/>
 
-                    <Route exact={true} path="/profile"
-                           component={ProfilePage}/>
+                        <Route exact={true} path="/profile"
+                               component={ProfilePage}/>
 
-
-                    <Route path=''
-                           component={NotFound_404}/>
-                </Switch>
-
+                        <Route path=''
+                               component={NotFound_404}/>
+                    </Switch>
+                }
                 {/*   </Routes>*/}
             </>
             {/*    <Footer/>*/}

@@ -52,13 +52,14 @@ function MoviesPages(props){
         <>
             <HeaderSavedFilms/>
             <main>
-            <ResultMainSearch/>
+                <ResultMainSearch/>
 
-        {/*    {isLoading ? (
-             <Preloader/>) : (<MoviesCardList loading = {setLoading} />)}*/}
-            <ResultMainMore/>
+                {isLoading ? (
+                    <Preloader/>) : (<MoviesCardList loading = {setLoading} />)}
+                <ResultMainMore/>
             </main>
         </>
     )}
+
 
 export default MoviesPages;
