@@ -67,6 +67,7 @@
     box-sizing: border-box;
     border: none;
     padding-top: 10px;
+    align-items: center;
 }
 
 .lupa-film {
