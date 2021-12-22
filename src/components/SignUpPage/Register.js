@@ -1,25 +1,32 @@
 /* РЕГИСТРАЦИЯ*/
-//для авторизации
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './Register.css';
-// import './HeaderInwork.css';
 import '../Profile.css';
 import '../Footer.css';
 import '../SignInPage/SignInHeader.css';
-// import './SignUpHeader';
 import '../../index.css';
 
 
 function Register(props) {
+  /*  const [name, setName] =useState('');
+    const [email, setEmail] =useState('');
+    const [valid, setValid] =useState(true);
+    const [isName, setIsName] =useState('');
+    const [isName, setIsName] =useState('');
+    const [isName, setIsName] =useState('');
+    const [isName, setIsName] =useState('');
+
+    useEffect(() =>  {
+         (name && email) ? {valid(true)} : {valid(false)}, [name, email];
+    })*/
     return (
         <>
             {/*<SignUpHeader/>*/}
             <div className="auth">
 
                 <div className="auth__form-login">
-                    {/*input*/}
+
                     <label className= "label__input profile-name">Имя</label>
-                 {/*   <div className="profile__name">Имя</div>*/}
 
                     <form name="form__input_name">
                     <input type = 'text' className="profile__input-name" name="name" defaultValue="Василий Иванович" required
@@ -29,15 +36,12 @@ function Register(props) {
                 </div>
                 <div className="profile__email-email ">
                     <label className= "label__input profile__email">E-mail</label>
-                   {/* <div className="profile__email ">E-mail</div>*/}
-                    {/*input*/}
+
 
                     <form name="profile__input-email">
 
                     <input type = 'text' className="auth__form-login-input-email" name="email" defaultValue="pochta@newtree.ru" required
                            maxLength="30" minLength="2" /> </form>
-
-                      {/*  <div className="auth__form-login-input-email">pochta@newtree.ru</div>*/}
 
                 </div>
                 <div className="profile__email-email  profile__email-password">
@@ -50,6 +54,8 @@ function Register(props) {
                             maxLength="8" minLength="2" /> </form>
                     {/*input*/}
                    {/* <div className="auth__form-login-input-password">pochta@newtree.ru</div>*/}
+
+
 
 
                 </div>

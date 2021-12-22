@@ -17,7 +17,6 @@ function SavedMoviesPages(props){
         <>
             <HeaderSavedFilms/>
           <main>
-           <Preloader/>
             <ResultMainSearch/>
             <MoviesCardList/>
           </main>

@@ -262,11 +262,8 @@ export default function App(props) {
                     <Route exact={true} path="/sign-up"
                            component={SignUpPage}/>
 
-                  {/*  {isLoading ? (
-                        <Preloader/>) : (*/}
                     <Route exact={true} path="/movies"
                            component={MoviesPage}/>
-              {/*      )}*/}
 
                     <Route exact={true} path="/saved-movies"
                            component={SavedMoviesPages}/>

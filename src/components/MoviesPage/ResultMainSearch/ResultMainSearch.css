@@ -215,11 +215,13 @@
 }
 
 @media screen and (max-width: 344px) {
-.result_main_search__button_find{
-
-}
-  /*  .find-line-icon{
-        width: 0;
-        height: 0;
-        padding-top: 0;}*/
+    .result_main_search_icon__lupa {
+        display: none;
+    }
+    .result_main_search_icon_film{
+        padding-left: 19px;
+        Line-height: 20px;
+        font-size: 14px;
+        font-family: 'Inter', serif;
+    }
 }

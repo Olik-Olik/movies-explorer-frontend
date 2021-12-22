@@ -3,9 +3,6 @@ body {
     padding:0;
 }
 .tumb{
-    /*position: absolute;*/
-  /*  top: 25%;
-    left:50%;*/
     transform: translate(-50%, -50%);
 
 }
@@ -39,11 +36,9 @@ input:checked[type="checkbox"]:before{
     left:18px;
 }
 
-@media  (min-width: 320px) and (max-width: 596px ){
+@media  (min-width: 320px) and (max-width: 593px ){
 input[type="checkbox"]{
     bottom:10px;
 }
 }
 
-@media (min-width: 320px) and (max-width: 596px) {
-}
