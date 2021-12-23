@@ -1,7 +1,6 @@
 import React, {useState,} from 'react';
 import {useRouteMatch} from 'react-router-dom';
 import '../Card/Card.css';
-
 import TimeConvert from '../../../utils/TimeConvert/TimeConvert';
 import '../../../index.css';
 
@@ -18,6 +17,12 @@ function MovieCard(props) {
     function toggleLike() {
         setIsLiked(!isLiked);
     }
+    function handleSave(){
+       props.isSave(props.cardData);
+    }
+    function handleDelete(evt){
+        props.isDelete(props.cardData);
+    }
 
     return (
         <form className="card__container">
@@ -28,8 +33,9 @@ function MovieCard(props) {
             <div className="combini">
                 <div className="card__container_name">{props.cardData.nameRU || props.cardData.nameEN}</div>
                 {/*длительность кино линия и время*/}
-                <button className={`like card__container_like_passive ${isLiked ? "card__container_like_active" : ''} 
-            ${isLikedSavedFilms ? "like__delete" : ''}`} onClick={toggleLike}>
+                <button className={`like card__container_like_passive ${isLiked ? "card__container_like_active" && props.isSave: ''}`} onClick={props.isSave ? handleDelete : handleSave} >
+                 {/*   {`${isLikedSavedFilms ? "like__delete" : ''}`} onClick={toggleLike}`*/}
+                    {`${isLikedSavedFilms ? '' : 'Впихнем это в сохраненные-лайкнутые'}`}
 
                 </button>
             </div>

@@ -53,9 +53,9 @@ function MoviesPages(props){
             <HeaderSavedFilms/>
             <main>
                 <ResultMainSearch/>
-
-                {isLoading ? (
-                    <Preloader/>) : (<MoviesCardList loading = {setLoading} />)}
+<MoviesCardList/>
+             {/*   {isLoading ? (
+                    <Preloader/>) : (<MoviesCardList loading = {setLoading} />)}*/}
                 <ResultMainMore/>
             </main>
         </>
