@@ -7,10 +7,14 @@ import MovieCard from "../Card/MovieCard";
 import apiMovies from "../../../utils/MoviesApi";
 import Preloader from "../../Preloader";
 
+import useWindowWidth from "../MoviesCardList/currentWindowWidth";
+
 function MoviesCardList(props){
-        const [cards, setCards] = useState([]);
-  //      const [loaded, setLoaded] = useState(false);
-   /* const [isRenderRow, setIsRenderRow] =useState(0);
+   const [cards, setCards] = useState([]);
+
+    const [isRenderRow, setIsRenderRow] =useState(0);
+    const [isRenderMoreRow, setIsRenderMoreRow] =useState(0);
+
     const moviesRow1280 = 12;
     const moviesRowMore1280=4;
     const moviesRow768 = 8;
@@ -18,18 +22,12 @@ function MoviesCardList(props){
     const moviesRow320 = 4;
     const moviesRowMore320 = 2;
     const moviesNothing = 0;
-*/
-    const [isLoading, setLoading] = useState(false);
 
-   /* let currentWindowDimensions = null;
-    const [windowDimensions, setWindowDimensions] = componentDidMount(window.innerWidth); /!* ряды карт*!/
-*/
-/*    function updateWindowDimensions(){
-        currentWindowDimensions(()=> setWindowDimensions(window.innerWidth))
-    }*/
+
+    let currentWindowWidth = useWindowWidth();
+
 
     const MovieCard = lazy(() => import('../Card/MovieCard')); /* для прелоадера */
-
 
     useEffect(() => {
                         apiMovies.getAllAboutMovies()
@@ -41,17 +39,26 @@ function MoviesCardList(props){
                             .catch((err) => console.log('Киношки не загрузились!: ' + err.toString()))
  }, []);
 
+useEffect(() => {
+        if (currentWindowWidth >= 1280) {
+            setIsRenderRow(moviesRow1280); setIsRenderMoreRow(moviesRowMore1280)
+        }
 
-/*componentDidMount(() => {
-    updateWindowDimensions();
-    window.addEventListener('resize', updateWindowDimensions);
-});*/
+        if (currentWindowWidth >= 768) {
+            setIsRenderRow(moviesRow768); setIsRenderMoreRow(moviesRowMore768)
+        }
+
+        if (currentWindowWidth >= 320) {
+            setIsRenderRow(moviesRow320); setIsRenderMoreRow(moviesRowMore320)
+        }
+    },
+    [currentWindowWidth],
+)
 
     return(
     <section className="moviesCard_list">
-
-        <Suspense fallback={<Preloader/>}>
-      {cards &&
+      <Suspense fallback={<Preloader/>}>
+       {cards &&
         cards.map(card => (
             <MovieCard
              /*   cardData={card}*/
@@ -65,54 +72,16 @@ function MoviesCardList(props){
             isDelete={props.isDelete}
             addMovies={props.addMovies}
             />
-        ))}
+         ))}
+
+        {/*  <button*/}
 
         </Suspense>
+
     </section>
 )
 
 }
 export default MoviesCardList;
 
-/*
-
-constructor(props) {
-    super(props);
-    this.state = { width: 0};
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-}
-
-componentDidMount() {
-    this.updateWindowDimensions();
-    window.addEventListener('resize', this.updateWindowDimensions);
-}
-componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
-}
-updateWindowDimensions() {
-    this.setState({ width: window.innerWidth });
-}
-class AppComponent extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {height: props.height};
-  }
-  componentWillMount(){
-    this.setState({height: window.innerHeight + 'px'});
-  }
-
-  render() {
-    // render your component...
-  }
-}
-AppComponent.propTypes = {
- height:React.PropTypes.string
-};
-
-AppComponent.defaultProps = {
- height:'500px'
-};
-
-*/
 
