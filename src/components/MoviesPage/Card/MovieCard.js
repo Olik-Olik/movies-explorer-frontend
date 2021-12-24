@@ -54,7 +54,10 @@ const likeButton = `${isLiked ? "card__container_like_active" : "card__container
                     {`${isLikedSavedFilms ? '' : 'SAVE ME'}`}
                 </button>
 */}
-                <button className= likeButton onClick={props.isSave ? handleDelete : handleSave}>
+                <button className = {likeButton} onClick={props.isSave ? handleDelete : handleSave}>
+
+                </button>
+
 
             </div>
             <div className="card__container_time_line"/>
