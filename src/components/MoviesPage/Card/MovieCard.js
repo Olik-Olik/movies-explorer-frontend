@@ -1,16 +1,12 @@
 import React, {useState,} from 'react';
 import {useRouteMatch} from 'react-router-dom';
 import '../Card/Card.css';
-
 import TimeConvert from '../../../utils/TimeConvert/TimeConvert';
 import '../../../index.css';
-
 function MovieCard(props) {
-
 
     const urlAllFilm = 'https://api.nomoreparties.co';
 
-//const { card, isLiked }  = props.cardData.movie;
     const [isDelete, setIsDelete] = useState(false);
     const [isLiked, setIsLiked] = useState(false);
     const isLikedSavedFilms = useRouteMatch({path: '/saved-movies', exact: true});
@@ -18,7 +14,31 @@ function MovieCard(props) {
     function toggleLike() {
         setIsLiked(!isLiked);
     }
-
+    function handleSave(){
+       props.isSave(props.cardData);
+    }
+    function handleDelete(evt){
+        props.isDelete(props.cardData);
+    }
+function handleLike(){
+   if (!isLiked){
+       handleSave({
+           country: props.cardData.country,
+           director: props.cardData.director,
+           duration: props.cardData.duration,
+           year: props.cardData.year,
+           description: props.cardData.description,
+           movieId: props.cardData.movieId,
+           nameRU:props.cardData.nameRU,
+           nameEN: props.cardData.nameEN,
+           thumbnail: props.cardData.thumbnail,
+           image:  props.cardData.image.url,
+           trailer: props.cardData.trailerLink,
+       })
+   }
+}
+const likeButton = `${isLiked ? "card__container_like_active" : "card__container_like_passive"}` ;
+        {/*   {`${isLikedSavedFilms ? "like__delete" : ''}`} onClick={toggleLike}`*/}
     return (
         <form className="card__container">
             <a target="_blank" rel="noopener noreferrer"
@@ -28,10 +48,17 @@ function MovieCard(props) {
             <div className="combini">
                 <div className="card__container_name">{props.cardData.nameRU || props.cardData.nameEN}</div>
                 {/*длительность кино линия и время*/}
-                <button className={`like card__container_like_passive ${isLiked ? "card__container_like_active" : ''} 
-            ${isLikedSavedFilms ? "like__delete" : ''}`} onClick={toggleLike}>
+{/*
+                <button className={`like card__container_like_passive ${isLiked ? "card__container_like_active" && props.isSave: ''}`} onClick={props.isSave ? handleDelete : handleSave} >
+                    {`${isLikedSavedFilms ? "like__delete" : ''}`} onClick={toggleLike}`
+                    {`${isLikedSavedFilms ? '' : 'SAVE ME'}`}
+                </button>
+*/}
+                <button className = {likeButton} onClick={props.isSave ? handleDelete : handleSave}>
 
                 </button>
+
+
             </div>
             <div className="card__container_time_line"/>
             <div className="card__container_line"/>
