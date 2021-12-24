@@ -1,0 +1,227 @@
+.result_main_search__conteiner {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #202020;
+}
+
+.result_main_search {
+    box-sizing: border-box;
+    width: 100%;
+    Height: 152px;
+    Top: 74px;
+    background-color: #202020;
+    padding: 0 70px;
+
+}
+
+/*Строка поиска*/
+.result_main_search__conteiner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 72px;
+    border-radius: 9px;
+    box-sizing: border-box;
+    background-color: #2F2F2F;
+}
+
+/*Лупа и "Фильм"*/
+.result_main_search_icon {
+    display: flex;
+}
+
+.result_main_search_icon__lupa {
+    background: url('../../images/icon__lupa.svg') no-repeat center 25px;
+    color: #C4C4C4;
+    box-sizing: border-box;
+    width: 60px;
+    height: 65px;
+    padding: 25px 10px;
+
+}
+
+.result_main_search_icon__lupa:hover {
+    cursor: pointer;
+    transition: 0.01s;
+    transform: scale(2) perspective(1px);
+
+}
+
+.result_main_search__button_find:hover {
+    cursor: pointer;
+}
+
+.result_main_search_icon_smalltube:hover {
+    cursor: pointer;
+}
+
+
+.result_main_search_icon_film:hover {
+    cursor: pointer;
+}
+
+.result_main_search_icon_film {
+    display: flex;
+    background-color: #2F2F2F;
+    color: #8B8B8B;
+    box-sizing: border-box;
+    border: none;
+    padding-top: 10px;
+    align-items: center;
+}
+
+.lupa-film {
+    display: flex;
+    align-items: center;
+}
+
+.icon-shortfilm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.result_main_search_icon_smalltube {
+/*    background: url('../../images/smalltumb.svg') no-repeat center;*/
+    /* color: #C4C4C4;*/
+    /* box-sizing: border-box;*/
+/*    width: 36px;
+    height: 20px;
+    padding: 25px 10px;*/
+}
+
+.result_main_search_icon_shortfilm {
+    color: #FFFFFF;
+    Font-style: normal;
+    Font-size: 13px;
+    Line-height: 18px;
+    width: 117px;
+    padding: 27px 30px 30px 0;
+}
+
+.result_main_search__value {
+}
+
+.correct {
+    display: flex;
+}
+.result_main_search_icon_smalltube{
+    height: 0;
+    padding-left: 16px;
+  /*  padding-top: 46px;*/
+    padding-right: 0;
+   /* padding-left: 0;*/
+    padding-bottom: 0;
+}
+{ /*Линия между смоллтубом и Найти*/
+}
+.result_main_search_icon_line {
+    background: url('../../images/line_between_find.svg') no-repeat center;
+    color: #424242;
+    box-sizing: border-box;
+    border: none;
+    width: 1px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 29px;
+    padding-left: 29px;
+    top: 20px;
+}
+
+.find-line-icon {
+    display: flex;
+}
+/*Голубая кнопка Найти*/
+.result_main_search__button_find {
+    cursor: pointer;
+    right: 60px;
+    left: 0;
+    margin-right: 0;
+    width: 80px;
+    position: relative;
+    background: url('../../images/find.svg') no-repeat center;
+    box-sizing: border-box;
+    border: none;
+  /*  left: 21.35px;*/
+    font-size: 11px;
+    line-height: 18px;
+    align-items: Center;
+    vertical-align: Top;
+}
+.mobile{
+    visibility: hidden;
+}
+.decktop{
+
+}
+@media screen and (min-width: 594px) and (max-width: 768px){
+    .result_main_search{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    }
+    .icon-shortfilm {
+     /*   height: 0;
+        width: 0;
+        padding: 0;*/
+    }
+
+@media screen and (max-width: 593px) {
+    .result_main_search {
+        padding-top: 90px;
+        padding-bottom: 200px;
+        padding-left: 10px;
+        padding-right: 10px;
+      /*  height: 70px;*/
+    }
+    .result_main_search_icon_line{
+        padding-right: 19px;
+        padding-left: 19px;}
+    .result_main_search_icon_line {
+        visibility: hidden;
+
+    }
+
+    .result_main_search_icon_line {
+        visibility: hidden;
+    }
+
+    .result_main_search__button_find {
+        padding-left: 0;
+        padding-right: 0;
+        left: auto;
+    }
+
+    .find-line-icon {
+        display: flex;
+        padding-top: 46px;
+    }
+
+    .mobile {
+        visibility: initial;
+        justify-content: center;
+        padding-top: 46px;
+    }
+    .decktop{
+        display: none;
+    }
+.result_main_search_icon_smalltube{
+    padding-top: 46px;
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+}
+
+@media screen and (max-width: 344px) {
+    .result_main_search_icon__lupa {
+        display: none;
+    }
+    .result_main_search_icon_film{
+        padding-left: 19px;
+        Line-height: 20px;
+        font-size: 14px;
+        font-family: 'Inter', serif;
+    }
+}

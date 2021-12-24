@@ -1,26 +1,3 @@
-
-diplomfront.nomoredomains.work
-В README.md файл добавьте ссылку на 
-ваш сгенерированный макет 
-
-
-и домен, где лежит проект.
-
-diplomfront.nomoredomains.work
-diplomback.nomoredomains.work
-
-https://domain.nomoreparties.site/
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-# movies-explorer-frontend
-=======
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -91,4 +68,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> f38e1b7 (Aboutme)

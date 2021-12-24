@@ -1,0 +1,139 @@
+.p{ font-size: 12px;
+    top: 156px;
+    width: 89px;
+    line-height: 16px;
+    font-family: 'Inter', serif;;
+    font-weight: 500;
+}
+
+.header{
+ background-color: #073042;
+}
+
+.header__button{
+background-color: #073042;
+}
+
+.project{
+    display: flex;
+    flex-direction: row;
+    background-color: #073042;
+    padding-top: 0;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 30px;
+    margin: 0 auto;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+.project__content-container{
+    display: grid;
+    text-align: center;
+  /*  justify-items: center;*/
+}
+.project__button-container{
+    display: grid;
+    text-align: center;
+ /*   justify-items: center;*/
+}
+/*Титл*/
+.project__description{
+    max-width: 640px;
+    padding-top: 53px;
+    color: #FFFFFF;
+    padding-bottom:36px ;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    Line-height: 58px;
+    font-family: 'Inter', serif;
+    box-sizing: border-box;
+    text-align: left;}
+/* display: flex;
+}
+/*Текст*/
+.project__content{
+    max-width: 310px;
+    min-height: 32px;
+    text-align: left;
+    Opacity: 50%;
+    padding-bottom: 156px;
+   font-family: 'Inter', serif;
+   font-style: normal;
+    color: #FFFFFF;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.project__foto{
+    width: 310px;
+    height: 304px;
+}
+
+@media screen and (max-width: 768px){
+    .project{
+        padding-left: 44px;
+        padding-right: 44px;
+        display: flex;
+        background-color: #073042;
+        padding-top: 0;
+        padding-bottom: 30px;
+        margin: 0 auto;
+        align-content: center;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+    .project__description{
+        font-weight: 400;
+        Font-size: 40px;
+       Line-height: 50px;
+        justify-content: center;
+        text-align: center;
+    }
+    .project__content{
+        Font-size: 13px;
+        Line-height: 16px;
+        align-items: center;
+        text-align:center;
+        min-width: 260px;
+        min-height: 32px;
+        justify-content: center;
+
+    }
+    .project__content-container{
+        display: grid;
+        text-align: center;
+        justify-items: center;
+    }
+    .project__button-container{
+        display: grid;
+        text-align: center;
+        justify-items: center;
+    }
+}
+
+
+@media screen and (min-width: 200px) and (max-width: 500px) {
+    .project {
+          padding-left: 10px;
+          padding-right: 10px;
+    }
+
+    .project__description {
+        font-weight: 400;
+        Font-size: 30px;
+        Line-height: 38px;
+    }
+
+    .project__foto {
+        width: 210px;
+        height: 206px;
+    }
+
+    .project__content {
+        padding-bottom: 80px;
+    }
+}
+

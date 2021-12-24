@@ -1,0 +1,345 @@
+.aboutMe__main {
+    box-sizing: border-box;
+    padding-bottom: 0;
+}
+
+.aboutMe__whoIS {
+    width: 100%;
+    font-family: 'Inter', serif;
+    font-weight: 400;
+    max-height: 27px;
+    background-color: #202020;
+    margin: 0;
+    display: flex;
+    padding-bottom: 23px;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: left;
+    color: #FFFFFF;
+    border-bottom: 1px solid #DADADA;
+}
+
+.aboutMe__strelka-resurs {
+    align-items: stretch;
+    display: flex;
+    /*align-items: baseline;*/
+    height: 50px;
+    color: #FFFFFF;
+    font-family: 'Inter', serif;
+    font-Weight: 400;
+    font-Style: normal;
+    font-Size: 29px;
+    Line-height: 60px;
+}
+
+.aboutMe__myName {
+    padding-top: 62px;
+    padding-bottom: 8px;
+    max-width: 600px;
+    padding-left: 0;
+    height: 58px;
+    font-family: 'Inter', serif;
+    font-weight: 400;
+    width: 100%;
+    background-color: #202020;
+    color: #FFFFFF;
+    font-size: 58px;
+    margin: 0;
+    display: flex;
+}
+
+.aboutMeLinks {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.aboutMe__descriptionFoto {
+    width: 100%;
+    /*    padding: 0 70px;*/
+    display: flex;
+    background-color: #202020;
+}
+
+.imgfotoMe {
+    padding-top: 66px;
+    background-color: #202020;
+    width: 270px;
+    height: 327px;
+    border-radius: 10px;
+}
+
+.a {
+    grid-template-rows: repeat(1, 29px);
+    grid-template-columns: repeat(2, 231px);
+}
+
+.links {
+    font-family: 'Inter', serif;
+    box-sizing: border-box;
+    font-weight: 400;
+    width: 100%;
+    /*  padding: 0 70px;*/
+    margin: 0;
+    padding-bottom: 125px;
+    flex-direction: row;
+    display: flex;
+    background-color: #202020;
+}
+
+.aboutMe__connect {
+   /* padding-left: 0;*/
+    width: 100%;
+    background-color: #202020;
+    padding: 0 70px 100px 0;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.aboutMe__gitHub {
+    color: #FFFFFF;
+    width: 100%;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+.aboutMe__facebook {
+    padding-right: 20px;
+    color: #FFFFFF;
+    width: 100%;
+    text-decoration: none;
+}
+
+.aboutMe__portfolio {
+    box-sizing: border-box;
+    font-family: 'Inter', serif;;
+    Font-Weight: 400;
+    Font-Style: normal;
+    width: 100%;
+    padding: 0 /*70px*/;
+    margin: 0;
+    background-color: #202020;
+    color: #8B8B8B;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.aboutMe__work {
+    width: 100%;
+    /* padding: 0 70px;*/
+    max-width: 600px;
+    background-color: #202020;
+    padding-top: 18px;
+    padding-bottom: 26px;
+    margin: 0;
+    display: flex;
+    font-weight: 500;
+    font-style: normal;
+    size: 18px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.aboutMeTitleAbout {
+    height: 88px;
+    font-family: 'Inter', serif;
+    font-weight: 400;
+    padding-right: 270px;
+    width: 100%;
+    margin: 0;
+    background-color: #202020;
+    max-width: 600px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.aboutMelinks {
+    width: 100%;
+    max-width: 880px;
+}
+
+.aboutMe__lineSimple {
+    font-family: 'Inter', serif;
+    /*  padding: 0 70px;*/
+    width: 100%;
+    background-color: #202020;
+    max-width: 1140px;
+    color: #424242;
+    display: flex;
+}
+
+.aboutMeLinkStatic {
+    height: 10px;
+    Font-family: 'Inter', serif;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    width: 100%;
+    max-height: 50px;
+    background-color: #202020;
+    color: #FFFFFF;
+    line-height: 16px;
+    font-size: 30px;
+    text-decoration: none;
+    padding-bottom: 19px;
+    padding-top: 20px;
+    border-bottom: 1px solid #424242;
+}
+.aboutMeLinkStaticAnotherStyle{
+   border-bottom: none;
+}
+.aboutMe__strelka {
+    display: contents;
+    width: 29px;
+    height: 60px;
+}
+
+
+
+@media screen and (min-width: 200px) and (max-width: 620px) {
+    .aboutMe__descriptionFoto {
+        flex-direction: column-reverse;
+    }
+
+    .aboutMe__main {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .aboutMe__whoIS {
+        font-family: 'Inter', serif;
+        Font-weight: 400;
+        Font-size: 18px;
+        Line-height: 22px;
+        Letter-spacing: -0.04em;
+        padding-bottom: 28px;
+    }
+
+    .imgfotoMe {
+        width: 292px;
+        height: 352px;
+        padding-bottom: 40px;
+        padding-top: 60px;
+    }
+
+    .aboutMe__descriptionFoto {
+        border-radius: 10px;
+    }
+
+    .aboutMe__myName {
+        Font-weight: 400;
+        Font-size: 30px;
+        Line-height: 36px;
+        Letter-spacing: -0.04em;
+        padding-top: 0;
+        padding-bottom: 20px;
+    }
+
+    .aboutMe__work {
+        padding-top: 0;
+        padding-bottom: 20px;
+    }
+
+    .aboutMeTitleAbout {
+        width: 292px;
+        height: 112px;
+        padding-right: 0;
+        font-family: 'Inter', serif;;
+        font-weight: 400;
+        Font-size: 11px;
+        Line-height: 16px;
+        padding-bottom: 40px;
+    }
+
+    .aboutMe__connect {
+        padding: 0;
+    }
+
+    .aboutMe__portfolio {
+        padding-bottom: 20px;
+        font-size: 14px;
+        padding-top: 69px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .aboutMeLinkStatic {
+      /*  height: 10px;*/
+        font-family: 'Inter', serif;;
+        font-weight: 400;
+        letter-spacing: -0.04em;
+        max-height: 50px;
+        line-height: 28px;
+        font-size: 18px;
+    }
+
+    .aboutMe__strelka-resurs {
+        font-family: 'Inter', serif;
+        font-Size: 18px;
+        Line-height: 28px;
+        align-items: baseline;
+    }
+
+    .links {
+        padding-bottom: 14px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 920px) {
+    .aboutMe__whoIS {
+        font-family: 'Inter', serif;
+        Font-weight: 400;
+        Font-size: 22px;
+        Line-height: 27px;
+        Letter-spacing: -0.04em;
+        padding-bottom: 23px;
+    }
+.aboutMe__main{
+    padding-top: 90px;
+    padding-bottom: 0;
+}
+.aboutMe__myName{
+    Font-size: 40px;
+    Line-height: 40px;
+    padding-top: 66px;
+    padding-bottom: 16px;
+}
+    .aboutMe__work{
+        padding-top: 0;
+        padding-bottom: 20px;
+    }
+    .aboutMeTitleAbout{
+        font-size: 12px;
+        /* padding-right: 0; */
+        Line-height: 18px;
+       max-width: 364px;
+        max-height: 108px;
+        padding-bottom: 87px;
+    }
+    .aboutMe__connect{
+        padding-bottom: 90px;
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .aboutMe__portfolio{
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 30px;
+    }
+    /*.aboutMeLinkStatic {
+        font-family: 'Inter', serif;;
+        font-weight: 400;
+        letter-spacing: -0.04em;
+        line-height: 50px;
+        font-size: 28px;
+    }*/
+    .links{
+      /*  padding-bottom: 0;*/
+    }
+
+}
+
+

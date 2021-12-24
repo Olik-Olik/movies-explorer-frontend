@@ -1,0 +1,258 @@
+.aboutMe__main{
+padding: 110px 70px;
+background-color: #202020;
+}
+
+.aboutProject{
+
+}
+.aboutProject__title{
+    width: 100%;
+    margin: 0;
+    padding-bottom: 23px;
+    font-size: 22px;
+    line-height: 27px;
+    color: #FFFFFF;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    font-family: 'Inter', serif;
+    border-bottom: 1px solid #DADADA;
+
+}
+
+/*///////////////////////////////////////////////////////////////////*/
+/*  общее для титлов*/
+.aboutProject__1stolb{
+    width: 100%;
+  /*  padding: 0 70px 50px;*/
+    margin: 0;
+ /*   display: flex;
+    justify-content: space-between;*/
+    background-color: #202020;
+}
+
+.aboutProject__title1stolb{
+    max-width: 550px;
+    max-height: 24px;
+    background-color: #202020;
+    padding-top: 70px;
+    padding-bottom: 26px;
+    color: #FFFFFF;
+    line-height: 24px;
+ /*   display: flex;*/
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -0.04em;
+    font-family: 'Inter', serif;
+
+}
+
+.aboutProject__title2stolb{
+    max-width: 550px;
+    max-height: 24px;
+    padding-bottom: 26px;
+    background-color: #202020;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -.04em;
+    font-family: 'Inter', serif;
+}
+/*///////////////////////////////////////////////////////////////////*/
+/* вторая строчка*/
+.aboutProject__2stolb{
+    max-height: 40px;
+    width: 100%;
+    font-family: 'Inter', serif;
+   /* display: flex;
+    justify-content: space-between;*/
+
+}
+.aboutProject__process2stolb {
+    font-family: 'Inter', serif;
+    width: 100%;
+    padding-top: 26px;
+    max-width: 550px;
+    background-color: #202020;
+    color: #FFFFFF;
+    line-height: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    /*letter-spacing: -.04em;*/
+
+}
+.aboutProject__process1stolb{
+    font-family: 'Inter', serif;
+    width: 100%;
+    background-color: #202020;
+    padding-top: 26px;
+    color: #FFFFFF;
+ max-width: 550px;
+    line-height: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    /*letter-spacing: -.04em;*/
+}
+
+
+/*/////////псевдокнопки 1 неделя и 4 недели*/
+.aboutProject__button{
+    width: 100%;
+    display: flex;
+    justify-content: normal;
+    background-color: #202020;
+    text-decoration: none;
+ /*   horiz-align: center;*/
+
+}
+.aboutProject__all__stolb{
+    padding-bottom: 110px;
+    display: flex;
+    align-items: baseline;
+}
+.aboutProject__button_first{
+    align-items: center;
+    width: 228px;
+    height: 36px;
+    background: #3DDC84;  /* цвет фона */
+    color: #202020; /* Белые буквы */
+    font-size: 14px;
+    border: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.aboutProject__button_second{
+    align-items: center;
+    width: 912px;
+    height: 36px;
+    background: #303030;
+    color: white; /* Белые буквы */
+    font-size: 14px;
+    border: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+/* Надписи под 1 и 4 неделями*/
+
+.aboutProject__button_first_down{
+    align-items: center;
+    width: 228px;
+    height: 36px;
+    background: #202020;  /* цвет фона */
+    color: white; /* Белые буквы */
+    font-size: 14px;
+    border: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.aboutProject__button_second_down{
+    align-items: center;
+    width: 912px;
+    height: 36px;
+    background: #202020;
+    color: white; /* Белые буквы */
+    font-size: 14px;
+    border: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+@media screen and (min-width: 600px) and (max-width: 920px){
+.aboutMe__main {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+    .aboutProject__title {
+        font-family: 'Inter', serif;
+        font-weight: 400;
+        Font-size: 22px;
+        Line-height: 27px;
+    }
+
+    .aboutProject__title1stolb{
+        Font-size: 20px;
+        Line-height: 20px;
+    }
+    .aboutProject__title2stolb{
+        Font-size: 20px;
+        Line-height: 20px;
+    }
+    .aboutProject__process1stolb {
+        Font-size: 12px;
+        Line-height: 18px;
+        max-width: 319px;
+    }
+    .aboutProject__process2stolb{
+        Font-size: 12px;
+        Line-height: 18px;
+        max-width: 319px;
+    }
+
+}
+
+@media screen and (min-width: 200px) and (max-width: 620px) {
+    .aboutMe__main {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+    .aboutProject__all__stolb{
+        padding-bottom: 110px;
+        display: block;
+
+    }
+
+.aboutProject__title {
+    font-family: 'Inter', serif;
+    font-weight: 400;
+    Font-size: 18px;
+    Line-height: 22px;
+}
+    .aboutProject__title1stolb{
+        Font-size: 18px;
+        Line-height: 22px;
+        padding-bottom: 0;
+       /* margin-bottom: 0;*/
+    }
+    .aboutProject__title2stolb{
+        Font-size: 18px;
+        Line-height: 22px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+
+        padding-top: 38px;
+    }
+    .aboutProject__process1stolb {
+        Font-size: 11px;
+        Line-height: 16px;
+        max-width: 284px;
+        padding-bottom: 5px;
+    /*    margin-top: 0;*/
+    }
+    .aboutProject__process2stolb{
+        Font-size: 11px;
+        Line-height: 16px;
+        max-width: 284px;
+    /*    margin-top: 0;*/
+        padding-top: 16px;
+
+    }
+    .aboutProject__1stolb{
+        flex-direction: column;
+
+    }
+    .aboutProject__2stolb{
+        padding-bottom: 60px;
+    }
+    .aboutMe__main{
+        padding-top: 10px;
+      /*  padding-bottom: 56px;*/
+        padding-bottom: 70px;
+    }
+}

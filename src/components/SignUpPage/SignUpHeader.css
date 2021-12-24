@@ -1,0 +1,105 @@
+.header__signup{
+    min-width: 320px;
+    max-height: 253px;
+    flex-direction: column;
+    display: flex;
+    background-color: #202020;
+    color: white;
+}
+.header__logo_welcome:hover{
+    cursor: pointer;
+}
+.header__logo_welcome{
+    display: flex;
+    justify-content: space-between;
+    width: 396px;
+    padding-top: 56px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    max-width: 1280px;
+    max-height: 217px;
+    display: flex;
+    align-items: center;
+  /*  justify-content: center;*/
+ /*   padding-top: 70px;
+    padding-bottom: 40px;*/
+}
+.header__welcome{
+    display: flex;
+    justify-content: space-between;
+    width: 396px;
+  /*  display: flex;
+    justify-content: space-between;
+    width: 396px;*/
+    margin: 0 auto;
+    padding-bottom: 40px;
+    font-family: 'Inter', serif;
+    font-style: normal;
+    font-weight:500;
+    font-size: 24px;
+    line-height: 29px;
+   /* align-items: flex-start;*/
+    Vertical-align: Top;
+  /*  margin-bottom: 0;
+    display: flex;
+    justify-content: center;*/
+}
+
+    @media screen and (max-width: 768px){
+        .header__welcome {
+            display: flex;
+            justify-content: center;
+            width: 396px;
+        }
+        .header__logo_welcome{
+            display: flex;
+            justify-content: center;
+            width: 396px;
+        }
+    }
+@media screen and (max-width: 768px) {
+    .header__welcome {
+        display: flex;
+        justify-content: center;
+        width: 396px;
+    }
+    .header__logo_welcome{
+    }
+}
+      @media screen and (max-width: 620px){
+          .header__welcome {
+              font-family: 'Inter', serif;;
+             font-weight: 500  ;
+             Font-size: 24px;
+             Line-height: 29px;
+              max-width: 260px;
+              max-height: 29px;
+              padding-bottom: 80px;
+          }
+          .header__logo_welcome{
+              justify-content: center;
+
+          }
+          .header__signup{
+              min-width: 320px;
+              max-height: 253px;
+              flex-direction: column;
+              display: flex;
+              background-color: #202020;
+          }
+          .header{
+              display: flex;
+              flex-direction: column;
+              align-content: flex-start;
+              justify-content: flex-start;
+              align-items: flex-start;
+
+
+              padding-left: 30px;
+              padding-right: 0;
+          }
+      }
+/*
+@media screen and (max-width: 1024px){
+@media screen and (max-width: 768px)
+@media screen and (max-width: 620px)*/

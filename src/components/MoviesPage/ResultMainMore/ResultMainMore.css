@@ -1,0 +1,31 @@
+.result_main_more{
+    box-sizing: border-box;
+    Height:166px;
+    padding-top: 50px;
+}
+
+.result_search_main_container_more{
+    justify-content: center;
+}
+
+
+@media screen and (min-width: 581px) and (max-width: 800px) {
+    .result_main_more {
+        padding-top: 50px;
+        padding-bottom: 80px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media screen and (max-width: 580px){
+    .result_search_main_container_more{
+        margin: 0 auto;
+        max-width: 300px;
+        height: 36px;
+    }
+
+    .result_main_more{
+        padding-top: 50px;
+    }
+}
