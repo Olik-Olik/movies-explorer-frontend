@@ -1,9 +1,7 @@
-import React, {useState, useEffect} from "react";
-import {Redirect, Route, BrowserRouter, Switch, Routes, useHistory} from 'react-router-dom';
+import React, {useEffect, useState} from "react";
+import {BrowserRouter, Redirect, Route, Switch, useHistory, useLocation} from 'react-router-dom';
 import CurrentUserContext from "../src/utils/context/CurrentUserContext";
 import './index.css';
-/*import Header from "./components/Header";
-import Footer from "./components/Footer";*/
 import AboutPage from "./components/AboutPage/AboutPage";
 import MoviesPage from "./components/MoviesPage/MoviesPage";
 import NotFound_404 from "./components/NotFoundError/NotFound_404";
@@ -15,65 +13,106 @@ import SignInPage from "./components/SignInPage/SignInPage";
 import HeaderSavedFilms from "./components/ProfilePage/HeaderSavedFilms";
 import Checkbox from "./components/Checkbox/Checkbox";*/
 import apiMovies from "./utils/MoviesApi";
-import Preloader from "./components/Preloader";
-//import apiAuth from "./utils/MainApi";
-
-
+import apiAuth from "./utils/MainApi";
+import ProtectedRoute from "./components/ProtectedRoute";
+import MenuPopup from "./components/MenuPopup/MenuPopup";
+import * as path from "path";
 
 export default function App(props) {
+    const history = useHistory();
+ //   const location = useLocation();
     const [currentUser, setCurrentUser] = useState({});
-    const [isLoading, setLoading] =useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
-    const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
     const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
-    const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
-    const [isImagePopupOpen, setIsImagePopupOpen] = useState(false);
-    const [isConfirmDeletePopup, setIsConfirmDeletePopup] = useState(false);
     const [selectedCard, setSelectedCard] = useState({});
     const [cards, setCards] = useState([]);
     const [email, setEmail] = useState("");
-    const [infoSuccess, setInfoSuccess] = useState(false);
-    const [credential, setCredential] = useState({});
+    const [name, setName] = useState("");
+    const [password, setPassword] = useState("");
+       const [infoSuccess, setInfoSuccess] = useState(false);
+    const [search, setSearch] = useState({});
     const [isRegResOpen, setIsRegResOpen] = useState(false);
+    const [korotkometrazh, setKorotkometrazh] = useState(false);
 
-    function hukUseEffectToken() {
 
-    }
-   /* function hukUseEffectToken() {
+    /*function hukUseEffectToken() {
         // если у пользователя есть токен в localStorage,
         // эта функция проверит валидность токена
         const token = localStorage.getItem('token');
+      //  const path = location.pathname;
         if (token) {
-            console.log("токен есть JWT");
+           // console.log("токен есть JWT");
             // проверим токен в локалсторадж
-            auth.checkToken(token)
+            apiAuth.checkToken(token)
                 // здесь можем получить данные пользователя!
                 // поместим их в стейт внутри App.js
                 .then((res) => {
                     console.log('Ответ есть!');
                     setLoggedIn(true);
                     setEmail(res.email);
+                    setName(res.name);
                     setIsLoading(false);
-                    //history.push('/');
+                  //   history.push(path);
                 })
                 .catch((err) => {
                     console.log('Ответа нет! ' + err.toString());
                     setLoggedIn(false);
                     setIsLoading(false);
                     setEmail('');
+                    setName('');
+                   // history.push('/');
                 })
+
         } else {
             console.log('Токена нету!!!');
             setLoggedIn(false);
             setIsLoading(false);
             setEmail('');
+            setName('');
         }
     }
 */
 
-    useEffect(() => {
-        hukUseEffectToken();
-    }, [loggedIn]);
+    function hukUseEffectToken() {
+
+        const token = localStorage.getItem("token");
+        if (token) {
+             apiAuth.checkToken(token)
+
+                // здесь можем получить данные пользователя!
+                // поместим их в стейт внутри App.js
+                .then((res) => {
+                    console.log('Ответ есть!');
+                    setLoggedIn(true);
+                    setCurrentUser(res);
+                    history.push(path);
+                  //  setEmail(res.email);
+                  //  setName(res.name);
+                    setIsLoading(false);
+                })
+                .catch((err) => {
+                    console.log('Ответа нет! ' + err.toString());
+                    setLoggedIn(false);
+                    setIsLoading(false);
+                 //   setEmail('');
+                  //  setName('');
+                 //  history.push("/");
+                })
+
+        } else {
+            console.log('Токена нету!!!');
+            setLoggedIn(false);
+            setIsLoading(false);
+          //  setEmail('');
+          //  setName('');
+        }
+    }
+
+
+                    useEffect(() => {
+                        hukUseEffectToken();
+                    }, [loggedIn]);
 
 
 //movies
@@ -88,93 +127,78 @@ export default function App(props) {
         }
     }, [loggedIn]);
 
+    function handleLogin(email, password ) {
+        return apiAuth
+            .login(email, password )
+            .then((res) => {
+                console.log('login');
+                localStorage.setItem('token', res.token);
+               /* apiAuth.checkToken(res.token);*/
+                  apiAuth.handleToken(res.token); /*##########*/
+               // setEmail(email);
+                setLoggedIn(true);
+              //  history.push("/movies");
+                console.log('Залогинились !');
+            })
+            .catch((err) => {
+                console.log('Не залогинились :( ' + err.toString());
+                setLoggedIn(false);
+            })
+    }
 
+    function handleRegister(name, password, email) {
+        return apiAuth
+            .register(name, password, email)
+            .then((res) => {
+                   setInfoSuccess(true);
+                setIsRegResOpen(true);
+                console.log("register");
+                handleLogin({name, password, email});
+                setCurrentUser(res);
+            })
+            .catch((err) => {
+                    console.log('Не зарегались :( ' + err.toString());
+                       setInfoSuccess(false);
+                    console.log(`БЕЕЕ register ${err}`)
+                    setIsRegResOpen(true);
+                }
+            )
+    }
 
-//user
-/*    useEffect(() => {
-        if (loggedIn) {
-            api.getUserInfo()
-                .then(data => {
-                    setCurrentUser(data);
-                })
-                .catch((err) => {
-                        console.log('MAMA, Аватарчик не  получен!!!: ' + err.toString())
-                    }
-                )
-        }
-    }, [loggedIn]);*/
-
-
-/*    function handleUpdateProfile(userData) {
-        api.submitUserInfo({
+    function handleUpdateProfile(userData) {
+        apiAuth.updateProfile({
             'name': userData.name,
-            'about': userData.about
+            'email': userData.email,
+            'password': userData.password,
         })
             .then(data => {
                 setCurrentUser(data);
                 closeAllPopups()
             })
             .catch((err) => {
-                console.log('MAMA, username не  получен!!!: ' + err.toString())
+                console.log('username не  получен!!!: ' + err.toString())
             })
-    }*/
-
-//like
-   /* function handleCardLike(card) {
-        // Снова проверяем, есть ли уже лайк на этой карточке
-        const isLiked = card.likes.some(i => i === currentUser._id);
-        if (isLiked) {
-            // Отправляем запрос в API и получаем обновлённые данные карточки
-            api.dislike(card._id)
-                .then((newCard) => {
-                    setCards((cards) => cards.map((c) => c._id === card._id ? newCard : c));
-                })
-                .catch((err) => {
-                    console.log('MAMA!!! DisLike: ' + err.toString())
-                })
-
-        } else {
-            api.like(card._id)
-                .then((newCard) => {
-                    setCards((cards) => cards.map((c) => c._id === card._id ? newCard : c));
-                })
-                .catch((err) => {
-                    console.log('MAMA!!! Like: ' + err.toString())
-                })
-        }
     }
-*/
-//profile
-/*
-    function handleEditProfileClick(evt) {
-        console.log("I'm a walrus 2!!!")
-        setIsEditProfilePopupOpen(true);
-    }
-*/
 
 
+    /*    //profile
+        const handleEditProfileOpen = (evt) => {
+            console.log("I'm a superstar 2!!!")
+            handleEditProfileClick(evt)
+        }*/
 
-/*    //profile
-    const handleEditProfileOpen = (evt) => {
-        console.log("I'm a superstar 2!!!")
-        handleEditProfileClick(evt)
-    }*/
-
-    function handleCardClick(card) {
-        console.log("I'm a walrus 4!!!")
-        setSelectedCard(card);
-        setIsImagePopupOpen(true);
-    }
+    /*    function handleCardClick(card) {
+            console.log("I'm a walrus 4!!!")
+            setSelectedCard(card);
+            setIsImagePopupOpen(true);
+        }*/
 
     function closeAllPopups() {
         console.log("I was so close...")
-        setIsEditAvatarPopupOpen(false);
         setIsEditProfilePopupOpen(false);
-        setIsAddPlacePopupOpen(false);
-        setIsImagePopupOpen(false);
-        setIsConfirmDeletePopup(false);
         setIsRegResOpen(false);
-
+        setLoggedIn(false);
+        // history.push("/");
     }
 
     /*function handleCardLike(card) {
@@ -202,48 +226,25 @@ export default function App(props) {
     }
 */
 
-    /*function handleLogin(password, emmail) {
-        return auth
-            .login(password, emmail)
-            .then((res) => {
-                // console.log('vasa');
-                localStorage.setItem('token', res.token);
-                api.handleToken();
-                setEmail(emmail);
-                setLoggedIn(true);
-                console.log('Залогинились 1!');
-            })
-            .catch((err) => {
-                console.log('Не залогинились :( ' + err.toString());
-                setLoggedIn(false);
-            })
-    }*/
+    /*    /!* удаление из сохраненного*!/
+        function handleDelete(data) {
+            apiAuth.deleteMovie(data.id)
+                .then(() => {
+                })
+                .catch((err) => {
+                    console.log('Удаление:' + err.toString());
+                })*/
 
-    /*function handleRegister(password, email) {
-        return auth
-            .register(password, email)
-            .then((res) => {
-                setInfoSuccess(true);
-                setIsRegResOpen(true);
-                // history.push("/signin"); /////
-                console.log("1");
-            })
-            .catch((err) => {
-                    console.log('Не зарегались :( ' + err.toString());
-                    setInfoSuccess(false);
-                    console.log(`Вот такая ошибка вылезла ${err}`)
-                    setIsRegResOpen(true);
-                }
-            )
-    }*/
+
 
 //out off
     function handleSignOut() {
-        console.log("2 - logout");
+        console.log("logout");
         localStorage.removeItem('token');
         setCurrentUser({});
         setEmail("");
         setLoggedIn(false);
+        // history.push("/");
     }
 
 
@@ -252,78 +253,57 @@ export default function App(props) {
             <>
                 {!isLoading &&
                     <Switch>
-                        {/*   <Routes>*/}
+                       {/* <Route>
+                            {() => loggedIn === true ? <Redirect to="/movies"/> : <Redirect to="/sign-in"/>}
+                        </Route>
+*/}
                         <Route exact={true} path="/"
                                component={AboutPage}/>
 
+
                         <Route exact={true} path="/sign-in"
-                               component={SignInPage}/>
+                               component={() => (<SignInPage handleLogin={handleLogin}/>)}
+                        />
 
                         <Route exact={true} path="/sign-up"
-                               component={SignUpPage}/>
+                               component={() => (<SignUpPage handleRegister={handleRegister}/>)}
+                        />
+                        {/*регистрация */}
 
-                        <Route exact={true} path="/movies"
-                               component={MoviesPage}/>
+                        <ProtectedRoute
+                            exact={true} path="/movies"
+                            component={() => (<MoviesPage
+                                loggedIn={loggedIn}
+                                signOut={handleSignOut}
+                                updateProfile={handleUpdateProfile}
+                                korotkometrazh={korotkometrazh}/>)}
+                        />
 
-                        <Route exact={true} path="/saved-movies"
-                               component={SavedMoviesPages}/>
 
-                        <Route exact={true} path="/profile"
-                               component={ProfilePage}/>
+                        <ProtectedRoute
+                            exact={true} path="/saved-movies"
+                            component={() => (<SavedMoviesPages
+                                loggedIn={loggedIn}
+                                signOut={handleSignOut}/>)}
+                        />
 
-                        <Route path=''
-                               component={NotFound_404}/>
+                        <ProtectedRoute
+                            exact={true} path="/profile"
+                            component={() => (<ProfilePage
+                                loggedIn={loggedIn}
+                                signOut={handleSignOut}
+                                updateProfile={handleUpdateProfile}
+                            />)}
+                        />
+                        <Route path=''>
+                            <NotFound_404/>
+                        </Route>
+
                     </Switch>
                 }
-                {/*   </Routes>*/}
             </>
-            {/*    <Footer/>*/}
+                {/*    <MenuPopup isOpen={props.isOpen} onClose={props.onClose} />*/}
+                    </CurrentUserContext.Provider>
+    </BrowserRouter>
+    )}
 
-        </CurrentUserContext.Provider>
-    </BrowserRouter>)
-}
-
-    /*
-        import React, { useCallback } from "./react";
-//хук управления формой
-    export function useForm() {
-        const [values, setValues] = React.useState({});
-        const handleChange = (event) => {
-            const target = event.target;
-            const value = target.value;
-            const name = target.name;
-            setValues({...values, [name]: value});
-        };
-
-        return {values, handleChange, setValues};
-    }
-
-//хук управления формой и валидации формы
-    export function useFormWithValidation() {
-        const [values, setValues] = React.useState({});
-        const [errors, setErrors] = React.useState({});
-        const [isValid, setIsValid] = React.useState(false);
-
-        const handleChange = (event) => {
-            const target = event.target;
-            const name = target.name;
-            const value = target.value;
-            setValues({...values, [name]: value});
-            setErrors({...errors, [name]: target.validationMessage });
-            setIsValid(target.closest("form").checkValidity());
-        };
-
-        const resetForm = useCallback(
-            (newValues = {}, newErrors = {}, newIsValid = false) => {
-                setValues(newValues);
-                setErrors(newErrors);
-                setIsValid(newIsValid);
-            },
-            [setValues, setErrors, setIsValid]
-        );
-
-        return { values, handleChange, errors, isValid, resetForm };
-    }
-*/
-
-    /*  //const history = useHistory(); /////*/

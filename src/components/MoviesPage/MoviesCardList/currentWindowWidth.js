@@ -7,6 +7,7 @@ function getWindowWidth() {
 
 export default function useWindowWidth() {
     const [windowWidth, setWindowWidth] = useState(getWindowWidth());
+
     useEffect(() => {
         function handleResize() {
             setWindowWidth(getWindowWidth());

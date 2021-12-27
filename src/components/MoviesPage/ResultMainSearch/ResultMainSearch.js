@@ -13,7 +13,8 @@ function ResultMainSearch(props) {
                     <div className="result_main_search_icon__lupa"></div>
                     <form name="form__input_film">
                         <input type='text' className="result_main_search_icon_film" name="name"
-                               defaultValue="Фильм" required
+                           /*    defaultValue="Фильм"*/
+                               required
                                maxLength="60" minLength="2"/>
                     </form>
                 </div>

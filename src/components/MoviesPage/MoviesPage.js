@@ -52,7 +52,10 @@ function MoviesPages(props){
         <>
             <HeaderSavedFilms/>
             <main>
-                <ResultMainSearch/>
+                <ResultMainSearch
+
+
+                />
 <MoviesCardList/>
              {/*   {isLoading ? (
                     <Preloader/>) : (<MoviesCardList loading = {setLoading} />)}*/}

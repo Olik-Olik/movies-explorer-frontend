@@ -87,8 +87,8 @@ import './AboutPage/BeginPage/BurgerMenu/Burger.css';
     <HeaderRezultLoginWelcome>
     </HeaderRezultLoginWelcome>
 
-    <Register>
-    </Register>
+   {/* <Register>
+    </Register>*/}
     <Checkbox/>
 
 </>)}

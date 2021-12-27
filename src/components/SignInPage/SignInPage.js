@@ -14,7 +14,7 @@ function SignInPage(props){
         <>
             <SignInHeader/>
             <main>
-            <Login/>
+            <Login handleLogin={props.handleLogin}/>
             </main>
             <Footer/>
         </>)}

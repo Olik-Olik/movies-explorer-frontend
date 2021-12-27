@@ -21,7 +21,7 @@ function MovieCard(props) {
         props.isDelete(props.cardData);
     }
 function handleLike(){
-   if (!isLiked){
+   if (!isLiked) {
        handleSave({
            country: props.cardData.country,
            director: props.cardData.director,
@@ -29,14 +29,19 @@ function handleLike(){
            year: props.cardData.year,
            description: props.cardData.description,
            movieId: props.cardData.movieId,
-           nameRU:props.cardData.nameRU,
+           nameRU: props.cardData.nameRU,
            nameEN: props.cardData.nameEN,
            thumbnail: props.cardData.thumbnail,
-           image:  props.cardData.image.url,
+           image: props.cardData.image.url,
            trailer: props.cardData.trailerLink,
        })
+
+       setIsLiked(true);
+   } else {
+       setIsLiked(false);
+       const likedSavedMovie = isLiked.find(props.movie.movieId)} /*#### лайкнутое кино верно?*/
+       handleDelete(props.cardData.likedSavedMovie);
    }
-}
 const likeButton = `${isLiked ? "card__container_like_active" : "card__container_like_passive"}` ;
         {/*   {`${isLikedSavedFilms ? "like__delete" : ''}`} onClick={toggleLike}`*/}
     return (
@@ -54,7 +59,7 @@ const likeButton = `${isLiked ? "card__container_like_active" : "card__container
                     {`${isLikedSavedFilms ? '' : 'SAVE ME'}`}
                 </button>
 */}
-                <button className = {likeButton} onClick={props.isSave ? handleDelete : handleSave}>
+                <button className = {`like card__container_like_passive ${likeButton}`} onClick={props.isSave ? handleDelete : handleSave}>
 
                 </button>
 

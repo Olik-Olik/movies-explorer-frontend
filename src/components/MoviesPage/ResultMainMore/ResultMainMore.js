@@ -6,11 +6,14 @@ import '../../../index.css';
 
 function ResultMainMore(props){
     return(
-        <form className="result_main_search result_main_more" /*onChange={handleFormChange}*/>
+        <form className="result_main_search result_main_more" >
 
             <div className="result_main_search__conteiner result_search_main_container_more">
 
-                    <div className= "result_main_search_icon_film">Ещё</div>
+                    <button
+                        type="button"
+                        className= "result_main_search_icon_film"
+                        onClick={props.handleMoreClick}>Ещё</button>
 
             </div>
         </form>

@@ -8,7 +8,8 @@ import apiMovies from "../../../utils/MoviesApi";
 import Preloader from "../../Preloader";
 
 import useWindowWidth from "../MoviesCardList/currentWindowWidth";
-
+import ResultMainSearch from "../ResultMainSearch/ResultMainSearch";
+import ResultMainMore from "../ResultMainMore/ResultMainMore";
 function MoviesCardList(props){
    const [cards, setCards] = useState([]);
 
@@ -23,9 +24,7 @@ function MoviesCardList(props){
     const moviesRowMore320 = 2;
     const moviesNothing = 0;
 
-
     let currentWindowWidth = useWindowWidth();
-
 
     const MovieCard = lazy(() => import('../Card/MovieCard')); /* для прелоадера */
 
@@ -58,26 +57,22 @@ useEffect(() => {
     return(
     <section className="moviesCard_list">
       <Suspense fallback={<Preloader/>}>
+
        {cards &&
         cards.map(card => (
             <MovieCard
-             /*   cardData={card}*/
             cardData={card}
             id={card.movieId}
             name={card.name}
             duration={card.duration}
-
             isSave ={props.isSave}
             setIsSave={props.setIsSave}
             isDelete={props.isDelete}
             addMovies={props.addMovies}
             />
          ))}
-
-        {/*  <button*/}
-
         </Suspense>
-
+    <ResultMainMore/>
     </section>
 )
 

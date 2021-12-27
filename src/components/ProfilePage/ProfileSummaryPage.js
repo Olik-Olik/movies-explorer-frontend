@@ -15,7 +15,9 @@ function ProfileSummaryPage(props) {
                         <div className="result__name">Имя</div>
 
                         <form name="profile__input-name">
-                            <input type = 'text' className=" result__input-name" defaultValue="Олик" required
+                            <input type = 'text' className=" result__input-name"
+                                /*   defaultValue="Олик" */
+                                   required
                                    maxLength="30" minLength="2" /> </form>
 
                       {/*  <div className= " result__name result__input-name">Олик</div>*/}
@@ -24,7 +26,9 @@ function ProfileSummaryPage(props) {
                         <div className= "result__email ">E-mail</div>
 
                         <form name="profile__input-email">
-                            <input type = 'text' className="result__input-email " name="email" defaultValue="byka@newtree.ru" required
+                            <input type = 'text' className="result__input-email " name="email"
+
+                                   required
                                    maxLength="30" minLength="2" /> </form>
 
                   {/*      <div className= "result__input-name result__input-email">pochta@newtree.ru</div>*/}

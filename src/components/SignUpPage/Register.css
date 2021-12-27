@@ -2,9 +2,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-   /* width: 100%;*/
-  /*  max-width: 1280px;*/
-   /* padding: 0 70px;*/
     margin: 0 auto;
     color: #FFFFFF;
     background-color: #202020;
@@ -12,13 +9,16 @@
 .auth__login-signin{
     text-decoration: none;
     display: flex;
+
 }
 .profile__name{
      padding-top: 0;
     border-bottom: none;
     padding-bottom: 5px;
 }
-
+.label__input{
+    background-color: #202020;
+}
 /*форма input name*/
 .profile__input-name{
     width: 396px;
@@ -31,9 +31,12 @@
     padding-bottom: 10px;
     border-bottom: 1px solid #424242;
     border-right-width: 0;
-
 }
 
+.profile__input-name:focus
+{
+    background-color:#202020;
+}
 .auth__login-welcome {
 /*Заголовок*/
     display: flex;
@@ -59,6 +62,7 @@
     line-height: 17px;
     font-size: 14px;
     flex-direction: column;
+    background-color: #202020;
 }
 
 @media screen and (max-width: 320px) {
@@ -96,6 +100,7 @@
     background-color: #202020;
 }*/
 .auth__form-login-input-password {
+    background-color: #202020;
     font-size: 14px;
     line-height: 17px;
     font-style: normal;
@@ -105,14 +110,14 @@
     flex-direction: column;
     justify-content: center;
     display: flex;
-    background: transparent;
+ /*   background: transparent;*/
     list-style-type: none;
     text-decoration: none;
     cursor: pointer;
     padding: 0 0 13px 0;
     border: 0;
     -webkit-text-security: disc;
-    text-decoration: none;
+  /*  text-decoration: none;*/
 }
 /*Пароль и Почта*/
 .profile__email {
