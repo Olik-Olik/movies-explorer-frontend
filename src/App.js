@@ -279,18 +279,17 @@ export default function App(props) {
 
                         <ProtectedRoute
                             exact={true} path="/saved-movies"
-                            component={() => (<SavedMoviesPages
+                            component={SavedMoviesPages}
                                 loggedIn={loggedIn}
-                                signOut={handleSignOut}/>)}
+                                signOut={handleSignOut}
                         />
 
                         <ProtectedRoute
                             exact={true} path="/profile"
-                            component={() => (<ProfilePage
+                            component={ProfilePage}
                                 loggedIn={loggedIn}
                                 signOut={handleSignOut}
                                 updateProfile={handleUpdateProfile}
-                            />)}
                         />
                         <Route path=''>
                             <NotFound_404/>
