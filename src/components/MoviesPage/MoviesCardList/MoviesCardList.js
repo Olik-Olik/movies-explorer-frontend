@@ -12,17 +12,19 @@ import ResultMainSearch from "../ResultMainSearch/ResultMainSearch";
 import ResultMainMore from "../ResultMainMore/ResultMainMore";
 function MoviesCardList(props){
    const [cards, setCards] = useState([]);
-
+const currentPath = window.location.pathname;
     const [isRenderRow, setIsRenderRow] =useState(0);
     const [isRenderMoreRow, setIsRenderMoreRow] =useState(0);
 
     const moviesRow1280 = 12;
     const moviesRowMore1280=4;
+
     const moviesRow768 = 8;
     const moviesRowMore768 = 2;
+
     const moviesRow320 = 4;
     const moviesRowMore320 = 2;
-    const moviesNothing = 0;
+
 
     let currentWindowWidth = useWindowWidth();
 
@@ -37,17 +39,17 @@ function MoviesCardList(props){
                             })
                             .catch((err) => console.log('Киношки не загрузились!: ' + err.toString()))
  }, []);
-
+/*если больше */
 useEffect(() => {
-        if (currentWindowWidth >= 1280) {
+        if((currentPath === '/movies'||'/saved-movies') && (currentWindowWidth >= 1280)) {
             setIsRenderRow(moviesRow1280); setIsRenderMoreRow(moviesRowMore1280)
         }
 
-        if (currentWindowWidth >= 768) {
+        if ((currentPath === '/movies'||'/saved-movies') && (currentWindowWidth >= 768)) {
             setIsRenderRow(moviesRow768); setIsRenderMoreRow(moviesRowMore768)
         }
 
-        if (currentWindowWidth >= 320) {
+        if ((currentPath === '/movies'||'/saved-movies') && (currentWindowWidth >= 320)) {
             setIsRenderRow(moviesRow320); setIsRenderMoreRow(moviesRowMore320)
         }
     },
@@ -68,14 +70,13 @@ useEffect(() => {
             isSave ={props.isSave}
             setIsSave={props.setIsSave}
             isDelete={props.isDelete}
-            addMovies={props.addMovies}
+
             />
          ))}
         </Suspense>
     <ResultMainMore/>
     </section>
 )
-
 }
 export default MoviesCardList;
 

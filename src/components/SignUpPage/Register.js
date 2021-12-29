@@ -6,7 +6,7 @@ import '../Footer.css';
 import '../SignInPage/SignInHeader.css';
 import '../../index.css';
 import {useHistory} from "react-router-dom";
-
+import validator from '../../utils/validator';
 function Register(props) {
     const history = useHistory();
     const [email, setEmail] = useState('');
@@ -29,10 +29,10 @@ function Register(props) {
 
     function handleSubmitRegister(evt) {
         evt.preventDefault();
-        if (!password || !email ||!name) {
+        if (!name || !email || !password )  {
             return;
         }
-        props.handleRegister(name, password, email );
+        props.handleRegister(name, email, password);
     }
 
     useEffect(() => {
@@ -93,13 +93,13 @@ function Register(props) {
 
                         <form name="profile__input-password">
 
-                            <input type='text'
+                            <input type='password'
                                    name="password"
                                    className="auth__form-login-input-password"
                             /*       defaultValue="qwerty"*/
                                    required
                                    value={password || ""}
-                                   maxLength="8" minLength="2"
+                                   minLength="8"
                                 /*     placeholder="Пароль"*/
                                    onChange={handleChangePassword}
                             />

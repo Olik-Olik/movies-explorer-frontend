@@ -56,13 +56,16 @@ function MoviesPages(props){
 
 
                 />
-<MoviesCardList/>
+<MoviesCardList
+/*movies={props.movies}*/
+
+
+/>
              {/*   {isLoading ? (
                     <Preloader/>) : (<MoviesCardList loading = {setLoading} />)}*/}
                 <ResultMainMore/>
             </main>
         </>
     )}
-
 
 export default MoviesPages;

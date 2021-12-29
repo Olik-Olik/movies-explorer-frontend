@@ -6,9 +6,9 @@ function Checkbox(props) {
 return(
 <div className ="tumb" >
     <input type="checkbox"
-         /*  className="tumb__checkbox"
+         className="tumb__checkbox"
            checked = {props.korotkometrazh}
-           onChange={props.handleCheckbox}*/
+           onChange={props.handleCheckbox}
          /*  autocomplete*/
 
     />

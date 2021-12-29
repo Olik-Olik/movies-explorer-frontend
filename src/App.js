@@ -17,6 +17,7 @@ import apiAuth from "./utils/MainApi";
 import ProtectedRoute from "./components/ProtectedRoute";
 import MenuPopup from "./components/MenuPopup/MenuPopup";
 import * as path from "path";
+import MainApi from "./utils/MainApi";
 
 export default function App(props) {
     const history = useHistory();
@@ -30,7 +31,7 @@ export default function App(props) {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
-       const [infoSuccess, setInfoSuccess] = useState(false);
+    const [infoSuccess, setInfoSuccess] = useState(false);
     const [search, setSearch] = useState({});
     const [isRegResOpen, setIsRegResOpen] = useState(false);
     const [korotkometrazh, setKorotkometrazh] = useState(false);
@@ -78,7 +79,7 @@ export default function App(props) {
 
         const token = localStorage.getItem("token");
         if (token) {
-             apiAuth.checkToken(token)
+            apiAuth.checkToken(token)
 
                 // здесь можем получить данные пользователя!
                 // поместим их в стейт внутри App.js
@@ -86,16 +87,15 @@ export default function App(props) {
                     console.log('Ответ есть!');
                     setLoggedIn(true);
                     setCurrentUser(res);
-                    history.push(path);
-                  //  setEmail(res.email);
-                  //  setName(res.name);
+                   // history.push(path);
+                    setEmail(res.email);
                     setIsLoading(false);
                 })
                 .catch((err) => {
                     console.log('Ответа нет! ' + err.toString());
                     setLoggedIn(false);
                     setIsLoading(false);
-                 //   setEmail('');
+                     setEmail('');
                   //  setName('');
                  //  history.push("/");
                 })
@@ -104,7 +104,7 @@ export default function App(props) {
             console.log('Токена нету!!!');
             setLoggedIn(false);
             setIsLoading(false);
-          //  setEmail('');
+            setEmail('');
           //  setName('');
         }
     }
@@ -134,7 +134,7 @@ export default function App(props) {
                 console.log('login');
                 localStorage.setItem('token', res.token);
                /* apiAuth.checkToken(res.token);*/
-                  apiAuth.handleToken(res.token); /*##########*/
+                apiAuth.handleToken(res.token); /*##########*/
                // setEmail(email);
                 setLoggedIn(true);
               //  history.push("/movies");
@@ -146,19 +146,19 @@ export default function App(props) {
             })
     }
 
-    function handleRegister(name, password, email) {
+    function handleRegister(name, email, password) {
         return apiAuth
-            .register(name, password, email)
+            .register(name, email, password)
             .then((res) => {
-                   setInfoSuccess(true);
+                setInfoSuccess(true);
                 setIsRegResOpen(true);
                 console.log("register");
-                handleLogin({name, password, email});
+                //handleLogin({name, email, password});
                 setCurrentUser(res);
             })
             .catch((err) => {
                     console.log('Не зарегались :( ' + err.toString());
-                       setInfoSuccess(false);
+                    setInfoSuccess(false);
                     console.log(`БЕЕЕ register ${err}`)
                     setIsRegResOpen(true);
                 }

@@ -1,4 +1,3 @@
-/*  ####################  MOVIE #####################*/
 class ApiMovies {
     constructor(arr) {
         this._address = arr.address;
