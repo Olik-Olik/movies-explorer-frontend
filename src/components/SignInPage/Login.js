@@ -1,27 +1,28 @@
 /* Логин*/
 
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
 import '../Profile.css';
 import '../Footer.css';
 import '../../index.css';
-import {Link, useHistory} from "react-router-dom";
+import {Link, useHistory, useLocation} from "react-router-dom";
 
 function Login(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const history = useHistory();
+    const location = useLocation();
     const [emailError, setEmailError] = useState('');
 
 
-   function handleChangeEmail(evt) {
-       const emailValidation = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/i.test(evt.target.value);
+    function handleChangeEmail(evt) {
+        const emailValidation = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/i.test(evt.target.value);
 
-       if (emailValidation) {
-           setEmailError('Валидный Email :)')
-       } else {
-           setEmailError('Enter valid Email!')
-       }
+        if (emailValidation) {
+            setEmailError('Валидный Email :)')
+        } else {
+            setEmailError('Enter valid Email!')
+        }
 
         setEmail(evt.target.value);
 
@@ -34,22 +35,28 @@ function Login(props) {
     function handleSubmitLogin(evt) {
 
         evt.preventDefault();
-        if ( !email || !password )  {
-            return; }
+        if (!email || !password) {
+            return;
+        }
         props.handleLogin(email, password)
             .then(() => {
-            history.push('/movies')  /*#########*/
-        }
-    );
-}
-/*function handleChangeEmail(evt) {
-    const emailValid = /^([a-z0-9.-]+)@([a-z0-9\-]+)\.([a-z.]{2,})*$/i.test(evt.target.value);
-    if (emailValid) {
-        setEmailError('Valid Email ')
-    } else {
-        setEmailError('Enter valid Email!')
+                console.log('BR');
+                /*history.push({ pathname: '/movies', state: location.state } );  /!*#########*!/*/
+                history.push('/movies');
+                console.log('AR');
+                }
+            );
+        console.log('EF');
     }
-}*/
+
+    /*function handleChangeEmail(evt) {
+        const emailValid = /^([a-z0-9.-]+)@([a-z0-9\-]+)\.([a-z.]{2,})*$/i.test(evt.target.value);
+        if (emailValid) {
+            setEmailError('Valid Email ')
+        } else {
+            setEmailError('Enter valid Email!')
+        }
+    }*/
 
     return (
         <>
@@ -61,23 +68,23 @@ function Login(props) {
 
                     <div className="profile__email-email ">
                         <label className="profile__email ">E-mail
-                        <div className="profile__input-email">
-                            <input type='text'
-                                   className="auth__form-login-input-email"
-                                   name="email"
-                                /*    defaultValue="byka@newtree.ru"*/
-                                   required
-                                   maxLength="30" minLength="2"
-                                   value={email}
-                                /*  value={email || ""}*/
-                                /*  placeholder="Email"*/
-                                   onChange={handleChangeEmail}/></div>
+                            <div className="profile__input-email">
+                                <input type='text'
+                                       className="auth__form-login-input-email"
+                                       name="email"
+                                    /*    defaultValue="byka@newtree.ru"*/
+                                       required
+                                       maxLength="30" minLength="2"
+                                       value={email}
+                                    /*  value={email || ""}*/
+                                    /*  placeholder="Email"*/
+                                       onChange={handleChangeEmail}/></div>
                         </label>
                     </div>
 
                     <div className="profile__email-email  profile__email-password">
 
-                        <label className="profile__email ">Пароль  </label>
+                        <label className="profile__email ">Пароль </label>
 
                         <div className="profile__input-password">
                             <input
@@ -89,7 +96,7 @@ function Login(props) {
                                 type="password"
                                 value={password}
                                 /*    value={password || ""}*/
-                              /*  placeholder="Пароль"*/
+                                /*  placeholder="Пароль"*/
                                 onChange={handleChangePassword}
                             />
 
@@ -123,7 +130,7 @@ function Login(props) {
                 </form>
             </div>
         </>
- )
+    )
 }
 
 export default Login;

@@ -110,9 +110,11 @@ export default function App(props) {
     }
 
 
+/*
                     useEffect(() => {
                         hukUseEffectToken();
                     }, [loggedIn]);
+*/
 
 
 //movies
@@ -135,7 +137,7 @@ export default function App(props) {
                 localStorage.setItem('token', res.token);
                /* apiAuth.checkToken(res.token);*/
                 apiAuth.handleToken(res.token); /*##########*/
-               // setEmail(email);
+                setEmail(email);
                 setLoggedIn(true);
               //  history.push("/movies");
                 console.log('Залогинились !');
@@ -248,7 +250,7 @@ export default function App(props) {
     }
 
 
-    return (<BrowserRouter>
+    return (<BrowserRouter /*history={history}*/>
         <CurrentUserContext.Provider>
             <>
                 {!isLoading &&
@@ -257,9 +259,9 @@ export default function App(props) {
                             {() => loggedIn === true ? <Redirect to="/movies"/> : <Redirect to="/sign-in"/>}
                         </Route>
 */}
+
                         <Route exact={true} path="/"
                                component={AboutPage}/>
-
 
                         <Route exact={true} path="/sign-in"
                                component={() => (<SignInPage handleLogin={handleLogin}/>)}
@@ -271,14 +273,9 @@ export default function App(props) {
                         {/*регистрация */}
 
                         <ProtectedRoute
-                            exact={true} path="/movies"
-                            component={() => (<MoviesPage
-                                loggedIn={loggedIn}
-                                signOut={handleSignOut}
-                                updateProfile={handleUpdateProfile}
-                                korotkometrazh={korotkometrazh}/>)}
+                            component={MoviesPage}
+                            exact={true} path="/movies" loggedIn={loggedIn}
                         />
-
 
                         <ProtectedRoute
                             exact={true} path="/saved-movies"

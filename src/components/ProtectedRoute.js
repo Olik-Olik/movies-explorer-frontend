@@ -4,12 +4,14 @@ import React from 'react';
 import {Redirect, Route} from "react-router-dom";
 
 const ProtectedRoute = ({component: Component, ...props}) => {
+    console.log('In PR');
     return (
-        <Route exact={props.exact} path={props.path}>
-            {() =>
-                props.loggedIn === true ? <Component {...props} /> : <Redirect to="/sign-in"/>
+        <Route exact={props.exact} path={props.path}
+            render = {() =>
+                props.loggedIn === true ? <Component {...props}/> : <Redirect to="/sign-in"/>
             }
-        </Route>
+            />
+        /*</Route>*/
     );
 };
 
