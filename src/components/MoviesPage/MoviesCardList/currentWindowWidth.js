@@ -1,20 +1,20 @@
-import {useEffect, useState} from 'react';
+const widthExpandMap = {
+    1280: { initialAmount: 12, moreAmount:4},
+    768: { initialAmount: 8, moreAmount:2},
+    320: { initialAmount: 4, moreAmount:2},
+    0: { initialAmount: 4, moreAmount:2},
+}
 
 function getWindowWidth() {
     const {innerWidth: width} = window;
-    return {width};
+    return width;
 }
 
-export default function useWindowWidth() {
-    const [windowWidth, setWindowWidth] = useState(getWindowWidth());
-
-    useEffect(() => {
-        function handleResize() {
-            setWindowWidth(getWindowWidth());
-        }
-
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-    return windowWidth;
+export default function getExpandWidth() {
+    const width = getWindowWidth();
+    for (const [key, value] of Object.entries(widthExpandMap)) {
+        console.log(key, value);
+        if ( width >= key )  return value;
+    }
+    console.log("ЧЁто пошло не так, обратитесь к разработчику.");
 }

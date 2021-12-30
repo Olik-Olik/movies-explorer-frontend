@@ -6,27 +6,11 @@ import '../Card/MovieCard';
 import MovieCard from "../Card/MovieCard";
 import apiMovies from "../../../utils/MoviesApi";
 import Preloader from "../../Preloader";
+import getExpandWidth from "../../MoviesPage/MoviesCardList/currentWindowWidth";
 
-import useWindowWidth from "../MoviesCardList/currentWindowWidth";
-import ResultMainSearch from "../ResultMainSearch/ResultMainSearch";
-import ResultMainMore from "../ResultMainMore/ResultMainMore";
 function MoviesCardList(props){
    const [cards, setCards] = useState([]);
-const currentPath = window.location.pathname;
-    const [isRenderRow, setIsRenderRow] =useState(0);
-    const [isRenderMoreRow, setIsRenderMoreRow] =useState(0);
 
-    const moviesRow1280 = 12;
-    const moviesRowMore1280=4;
-
-    const moviesRow768 = 8;
-    const moviesRowMore768 = 2;
-
-    const moviesRow320 = 4;
-    const moviesRowMore320 = 2;
-
-
-    let currentWindowWidth = useWindowWidth();
 
     const MovieCard = lazy(() => import('../Card/MovieCard')); /* для прелоадера */
 
@@ -34,27 +18,14 @@ const currentPath = window.location.pathname;
                         apiMovies.getAllAboutMovies()
                             .then((res) => {
                                     console.log(res);
+                                    console.log(getExpandWidth());
                                     setCards(res)
                                 console.log('Киношки загрузились корректно!')
                             })
                             .catch((err) => console.log('Киношки не загрузились!: ' + err.toString()))
  }, []);
 /*если больше */
-useEffect(() => {
-        if((currentPath === '/movies'||'/saved-movies') && (currentWindowWidth >= 1280)) {
-            setIsRenderRow(moviesRow1280); setIsRenderMoreRow(moviesRowMore1280)
-        }
 
-        if ((currentPath === '/movies'||'/saved-movies') && (currentWindowWidth >= 768)) {
-            setIsRenderRow(moviesRow768); setIsRenderMoreRow(moviesRowMore768)
-        }
-
-        if ((currentPath === '/movies'||'/saved-movies') && (currentWindowWidth >= 320)) {
-            setIsRenderRow(moviesRow320); setIsRenderMoreRow(moviesRowMore320)
-        }
-    },
-    [currentWindowWidth],
-)
 
     return(
     <section className="moviesCard_list">
@@ -74,7 +45,7 @@ useEffect(() => {
             />
          ))}
         </Suspense>
-    <ResultMainMore/>
+ {/*   <ResultMainMore/>*/}
     </section>
 )
 }
