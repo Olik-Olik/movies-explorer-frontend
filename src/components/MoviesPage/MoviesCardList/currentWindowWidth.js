@@ -12,9 +12,15 @@ function getWindowWidth() {
 
 export default function getExpandWidth() {
     const width = getWindowWidth();
-    for (const [key, value] of Object.entries(widthExpandMap)) {
-        console.log(key, value);
-        if ( width >= key )  return value;
+    console.log('WDH: ' + width);
+    const ewKeys = Object.keys(widthExpandMap).reverse();
+    console.log('ewK: ' + ewKeys);
+    for (const key of ewKeys) {
+        console.log(key);
+        if ( width >= key )  {
+            console.log('ret: ' + widthExpandMap[key].initialAmount);
+            return widthExpandMap[key];
+        }
     }
     console.log("ЧЁто пошло не так, обратитесь к разработчику.");
 }
