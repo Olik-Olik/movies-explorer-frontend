@@ -119,10 +119,10 @@ function Login(props) {
                                 Еще не зарегистрированы?
                             </div>
 
-                            <p className="auth__login-signup-nonDecoration">
+                            <div className="auth__login-signup-nonDecoration">
                                 <p className="auth__login-signup-Do_Register auth__signup-link auth__signup-link-color auth__login-signup-Do_Register-enter">Регистрация
                                 </p>
-                            </p>
+                            </div>
                         </Link>
 
 

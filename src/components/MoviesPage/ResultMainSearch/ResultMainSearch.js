@@ -9,20 +9,19 @@ function ResultMainSearch(props) {
 
             <div className="result_main_search__conteiner">
                 <div className="lupa-film">
-                    <div className="result_main_search_icon"></div>
-                    <div className="result_main_search_icon__lupa"></div>
+                    <div className="result_main_search_icon"/>
+                    <div className="result_main_search_icon__lupa"/>
                     <form name="form__input_film">
                         <input type='text' className="result_main_search_icon_film" name="name"
                            /*    defaultValue="Фильм"*/
                                required
-                               maxLength="60" minLength="2"/>
+                               maxLength="40" minLength="2"/>
                     </form>
                 </div>
-                {/*    <div className= "result_main_search_icon_film">Фильм</div>*/}
 
                 <div className="correct">
                 {/*Найти*/}
-                <button className="result_main_search__button_find"></button>
+                <button className="result_main_search__button_find"/>
                 {/*Линия между смоллтубом и Найти*/}
 
 

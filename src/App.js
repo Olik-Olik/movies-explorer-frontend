@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import {BrowserRouter, Redirect, Route, Switch, useHistory, useLocation} from 'react-router-dom';
-import CurrentUserContext from "../src/utils/context/CurrentUserContext";
 import './index.css';
 import AboutPage from "./components/AboutPage/AboutPage";
 import MoviesPage from "./components/MoviesPage/MoviesPage";
@@ -17,12 +16,13 @@ import apiAuth from "./utils/MainApi";
 import ProtectedRoute from "./components/ProtectedRoute";
 import MenuPopup from "./components/MenuPopup/MenuPopup";
 import * as path from "path";
-import MainApi from "./utils/MainApi";
+import { CurrentUserContext } from "./utils/context/CurrentUserContext";
 
 export default function App(props) {
+    const currentUserContext = useContext(CurrentUserContext);
+    const [currentUser, setCurrentUser] = useState({});//Стейт переменная используется
     const history = useHistory();
  //   const location = useLocation();
-    const [currentUser, setCurrentUser] = useState({});
     const [isLoading, setIsLoading] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
     const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
@@ -79,21 +79,21 @@ export default function App(props) {
 
         const token = localStorage.getItem("token");
         if (token) {
-            apiAuth.checkToken(token)
+            apiAuth.checkToken()
 
                 // здесь можем получить данные пользователя!
                 // поместим их в стейт внутри App.js
                 .then((res) => {
                     console.log('Ответ есть!');
-                    setLoggedIn(true);
-                    setCurrentUser(res);
+                    currentUser.loggedIn = true;
+                    setCurrentUser(currentUser);
                    // history.push(path);
                     setEmail(res.email);
                     setIsLoading(false);
                 })
                 .catch((err) => {
                     console.log('Ответа нет! ' + err.toString());
-                    setLoggedIn(false);
+                    currentUser.loggedIn = false;
                     setIsLoading(false);
                      setEmail('');
                   //  setName('');
@@ -102,49 +102,40 @@ export default function App(props) {
 
         } else {
             console.log('Токена нету!!!');
-            setLoggedIn(false);
+            currentUser.loggedIn = false;
             setIsLoading(false);
             setEmail('');
           //  setName('');
         }
     }
 
-
-/*
-                    useEffect(() => {
-                        hukUseEffectToken();
-                    }, [loggedIn]);
-*/
-
-
-//movies
     useEffect(() => {
-        if (loggedIn) {
-            apiMovies.getAllAboutMovies()
-                .then((res) => {
-                    console.log(res);
-                    setCards(res)
-                })
-                .catch((err) => console.log('Кина не будет!: ' + err.toString()))
-        }
+        apiAuth.checkToken().then(() => { setLoggedIn(true)} ).catch( setLoggedIn(false));
+    },[])
+
+    useEffect(() => {
+        hukUseEffectToken();
     }, [loggedIn]);
+
+
 
     function handleLogin(email, password ) {
         return apiAuth
             .login(email, password )
             .then((res) => {
                 console.log('login');
+                console.log(res.token);
                 localStorage.setItem('token', res.token);
                /* apiAuth.checkToken(res.token);*/
                 apiAuth.handleToken(res.token); /*##########*/
                 setEmail(email);
-                setLoggedIn(true);
+                currentUser.loggedIn = true;
               //  history.push("/movies");
                 console.log('Залогинились !');
             })
             .catch((err) => {
                 console.log('Не залогинились :( ' + err.toString());
-                setLoggedIn(false);
+                currentUser.loggedIn = false;
             })
     }
 
@@ -156,7 +147,7 @@ export default function App(props) {
                 setIsRegResOpen(true);
                 console.log("register");
                 //handleLogin({name, email, password});
-                setCurrentUser(res);
+                //setCurrentUser(res);
             })
             .catch((err) => {
                     console.log('Не зарегались :( ' + err.toString());
@@ -174,7 +165,7 @@ export default function App(props) {
             'password': userData.password,
         })
             .then(data => {
-                setCurrentUser(data);
+                //setCurrentUser(data);
                 closeAllPopups()
             })
             .catch((err) => {
@@ -199,7 +190,7 @@ export default function App(props) {
         console.log("I was so close...")
         setIsEditProfilePopupOpen(false);
         setIsRegResOpen(false);
-        setLoggedIn(false);
+        //setLoggedIn(false);
         // history.push("/");
     }
 
@@ -243,23 +234,25 @@ export default function App(props) {
     function handleSignOut() {
         console.log("logout");
         localStorage.removeItem('token');
+        setLoggedIn(false);
         setCurrentUser({});
         setEmail("");
-        setLoggedIn(false);
+        currentUser.loggedIn = false;
         // history.push("/");
     }
 
 
-    return (<BrowserRouter /*history={history}*/>
-        <CurrentUserContext.Provider>
-            <>
+    return (
+        <>
+        <BrowserRouter /*history={history}*/>
+        <CurrentUserContext.Provider value={currentUser}>
+
                 {!isLoading &&
                     <Switch>
                        {/* <Route>
                             {() => loggedIn === true ? <Redirect to="/movies"/> : <Redirect to="/sign-in"/>}
                         </Route>
 */}
-
                         <Route exact={true} path="/"
                                component={AboutPage}/>
 
@@ -273,21 +266,22 @@ export default function App(props) {
                         {/*регистрация */}
 
                         <ProtectedRoute
+                            exact={true} path="/movies"
                             component={MoviesPage}
-                            exact={true} path="/movies" loggedIn={loggedIn}
+                            loggedIn={currentUserContext}
                         />
 
                         <ProtectedRoute
                             exact={true} path="/saved-movies"
                             component={SavedMoviesPages}
-                                loggedIn={loggedIn}
+                                loggedIn={currentUserContext}
                                 signOut={handleSignOut}
                         />
 
                         <ProtectedRoute
                             exact={true} path="/profile"
                             component={ProfilePage}
-                                loggedIn={loggedIn}
+                                loggedIn={currentUserContext}
                                 signOut={handleSignOut}
                                 updateProfile={handleUpdateProfile}
                         />
@@ -297,9 +291,10 @@ export default function App(props) {
 
                     </Switch>
                 }
-            </>
+
                 {/*    <MenuPopup isOpen={props.isOpen} onClose={props.onClose} />*/}
                     </CurrentUserContext.Provider>
     </BrowserRouter>
+        </>
     )}
 

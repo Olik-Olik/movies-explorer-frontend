@@ -5,12 +5,14 @@ import '../../index.css';
 function Checkbox(props) {
 return(
 <div className ="tumb" >
-    <input type="checkbox"
-         className="tumb__checkbox"
-           checked = {props.korotkometrazh}
-           onChange={props.handleCheckbox}
-         /*  autocomplete*/
+    <input
+        type="checkbox"
+        className="tumb__checkbox"
 
+        id = "korotkometrazh"
+/*        checked = {props.korotkometrazh}*/
+
+        onChange={props.handleCheckbox}
     />
 </div>
 )

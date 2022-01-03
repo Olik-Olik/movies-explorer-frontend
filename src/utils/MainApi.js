@@ -9,7 +9,7 @@
     }
 
       handleToken(){
-          this._authTocken = localStorage.getItem('token');
+          this._authTocken = localStorage.getItem("token");
           this._headers.Authorization = `Bearer ${this._authTocken}`;
       }
 
@@ -23,7 +23,9 @@
     }
 
 
-    checkToken = (token) => {
+    checkToken = () => {
+        this.handleToken();
+        console.log(this._headers);
         return fetch(`${ this._address}/users/me`, {
                 method: 'GET',
                 headers: this._headers,
@@ -34,6 +36,7 @@
 
 
     updateProfile = (name, email, password, token) => {
+        this.handleToken();
         return fetch(`${ this._address}/users/me`, {
             method: 'PATCH',
             headers: this._headers,
