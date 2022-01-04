@@ -40,7 +40,7 @@ function MoviesCardList(props) {
         console.log('ATSH' + amountToShow);
         if (amountToShow >= res.length) {
             amountToShow = res.length;
-            setShowMore(false);
+            // setShowMore(false);
         }
         setShownAmount(amountToShow);
         const slicedCards = res.slice(0, amountToShow);
@@ -92,6 +92,7 @@ function MoviesCardList(props) {
 
 
     return (
+        <>
         <section className="moviesCard_list">
             <Suspense fallback={<Preloader/>}>
 
@@ -109,9 +110,11 @@ function MoviesCardList(props) {
                         />
                     ))}
             </Suspense>
-            { showMore && <ResultMainMore handleMoreClick={handleMoreClick}/> }
         </section>
 
+    { showMore && <ResultMainMore handleMoreClick={handleMoreClick}/>}
+
+</>
     )
 }
 

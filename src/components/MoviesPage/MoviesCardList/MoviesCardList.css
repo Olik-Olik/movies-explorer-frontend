@@ -19,9 +19,9 @@
     gap:20px;
     box-sizing: border-box;
 }
-/*@media  (min-width: 501px) and (max-width: 1024px) {*/
+/* @media  (min-width: 660px) and (max-width: 1024px) {*/
 
-@media  (min-width: 501px) and (max-width: 1024px) {
+@media  (min-width: 501px) and (max-width: 1210px) {
 
     .moviesCard_list{
       /*  padding: 0;*/

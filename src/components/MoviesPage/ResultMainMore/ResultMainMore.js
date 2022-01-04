@@ -10,7 +10,10 @@ function ResultMainMore(props){
     return(
         <form className="result_main_search result_main_more" >
 
-            <div className="result_main_search__conteiner result_search_main_container_more" onClick={props.handleMoreClick}>
+            <div className="result_main_search__conteiner
+
+       {/*     result_search_main_container_more*/}
+            " onClick={props.handleMoreClick}>
 
                     <button
                         type="button"
