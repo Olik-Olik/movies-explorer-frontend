@@ -10,13 +10,6 @@ const ProtectedRoute = ({component: Component, ...props}) => {
     console.log('In PR ' + props.path);
     console.log(props.loggedIn);
     console.log(currentUser);
-    console.log(currentUser['loggedIn']);
-    console.log(typeof currentUser);
-    const { loggedIn } = currentUser;
-    console.log(loggedIn);
-
-    var err = new Error();
-    console.log(err.stack)
     return (
         <Route exact={props.exact} path={props.path}
             render = {() =>

@@ -50,27 +50,25 @@ function MoviesCardList(props) {
 
     /*клац по кнопке еще*/
     function handleMoreClick() {
-        setShownAmount(0);
         _showLimitedCards()
     }
 
     const MovieCard = lazy(() => import('../Card/MovieCard')); /* для прелоадера */
 
 /*фтльтрованных*/
-/*    useEffect(() => {
+    useEffect(() => {
         let searchResult = [];
         loadedCards.forEach(function (value){
-            searchResult.push(value);
-/!*
+            //searchResult.push(value);
             if (searchCriteria.shortMeter && value.duration <= 40){
                 searchResult.push(value);
             }
-*!/
         });
+        //setShownAmount(0);
         setAllCards(searchResult);
         _showLimitedCards();
     }, [searchCriteria]);
-    */
+
     useEffect(() => {
         _showLimitedCards();
     }, [allCards])
@@ -83,9 +81,10 @@ function MoviesCardList(props) {
     useEffect(() => {
         apiMovies.getAllAboutMovies()
             .then((res) => {
-                console.log('Киношки загрузились корректно!')
+                console.log('Киношки загрузились корректно!');
+                setShownAmount(0);
                 setLoadedCards(res);
-                setAllCards(res);
+                //setAllCards(res);
             })
             .catch((err) => console.log('Киношки не загрузились!: ' + err.toString()))
     }, []);

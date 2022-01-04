@@ -5,7 +5,7 @@ import ResultMainSearch from "./ResultMainSearch/ResultMainSearch";
 import MoviesCardList from "./MoviesCardList/MoviesCardList";
 import '../../index.css';
 import HeaderSavedFilms from "./HeaderSavedFilms/HeaderSavedFilms";
-import SearchForm from "../SearchForm";
+//import SearchForm from "../SearchForm";
 import Footer from "../Footer";
 
 
@@ -28,11 +28,13 @@ function MoviesPages(props) {
     let _shortMeter = false;
 
     function setSearchCriteria(keyWord, shortMeter){
+        console.log('sSC');
         _keyWord = keyWord;
         _shortMeter = shortMeter;
     }
 
     function getSearchCriteria(){
+        console.log('gSC');
         return {keyWord: _keyWord, shortMetter: _shortMeter};
     }
 
@@ -40,7 +42,7 @@ function MoviesPages(props) {
         <>
             <HeaderSavedFilms/>
             <main>
-                <SearchForm setSearchCriteria={setSearchCriteria}/>
+                <ResultMainSearch setSearchCriteria={setSearchCriteria}/>
                 <MoviesCardList getSearchCriteria={getSearchCriteria}/>
             </main>
             <Footer/>
