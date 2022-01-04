@@ -6,7 +6,7 @@ import '../Profile.css';
 import '../Footer.css';
 import '../../index.css';
 import {Link, useHistory, useLocation} from "react-router-dom";
-import {CurrentUserContext} from "../../utils/context/CurrentUserContext";
+import { CurrentUserContext } from '../../utils/context/CurrentUserContext';
 
 function Login(props) {
     const [email, setEmail] = useState('');

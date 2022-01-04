@@ -29,7 +29,7 @@ function ResultMainSearch(props) {
 
         return (
 
-          <form className="result_main_search" onSubmit={handleSubmit}>
+          <form className="result_main_search" /*onSubmit={handleSubmit}*/>
           <div className="result_main_search__conteiner">
           <div className="lupa-film">
           <div className="result_main_search_icon"/>
@@ -49,7 +49,9 @@ function ResultMainSearch(props) {
                     </form>
                 </div>
               <div className="correct">
-                  <button className="result_main_search__button_find" type="button"/>
+                  <button className="result_main_search__button_find" type="button"
+                          onClick={handleSubmit}
+                  />
 
                   <div className="find-line-icon">
                       <div className="result_main_search_icon_line">

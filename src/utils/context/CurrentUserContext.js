@@ -1,14 +1,8 @@
 import {createContext} from "react";
-
-const cuc = new Map()
-
-cuc.set('loggedIn', false);
 /*
-{
-    id: '',
-    email: '',
-    loggedIn: false
-});
+const CurrentUserContext = createContext();
+export default CurrentUserContext;
 */
+
 
 export const CurrentUserContext = createContext(false);

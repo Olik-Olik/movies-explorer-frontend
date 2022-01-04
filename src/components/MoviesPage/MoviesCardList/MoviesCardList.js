@@ -19,6 +19,7 @@ function MoviesCardList(props) {
     function handleSearchCards(){
         setSearchCriteria(props.getSearchCriteria());
     }
+
     function getShowAmount() {
         const expandWidth = getExpandWidth(); /* ширина есть текущая ширина*/
         console.log('EW: ' + expandWidth.toString());
@@ -40,7 +41,7 @@ function MoviesCardList(props) {
         console.log('ATSH' + amountToShow);
         if (amountToShow >= res.length) {
             amountToShow = res.length;
-            // setShowMore(false);
+            setShowMore(false);
         }
         setShownAmount(amountToShow);
         const slicedCards = res.slice(0, amountToShow);
@@ -57,24 +58,27 @@ function MoviesCardList(props) {
 
 /*фтльтрованных*/
     useEffect(() => {
-        let searchResult = [];
-        loadedCards.forEach(function (value){
-            //searchResult.push(value);
-            if (searchCriteria.shortMeter && value.duration <= 40){
-                searchResult.push(value);
-            }
-        });
-        //setShownAmount(0);
-        setAllCards(searchResult);
-        _showLimitedCards();
-    }, [searchCriteria]);
-
-    useEffect(() => {
         _showLimitedCards();
     }, [allCards])
 
     useEffect(() =>{
-        setAllCards(loadedCards);
+        if (props.searchCriteria.doSearch){
+            console.log('Filter cards...');
+            let searchResult = [];
+            loadedCards.forEach(function (value){
+                //searchResult.push(value);
+                if (props.searchCriteria.shortMeter && value.duration <= 40){
+                    searchResult.push(value);
+                }
+            });
+            setShownAmount(0);
+            setAllCards(searchResult);
+            _showLimitedCards();
+        }else{
+            console.log('NO FILTERS...');
+            setShownAmount(0);
+            setAllCards(loadedCards);
+        }
     }, [loadedCards])
 
 /*отображение всех карт*/
@@ -84,7 +88,6 @@ function MoviesCardList(props) {
                 console.log('Киношки загрузились корректно!');
                 setShownAmount(0);
                 setLoadedCards(res);
-                //setAllCards(res);
             })
             .catch((err) => console.log('Киношки не загрузились!: ' + err.toString()))
     }, []);

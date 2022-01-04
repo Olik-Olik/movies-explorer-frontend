@@ -24,18 +24,20 @@ function MoviesPages(props) {
         window.addEventListener("load", loading)
     }, [])
 
+    let _doSearch = false;
     let _keyWord = '';
     let _shortMeter = false;
 
     function setSearchCriteria(keyWord, shortMeter){
         console.log('sSC');
+        _doSearch = true;
         _keyWord = keyWord;
         _shortMeter = shortMeter;
     }
 
     function getSearchCriteria(){
         console.log('gSC');
-        return {keyWord: _keyWord, shortMetter: _shortMeter};
+        return {doSearch: _doSearch, keyWord: _keyWord, shortMeter: _shortMeter};
     }
 
     return (
@@ -43,7 +45,7 @@ function MoviesPages(props) {
             <HeaderSavedFilms/>
             <main>
                 <ResultMainSearch setSearchCriteria={setSearchCriteria}/>
-                <MoviesCardList getSearchCriteria={getSearchCriteria}/>
+                <MoviesCardList getSearchCriteria={getSearchCriteria} searchCriteria={getSearchCriteria()}/>
             </main>
             <Footer/>
         </>

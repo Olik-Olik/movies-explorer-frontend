@@ -16,14 +16,14 @@ import apiAuth from "./utils/MainApi";
 import ProtectedRoute from "./components/ProtectedRoute";
 import MenuPopup from "./components/MenuPopup/MenuPopup";
 import * as path from "path";
-import { CurrentUserContext } from "./utils/context/CurrentUserContext";
+import { CurrentUserContext } from './utils/context/CurrentUserContext';
 
 export default function App(props) {
     let currentUserContext = useContext(CurrentUserContext);
     const [currentUser, setCurrentUser] = useState({});//Стейт переменная используется
     const history = useHistory();
  //   const location = useLocation();
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [loggedIn, setLoggedIn] = useState(false);
     const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
     const [selectedCard, setSelectedCard] = useState({});
@@ -265,7 +265,7 @@ export default function App(props) {
     return (
         <>
         <BrowserRouter /*history={history}*/>
-        <CurrentUserContext.Provider value={currentUserContext}>
+        <CurrentUserContext.Provider value={CurrentUserContext}>
 
                 {!isLoading &&
                     <Switch>

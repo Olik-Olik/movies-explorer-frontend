@@ -1,5 +1,5 @@
-/*
 
+/*
 import React, {useState} from "react";
 import Checkbox from "./Checkbox/Checkbox";
 import ResultMainSearch from "./MoviesPage/ResultMainSearch/ResultMainSearch";
@@ -7,9 +7,9 @@ import ResultMainSearch from "./MoviesPage/ResultMainSearch/ResultMainSearch";
 function SearchForm(props) {
 
     const [keyWord, setKeyWord] = useState('');
-    const [shortMeter, setShortMeter] = useState(false);
+    const [shortMeter, setShortMeter] = useState(false);*/
 
-    function handleSearchField(evt) {
+  /*  function handleSearchField(evt) {
         evt.preventDefault();
         console.log('KW: ' + evt.target.value);
         setKeyWord(evt.target.value)
