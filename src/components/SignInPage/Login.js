@@ -1,11 +1,12 @@
 /* Логин*/
 
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 
 import '../Profile.css';
 import '../Footer.css';
 import '../../index.css';
 import {Link, useHistory, useLocation} from "react-router-dom";
+import {CurrentUserContext} from "../../utils/context/CurrentUserContext";
 
 function Login(props) {
     const [email, setEmail] = useState('');
@@ -13,6 +14,7 @@ function Login(props) {
     const history = useHistory();
     const location = useLocation();
     const [emailError, setEmailError] = useState('');
+    let currentUserContext = useContext(CurrentUserContext);
 
 
     function handleChangeEmail(evt) {
@@ -39,11 +41,21 @@ function Login(props) {
             return;
         }
         props.handleLogin(email, password)
-            .then(() => {
+            .then((response) => {
                 console.log('BR');
-                /*history.push({ pathname: '/movies', state: location.state } );  /!*#########*!/*/
-                history.push('/movies');
+                currentUserContext = true;
+                history.push({ pathname: '/movies',
+                    state: {
+                            authenticated: true,
+                            access_token: response.access_token,
+                            token_type: response.token_type,
+                            expires_in: response.expires_in,
+                            scope: response.scope},
+                });
+
+                //history.push('/movies');
                 console.log('AR');
+
                 }
             );
         console.log('EF');

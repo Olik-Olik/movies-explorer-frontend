@@ -19,7 +19,7 @@ import * as path from "path";
 import { CurrentUserContext } from "./utils/context/CurrentUserContext";
 
 export default function App(props) {
-    const currentUserContext = useContext(CurrentUserContext);
+    let currentUserContext = useContext(CurrentUserContext);
     const [currentUser, setCurrentUser] = useState({});//Стейт переменная используется
     const history = useHistory();
  //   const location = useLocation();
@@ -85,15 +85,17 @@ export default function App(props) {
                 // поместим их в стейт внутри App.js
                 .then((res) => {
                     console.log('Ответ есть!');
-                    currentUser.loggedIn = true;
-                    setCurrentUser(currentUser);
+                    currentUserContext = true;
+                    setLoggedIn(true);
+                    //setCurrentUser(currentUser);
                    // history.push(path);
                     setEmail(res.email);
                     setIsLoading(false);
                 })
                 .catch((err) => {
                     console.log('Ответа нет! ' + err.toString());
-                    currentUser.loggedIn = false;
+                    currentUserContext = false;
+                    setLoggedIn(false);
                     setIsLoading(false);
                      setEmail('');
                   //  setName('');
@@ -102,21 +104,35 @@ export default function App(props) {
 
         } else {
             console.log('Токена нету!!!');
-            currentUser.loggedIn = false;
+            currentUserContext = false;
+            setLoggedIn(false);
             setIsLoading(false);
             setEmail('');
           //  setName('');
         }
     }
 
+/*
     useEffect(() => {
-        apiAuth.checkToken().then(() => { setLoggedIn(true)} ).catch( setLoggedIn(false));
+        apiAuth.checkToken().then(() => {
+            currentUserContext = true;
+            setLoggedIn(true)
+        }).catch( (err) => {
+            currentUserContext = false;
+            setLoggedIn(false);
+        })
     },[])
-
+*/
     useEffect(() => {
         hukUseEffectToken();
-    }, [loggedIn]);
+    }, []);
 
+/*
+    useEffect(() => {
+        hukUseEffectToken();
+    }, [loggedIn, currentUserContext]);
+
+*/
 
 
     function handleLogin(email, password ) {
@@ -129,13 +145,16 @@ export default function App(props) {
                /* apiAuth.checkToken(res.token);*/
                 apiAuth.handleToken(res.token); /*##########*/
                 setEmail(email);
-                currentUser.loggedIn = true;
-              //  history.push("/movies");
+                currentUserContext = true;
+                setLoggedIn(true);
+                //history.push("/movies");
                 console.log('Залогинились !');
+                return res;
             })
             .catch((err) => {
                 console.log('Не залогинились :( ' + err.toString());
-                currentUser.loggedIn = false;
+                currentUserContext = false;
+                setLoggedIn(false);
             })
     }
 
@@ -234,10 +253,11 @@ export default function App(props) {
     function handleSignOut() {
         console.log("logout");
         localStorage.removeItem('token');
-        setLoggedIn(false);
+        //setLoggedIn(false);
         setCurrentUser({});
+        currentUserContext = false;
         setEmail("");
-        currentUser.loggedIn = false;
+        setLoggedIn(false);
         // history.push("/");
     }
 
@@ -245,7 +265,7 @@ export default function App(props) {
     return (
         <>
         <BrowserRouter /*history={history}*/>
-        <CurrentUserContext.Provider value={currentUser}>
+        <CurrentUserContext.Provider value={currentUserContext}>
 
                 {!isLoading &&
                     <Switch>
@@ -268,7 +288,7 @@ export default function App(props) {
                         <ProtectedRoute
                             exact={true} path="/movies"
                             component={MoviesPage}
-                            loggedIn={currentUserContext}
+                            loggedIn={loggedIn}
                         />
 
                         <ProtectedRoute

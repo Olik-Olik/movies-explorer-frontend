@@ -7,7 +7,8 @@ import {CurrentUserContext} from '../utils/context/CurrentUserContext';
 
 const ProtectedRoute = ({component: Component, ...props}) => {
     const currentUser = useContext(CurrentUserContext);
-    console.log('In PR');
+    console.log('In PR ' + props.path);
+    console.log(props.loggedIn);
     console.log(currentUser);
     console.log(currentUser['loggedIn']);
     console.log(typeof currentUser);
@@ -19,7 +20,7 @@ const ProtectedRoute = ({component: Component, ...props}) => {
     return (
         <Route exact={props.exact} path={props.path}
             render = {() =>
-                currentUser.loggedIn === true ? <Component {...props}/> : <Redirect to="/sign-in"/>
+                props.loggedIn === true ? <Component {...props}/> : <Redirect to="/sign-in"/>
             }
         />
     );
