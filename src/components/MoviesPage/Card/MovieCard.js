@@ -10,21 +10,21 @@ function MovieCard(props) {
     const urlAllFilm = 'https://api.nomoreparties.co';
     const isLikedSavedFilms = useRouteMatch({path: '/saved-movies', exact: true});
 
-    function handleDelete(movieId) {
-        apiAuth.deleteMovie(movieId)
+    function handleDelete(id) {
+        apiAuth.deleteMovie(id)
             .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
     }
 
     function handleSave(evt) {
         evt.preventDefault();
-        if (!props.cardData.isSaved) {
+        if (!props.isSave) {
             apiAuth.createMovie(
                 props.cardData.country,
                 props.cardData.director,
                 props.cardData.duration,
                 props.cardData.year,
                 props.cardData.description,
-                props.cardData.movieId,
+                props.cardData.id,
                 props.cardData.nameRU,
                 props.cardData.nameEN,
                 urlAllFilm + props.cardData.image.url,
@@ -34,13 +34,15 @@ function MovieCard(props) {
                 console.log('Нет кина :( ' + err.toString());
 
             })
-            props.cardData.isSaved(true);
+            props.isSave(true);
         } else {
-            props.cardData.isSaved(false);
-            handleDelete(props.cardData.movieId);
+            props.isSave(false);
+            handleDelete(props.cardData.id);
         }
-
+    }
         return (
+            <>
+                {console.log('Render CARD!!!')}
             <form className="card__container">
                 <a target="_blank" rel="noopener noreferrer"
                    className="card__image" href={props.cardData.trailerLink}>
@@ -51,11 +53,9 @@ function MovieCard(props) {
                     {/*длительность кино линия и время*/}
 
                     <button
-                        className="like card__container_like_passive
+                       /* className="like card__container_like_passive
                            `${isLikedSavedFilms ? ' like__delete ' : ' ' }
-                         {props.cardData.isSaved ? ' card__container_like_active ' : ' '}`
-
-                        "
+                         {props.cardData.isSaved ? ' card__container_like_active ' : ' '}`"*/
                         onClick={handleSave}>
                     </button>
                 </div>
@@ -64,9 +64,8 @@ function MovieCard(props) {
                 <p className="card__container_time">{TimeConvert(props.cardData.duration)}</p>
 
             </form>
-
+            </>
         )
-    }
 }
 
 export default MovieCard;

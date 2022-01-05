@@ -10,7 +10,7 @@ import Footer from "../Footer";
 
 
 function MoviesPages(props) {
-    const [isLoading, setLoading] = useState(false);
+    const [isLoading, setLoading] = useState(true);
     const [loadedCards, setLoadedCards] = useState([]);
 
     /*отображение всех карт*/
@@ -18,19 +18,22 @@ function MoviesPages(props) {
         apiMovies.getAllAboutMovies()
             .then((res) => {
                 console.log('Киношки загрузились корректно!');
-                //setShownAmount(0);
                 setLoadedCards(res);
+                setLoading(false);
             })
             .catch((err) => console.log('Киношки не загрузились!: ' + err.toString()))
     }, []);
 
 
+/*
     useEffect(() => {
         const loading = () => {
-            setLoading(false);
+            console.log('Cards Loaded!')
+
         }
         window.addEventListener("load", loading)
     }, [])
+*/
 
     let _doSearch = false;
     let _keyWord = '';
@@ -50,14 +53,15 @@ function MoviesPages(props) {
 
     return (
         <>
+            {console.log('MP: ' + loadedCards)}
             <HeaderSavedFilms/>
             <main>
                 <ResultMainSearch setSearchCriteria={setSearchCriteria}/>
-                <MoviesCardList
+                {!isLoading && <MoviesCardList
                     getSearchCriteria={getSearchCriteria}
                     searchCriteria={getSearchCriteria()}
                     loadedCards={loadedCards} /*все карты извне*/
-                />
+                />}
             </main>
             <Footer/>
         </>

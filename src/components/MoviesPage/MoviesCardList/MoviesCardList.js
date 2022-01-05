@@ -13,7 +13,7 @@ function MoviesCardList(props) {
     const [cards, setCards] = useState([]);
     const [shownAmount, setShownAmount] = useState(0);/*ничего не показано*/
     const [showMore, setShowMore] = useState(true);/*кнопочка моооо */
-    const [searchCriteria, setSearchCriteria] = useState({ keyWord: '', shortMeter: false});
+    // const [searchCriteria, setSearchCriteria] = useState({ keyWord: '', shortMeter: false});
 
     function getShowAmount() {
         const expandWidth = getExpandWidth(); /* ширина есть текущая ширина*/
@@ -72,9 +72,10 @@ function MoviesCardList(props) {
         }else{
             console.log('NO FILTERS...');
             setShownAmount(0);
+            console.log(props.loadedCards);
             setAllCards(props.loadedCards);
         }
-    }, [props.loadedCards])
+    }, [/*props.loadedCards*/])
 
 /*
 /!*отображение всех карт*!/
@@ -100,13 +101,10 @@ function MoviesCardList(props) {
                     cards.map(card => (
                         <MovieCard
                             cardData={card}
-                            id={card.movieId}
+                            id={card.id}
                             name={card.name}
                             duration={card.duration}
                             isSave={props.isSave}
-                            setIsSave={props.setIsSave}
-                            isDelete={props.isDelete}
-                            likedSavedMovie ={props.likedSavedMovie}/*если лайкнуто-значит в сохранено*/
                         />
                     ))}
             </Suspense>
