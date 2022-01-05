@@ -5,17 +5,25 @@ import ResultMainSearch from "./ResultMainSearch/ResultMainSearch";
 import MoviesCardList from "./MoviesCardList/MoviesCardList";
 import '../../index.css';
 import HeaderSavedFilms from "./HeaderSavedFilms/HeaderSavedFilms";
-//import SearchForm from "../SearchForm";
+import apiMovies from "./../../utils/MoviesApi";
 import Footer from "../Footer";
 
 
 function MoviesPages(props) {
     const [isLoading, setLoading] = useState(false);
+    const [loadedCards, setLoadedCards] = useState([]);
 
-    /*  useEffect(() => {
-          console.log("Load finished!");
-          //setLoading(false);
-      }, [isLoading]);*/
+    /*отображение всех карт*/
+    useEffect(() => {
+        apiMovies.getAllAboutMovies()
+            .then((res) => {
+                console.log('Киношки загрузились корректно!');
+                //setShownAmount(0);
+                setLoadedCards(res);
+            })
+            .catch((err) => console.log('Киношки не загрузились!: ' + err.toString()))
+    }, []);
+
 
     useEffect(() => {
         const loading = () => {
@@ -45,7 +53,11 @@ function MoviesPages(props) {
             <HeaderSavedFilms/>
             <main>
                 <ResultMainSearch setSearchCriteria={setSearchCriteria}/>
-                <MoviesCardList getSearchCriteria={getSearchCriteria} searchCriteria={getSearchCriteria()}/>
+                <MoviesCardList
+                    getSearchCriteria={getSearchCriteria}
+                    searchCriteria={getSearchCriteria()}
+                    loadedCards={loadedCards} /*все карты извне*/
+                />
             </main>
             <Footer/>
         </>

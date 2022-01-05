@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 //import MoviesPages from "./MoviesPages/MoviesPages";
 /*import ResultMainMore from "../MoviesPage/ResultMainMore/ResultMainMore";
@@ -14,6 +14,8 @@ import Preloader from "../Preloader";
 
 
 function SavedMoviesPages(props){
+    const [loadedCards, setLoadedCards] = useState([]);
+
     return (
         <>
             <HeaderSavedFilms/>

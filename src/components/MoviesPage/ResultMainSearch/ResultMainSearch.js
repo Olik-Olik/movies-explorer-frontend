@@ -3,8 +3,11 @@ import './ResultMainSearch.css';
 import '../../../index.css';
 import Checkbox from "../../Checkbox/Checkbox";
 import React, {useState} from "react";
+import useRef from 'react';
 
 function ResultMainSearch(props) {
+
+ //   const refContainer = useRef(initialValue);
 
         const [keyWord, setKeyWord] = useState('');
         const [shortMeter, setShortMeter] = useState(false);

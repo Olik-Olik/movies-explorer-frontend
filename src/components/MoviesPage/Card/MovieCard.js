@@ -11,6 +11,22 @@ function MovieCard(props) {
     const [isLiked, setIsLiked] = useState(false);
     const isLikedSavedFilms = useRouteMatch({path: '/saved-movies', exact: true});
 
+//    const currentUser = useContext(CurrentUserContext);
+
+ //   const isOwn = props.cardData.owner === currentUser._id;
+  //  const isLiked = props.cardData.likes.some((i) => i === currentUser._id);
+   // const cardDeleteButtonClassName = `elements__trash ${isOwn ? 'elements__trash' : 'elements__trash-hidden'}`
+   // const cardLikeButtonClassName =
+    //    `elements__like_active ${isLiked ? 'elements__like_active' : 'elements__like'}`;
+
+//const isLiked = props.cardData.likes
+/*################*/
+
+
+/*    function handleCardClick() {
+        props.onCardClick(props.cardData);
+    }*/
+
     function toggleLike() {
         setIsLiked(!isLiked);
     }
@@ -40,7 +56,7 @@ function handleLike(evt){
        setIsLiked(true);
    } else {
        setIsLiked(false);
-       const likedSavedMovie = isLiked.find(props.movie.movieId)} /*#### лайкнутое кино верно?*/
+       const likedSavedMovie = isLiked.find(props.cardData.movieId)} /*#### лайкнутое кино верно?*/
        handleDelete(props.cardData.likedSavedMovie);
    }
 /*const likeButton = `${isLiked ? "card__container_like_active" : "card__container_like_passive"}` ;*/
@@ -77,3 +93,4 @@ function handleLike(evt){
 }
 
 export default MovieCard;
+

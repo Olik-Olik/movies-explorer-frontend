@@ -6,7 +6,7 @@ import '../Profile.css';
 import '../Footer.css';
 import '../../index.css';
 import {Link, useHistory, useLocation} from "react-router-dom";
-import { CurrentUserContext } from '../../utils/context/CurrentUserContext';
+import {CurrentUserContext} from '../../utils/context/CurrentUserContext';
 
 function Login(props) {
     const [email, setEmail] = useState('');
@@ -42,19 +42,21 @@ function Login(props) {
         }
         props.handleLogin(email, password)
             .then((response) => {
-                console.log('BR');
-                currentUserContext = true;
-                history.push({ pathname: '/movies',
-                    state: {
+                    console.log('BR');
+                    currentUserContext = true;
+                    history.push({
+                        pathname: '/movies',
+                        state: {
                             authenticated: true,
                             access_token: response.access_token,
                             token_type: response.token_type,
                             expires_in: response.expires_in,
-                            scope: response.scope},
-                });
+                            scope: response.scope
+                        },
+                    });
 
-                //history.push('/movies');
-                console.log('AR');
+                    //history.push('/movies');
+                    console.log('AR');
 
                 }
             );
@@ -126,14 +128,15 @@ function Login(props) {
 
                         {/*sign-up*/}
                         < Link to="/sign-up" className="auth__login-signup-nonDecoration">
-                            <div
-                                className="auth__login-signup-Do_Register auth__signup-link auth__login-signup-Do_Register-enter ">
+                            <div className="correct">
+                            <div className="auth__login-signup-Do_Register auth__signup-link auth__login-signup-Do_Register-enter ">
                                 Еще не зарегистрированы?
                             </div>
 
                             <div className="auth__login-signup-nonDecoration">
                                 <p className="auth__login-signup-Do_Register auth__signup-link auth__signup-link-color auth__login-signup-Do_Register-enter">Регистрация
                                 </p>
+                            </div>
                             </div>
                         </Link>
 

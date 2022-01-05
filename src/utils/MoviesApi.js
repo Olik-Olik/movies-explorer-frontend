@@ -66,6 +66,7 @@ saveMovie = ( country,
             trailer: trailer,
             thumbnail: thumbnail,
             image: image,
+
         })
     })
         .then((response) => this._handleResponse(response));

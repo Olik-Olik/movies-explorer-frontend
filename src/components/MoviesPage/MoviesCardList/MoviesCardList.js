@@ -3,22 +3,17 @@ import '../../MoviesPage/Card/Card.css';
 import './MoviesCardList.css'
 import '../Card/MovieCard';
 import MovieCard from "../Card/MovieCard";
-import apiMovies from "../../../utils/MoviesApi";
 import Preloader from "../../Preloader";
 import getExpandWidth from "../../MoviesPage/MoviesCardList/currentWindowWidth";
 import ResultMainMore from "../ResultMainMore/ResultMainMore";
 
 function MoviesCardList(props) {
-    const [loadedCards, setLoadedCards] = useState([]);
+/*    const [loadedCards, setLoadedCards] = useState([]);*/
     const [allCards, setAllCards] = useState([]);
     const [cards, setCards] = useState([]);
     const [shownAmount, setShownAmount] = useState(0);/*ничего не показано*/
     const [showMore, setShowMore] = useState(true);/*кнопочка моооо */
     const [searchCriteria, setSearchCriteria] = useState({ keyWord: '', shortMeter: false});
-
-    function handleSearchCards(){
-        setSearchCriteria(props.getSearchCriteria());
-    }
 
     function getShowAmount() {
         const expandWidth = getExpandWidth(); /* ширина есть текущая ширина*/
@@ -65,7 +60,7 @@ function MoviesCardList(props) {
         if (props.searchCriteria.doSearch){
             console.log('Filter cards...');
             let searchResult = [];
-            loadedCards.forEach(function (value){
+            props.loadedCards.forEach(function (value){
                 //searchResult.push(value);
                 if (props.searchCriteria.shortMeter && value.duration <= 40){
                     searchResult.push(value);
@@ -77,11 +72,12 @@ function MoviesCardList(props) {
         }else{
             console.log('NO FILTERS...');
             setShownAmount(0);
-            setAllCards(loadedCards);
+            setAllCards(props.loadedCards);
         }
-    }, [loadedCards])
+    }, [props.loadedCards])
 
-/*отображение всех карт*/
+/*
+/!*отображение всех карт*!/
     useEffect(() => {
         apiMovies.getAllAboutMovies()
             .then((res) => {
@@ -91,6 +87,7 @@ function MoviesCardList(props) {
             })
             .catch((err) => console.log('Киношки не загрузились!: ' + err.toString()))
     }, []);
+*/
 
 
 
