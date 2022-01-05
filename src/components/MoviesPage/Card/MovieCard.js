@@ -1,95 +1,72 @@
-import React, {useState,} from 'react';
+import React from 'react';
 import {useRouteMatch} from 'react-router-dom';
 import '../Card/Card.css';
 import TimeConvert from '../../../utils/TimeConvert/TimeConvert';
 import '../../../index.css';
+import apiAuth from "../../../utils/MainApi";
+
 function MovieCard(props) {
 
     const urlAllFilm = 'https://api.nomoreparties.co';
-
-    const [isDelete, setIsDelete] = useState(false);
-    const [isLiked, setIsLiked] = useState(false);
     const isLikedSavedFilms = useRouteMatch({path: '/saved-movies', exact: true});
 
-//    const currentUser = useContext(CurrentUserContext);
-
- //   const isOwn = props.cardData.owner === currentUser._id;
-  //  const isLiked = props.cardData.likes.some((i) => i === currentUser._id);
-   // const cardDeleteButtonClassName = `elements__trash ${isOwn ? 'elements__trash' : 'elements__trash-hidden'}`
-   // const cardLikeButtonClassName =
-    //    `elements__like_active ${isLiked ? 'elements__like_active' : 'elements__like'}`;
-
-//const isLiked = props.cardData.likes
-/*################*/
-
-
-/*    function handleCardClick() {
-        props.onCardClick(props.cardData);
-    }*/
-
-    function toggleLike() {
-        setIsLiked(!isLiked);
+    function handleDelete(movieId) {
+        apiAuth.deleteMovie(movieId)
+            .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
     }
-    function handleSave(){
-       props.isSave(props.cardData);
+
+    function handleSave(evt) {
+        evt.preventDefault();
+        if (!props.cardData.isSaved) {
+            apiAuth.createMovie(
+                props.cardData.country,
+                props.cardData.director,
+                props.cardData.duration,
+                props.cardData.year,
+                props.cardData.description,
+                props.cardData.movieId,
+                props.cardData.nameRU,
+                props.cardData.nameEN,
+                urlAllFilm + props.cardData.image.url,
+                props.cardData.thumbnail,
+                props.cardData.trailerLink
+            ).catch((err) => {
+                console.log('Нет кина :( ' + err.toString());
+
+            })
+            props.cardData.isSaved(true);
+        } else {
+            props.cardData.isSaved(false);
+            handleDelete(props.cardData.movieId);
+        }
+
+        return (
+            <form className="card__container">
+                <a target="_blank" rel="noopener noreferrer"
+                   className="card__image" href={props.cardData.trailerLink}>
+                    <img alt="Постер киношки" className="card__image" src={urlAllFilm + props.cardData.image.url}/></a>
+
+                <div className="combini">
+                    <div className="card__container_name">{props.cardData.nameRU || props.cardData.nameEN}</div>
+                    {/*длительность кино линия и время*/}
+
+                    <button
+                        className="like card__container_like_passive
+                           `${isLikedSavedFilms ? ' like__delete ' : ' ' }
+                         {props.cardData.isSaved ? ' card__container_like_active ' : ' '}`
+
+                        "
+                        onClick={handleSave}>
+                    </button>
+                </div>
+                <div className="card__container_time_line"/>
+                <div className="card__container_line"/>
+                <p className="card__container_time">{TimeConvert(props.cardData.duration)}</p>
+
+            </form>
+
+        )
     }
-    function handleDelete(evt){
-        props.isDelete(props.cardData);
-    }
-    /*обработчик лайка*/
-function handleLike(evt){
-    evt.props.isDelete();
-   if (!isLiked) { /*если лайкнуто-сохраняем*/
-       handleSave({
-           owner:props.cardData.owner,
-           director: props.cardData.director,
-           duration: props.cardData.duration,
-           year: props.cardData.year,
-           description: props.cardData.description,
-           movieId: props.cardData.movieId,
-           nameRU: props.cardData.nameRU,
-           nameEN: props.cardData.nameEN,
-           thumbnail: props.cardData.thumbnail,
-           image: props.cardData.trailerLink,
-           trailer: urlAllFilm + props.cardData.image.url,
-       })
-       setIsLiked(true);
-   } else {
-       setIsLiked(false);
-       const likedSavedMovie = isLiked.find(props.cardData.movieId)} /*#### лайкнутое кино верно?*/
-       handleDelete(props.cardData.likedSavedMovie);
-   }
-/*const likeButton = `${isLiked ? "card__container_like_active" : "card__container_like_passive"}` ;*/
-        {/*   {`${isLikedSavedFilms ? "like__delete" : ''}`} onClick={toggleLike}`*/}
-    return (
-        <form className="card__container">
-            <a target="_blank" rel="noopener noreferrer"
-               className="card__image" href={props.cardData.trailerLink}>
-                <img alt="Постер киношки" className="card__image" src={urlAllFilm + props.cardData.image.url}/></a>
-
-            <div className="combini">
-                <div className="card__container_name">{props.cardData.nameRU || props.cardData.nameEN}</div>
-                {/*длительность кино линия и время*/}
-
-                <button className={`like card__container_like_passive ${isLiked ? "card__container_like_active" : ''}
-                        onClick={props.isSave ? handleDelete : handleSave} 
-                    {${isLikedSavedFilms ? "like__delete" : ''}`} onClick={toggleLike}>
-          {/*          {`${isLikedSavedFilms ? '' : 'SAVE ME'}`}*/}
-                </button>
-
-              {/*  <button className = {`like card__container_like_passive ${likeButton}`} onClick={props.isSave ? handleDelete : handleSave}>
-
-                </button>*/}
-
-
-            </div>
-            <div className="card__container_time_line"/>
-            <div className="card__container_line"/>
-            <p className="card__container_time">{TimeConvert(props.cardData.duration)}</p>
-
-        </form>
-
-    )
 }
 
 export default MovieCard;

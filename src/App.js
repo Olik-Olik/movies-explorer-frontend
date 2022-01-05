@@ -34,46 +34,6 @@ export default function App(props) {
     const [infoSuccess, setInfoSuccess] = useState(false);
     const [search, setSearch] = useState({});
     const [isRegResOpen, setIsRegResOpen] = useState(false);
-    const [korotkometrazh, setKorotkometrazh] = useState(false);
-
-
-    /*function hukUseEffectToken() {
-        // если у пользователя есть токен в localStorage,
-        // эта функция проверит валидность токена
-        const token = localStorage.getItem('token');
-      //  const path = location.pathname;
-        if (token) {
-           // console.log("токен есть JWT");
-            // проверим токен в локалсторадж
-            apiAuth.checkToken(token)
-                // здесь можем получить данные пользователя!
-                // поместим их в стейт внутри App.js
-                .then((res) => {
-                    console.log('Ответ есть!');
-                    setLoggedIn(true);
-                    setEmail(res.email);
-                    setName(res.name);
-                    setIsLoading(false);
-                  //   history.push(path);
-                })
-                .catch((err) => {
-                    console.log('Ответа нет! ' + err.toString());
-                    setLoggedIn(false);
-                    setIsLoading(false);
-                    setEmail('');
-                    setName('');
-                   // history.push('/');
-                })
-
-        } else {
-            console.log('Токена нету!!!');
-            setLoggedIn(false);
-            setIsLoading(false);
-            setEmail('');
-            setName('');
-        }
-    }
-*/
 
     function hukUseEffectToken() {
 
@@ -193,18 +153,6 @@ export default function App(props) {
     }
 
 
-    /*    //profile
-        const handleEditProfileOpen = (evt) => {
-            console.log("I'm a superstar 2!!!")
-            handleEditProfileClick(evt)
-        }*/
-
-    /*    function handleCardClick(card) {
-            console.log("I'm a walrus 4!!!")
-            setSelectedCard(card);
-            setIsImagePopupOpen(true);
-        }*/
-
     function closeAllPopups() {
         console.log("I was so close...")
         setIsEditProfilePopupOpen(false);
@@ -212,41 +160,6 @@ export default function App(props) {
         //setLoggedIn(false);
         // history.push("/");
     }
-
-    /*function handleCardLike(card) {
-        // Снова проверяем, есть ли уже лайк на этой карточке
-        const isLiked = card.likes.some(i => i === currentUser._id);
-        if (isLiked) {
-            // Отправляем запрос в API и получаем обновлённые данные карточки
-            apiMovies.card__container_like_passive(card._id)
-                .then((newCard) => {
-                    setCards((cards) => cards.map((c) => c._id === card._id ? newCard : c));
-                })
-                .catch((err) => {
-                    console.log('MAMA!!! DisLike: ' + err.toString())
-                })
-
-        } else {
-            apiMovies.card__container_like_active(card._id)
-                .then((newCard) => {
-                    setCards((cards) => cards.map((c) => c._id === card._id ? newCard : c));
-                })
-                .catch((err) => {
-                    console.log('MAMA!!! Like: ' + err.toString())
-                })
-        }
-    }
-*/
-
-    /*    /!* удаление из сохраненного*!/
-        function handleDelete(data) {
-            apiAuth.deleteMovie(data.id)
-                .then(() => {
-                })
-                .catch((err) => {
-                    console.log('Удаление:' + err.toString());
-                })*/
-
 
 
 //out off
@@ -269,10 +182,7 @@ export default function App(props) {
 
                 {!isLoading &&
                     <Switch>
-                       {/* <Route>
-                            {() => loggedIn === true ? <Redirect to="/movies"/> : <Redirect to="/sign-in"/>}
-                        </Route>
-*/}
+
                         <Route exact={true} path="/"
                                component={AboutPage}/>
 
