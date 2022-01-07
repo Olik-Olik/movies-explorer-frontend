@@ -6,7 +6,6 @@ import '../Footer.css';
 import '../SignInPage/SignInHeader.css';
 import '../../index.css';
 import {useHistory} from "react-router-dom";
-import validator from '../../utils/validator';
 function Register(props) {
     const history = useHistory();
     const [email, setEmail] = useState('');

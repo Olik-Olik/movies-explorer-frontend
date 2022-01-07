@@ -37,7 +37,7 @@ function MovieCard(props) {
     function handleSave(evt) {
         evt.preventDefault();
         if (!props.cardData.isLiked) {
-            apiAuth.createMovie(
+            apiAuth.saveMovie(
                 props.cardData.country,
                 props.cardData.director,
                 props.cardData.duration,
@@ -46,9 +46,8 @@ function MovieCard(props) {
                 props.cardData.id,
                 props.cardData.nameRU,
                 props.cardData.nameEN,
+                props.cardData.trailerLink,
                 urlAllFilm + props.cardData.image.url,
-                props.cardData.thumbnail,
-                props.cardData.trailerLink
             ).catch((err) => {
                 console.log('Не сохраняется :( ' + err.toString());
 
@@ -63,26 +62,27 @@ function MovieCard(props) {
         }
     }
 
-    let likeClass = 'like ';
+    let likeClass = 'like ';/*like_active.svg*/
     let likeOnClick = () => {console.log('Fix me!!!')};
 
     if (isSavedFilmsPage) {
-        likeClass += ' card__container_like_active ' + props.cardData.isLiked ? 'like__delete' : '';
+
+        likeClass += 'like' + props.cardData.isLiked ? 'like__delete' : ''; /*delete.svg*/
         likeOnClick = handleDelete
     }
     else{
         if (props.cardData.isLiked) {
-            likeClass += ' like card__container_like_active elements__like_active';
+            likeClass += 'like';
             likeOnClick = handleDelete;
         } else {
-            likeClass += ' like card__container_like_active elements__like';
+            likeClass += 'card__container_like_passive' ; /*like_passive.svg*/
             likeOnClick = handleSave;
         }
     }
 
     return (
             <>
-                {console.log('Render CARD!!!')}
+{/*                {console.log('Render CARD!!!')}*/}
             <form className="card__container">
                 <a target="_blank" rel="noopener noreferrer"
                    className="card__image" href={props.cardData.trailerLink}>

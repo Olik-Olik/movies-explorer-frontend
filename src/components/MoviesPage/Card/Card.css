@@ -58,7 +58,6 @@
 }
 .card__container_like_passive{
 /*.card__like[type="checkbox"]{*/
-
     opacity: 0.5;
     background: url('../../images/like_passive.svg') no-repeat center;
     cursor: pointer;

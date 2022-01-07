@@ -82,6 +82,7 @@
       }
 
 
+/*
       createMovie = (...data) => {
           return fetch(`${this._address}/movies`,
               {
@@ -93,6 +94,7 @@
               })
               .then((response) => this._handleResponse(response));
       }
+*/
 
 
       deleteMovie = (movieId) => {
@@ -125,10 +127,9 @@
                     nameRU,
                     nameEN,
                     trailer,
-                    thumbnail,
-                    image
+                    thumbnail
       ) => {
-          return fetch(`${this._address}/saved-movies`, {
+          return fetch(`${this._address}/movies`, {
               method: 'POST',
               headers: { ... this._headers,},
               body: JSON.stringify({
@@ -141,8 +142,7 @@
                   nameRU: nameRU,
                   nameEN: nameEN,
                   trailer: trailer,
-                  thumbnail: thumbnail,
-                  image: image,
+                  thumbnail: thumbnail
               })
           })
               .then((response) => this._handleResponse(response));
