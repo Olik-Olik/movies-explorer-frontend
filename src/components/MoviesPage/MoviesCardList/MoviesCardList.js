@@ -36,7 +36,7 @@ function MoviesCardList(props) {
         console.log('ATSH' + amountToShow);
         if (amountToShow >= res.length) {
             amountToShow = res.length;
-            setShowMore(false);
+         //   setShowMore(false);
         }
         setShownAmount(amountToShow);
         const slicedCards = res.slice(0, amountToShow);
@@ -56,17 +56,25 @@ function MoviesCardList(props) {
         _showLimitedCards();
     }, [allCards])
 
+
     useEffect(() =>{
         if (props.searchCriteria.doSearch){
             console.log('Filter cards...');
             let searchResult = [];
             props.loadedCards.forEach(function (value){
                 //searchResult.push(value);
-                if (props.searchCriteria.shortMeter && value.duration <= 40){
+                /* по короткометражкам ищем*/
+            /*вместо  входит ли keyWord  в  card.cardData.nameRU */
+           //     if ((props.searchCriteria.shortMeter && value.duration <= 40) && (props.searchCriteria.keyWord)) {
+                if ((props.searchCriteria.shortMeter && value.duration <= 40)
+                    && (props.searchCriteria.keyWord ?
+                    ( (value.nameRU.includes(props.searchCriteria.keyWord)) || (value.nameEN.includes(props.searchCriteria.keyWord))) : (console.log('Введите ключевое слово для поиска!' )
+
+                ))) {
                     searchResult.push(value);
                 }
             });
-            setShownAmount(0);
+            //setShownAmount(0);
             setAllCards(searchResult);
             _showLimitedCards();
         }else{
@@ -90,8 +98,6 @@ function MoviesCardList(props) {
     }, []);
 */
 
-
-
     return (
         <>
         <section className="moviesCard_list">
@@ -104,7 +110,6 @@ function MoviesCardList(props) {
                             id={card.id}
                             name={card.name}
                             duration={card.duration}
-                            isSave={props.isSave}
                         />
                     ))}
             </Suspense>

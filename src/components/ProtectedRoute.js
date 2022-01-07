@@ -17,6 +17,12 @@ const ProtectedRoute = ({component: Component, ...props}) => {
     );
 };
 
+
+/*function ProtectedRoute({loggedIn, children, redirect})
+{
+    return loggedIn ? children : <Redirect to={redirect} />;
+} */
+
 export default ProtectedRoute;
 /*
 

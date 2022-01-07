@@ -44,7 +44,6 @@ function ResultMainSearch(props) {
                                placeholder='Кино'
 
                                className="result_main_search_icon_film"
-                            /*   name="name"*/
                                required
                                maxLength="40" minLength="2"/>
                     </div>
@@ -78,7 +77,8 @@ function ResultMainSearch(props) {
 }
 
 export default ResultMainSearch;
-{/*
+
+/*
 
                 <div className="correct">
                 Найти
@@ -112,4 +112,4 @@ export default ResultMainSearch;
 }
 
 export default ResultMainSearch;*/
-}
+

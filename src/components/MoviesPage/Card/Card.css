@@ -35,7 +35,6 @@
 }
 .like{
     cursor: pointer;
-
     display: flex;
     background: url('../../images/like_active.svg') no-repeat center ;
     width: 24px;
@@ -54,7 +53,8 @@
 }
 .like:hover{
     transition: 0.01s;
-    transform: scale(2) perspective(2px);
+  /*  transform: scale(2);
+    perspective(2px);*/
 }
 .card__container_like_passive{
 /*.card__like[type="checkbox"]{*/

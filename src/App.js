@@ -1,5 +1,5 @@
-import React, {useEffect, useState, useContext} from "react";
-import {BrowserRouter, Redirect, Route, Switch, useHistory, useLocation} from 'react-router-dom';
+import React, {useEffect, useState} from "react";
+import {BrowserRouter, Route, Switch, useHistory, Redirect} from 'react-router-dom';
 import './index.css';
 import AboutPage from "./components/AboutPage/AboutPage";
 import MoviesPage from "./components/MoviesPage/MoviesPage";
@@ -11,18 +11,16 @@ import SignInPage from "./components/SignInPage/SignInPage";
 /*import SignInHeader from "./components/SignInPage/SignInHeader";
 import HeaderSavedFilms from "./components/ProfilePage/HeaderSavedFilms";
 import Checkbox from "./components/Checkbox/Checkbox";*/
-import apiMovies from "./utils/MoviesApi";
 import apiAuth from "./utils/MainApi";
+import mainApi from "./utils/MainApi";
 import ProtectedRoute from "./components/ProtectedRoute";
-import MenuPopup from "./components/MenuPopup/MenuPopup";
-import * as path from "path";
-import { CurrentUserContext } from './utils/context/CurrentUserContext';
+import {CurrentUserContext} from './utils/context/CurrentUserContext';
 
 export default function App(props) {
-    let currentUserContext = useContext(CurrentUserContext);
-    const [currentUser, setCurrentUser] = useState({});//Стейт переменная используется
+    /*####*/ //  let currentUserContext = useContext(CurrentUserContext);
+    const [currentUser, setCurrentUser] = useState({});//Стейт переменная используется  /*####*/
     const history = useHistory();
- //   const location = useLocation();
+    //   const location = useLocation();
     const [isLoading, setIsLoading] = useState(true);
     const [loggedIn, setLoggedIn] = useState(false);
     const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
@@ -32,88 +30,104 @@ export default function App(props) {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [infoSuccess, setInfoSuccess] = useState(false);
-    const [search, setSearch] = useState({});
+    const [movies, setMovies] = useState('')
+    //   const [search, setSearch] = useState({});
     const [isRegResOpen, setIsRegResOpen] = useState(false);
 
-    function hukUseEffectToken() {
+    const checkToken = () => {
+        setTimeout(()=> {
+            setLoggedIn(true);
+            setIsLoading(false);},1500);
+    }
+        /*const token = localStorage.getItem('token');
+        if (token) {
+            apiAuth.checkToken(token)
+                .then(() => {
+                    setIsLoading(true);
+                    setLoggedIn(true);
+                }).catch((err) => {
+                console.log('не залогинились не подгрузились!!!: ' + err.toString())
+            })
+        }
+    }*/
 
+    function hukUseEffectToken() {
+        checkToken();
         const token = localStorage.getItem("token");
         if (token) {
             apiAuth.checkToken()
-
                 // здесь можем получить данные пользователя!
                 // поместим их в стейт внутри App.js
                 .then((res) => {
                     console.log('Ответ есть!');
-                    currentUserContext = true;
+                    /*####*/   //   currentUserContext = true;
                     setLoggedIn(true);
-                    //setCurrentUser(currentUser);
-                   // history.push(path);
+                    setCurrentUser(currentUser);
                     setEmail(res.email);
                     setIsLoading(false);
                 })
                 .catch((err) => {
                     console.log('Ответа нет! ' + err.toString());
-                    currentUserContext = false;
+                    /*####*/   //    currentUserContext = false;
                     setLoggedIn(false);
                     setIsLoading(false);
-                     setEmail('');
-                  //  setName('');
-                 //  history.push("/");
+                    setEmail('');
                 })
 
         } else {
             console.log('Токена нету!!!');
-            currentUserContext = false;
+            /*####*/      //  currentUserContext = false;
             setLoggedIn(false);
             setIsLoading(false);
             setEmail('');
-          //  setName('');
+            //  setName('');
         }
     }
 
-/*
-    useEffect(() => {
-        apiAuth.checkToken().then(() => {
-            currentUserContext = true;
-            setLoggedIn(true)
-        }).catch( (err) => {
-            currentUserContext = false;
-            setLoggedIn(false);
-        })
-    },[])
-*/
+    /*
+        useEffect(() => {
+            apiAuth.checkToken().then(() => {
+                currentUserContext = true;
+                setLoggedIn(true)
+            }).catch( (err) => {
+                currentUserContext = false;
+                setLoggedIn(false);
+            })
+        },[])
+    */
     useEffect(() => {
         hukUseEffectToken();
     }, []);
 
-/*
-    useEffect(() => {
-        hukUseEffectToken();
-    }, [loggedIn, currentUserContext]);
+    /*
+        useEffect(() => {
+            hukUseEffectToken();
+        }, [loggedIn, currentUserContext]);
 
-*/
+    */
 
 
-    function handleLogin(email, password ) {
+    function handleLogin(email, password) {
         return apiAuth
-            .login(email, password )
+            .login(email, password)
             .then((res) => {
                 console.log('login');
                 console.log(res.token);
                 localStorage.setItem('token', res.token);
-               /* apiAuth.checkToken(res.token);*/
+                /* apiAuth.checkToken(res.token);*/
                 apiAuth.handleToken(res.token); /*##########*/
                 setEmail(email);
-                currentUserContext = true;
+                /*######*/ //          currentUserContext = true;
                 setLoggedIn(true);
                 //history.push("/movies");
                 console.log('Залогинились !');
-                return res;
+                // return res;
+                return loggedIn; /*#####*/
+
             })
             .catch((err) => {
                 console.log('Не залогинились :( ' + err.toString());
-                currentUserContext = false;
+                /*######*/      //      currentUserContext = false;
                 setLoggedIn(false);
             })
     }
@@ -124,9 +138,9 @@ export default function App(props) {
             .then((res) => {
                 setInfoSuccess(true);
                 setIsRegResOpen(true);
-                console.log("register");
-                //handleLogin({name, email, password});
-                //setCurrentUser(res);
+                console.log("зарегались");
+                handleLogin(email, password); /*######*/
+                setCurrentUser(res); /*######*/
             })
             .catch((err) => {
                     console.log('Не зарегались :( ' + err.toString());
@@ -143,8 +157,8 @@ export default function App(props) {
             'email': userData.email,
             'password': userData.password,
         })
-            .then(data => {
-                //setCurrentUser(data);
+            .then(res => {
+                setCurrentUser(res); /*######*/
                 closeAllPopups()
             })
             .catch((err) => {
@@ -166,65 +180,77 @@ export default function App(props) {
     function handleSignOut() {
         console.log("logout");
         localStorage.removeItem('token');
-        //setLoggedIn(false);
-        setCurrentUser({});
-        currentUserContext = false;
-        setEmail("");
+        /*######*/  //  setCurrentUser({});
+        /*######*/ //  currentUserContext = false;
+        // /*######*/ //      setEmail("");
         setLoggedIn(false);
         // history.push("/");
     }
 
+    /*  checkBoxShortMovies* тумблер в чекбоксе/*/
+    const [checkBoxShortMovies, setCheckBoxShortMovies] = useState(true);
+
+    function handleCheckBoxShortMovies() {
+        setCheckBoxShortMovies(checkBoxShortMovies);
+    }
 
     return (
         <>
-        <BrowserRouter /*history={history}*/>
-        <CurrentUserContext.Provider value={CurrentUserContext}>
+            <BrowserRouter /*history={history}*/>
+                <CurrentUserContext.Provider value={currentUser}>
 
-                {!isLoading &&
-                    <Switch>
+                    {!isLoading &&
+                        <Switch>
 
-                        <Route exact={true} path="/"
-                               component={AboutPage}/>
+                            <Route exact={true} path="/"
+                                   component={AboutPage}/>
 
-                        <Route exact={true} path="/sign-in"
-                               component={() => (<SignInPage handleLogin={handleLogin}/>)}
-                        />
+                            <Route exact={true} path="/sign-in"
+                                   component={() => (<SignInPage handleLogin={handleLogin}/>)}
+                            />
 
-                        <Route exact={true} path="/sign-up"
-                               component={() => (<SignUpPage handleRegister={handleRegister}/>)}
-                        />
-                        {/*регистрация */}
+                            <Route exact={true} path="/sign-up"
+                                   component={() => (<SignUpPage handleRegister={handleRegister}/>)}
+                            />
+                            {/*регистрация */}
 
-                        <ProtectedRoute
-                            exact={true} path="/movies"
-                            component={MoviesPage}
-                            loggedIn={loggedIn}
-                        />
+                            <ProtectedRoute
+                                exact={true}
+                                redirect="/"
+                                path="/movies"
+                                component={MoviesPage}
+                                loggedIn={loggedIn}
+                                checkBoxShortMovies={checkBoxShortMovies}
 
-                        <ProtectedRoute
-                            exact={true} path="/saved-movies"
-                            component={SavedMoviesPages}
-                                loggedIn={currentUserContext}
+                            />
+
+                            <ProtectedRoute
+                                exact={true} path="/saved-movies"
+                                component={SavedMoviesPages}
+                                loggedIn={loggedIn}
+                                // loggedIn={currentUserContext}
                                 signOut={handleSignOut}
-                        />
+                            />
 
-                        <ProtectedRoute
-                            exact={true} path="/profile"
-                            component={ProfilePage}
-                                loggedIn={currentUserContext}
+                            <ProtectedRoute
+                                exact={true} path="/profile"
+                                component={ProfilePage}
+                                loggedIn={loggedIn}
+                                //  loggedIn={currentUserContext}
                                 signOut={handleSignOut}
                                 updateProfile={handleUpdateProfile}
-                        />
-                        <Route path=''>
-                            <NotFound_404/>
-                        </Route>
+                            />
+                            <Route path=''>
+                                <NotFound_404/>
+                            </Route>
 
-                    </Switch>
-                }
+                        </Switch>
+                    }
 
-                {/*    <MenuPopup isOpen={props.isOpen} onClose={props.onClose} />*/}
-                    </CurrentUserContext.Provider>
-    </BrowserRouter>
+                    {/*    <MenuPopup isOpen={props.isOpen} onClose={props.onClose} />*/}
+                </CurrentUserContext.Provider>
+            </BrowserRouter>
         </>
-    )}
+    )
+}
 

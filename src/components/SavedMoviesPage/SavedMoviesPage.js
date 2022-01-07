@@ -2,15 +2,14 @@ import React, {useState} from "react";
 
 //import MoviesPages from "./MoviesPages/MoviesPages";
 /*import ResultMainMore from "../MoviesPage/ResultMainMore/ResultMainMore";
-import MovieCard from "../MoviesPage/MovieCard/MovieCard";*/
+//import MovieCard from "../MoviesPage/MovieCard/MovieCard";*/
 import ResultMainSearch from "../MoviesPage/ResultMainSearch/ResultMainSearch";
 import MoviesCardList from "../MoviesPage/MoviesCardList/MoviesCardList";
 import '../../index.css';
 import HeaderSavedFilms from "../MoviesPage/HeaderSavedFilms/HeaderSavedFilms";
 import Footer from "../Footer";
-import Preloader from "../Preloader";
-// import SearchForm from "../SearchForm";
-/*import Header from "../Header";*/
+//import Preloader from "../Preloader";
+
 
 
 function SavedMoviesPages(props){
@@ -21,7 +20,6 @@ function SavedMoviesPages(props){
             <HeaderSavedFilms/>
           <main>
             <ResultMainSearch/>
-         {/*   <SearchForm/>*/}
             <MoviesCardList/>
           </main>
             <Footer/>

@@ -106,6 +106,48 @@
       }
 
 
+      /*GET MOVIES*/
+      getSaveMovies = () => {
+          this.handleToken();
+          return fetch(`${this._address}/movies`, {
+              method: 'GET',
+              headers: { ... this._headers,}
+          })
+              .then((response) => this._handleResponse(response));
+      }
+
+      saveMovie = ( country,
+                    director,
+                    duration,
+                    year,
+                    description,
+                    movieId,
+                    nameRU,
+                    nameEN,
+                    trailer,
+                    thumbnail,
+                    image
+      ) => {
+          return fetch(`${this._address}/saved-movies`, {
+              method: 'POST',
+              headers: { ... this._headers,},
+              body: JSON.stringify({
+                  country: country,
+                  director: director,
+                  duration: duration,
+                  year: year,
+                  description: description,
+                  movieId: movieId,
+                  nameRU: nameRU,
+                  nameEN: nameEN,
+                  trailer: trailer,
+                  thumbnail: thumbnail,
+                  image: image,
+              })
+          })
+              .then((response) => this._handleResponse(response));
+      }
+
   }
    const apiAuth = new MainApi({
     /*   /!* address: BASE_URL,*!/*/

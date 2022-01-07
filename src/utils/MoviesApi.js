@@ -22,7 +22,6 @@ class ApiMovies {
             .then((response) => this._handleResponse(response));
     }
 /*
-
 /!*GET MOVIES*!/
 getSaveMovies = (token) => {
     return fetch(`${this._address}/movies`, {
@@ -30,10 +29,10 @@ getSaveMovies = (token) => {
         headers: { ... this._headers,}
     })
         .then((response) => this._handleResponse(response));
-}
-*/
-/*
+}*/
 
+
+/*
 saveMovie = ( country,
               director,
               duration,
@@ -69,14 +68,13 @@ saveMovie = ( country,
 
 /*
 /!*DEL MOVIE 1      id ########## !!!*!/
-deleteMovie = (data, token, id) => {
-    return fetch(`${this._address}/saved-movies/${id}`, {
+deleteMovie = (data, token, movieId) => {
+    return fetch(`${this._address}/saved-movies/${movieId}`, {
         method: 'DELETE',
         headers: { ... this._headers,}
     })
         .then((response) => this._handleResponse(response));
-}
-*/
+}*/
 
 }
 
