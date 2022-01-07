@@ -19,12 +19,18 @@ let  changeWithSetTimeOut = setTimeout(() => getWindowWidth(window.innerWidth), 
 
     export default function getExpandWidth() {
         const width = getWindowWidth();
+/*
         console.log('WDH: ' + width);
+*/
         const ewKeys = Object.keys(widthExpandMap).reverse();
+/*
         console.log('ewK: ' + ewKeys);
+*/
         for (const key of ewKeys) {
+/*
             console.log(key);
             console.log(typeof key);
+*/
             if (width >= key) {
                 console.log('ret: ' + widthExpandMap[key].initialAmount);
                 return widthExpandMap[key];

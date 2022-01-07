@@ -8,40 +8,39 @@ import getExpandWidth from "../../MoviesPage/MoviesCardList/currentWindowWidth";
 import ResultMainMore from "../ResultMainMore/ResultMainMore";
 
 function MoviesCardList(props) {
-/*    const [loadedCards, setLoadedCards] = useState([]);*/
-    const [allCards, setAllCards] = useState([]);
+    const [allCards, setAllCards] = useState(null);
     const [cards, setCards] = useState([]);
     const [shownAmount, setShownAmount] = useState(0);/*ничего не показано*/
     const [showMore, setShowMore] = useState(true);/*кнопочка моооо */
-    // const [searchCriteria, setSearchCriteria] = useState({ keyWord: '', shortMeter: false});
 
     function getShowAmount() {
         const expandWidth = getExpandWidth(); /* ширина есть текущая ширина*/
         console.log('EW: ' + expandWidth.toString());
         if (shownAmount === 0) {  /* ничего не показано ловим 0 словарь*/
             /*стейт текущее знач заполняем объект экспандширина св-во начальное знач для этой ширины*/
-            setShownAmount(expandWidth.initialAmount);
+            //  setShownAmount(expandWidth.initialAmount);
             console.log('ret 0:' + expandWidth.initialAmount)
             /*вернем при  объекте экспандширина базисное значение*/
             return expandWidth.initialAmount;
         }
-        setShownAmount(shownAmount + expandWidth.moreAmount);
+        // setShownAmount(shownAmount + expandWidth.moreAmount);
         return shownAmount + expandWidth.moreAmount;
     }
 
     function _showLimitedCards(){
+        if (!allCards) {return}
         const res = allCards;
         console.log(getExpandWidth());
         let amountToShow = getShowAmount();
-        console.log('ATSH' + amountToShow);
+        console.log('ATSH ' + amountToShow);
         if (amountToShow >= res.length) {
             amountToShow = res.length;
-         //   setShowMore(false);
+            setShowMore(false);
         }
-        setShownAmount(amountToShow);
         const slicedCards = res.slice(0, amountToShow);
         console.log(slicedCards);
         setCards(slicedCards);
+        setShownAmount(amountToShow);
     }
 
     /*клац по кнопке еще*/
@@ -56,47 +55,53 @@ function MoviesCardList(props) {
         _showLimitedCards();
     }, [allCards])
 
+    useEffect(() => {
+        if (props.searchCriteria.doSearch){
+            console.log('Filter cards...');
+            let searchResult = [];
+            props.loadedCards.forEach(function (value){
+                console.log(value);
+                if (/*(props.searchCriteria.shortMeter && value.duration <= 40)
+                    &&*/ (props.searchCriteria.keyWord && value.nameRU && value.nameEN &&
+                        ( (value.nameRU.includes(props.searchCriteria.keyWord)) || (value.nameEN.includes(props.searchCriteria.keyWord)))
+                    )) {
+                    console.log('Seach hit!');
+                    searchResult.push(value);
+                }
+            });
+            console.log('Found: ' + searchResult);
+            setAllCards(searchResult);
+            setShownAmount(0);
+            _showLimitedCards();
+        }
+    }, [props.searchCriteria.doSearch])
 
     useEffect(() =>{
         if (props.searchCriteria.doSearch){
             console.log('Filter cards...');
             let searchResult = [];
             props.loadedCards.forEach(function (value){
-                //searchResult.push(value);
-                /* по короткометражкам ищем*/
-            /*вместо  входит ли keyWord  в  card.cardData.nameRU */
-           //     if ((props.searchCriteria.shortMeter && value.duration <= 40) && (props.searchCriteria.keyWord)) {
                 if ((props.searchCriteria.shortMeter && value.duration <= 40)
-                    && (props.searchCriteria.keyWord ?
-                    ( (value.nameRU.includes(props.searchCriteria.keyWord)) || (value.nameEN.includes(props.searchCriteria.keyWord))) : (console.log('Введите ключевое слово для поиска!' )
-
-                ))) {
+                    && (props.searchCriteria.keyWord &&
+                    ( (value.nameRU.includes(props.searchCriteria.keyWord)) || (value.nameEN.includes(props.searchCriteria.keyWord)))
+                )) {
+                    console.log('Seach hit!');
                     searchResult.push(value);
                 }
             });
-            //setShownAmount(0);
+            console.log('Found: ' + searchResult);
             setAllCards(searchResult);
+            setShownAmount(0);
             _showLimitedCards();
         }else{
             console.log('NO FILTERS...');
-            setShownAmount(0);
-            console.log(props.loadedCards);
+            console.log('Loaded cards: ' + props.loadedCards);
             setAllCards(props.loadedCards);
+            setShownAmount(0);
+            _showLimitedCards();
         }
-    }, [/*props.loadedCards*/])
+    }, [])
 
-/*
-/!*отображение всех карт*!/
-    useEffect(() => {
-        apiMovies.getAllAboutMovies()
-            .then((res) => {
-                console.log('Киношки загрузились корректно!');
-                setShownAmount(0);
-                setLoadedCards(res);
-            })
-            .catch((err) => console.log('Киношки не загрузились!: ' + err.toString()))
-    }, []);
-*/
 
     return (
         <>
@@ -104,10 +109,10 @@ function MoviesCardList(props) {
             <Suspense fallback={<Preloader/>}>
 
                 {cards &&
-                    cards.map(card => (
+                    cards.map((card) => (
+                        /*console.log('CardID: ' + card.id)*/
                         <MovieCard
                             cardData={card}
-                            id={card.id}
                             name={card.name}
                             duration={card.duration}
                         />

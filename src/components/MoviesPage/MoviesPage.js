@@ -12,8 +12,13 @@ import apiAuth from "../../utils/MainApi";
 
 
 function MoviesPages(props) {
+    /* дублироание кода! в константы! */
+    const urlAllFilm = 'https://api.nomoreparties.co';
     const [isLoading, setLoading] = useState(true);
     const [loadedCards, setLoadedCards] = useState([]);
+    const [searchCriteriaData, setSearchCriteriaData] = useState({ doSearch: false,
+        keyWord: '',
+        shortMeter: false});
 
     /*отображение всех карт*/
     useEffect(() => {
@@ -24,8 +29,10 @@ function MoviesPages(props) {
                     .then((savedMovies)=> {
                         console.log('Лайки загрузились корректно!');
                         cards.forEach((card) => {
+                            card.imageURL = urlAllFilm + card.image.url;
                             card.isLiked = !!savedMovies.some((liked) => {
-                                card.id = liked.movieId;
+/*                                console.log('CardID: ' + card.id);*/
+                                return card.id === liked.movieId;
                             });
                         })
                         setLoadedCards(cards);
@@ -35,7 +42,10 @@ function MoviesPages(props) {
             .catch((err) => console.log('Киношки не загрузились!: ' + err.toString()))
     }, []);
 
-
+    useEffect(() => {
+        console.log('Effect searchCriteriaData: ' + searchCriteriaData.toString());
+        setLoadedCards(loadedCards);
+    }, [searchCriteriaData])
 /*
     useEffect(() => {
         const loading = () => {
@@ -46,27 +56,21 @@ function MoviesPages(props) {
     }, [])
 */
 
-    let _doSearch = false;
-    let _keyWord = '';
-    let _shortMeter = false;
-
     function setSearchCriteria(keyWord, shortMeter){
         console.log('setSearchCriteria');
-        _doSearch = true;
-        _keyWord = keyWord;
-        _shortMeter = shortMeter;
+        setSearchCriteriaData(
+            { doSearch: true,
+                    keyWord: keyWord,
+                    shortMeter: shortMeter})
     }
 
     function getSearchCriteria(){
         console.log('getSearchCriteria');
-        return {doSearch: _doSearch,
-                keyWord: _keyWord,
-                shortMeter: _shortMeter};
+        return searchCriteriaData;
     }
 
     return (
         <>
-            {console.log('MoviesPage: ' + loadedCards)}
             <HeaderSavedFilms/>
             <main>
                 <ResultMainSearch setSearchCriteria={setSearchCriteria}/>
