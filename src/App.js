@@ -8,11 +8,7 @@ import SavedMoviesPages from "./components/SavedMoviesPage/SavedMoviesPage";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
 import SignUpPage from "./components/SignUpPage/SignUpPage";
 import SignInPage from "./components/SignInPage/SignInPage";
-/*import SignInHeader from "./components/SignInPage/SignInHeader";
-import HeaderSavedFilms from "./components/ProfilePage/HeaderSavedFilms";
-import Checkbox from "./components/Checkbox/Checkbox";*/
 import apiAuth from "./utils/MainApi";
-import mainApi from "./utils/MainApi";
 import ProtectedRoute from "./components/ProtectedRoute";
 import {CurrentUserContext} from './utils/context/CurrentUserContext';
 
@@ -20,7 +16,6 @@ export default function App(props) {
     /*####*/ //  let currentUserContext = useContext(CurrentUserContext);
     const [currentUser, setCurrentUser] = useState({});//Стейт переменная используется  /*####*/
     const history = useHistory();
-    //   const location = useLocation();
     const [isLoading, setIsLoading] = useState(true);
     const [loggedIn, setLoggedIn] = useState(false);
     const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
@@ -30,7 +25,7 @@ export default function App(props) {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [infoSuccess, setInfoSuccess] = useState(false);
-    const [movies, setMovies] = useState('')
+    const [info, setInfo] = useState('')
     //   const [search, setSearch] = useState({});
     const [isRegResOpen, setIsRegResOpen] = useState(false);
 
@@ -56,11 +51,8 @@ export default function App(props) {
         const token = localStorage.getItem("token");
         if (token) {
             apiAuth.checkToken()
-                // здесь можем получить данные пользователя!
-                // поместим их в стейт внутри App.js
                 .then((res) => {
                     console.log('Ответ есть!');
-                    /*####*/   //   currentUserContext = true;
                     setLoggedIn(true);
                     setCurrentUser(currentUser);
                     setEmail(res.email);
@@ -119,13 +111,16 @@ export default function App(props) {
                 setEmail(email);
                 /*######*/ //          currentUserContext = true;
                 setLoggedIn(true);
-                //history.push("/movies");
                 console.log('Залогинились !');
-                // return res;
-                return loggedIn; /*#####*/
+                setInfo('Залогинились !');
+                 return res;
+              //  return loggedIn; /*#####*/
 
             })
             .catch((err) => {
+                if (err.status === 401 ){setInfo('указанные имя пользователя и пароль не верны')}
+                else
+                {setInfo('Не залогинились !');}
                 console.log('Не залогинились :( ' + err.toString());
                 /*######*/      //      currentUserContext = false;
                 setLoggedIn(false);
@@ -139,13 +134,15 @@ export default function App(props) {
                 setInfoSuccess(true);
                 setIsRegResOpen(true);
                 console.log("зарегались");
+                setInfo('Зарегистрировались, Класс')
                 handleLogin(email, password); /*######*/
                 setCurrentUser(res); /*######*/
             })
             .catch((err) => {
-                    console.log('Не зарегались :( ' + err.toString());
+                    console.log('Не зарегистрировались :( ' + err.toString());
                     setInfoSuccess(false);
-                    console.log(`БЕЕЕ register ${err}`)
+                    setInfo('Не зарегистрировались')
+                    console.log(`Не зарегались ${err}`)
                     setIsRegResOpen(true);
                 }
             )
@@ -162,6 +159,7 @@ export default function App(props) {
                 closeAllPopups()
             })
             .catch((err) => {
+                setInfo('Не получилось изменить данные')
                 console.log('username не  получен!!!: ' + err.toString())
             })
     }

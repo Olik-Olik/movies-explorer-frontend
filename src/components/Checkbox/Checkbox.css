@@ -6,8 +6,8 @@ body {
     transform: translate(-50%, -50%);
 
 }
+
 input[type="checkbox"]{
- /*   bottom:10px;*/
     cursor: pointer;
     position: relative;
     width: 36px;
@@ -15,22 +15,23 @@ input[type="checkbox"]{
     -webkit-appearance: none; /*для отображения элемента*/
     background:  #202020;
     border-radius: 16px;
-    transition: .01s; /*ненавижу долгие переключения*/
+    transition: .0001s;
 }
+/*
 input:checked[type="checkbox"]{
     background: #202020;
 }
+*/
+
 input[type="checkbox"]:before{
     content: '';
     position: absolute;
     width: 16px;
     height: 16px;
     border-radius: 16px;
-    top:0;
-    left:0;
     background:#3DDC84;
-    transition: 0.01s;
-    transform: scale(1.1); /*, без сжатий и увеличений*/
+    top:2px;
+    transition: .0001s;
 }
 input:checked[type="checkbox"]:before{
     left:18px;
@@ -40,5 +41,12 @@ input:checked[type="checkbox"]:before{
 input[type="checkbox"]{
     bottom:10px;
 }
+    /*по макету непонятно состояние чекбокса, меняю чуть цвет background */
+    input:checked[type="checkbox"]{
+        background: black;
+    }
+    input[type="checkbox"]{
+        background: black;
+    }
 }
 

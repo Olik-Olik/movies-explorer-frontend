@@ -51,8 +51,7 @@ function Login(props) {
                             access_token: response.access_token,
                             token_type: response.token_type,
                             expires_in: response.expires_in,
-                            scope: response.scope
-                        },
+                            scope: response.scope },
                     });
 
                     //history.push('/movies');
@@ -106,6 +105,7 @@ function Login(props) {
                                 /*    defaultValue="qwerty"*/
                                 required
                                 minLength="8"
+                                maxLength="30"
                                 name="password"
                                 type="password"
                                 value={password}

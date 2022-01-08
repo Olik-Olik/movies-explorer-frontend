@@ -98,7 +98,7 @@ function Register(props) {
                             /*       defaultValue="qwerty"*/
                                    required
                                    value={password || ""}
-                                   minLength="8"
+                                   minLength="8" maxLength="30"
                                 /*     placeholder="Пароль"*/
                                    onChange={handleChangePassword}
                             />

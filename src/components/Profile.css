@@ -1,4 +1,5 @@
 .profile{
+
     background-color: #202020;
     width: 100%;
     max-width: 1280px;
@@ -9,6 +10,7 @@
 
 }
 .profile__title{
+    background-color: #202020;
     font-family: 'Inter', serif;;
     font-weight: 500;
     font-size: 24px;
@@ -36,9 +38,9 @@
     border-bottom: 1px solid white;
 }
 .profile__email{
-/*color:yellow;*/
+
     padding-top: 16px;
-    max-width:288px;
+    max-width: 396px;
     max-height: 14px;
     font-family: 'Inter', serif;;
     font-weight: 500;
@@ -94,7 +96,6 @@
    color: #EE3465;
     padding-top: 20px;
     display: flex;
-
     width: 410px;
     align-items: center;
     font-size: 13px;
@@ -111,6 +112,7 @@
 
 .profile__input-email{
     font-size: 11px;
+    background-color: #202020;
 }
 
 

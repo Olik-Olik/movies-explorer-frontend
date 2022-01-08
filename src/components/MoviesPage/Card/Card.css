@@ -120,31 +120,4 @@
     height: 1px;
     padding-bottom: 6px;
 }
-/*
 
-input[type="checkbox"]{
-    !*   bottom:10px;*!
-    cursor: pointer;
-    position: relative;
-    width: 36px;
-    height: 20px;
-    -webkit-appearance: none; !*для отображения элемента*!
-    background:  #202020;
-    border-radius: 16px;
-    transition: .01s; !*ненавижу долгие переключения*!
-}
-input:checked[type="checkbox"]{
-    background: #202020;
-}
-input[type="checkbox"]:before{
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    border-radius: 16px;
-    top:0;
-    left:0;
-    background:#3DDC84;
-    transition: 0.01s;
-    transform: scale(1.1); !*, без сжатий и увеличений*!
-}*/

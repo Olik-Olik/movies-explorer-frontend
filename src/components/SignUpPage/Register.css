@@ -6,6 +6,7 @@
     color: #FFFFFF;
     background-color: #202020;
 }
+
 .auth__login-signin{
     text-decoration: none;
     display: flex;
@@ -16,9 +17,9 @@
     border-bottom: none;
     padding-bottom: 5px;
 }
-.label__input{
+/*.label__input{
     background-color: #202020;
-}
+}*/
 /*форма input name*/
 .profile__input-name{
     width: 396px;
@@ -33,10 +34,10 @@
     border-right-width: 0;
 }
 
-.profile__input-name:focus
+/*.profile__input-name:focus
 {
     background-color:#202020;
-}
+}*/
 .auth__login-welcome {
 /*Заголовок*/
     display: flex;
@@ -65,14 +66,13 @@
     background-color: #202020;
 }
 
-@media screen and (max-width: 320px) {
-    .auth {
-        width: 260px;
-    }
-}
+
 .auth__form-login-input-email {
+    height: 27px;
+    padding-bottom: 0;
     border-right-width: 0;
     color: #FFFFFF;
+    background-color: #202020;
     cursor: pointer;
    /* border-bottom: 1px solid #4285F4;*/
     border-bottom: 1px solid #424242;
@@ -84,22 +84,25 @@
     font-weight: 400;
     flex-direction: column;
     justify-content: center;
-    display: flex;
+   /* display: flex;*/
     margin: 0 auto;
-    background: transparent;
+ /*   background: transparent;*/
     list-style-type: none;
     text-decoration: none;
-    padding: 0 0 10px 0;
+/*    padding: 0 0 10px 0;*/
 }
 .profile__email-email {
     display: flex;
-    flex-direction: column;}
+    flex-direction: column;
+   /* align-items: center;*/}
 
 /*!*форма input name*!
 .profile__input-name{
     background-color: #202020;
 }*/
 .auth__form-login-input-password {
+    /*max-width: 288px;*/
+    width: 396px;
     background-color: #202020;
     font-size: 14px;
     line-height: 17px;
@@ -110,17 +113,21 @@
     flex-direction: column;
     justify-content: center;
     display: flex;
- /*   background: transparent;*/
     list-style-type: none;
     text-decoration: none;
     cursor: pointer;
     padding: 0 0 13px 0;
     border: 0;
     -webkit-text-security: disc;
-  /*  text-decoration: none;*/
+    padding-bottom: 0;
+    height: 30px;
+  /*  border-bottom: 1px solid #424242;*/
+
 }
 /*Пароль и Почта*/
 .profile__email {
+    width: 266px;
+    height: 14px;
     padding-top: 24px;
     padding-bottom: 5px;
     color: #8B8B8B;
@@ -239,30 +246,45 @@
       /*  max-width: 260px;*/
     }
     .auth__form-login-input-password{
-  /*      max-width: 260px;*/
+      /*  max-width: 260px;*/
+    }
+    .auth__form-login-submit-button{
+       /* max-width: 260px;*/
     }
 }
 
 @media screen and (min-width: 620px) and(max-width: 768px){
     .auth__form-login-input-email{
-      /*  max-width: 260px;*/
+        max-width: 260px;
     }
     .auth__form-login-input-password{
-     /*   max-width: 260px;*/
+        max-width: 260px;
+    }
+    .auth__form-login-submit-button{
+        max-width: 260px;
     }
 }
 
- @media screen and (min-width: 320px) and(max-width: 620px){
+ @media screen and (min-width: 319px) and(max-width: 620px){
     .auth {
-     /*   max-width: 320px;*/
+        max-width: 260px;
 }
      .auth__form-login-input-email{
-     /*    max-width: 260px;*/
+         max-width: 260px;
      }
      .auth__form-login-input-password{
-
+         max-width: 260px;
+     }
+     .auth__form-login-submit-button{
+         max-width: 260px;
      }
  }
 
 
-
+/*
+@media screen and (max-width: 320px) {
+    .auth {
+        width: 260px;
+    }
+}
+*/
