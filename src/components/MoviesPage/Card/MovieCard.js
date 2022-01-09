@@ -11,7 +11,7 @@ function MovieCard(props) {
 
     function handleDelete() {
         console.log("Удаление");
-        apiAuth.deleteMovie(props.cardData.id)
+        apiAuth.deleteMovie(props.cardData.movieId)
             .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
     }
 

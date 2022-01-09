@@ -188,11 +188,13 @@ export default function App(props) {
     }
 
     /*  checkBoxShortMovies* тумблер в чекбоксе/*/
+/*
     const [checkBoxShortMovies, setCheckBoxShortMovies] = useState(false);
 
     function handleCheckBoxShortMovies() {
         setCheckBoxShortMovies(checkBoxShortMovies);
     }
+*/
 
     return (
         <>
@@ -216,28 +218,23 @@ export default function App(props) {
 
                             <ProtectedRoute
                                 exact={true}
-                                redirect="/"
                                 path="/movies"
                                 component={MoviesPage}
                                 loggedIn={loggedIn}
-                                checkBoxShortMovies={checkBoxShortMovies}
-
                             />
 
                             <ProtectedRoute
-                                exact={true} path="/saved-movies"
+                                exact={true}
+                                path="/saved-movies"
                                 component={SavedMoviesPages}
                                 signOut={handleSignOut}
-                          /*      shortMeter={shortMeter}*/
-
-
+                                loggedIn={loggedIn}
                             />
 
                             <ProtectedRoute
                                 exact={true} path="/profile"
                                 component={ProfilePage}
                                 loggedIn={loggedIn}
-
                                 signOut={handleSignOut}
                                 updateProfile={handleUpdateProfile}
                             />

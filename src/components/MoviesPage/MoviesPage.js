@@ -46,15 +46,7 @@ function MoviesPages(props) {
         console.log('Effect searchCriteriaData: ' + searchCriteriaData.toString());
         setLoadedCards(loadedCards);
     }, [searchCriteriaData])
-/*
-    useEffect(() => {
-        const loading = () => {
-            console.log('Cards Loaded!')
 
-        }
-        window.addEventListener("load", loading)
-    }, [])
-*/
 
     function setSearchCriteria(keyWord, shortMeter){
         console.log('setSearchCriteria');
