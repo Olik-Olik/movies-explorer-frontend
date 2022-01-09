@@ -9,6 +9,7 @@ import ProfilePage from "./components/ProfilePage/ProfilePage";
 import SignUpPage from "./components/SignUpPage/SignUpPage";
 import SignInPage from "./components/SignInPage/SignInPage";
 import apiAuth from "./utils/MainApi";
+import apiMovies from "./utils/MoviesApi";
 import ProtectedRoute from "./components/ProtectedRoute";
 import {CurrentUserContext} from './utils/context/CurrentUserContext';
 
@@ -25,7 +26,8 @@ export default function App(props) {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [infoSuccess, setInfoSuccess] = useState(false);
-    const [info, setInfo] = useState('')
+    const [info, setInfo] = useState('');
+    const [movies, setMovies] = useState('');
     //   const [search, setSearch] = useState({});
     const [isRegResOpen, setIsRegResOpen] = useState(false);
 
@@ -186,7 +188,7 @@ export default function App(props) {
     }
 
     /*  checkBoxShortMovies* тумблер в чекбоксе/*/
-    const [checkBoxShortMovies, setCheckBoxShortMovies] = useState(true);
+    const [checkBoxShortMovies, setCheckBoxShortMovies] = useState(false);
 
     function handleCheckBoxShortMovies() {
         setCheckBoxShortMovies(checkBoxShortMovies);
@@ -225,16 +227,17 @@ export default function App(props) {
                             <ProtectedRoute
                                 exact={true} path="/saved-movies"
                                 component={SavedMoviesPages}
-                                loggedIn={loggedIn}
-                                // loggedIn={currentUserContext}
                                 signOut={handleSignOut}
+                          /*      shortMeter={shortMeter}*/
+
+
                             />
 
                             <ProtectedRoute
                                 exact={true} path="/profile"
                                 component={ProfilePage}
                                 loggedIn={loggedIn}
-                                //  loggedIn={currentUserContext}
+
                                 signOut={handleSignOut}
                                 updateProfile={handleUpdateProfile}
                             />

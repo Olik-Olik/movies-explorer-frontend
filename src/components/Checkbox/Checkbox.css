@@ -2,9 +2,9 @@ body {
     margin: 0;
     padding:0;
 }
+
 .tumb{
     transform: translate(-50%, -50%);
-
 }
 
 input[type="checkbox"]{
@@ -17,11 +17,10 @@ input[type="checkbox"]{
     border-radius: 16px;
     transition: .0001s;
 }
-/*
+
 input:checked[type="checkbox"]{
-    background: #202020;
+    background: #FF0000;
 }
-*/
 
 input[type="checkbox"]:before{
     content: '';
@@ -33,6 +32,7 @@ input[type="checkbox"]:before{
     top:2px;
     transition: .0001s;
 }
+
 input:checked[type="checkbox"]:before{
     left:18px;
 }
@@ -41,12 +41,14 @@ input:checked[type="checkbox"]:before{
 input[type="checkbox"]{
     bottom:10px;
 }
-    /*по макету непонятно состояние чекбокса, меняю чуть цвет background */
+    /*
+    !*по макету непонятно состояние чекбокса, меняю чуть цвет background *!
     input:checked[type="checkbox"]{
         background: black;
     }
     input[type="checkbox"]{
         background: black;
     }
+    */
 }
 

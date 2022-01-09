@@ -16,7 +16,6 @@ function ProfileSummaryPage(props) {
 
                         <form name="profile__input-name">
                             <input type = 'text' className=" result__input-name"
-                                /*   defaultValue="Олик" */
                                    required
                                    maxLength="30" minLength="2" /> </form>
 

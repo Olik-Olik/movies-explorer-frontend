@@ -60,16 +60,16 @@ function MoviesCardList(props) {
             console.log('Filter cards...');
             let searchResult = [];
             props.loadedCards.forEach(function (value){
-                console.log(value);
-                if (/*(props.searchCriteria.shortMeter && value.duration <= 40)
-                    &&*/ (props.searchCriteria.keyWord &&
+
+                if ((props.searchCriteria.shortMeter && value.duration <= 40)
+                    && (props.searchCriteria.keyWord &&
                         ( (value.nameRU && value.nameRU.includes(props.searchCriteria.keyWord)) || ( value.nameEN && value.nameEN.includes(props.searchCriteria.keyWord)))
                     )) {
                     console.log('Seach hit!');
                     searchResult.push(value);
                 }
             });
-            console.log('Found: ' + searchResult);
+            console.log('Found: ' + searchResult.length);
             setAllCards(searchResult);
             setShownAmount(0);
             _showLimitedCards();
@@ -81,7 +81,8 @@ function MoviesCardList(props) {
             console.log('Filter cards...');
             let searchResult = [];
             props.loadedCards.forEach(function (value){
-                if ((props.searchCriteria.shortMeter && value.duration <= 40)
+                //console.log("VD: " + value.duration);
+                if ((props.searchCriteria.shortMeter && value.duration <= 60)
                     && (props.searchCriteria.keyWord &&
                     ( (value.nameRU.includes(props.searchCriteria.keyWord)) || (value.nameEN.includes(props.searchCriteria.keyWord)))
                 )) {
@@ -89,13 +90,13 @@ function MoviesCardList(props) {
                     searchResult.push(value);
                 }
             });
-            console.log('Found: ' + searchResult);
+            console.log('Found: ' + searchResult.length);
             setAllCards(searchResult);
             setShownAmount(0);
             _showLimitedCards();
         }else{
             console.log('NO FILTERS...');
-            console.log('Loaded cards: ' + props.loadedCards);
+            console.log('Loaded cards: ' + props.loadedCards.length);
             setAllCards(props.loadedCards);
             setShownAmount(0);
             _showLimitedCards();

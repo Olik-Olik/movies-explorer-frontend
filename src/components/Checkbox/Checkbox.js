@@ -7,7 +7,7 @@ return(
 <div className ="tumb" >
     <input
         type="checkbox"
-        onClick={props.handleCheckbox} /*#####*/
+        onChange={props.handleCheckbox}
     />
 </div>
 )
