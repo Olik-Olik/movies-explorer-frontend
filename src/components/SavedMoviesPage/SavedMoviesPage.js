@@ -19,7 +19,7 @@ function SavedMoviesPages(props) {
     });
 
     function setSearchCriteria(keyWord, shortMeter) {
-        console.log('setSearchCriteria');
+        console.log('setSearchCriteria SMP');
         setSearchCriteriaData(
             {
                 doSearch: true,

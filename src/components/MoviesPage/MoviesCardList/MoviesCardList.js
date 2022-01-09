@@ -60,7 +60,6 @@ function MoviesCardList(props) {
             console.log('Filter cards...');
             let searchResult = [];
             props.loadedCards.forEach(function (value){
-
                 if ((props.searchCriteria.shortMeter && value.duration <= 40)
                     && (props.searchCriteria.keyWord &&
                         ( (value.nameRU && value.nameRU.includes(props.searchCriteria.keyWord)) || ( value.nameEN && value.nameEN.includes(props.searchCriteria.keyWord)))
@@ -71,6 +70,12 @@ function MoviesCardList(props) {
             });
             console.log('Found: ' + searchResult.length);
             setAllCards(searchResult);
+            setShownAmount(0);
+            _showLimitedCards();
+        } else {
+            console.log('NO FILTERS...');
+            console.log('Loaded cards: ' + props.loadedCards.length);
+            setAllCards(props.loadedCards);
             setShownAmount(0);
             _showLimitedCards();
         }

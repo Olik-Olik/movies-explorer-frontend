@@ -81,22 +81,6 @@
               .then((response) => this._handleResponse(response))
       }
 
-
-/*
-      createMovie = (...data) => {
-          return fetch(`${this._address}/movies`,
-              {
-                  headers: this._headers,
-                  method: 'POST',
-                  body: JSON.stringify({
-                      ...data
-                  })
-              })
-              .then((response) => this._handleResponse(response));
-      }
-*/
-
-
       deleteMovie = (movieId) => {
           this.handleToken();
           return fetch(`${this._address}/movies/${movieId}`,

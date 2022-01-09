@@ -49,7 +49,7 @@ function MoviesPages(props) {
 
 
     function setSearchCriteria(keyWord, shortMeter){
-        console.log('setSearchCriteria');
+        console.log('setSearchCriteria MP');
         setSearchCriteriaData(
             { doSearch: true,
                     keyWord: keyWord,

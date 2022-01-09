@@ -30,19 +30,17 @@ function ResultMainSearch(props) {
 
     return (
 
-        <form className="result_main_search" onSubmit={handleSubmit}>
+        <form className="result_main_search" /*onSubmit={handleSubmit}*/>
             <div className="result_main_search__conteiner">
                 <div className="lupa-film">
                     <div className="result_main_search_icon"/>
                     <div className="result_main_search_icon__lupa"/>
                     <div name="form__input_film">
                         <input type='text'
-
                                name="search"
                                value={keyWord}
                                onChange={handleSearchField}
                                placeholder='Кино'
-
                                className="result_main_search_icon_film"
                                required
                                maxLength="40" minLength="2"/>
