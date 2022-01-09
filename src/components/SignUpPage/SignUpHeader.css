@@ -20,17 +20,11 @@
     max-height: 217px;
     display: flex;
     align-items: center;
-  /*  justify-content: center;*/
- /*   padding-top: 70px;
-    padding-bottom: 40px;*/
 }
 .header__welcome{
     display: flex;
     justify-content: space-between;
     width: 396px;
-  /*  display: flex;
-    justify-content: space-between;
-    width: 396px;*/
     margin: 0 auto;
     padding-bottom: 40px;
     font-family: 'Inter', serif;
@@ -38,11 +32,7 @@
     font-weight:500;
     font-size: 24px;
     line-height: 29px;
-   /* align-items: flex-start;*/
     Vertical-align: Top;
-  /*  margin-bottom: 0;
-    display: flex;
-    justify-content: center;*/
 }
 
     @media screen and (max-width: 768px){
@@ -78,10 +68,10 @@
           }
           .header__logo_welcome{
               justify-content: center;
-
+              width: 260px;
           }
           .header__signup{
-              min-width: 320px;
+              min-width: 260px;
               max-height: 253px;
               flex-direction: column;
               display: flex;
@@ -93,8 +83,6 @@
               align-content: flex-start;
               justify-content: flex-start;
               align-items: flex-start;
-
-
               padding-left: 30px;
               padding-right: 0;
           }

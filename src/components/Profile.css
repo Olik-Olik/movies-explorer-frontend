@@ -65,7 +65,6 @@
 .profile__email-email{
     display: flex;
     justify-content: space-between;
-
     width: 396px;
     font-size: 14px;
     align-items: flex-start;
@@ -76,7 +75,7 @@
     color: #EE3465;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #424242;
+  /*  border-bottom: 1px solid #424242;*/ /*111*/
     width: 396px;
     font-size: 14px;
     align-items: flex-start;

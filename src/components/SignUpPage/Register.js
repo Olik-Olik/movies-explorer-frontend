@@ -55,7 +55,7 @@ function Register(props) {
 
                     <form name="form__input_name">
                         <input type='text'
-                               className="profile__input-name"
+                               className="profile__input-name auth__form-login-input-email"
                                name="name"
                                value={name || ""}
                    /*            defaultValue="Олик"*/
