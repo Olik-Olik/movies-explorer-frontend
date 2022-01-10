@@ -54,7 +54,7 @@ function Login(props) {
                             scope: response.scope },
                     });
 
-                    //history.push('/movies');
+
                     console.log('AR');
 
                 }
@@ -64,6 +64,7 @@ function Login(props) {
             });
         console.log('EF');
     }
+
 
     /*function handleChangeEmail(evt) {
         const emailValid = /^([a-z0-9.-]+)@([a-z0-9\-]+)\.([a-z.]{2,})*$/i.test(evt.target.value);

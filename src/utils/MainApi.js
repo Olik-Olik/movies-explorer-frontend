@@ -17,8 +17,8 @@
           if (response.ok) {
               return response.json()
           } else {
-              return Promise.reject(response.status);
-              /*"Ошибка, УПС! " + response.status + ":" + response.statusText);*/
+              return Promise.reject(response.status +
+              "Ошибка, УПС! " + response.status + ":" + response.statusText);
           }
       }
 

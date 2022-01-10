@@ -1,3 +1,4 @@
+
 .auth {
     display: flex;
     align-items: center;
@@ -83,7 +84,6 @@
     justify-content: center;
     display: flex; /*11111*/
     margin: 0 auto;
- /*   background: transparent;*/
     list-style-type: none;
     text-decoration: none;
 /*    padding: 0 0 10px 0;*/
@@ -91,14 +91,10 @@
 .profile__email-email {
     display: flex;
     flex-direction: column;
-   /* align-items: center;*/}
+}
 
-/*!*форма input name*!
-.profile__input-name{
-    background-color: #202020;
-}*/
+
 .auth__form-login-input-password {
-    /*max-width: 288px;*/
     width: 396px;
     background-color: #202020;
     font-size: 14px;
@@ -163,9 +159,27 @@
     justify-content: center;
     text-decoration: none;
 }
-
+.auth__form-login-submit-button_hidden{
+    width: 396px;
+    height: 45px;
+    line-height: 17px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    border-style: none;
+    margin-top: 152px;
+    margin-bottom: 103px;
+    cursor: pointer;
+    color: white;
+    background: #4285F4;
+    font-size: 14px;
+ /*   display: flex;*/
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    display: none;
+}
 .auth__signup-link-Do-Register {
-
     text-decoration: none;
     color: #FFFFFF;
     align-self: flex-end;
@@ -206,6 +220,7 @@
 
 }
 .auth__signup-link {
+    margin-left: 20px;
     justify-content: center;
     text-decoration: none;
     /*зарегистрироваться*/
@@ -265,6 +280,7 @@
     }
 }
 
+
 /*@media screen  and(max-width: 427px){*/
 @media screen and (max-width: 427px){
     .auth__form-login {
@@ -300,5 +316,14 @@
         font-size: 10px;
         line-height: 12px;
     }
-
+    .info {
+        max-width: 260px;
+    }
  }
+.setinfo__error{
+    color: #EE3465;
+    font-weight:400;
+    font-family: 'Inter', serif;
+    font-size: 10px;
+    line-height: 12.1px;
+}

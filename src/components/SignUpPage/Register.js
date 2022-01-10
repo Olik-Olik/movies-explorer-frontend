@@ -6,6 +6,7 @@ import '../Footer.css';
 import '../SignInPage/SignInHeader.css';
 import '../../index.css';
 import {useHistory} from "react-router-dom";
+
 function Register(props) {
     const history = useHistory();
     const [email, setEmail] = useState('');
@@ -13,22 +14,38 @@ function Register(props) {
     const [name, setName] = useState('');
     const [error, setError] = useState({});
     const [valid, setValid] = useState(false);
+    const [info, setInfo] = useState('');
 
     function handleChangeName(evt) {
+        if (evt.target.value < 2 && evt.target.value > 30) {
+            setInfo("Введите >= 2 символов, но < 30")
+        } else {
+            setInfo('');
+        }
         setName(evt.target.value);
     }
 
     function handleChangeEmail(evt) {
+        if (evt.target.value < 2) {
+            setInfo("Введите >= 2 символам")
+        } else {
+            setInfo('');
+        }
         setEmail(evt.target.value);
     }
 
     function handleChangePassword(evt) {
+        if (evt.target.value < 8) {
+            setInfo("Введите >= 8 символам")
+        } else {
+            setInfo('');
+        }
         setPassword(evt.target.value);
     }
 
     function handleSubmitRegister(evt) {
         evt.preventDefault();
-        if (!name || !email || !password )  {
+        if (!name || !email || !password) {
             return;
         }
         props.handleRegister(name, email, password);
@@ -36,43 +53,39 @@ function Register(props) {
 
     useEffect(() => {
         if (props.loggedIn) {
-            // history.push('/')
         }
     }, [props.loggedIn]);
 
-    /*   useEffect(() =>  {
-               (name && email && password) ? {valid(true) : valid(false)},
-           [name, email, password]);*/
-
+    useEffect(() => {
+            (name && email && password) ? setValid(true) : setValid(false)
+        },
+        [name, email, password]);
+    /*если трушно показывать кнопку*/
     return (
         <>
             <div className="auth">
                 {/*  <div className="auth__form-login">*/}
+                <form onSubmit={handleSubmitRegister}
+                      className="auth__form-login">
 
-                <form onSubmit={handleSubmitRegister} className="auth__form-login">
-
-                    <label className="label__input profile-name">Имя</label>
+                    <label className="label__input profile-name"> Имя
+                    </label>
 
                     <form name="form__input_name">
                         <input type='text'
                                className="profile__input-name auth__form-login-input-email"
                                name="name"
                                value={name || ""}
-                   /*            defaultValue="Олик"*/
                                required
-                               maxLength="30" minLength="2"
-                            /*   placeholder="Name"*/
-                               onChange={handleChangeName}
-
-                        />
+                               maxLength="30"
+                               minLength="2"
+                               onChange={handleChangeName}/>
+                        <div className="setinfo__error">{info}</div>
                     </form>
 
-
                     <div className="profile__email-email ">
-                        <label className="label__input profile__email">E-mail</label>
-
+                        <label className="label__input profile__email"> E-mail</label>
                         <form name="profile__input-email">
-
                             <input type='text'
                                    className="auth__form-login-input-email"
                                    name="email"
@@ -88,41 +101,50 @@ function Register(props) {
                     </div>
                     <div className="profile__email-email  profile__email-password">
 
-                        <label className="profile__email">Пароль</label>
+                        <label className="profile__email"> Пароль
+                        </label>
 
                         <form name="profile__input-password">
 
                             <input type='password'
                                    name="password"
-                                   className="auth__form-login-input-password"
-                            /*       defaultValue="qwerty"*/
+                                /*     className="auth__form-login-input-password"*/
+                                   className={`auth__form-login-input-password ${info ? "info__error" : ''}`}
                                    required
                                    value={password || ""}
                                    minLength="8" maxLength="30"
-                                /*     placeholder="Пароль"*/
                                    onChange={handleChangePassword}
                             />
+                            {/**/}
+                            <div className="setinfo__error profile__email profile__email-password"
+                                 disabled={!valid}
+                            > {/*Что-то пошло не так...*/}
+                                {info}
+                            </div>
                         </form>
 
                     </div>
+                    {/*причем-то невалидном кнопка не должна быть видна/активна*/}
                     <a href="/sign-in"
                        className="auth__login-signin">
                         <button className="auth__form-login-submit-button"
-                                type="submit">Зарегистрироваться
+                                type="submit"
+                                disabled={valid}
+                        >Зарегистрироваться
                         </button>
                     </a>
                 </form>
-                    <div className="auth__login-signup-container">
+                <div className="auth__login-signup-container">
 
-                        <a href="/sign-in" className="auth__login-signin">
-                            <div className="auth__login-signup-Do_Register auth__signup-link">
-                                Уже зарегистрированы?
-                            </div>
+                    <a href="/sign-in" className="auth__login-signin">
+                        <div className="auth__login-signup-Do_Register auth__signup-link">
+                            Уже зарегистрированы?
+                        </div>
 
-                            <p className="auth__login-signup-Do_Register auth__signup-link auth__signup-link-color">Войти
-                            </p>
-                        </a>
-                    </div>
+                        <p className="auth__login-signup-Do_Register auth__signup-link auth__signup-link-color">Войти
+                        </p>
+                    </a>
+                </div>
 
             </div>
         </>

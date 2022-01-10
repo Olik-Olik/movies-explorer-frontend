@@ -236,7 +236,7 @@ export default function App(props) {
                                 component={ProfilePage}
                                 loggedIn={loggedIn}
                                 signOut={handleSignOut}
-                                updateProfile={handleUpdateProfile}
+                                handleUpdateProfile={handleUpdateProfile}
                             />
                             <Route path=''>
                                 <NotFound_404/>
