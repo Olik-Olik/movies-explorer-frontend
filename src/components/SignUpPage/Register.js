@@ -6,19 +6,21 @@ import '../Footer.css';
 import '../SignInPage/SignInHeader.css';
 import '../../index.css';
 import {useHistory} from "react-router-dom";
+import {regex} from "react-admin";
 
 function Register(props) {
     const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
-    const [error, setError] = useState({});
+    const [passwordInfo, setPasswordInfo] = useState('');
+    const [infoEmail, setInfoEmail] = useState('');
     const [valid, setValid] = useState(false);
     const [info, setInfo] = useState('');
     const buttonClassNameAppearDisabled = `${!valid ? "auth__form-login-submit-button" : "auth__form-login-submit-button_hidden"}`
 
     function handleChangeName(evt) {
-        if (evt.target.value < 2 && evt.target.value > 30) {
+        if (evt.target.value.length < 2 || evt.target.value.length > 30) {
             setInfo("Введите > 2 символов, но < 30")
         } else {
             setInfo('');
@@ -27,19 +29,20 @@ function Register(props) {
     }
 
     function handleChangeEmail(evt) {
-        if (evt.target.value < 2) {
-            setInfo("Введите > 2 символов")
+        const lala = /((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,20})/
+        if (evt.target.value.length > 2 && (evt.target.value.match(lala) )) {
+            setInfoEmail('');
         } else {
-            setInfo('');
+            setInfoEmail("Введите > 2 символов и вообще, email должен быть похож на email")
         }
         setEmail(evt.target.value);
     }
 
     function handleChangePassword(evt) {
-        if (evt.target.value < 8) {
-            setInfo("Что-то пошло не так...")
+        if (evt.target.value.length < 8) {
+            setPasswordInfo("Что-то пошло не так...")
         } else {
-            setInfo('');
+            setPasswordInfo('');
         }
         setPassword(evt.target.value);
     }
@@ -52,10 +55,10 @@ function Register(props) {
         props.handleRegister(name, email, password);
     }
 
-    useEffect(() => {
+  /*  useEffect(() => {
         if (props.loggedIn) {
         }
-    }, [props.loggedIn]);
+    }, [props.loggedIn]);*/
 
     useEffect(() => {
             (name && email && password) ? setValid(true) : setValid(false)
@@ -81,7 +84,7 @@ function Register(props) {
                                maxLength="30"
                                minLength="2"
                                onChange={handleChangeName}/>
-                   {/*     <div className="setinfo__error">{info}</div>*/}
+                        <div className="setinfo__error">{info}</div>
                     </form>
 
                     <div className="profile__email-email ">
@@ -96,7 +99,7 @@ function Register(props) {
                                    value={email || ""}
                                 /*  placeholder="Email"*/
                                    onChange={handleChangeEmail} />
-                            {/*     <div className="setinfo__error">{info}</div>*/}
+                                 <div className="setinfo__error">{infoEmail}</div>
                         </form>
 
                     </div>
@@ -120,12 +123,12 @@ function Register(props) {
                       {/*      <div className="setinfo__error profile__email profile__email-password"
                                  disabled={!valid}> Что-то пошло не так... {info}
                             </div>*/}
-                                 <div className="setinfo__error">{info}</div>
+                                 <div className="setinfo__error">{passwordInfo}</div>
                         </form>
 
                     </div>
                     {/*причем-то невалидном кнопка не должна быть видна/активна*/}
-                    <a href="/sign-in"
+                    <div
                        className="auth__login-signin">
                         <button className={buttonClassNameAppearDisabled}
                                  //   "auth__form-login-submit-button"
@@ -133,18 +136,18 @@ function Register(props) {
                                 disabled={!valid}
                         >Зарегистрироваться
                         </button>
-                    </a>
+                    </div>
                 </form>
                 <div className="auth__login-signup-container">
 
-                    <a href="/sign-in" className="auth__login-signin">
+                    <div className="auth__login-signin">
                         <div className="auth__login-signup-Do_Register auth__signup-link">
                             Уже зарегистрированы?
                         </div>
 
                         <p className="auth__login-signup-Do_Register auth__signup-link auth__signup-link-color">Войти
                         </p>
-                    </a>
+                    </div>
                 </div>
 
             </div>

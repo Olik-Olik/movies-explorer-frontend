@@ -34,7 +34,6 @@
               .then((response) => this._handleResponse(response));
       }
 
-
       submitProfile = (name, email/*, password*/) => {
           this.handleToken();
           return fetch(`${this._address}/users/me`, {
