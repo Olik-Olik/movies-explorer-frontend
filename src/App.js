@@ -34,8 +34,9 @@ export default function App(props) {
     const checkToken = () => {
         setTimeout(()=> {
             setLoggedIn(true);
-            setIsLoading(false);},1500);
+            setIsLoading(false);},3000);
     }
+
         /*const token = localStorage.getItem('token');
         if (token) {
             apiAuth.checkToken(token)
@@ -93,13 +94,6 @@ export default function App(props) {
         hukUseEffectToken();
     }, []);
 
-    /*
-        useEffect(() => {
-            hukUseEffectToken();
-        }, [loggedIn, currentUserContext]);
-
-    */
-
 
     function handleLogin(email, password) {
         return apiAuth
@@ -111,7 +105,7 @@ export default function App(props) {
                 /* apiAuth.checkToken(res.token);*/
                 apiAuth.handleToken(res.token); /*##########*/
                 setEmail(email);
-                /*######*/ //          currentUserContext = true;
+                /*######*/ // currentUserContext = true;
                 setLoggedIn(true);
                 console.log('Залогинились !');
                 setInfo('Залогинились !');
@@ -151,14 +145,11 @@ export default function App(props) {
     }
 
     function handleUpdateProfile(userData) {
-        apiAuth.updateProfile({
-            'name': userData.name,
-            'email': userData.email,
-            'password': userData.password,
-        })
-            .then(res => {
-                setCurrentUser(res); /*######*/
-                closeAllPopups()
+        console.log('UD: ' + userData.name);
+        apiAuth.submitProfile(userData.name, userData.email/*, userData.password*/)
+            .then(data => {
+                setCurrentUser(data); /*######*/
+                /*closeAllPopups()*/
             })
             .catch((err) => {
                 setInfo('Не получилось изменить данные')
@@ -237,6 +228,7 @@ export default function App(props) {
                                 loggedIn={loggedIn}
                                 signOut={handleSignOut}
                                 handleUpdateProfile={handleUpdateProfile}
+                             //   handleSubmitProfile={handleSubmitProfile} /*#####*/
                             />
                             <Route path=''>
                                 <NotFound_404/>

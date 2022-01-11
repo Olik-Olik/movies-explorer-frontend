@@ -177,7 +177,9 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    display: none;
+   /* display: none;*/
+    display: block;
+
 }
 .auth__signup-link-Do-Register {
     text-decoration: none;

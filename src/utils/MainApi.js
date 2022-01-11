@@ -35,15 +35,15 @@
       }
 
 
-      updateProfile = (name, email, password, token) => {
+      submitProfile = (name, email/*, password*/) => {
           this.handleToken();
           return fetch(`${this._address}/users/me`, {
               method: 'PATCH',
               headers: this._headers,
               body: JSON.stringify({
-                  name: name,
-                  email: email,
-                  password: password,
+                  'name': name,
+                  'email': email,
+                  /*password: password,*/
               })
           })
               .then((response) => this._handleResponse(response));

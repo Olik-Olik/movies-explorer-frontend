@@ -5,8 +5,6 @@ import React, {useState} from "react";
 
 function ResultMainSearch(props) {
 
-    //   const refContainer = useRef(initialValue);
-
     const [keyWord, setKeyWord] = useState('');
     const [shortMeter, setShortMeter] = useState(false);
 

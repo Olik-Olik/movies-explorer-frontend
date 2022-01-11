@@ -87,7 +87,7 @@ function MoviesCardList(props) {
             let searchResult = [];
             props.loadedCards.forEach(function (value){
                 //console.log("VD: " + value.duration);
-                if ((props.searchCriteria.shortMeter && value.duration <= 60)
+                if ((props.searchCriteria.shortMeter && value.duration <= 40)
                     && (props.searchCriteria.keyWord &&
                     ( (value.nameRU.includes(props.searchCriteria.keyWord)) || (value.nameEN.includes(props.searchCriteria.keyWord)))
                 )) {

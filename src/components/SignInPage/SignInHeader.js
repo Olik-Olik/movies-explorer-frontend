@@ -17,7 +17,7 @@ function SignInHeader(props) {
                     <img className="headerLogo " src={logo} alt="Logo"/>
             </div>
             </a>
-            <p className="header__welcome">Рады видеть!
+            <p className="header__welcome">Рады видеть!{props.name}
             </p>
         </header>
 

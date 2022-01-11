@@ -14,7 +14,7 @@ function SignUpHeader(props) {
 
                         <img className="headerLogo" src={logo} alt="Logo"/>
                 </div></a>
-                <p className="header__welcome">Добро пожаловать!
+                <p className="header__welcome ">Добро пожаловать!
                 </p>
         </header>
 

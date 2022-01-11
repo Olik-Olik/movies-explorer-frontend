@@ -5,11 +5,13 @@
     display: flex;
     background-color: #202020;
     color: white;
+    padding-left: 50px;
 }
 .header__logo_welcome:hover{
     cursor: pointer;
 }
 .header__logo_welcome{
+   /* padding-left: 80px;*/
     display: flex;
     justify-content: space-between;
     width: 396px;
@@ -22,6 +24,7 @@
     align-items: center;
 }
 .header__welcome{
+   /* padding-left: 80px;*/
     display: flex;
     justify-content: space-between;
     width: 396px;
@@ -54,14 +57,16 @@
         width: 396px;
     }
     .header__logo_welcome{
+
     }
 }
       @media screen and (max-width: 620px){
           .header__welcome {
+              padding-left: 0;
               font-family: 'Inter', serif;;
-             font-weight: 500  ;
-             Font-size: 24px;
-             Line-height: 29px;
+              font-weight: 500  ;
+              Font-size: 24px;
+              Line-height: 29px;
               max-width: 260px;
               max-height: 29px;
               padding-bottom: 80px;
@@ -69,6 +74,7 @@
           .header__logo_welcome{
               justify-content: center;
               width: 260px;
+              padding-left: 0;
           }
           .header__signup{
               min-width: 260px;

@@ -17,7 +17,9 @@ function ProfilePage(props) {
        {/*     <Header/>*/}
         <HeaderSavedFilms/>
         <main>
-        <ProfileSummaryPage handleUpdateProfile={props.handleUpdateProfile}/>
+        <ProfileSummaryPage handleUpdateProfile={props.handleUpdateProfile}
+                            handleSubmitProfile={props.handleSubmitProfile}
+         />
         </main>
         </>
     )

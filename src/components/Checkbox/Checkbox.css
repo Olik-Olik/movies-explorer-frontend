@@ -19,7 +19,7 @@ input[type="checkbox"]{
 }
 
 input:checked[type="checkbox"]{
-    background: #FF0000;
+  /*  background: #FF0000;*/
 }
 
 input[type="checkbox"]:before{

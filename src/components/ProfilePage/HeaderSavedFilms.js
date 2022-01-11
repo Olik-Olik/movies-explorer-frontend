@@ -1,9 +1,7 @@
-
 import React from "react";
 import './HeaderSavedFilms.css'
 import '../Header.css';
 import logo from '../../components/images/logo.svg';
-import icon_header from '../../components/images/icon_header.svg';
 import '../../index.css';
 
 function HeaderSavedFilms(props) {

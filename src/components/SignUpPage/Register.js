@@ -15,10 +15,11 @@ function Register(props) {
     const [error, setError] = useState({});
     const [valid, setValid] = useState(false);
     const [info, setInfo] = useState('');
+    const buttonClassNameAppearDisabled = `${!valid ? "auth__form-login-submit-button" : "auth__form-login-submit-button_hidden"}`
 
     function handleChangeName(evt) {
         if (evt.target.value < 2 && evt.target.value > 30) {
-            setInfo("Введите >= 2 символов, но < 30")
+            setInfo("Введите > 2 символов, но < 30")
         } else {
             setInfo('');
         }
@@ -27,7 +28,7 @@ function Register(props) {
 
     function handleChangeEmail(evt) {
         if (evt.target.value < 2) {
-            setInfo("Введите >= 2 символам")
+            setInfo("Введите > 2 символов")
         } else {
             setInfo('');
         }
@@ -36,7 +37,7 @@ function Register(props) {
 
     function handleChangePassword(evt) {
         if (evt.target.value < 8) {
-            setInfo("Введите >= 8 символам")
+            setInfo("Что-то пошло не так...")
         } else {
             setInfo('');
         }
@@ -45,7 +46,7 @@ function Register(props) {
 
     function handleSubmitRegister(evt) {
         evt.preventDefault();
-        if (!name || !email || !password) {
+        if (name || email || password) {
             return;
         }
         props.handleRegister(name, email, password);
@@ -80,7 +81,7 @@ function Register(props) {
                                maxLength="30"
                                minLength="2"
                                onChange={handleChangeName}/>
-                        <div className="setinfo__error">{info}</div>
+                   {/*     <div className="setinfo__error">{info}</div>*/}
                     </form>
 
                     <div className="profile__email-email ">
@@ -94,8 +95,8 @@ function Register(props) {
                                    maxLength="30" minLength="2"
                                    value={email || ""}
                                 /*  placeholder="Email"*/
-                                   onChange={handleChangeEmail}
-                            />
+                                   onChange={handleChangeEmail} />
+                            {/*     <div className="setinfo__error">{info}</div>*/}
                         </form>
 
                     </div>
@@ -115,21 +116,21 @@ function Register(props) {
                                    minLength="8" maxLength="30"
                                    onChange={handleChangePassword}
                             />
-                            {/**/}
-                            <div className="setinfo__error profile__email profile__email-password"
-                                 disabled={!valid}
-                            > {/*Что-то пошло не так...*/}
-                                {info}
-                            </div>
+
+                      {/*      <div className="setinfo__error profile__email profile__email-password"
+                                 disabled={!valid}> Что-то пошло не так... {info}
+                            </div>*/}
+                                 <div className="setinfo__error">{info}</div>
                         </form>
 
                     </div>
                     {/*причем-то невалидном кнопка не должна быть видна/активна*/}
                     <a href="/sign-in"
                        className="auth__login-signin">
-                        <button className="auth__form-login-submit-button"
+                        <button className={buttonClassNameAppearDisabled}
+                                 //   "auth__form-login-submit-button"
                                 type="submit"
-                                disabled={valid}
+                                disabled={!valid}
                         >Зарегистрироваться
                         </button>
                     </a>
