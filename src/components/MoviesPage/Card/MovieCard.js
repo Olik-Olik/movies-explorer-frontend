@@ -11,10 +11,11 @@ function MovieCard(props) {
 
     function handleDelete() {
         console.log("Удаление");
-        apiAuth.deleteMovie(props.cardData.movieId)
+        apiAuth.deleteMovie(props.cardData.id).then(() => {
+            props.cardData.isLiked = false;
+        })
             .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
     }
-
 
     function handleSave(evt) {
         evt.preventDefault();
@@ -30,13 +31,14 @@ function MovieCard(props) {
                 props.cardData.nameEN,
                 props.cardData.trailerLink,
                 props.cardData.imageURL,
-            ).catch((err) => {
+            ).then(() => {
+                props.cardData.isLiked = true;
+                console.log('Saved Film')
+            })
+                .catch((err) => {
                 console.log('Не сохраняется :( ' + err.toString());
             })
-            props.cardData.isLiked = true;
-            console.log('Saved Film')
         } else {
-            props.cardData.isLiked = false;
             handleDelete();
         }
     }

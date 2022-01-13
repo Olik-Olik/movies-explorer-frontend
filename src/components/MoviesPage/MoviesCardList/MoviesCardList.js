@@ -63,7 +63,7 @@ function MoviesCardList(props) {
             let searchResult = [];
             props.loadedCards.forEach(function (value){
                 if ((props.searchCriteria.shortMeter === true && value.duration <= FILM_DURATION /*40*/)
-                    || (props.searchCriteria.keyWord.length > 0 &&
+                    || (props.searchCriteria.keyWord.length >= 0 &&
                         ( (value.nameRU && value.nameRU.includes(props.searchCriteria.keyWord)) || ( value.nameEN && value.nameEN.includes(props.searchCriteria.keyWord)))
                     )) {
                     console.log('Seach hit!');
@@ -91,7 +91,7 @@ function MoviesCardList(props) {
             props.loadedCards.forEach(function (value){
                 //console.log("VD: " + value.duration);
                 if ((props.searchCriteria.shortMeter === true && value.duration <= FILM_DURATION)
-                    || (props.searchCriteria.keyWord.length > 0 &&
+                    || (props.searchCriteria.keyWord.length >= 0 &&
                      ((value.nameRU && value.nameRU.includes(props.searchCriteria.keyWord)) || ( value.nameEN && value.nameEN.includes(props.searchCriteria.keyWord)))
                 )) {
                     console.log('Seach hit!');
