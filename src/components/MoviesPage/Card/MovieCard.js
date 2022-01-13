@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {useRouteMatch} from 'react-router-dom';
 import '../Card/Card.css';
 import TimeConvert from '../../../utils/TimeConvert/TimeConvert';
@@ -7,12 +7,14 @@ import apiAuth from "../../../utils/MainApi";
 
 function MovieCard(props) {
 
+    const [likeMe, setLikeMe] = useState(false);
     const isSavedFilmsPage = useRouteMatch({path: '/saved-movies', exact: true});
 
     function handleDelete() {
         console.log("Удаление");
         apiAuth.deleteMovie(props.cardData.id).then(() => {
             props.cardData.isLiked = false;
+            setLikeMe(props.cardData.isLiked);
         })
             .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
     }
@@ -33,6 +35,7 @@ function MovieCard(props) {
                 props.cardData.imageURL,
             ).then(() => {
                 props.cardData.isLiked = true;
+                setLikeMe(props.cardData.isLiked);
                 console.log('Saved Film')
             })
                 .catch((err) => {
@@ -59,6 +62,14 @@ function MovieCard(props) {
             likeOnClick = handleSave;
         }
     }
+
+/*
+    useEffect(() => {
+        /!*console.log('Toggle like!');*!/
+        //setLikeMe(props.cardData.isLiked);
+        }
+    ,[likeMe])
+*/
 
     return (
         <>
