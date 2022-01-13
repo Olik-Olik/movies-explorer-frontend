@@ -1,6 +1,6 @@
-//const BASE_URL = 'http://localhost:3627';
+import { BASE_URL} from "./constants";
 
-  class MainApi {
+class MainApi {
       constructor(arr) {
     /*  const BASE_URL = 'https://diplomfront.nomoredomains.work*/
 
