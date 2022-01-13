@@ -1,3 +1,5 @@
+import {BEATFILM} from "./constants";
+
 class ApiMovies {
     constructor(arr) {
         this._address = arr.address;
@@ -24,7 +26,7 @@ class ApiMovies {
 }
 
 const apiMovies = new ApiMovies({
-    address: 'https://api.nomoreparties.co/beatfilm-movies',
+    address: /*'https://api.nomoreparties.co/beatfilm-movies'*/ BEATFILM,
     headers: {'Content-Type': 'application/json'}
 });
 

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import  {useEffect, useState} from "react";
 import {BrowserRouter, Route, Switch, useHistory, Redirect} from 'react-router-dom';
 import './index.css';
 import AboutPage from "./components/AboutPage/AboutPage";
@@ -9,26 +9,17 @@ import ProfilePage from "./components/ProfilePage/ProfilePage";
 import SignUpPage from "./components/SignUpPage/SignUpPage";
 import SignInPage from "./components/SignInPage/SignInPage";
 import apiAuth from "./utils/MainApi";
-import apiMovies from "./utils/MoviesApi";
 import ProtectedRoute from "./components/ProtectedRoute";
 import {CurrentUserContext} from './utils/context/CurrentUserContext';
 
 export default function App(props) {
-    /*####*/ //  let currentUserContext = useContext(CurrentUserContext);
-    const [currentUser, setCurrentUser] = useState({});//Стейт переменная используется  /*####*/
-    const history = useHistory();
+    const [currentUser, setCurrentUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [loggedIn, setLoggedIn] = useState(false);
     const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
-    const [selectedCard, setSelectedCard] = useState({});
-    const [cards, setCards] = useState([]);
     const [email, setEmail] = useState("");
-    const [name, setName] = useState("");
-    const [password, setPassword] = useState("");
     const [infoSuccess, setInfoSuccess] = useState(false);
     const [info, setInfo] = useState('');
-    const [movies, setMovies] = useState('');
-    //   const [search, setSearch] = useState({});
     const [isRegResOpen, setIsRegResOpen] = useState(false);
 
     const checkToken = () => {
@@ -36,18 +27,6 @@ export default function App(props) {
             setLoggedIn(true);
             setIsLoading(false);},3000);
     }
-
-        /*const token = localStorage.getItem('token');
-        if (token) {
-            apiAuth.checkToken(token)
-                .then(() => {
-                    setIsLoading(true);
-                    setLoggedIn(true);
-                }).catch((err) => {
-                console.log('не залогинились не подгрузились!!!: ' + err.toString())
-            })
-        }
-    }*/
 
     function hukUseEffectToken() {
         checkToken();
@@ -63,7 +42,6 @@ export default function App(props) {
                 })
                 .catch((err) => {
                     console.log('Ответа нет! ' + err.toString());
-                    /*####*/   //    currentUserContext = false;
                     setLoggedIn(false);
                     setIsLoading(false);
                     setEmail('');
@@ -71,25 +49,12 @@ export default function App(props) {
 
         } else {
             console.log('Токена нету!!!');
-            /*####*/      //  currentUserContext = false;
             setLoggedIn(false);
             setIsLoading(false);
             setEmail('');
-            //  setName('');
         }
     }
 
-    /*
-        useEffect(() => {
-            apiAuth.checkToken().then(() => {
-                currentUserContext = true;
-                setLoggedIn(true)
-            }).catch( (err) => {
-                currentUserContext = false;
-                setLoggedIn(false);
-            })
-        },[])
-    */
     useEffect(() => {
         hukUseEffectToken();
     }, []);
@@ -102,23 +67,18 @@ export default function App(props) {
                 console.log('login');
                 console.log(res.token);
                 localStorage.setItem('token', res.token);
-                /* apiAuth.checkToken(res.token);*/
-                apiAuth.handleToken(res.token); /*##########*/
+                apiAuth.handleToken(res.token);
                 setEmail(email);
-                /*######*/ // currentUserContext = true;
                 setLoggedIn(true);
                 console.log('Залогинились !');
                 setInfo('Залогинились !');
                  return res;
-              //  return loggedIn; /*#####*/
-
             })
             .catch((err) => {
                 if (err.status === 401 ){setInfo('указанные имя пользователя и пароль не верны')}
                 else
                 {setInfo('Не залогинились !');}
                 console.log('Не залогинились :( ' + err.toString());
-                /*######*/      //      currentUserContext = false;
                 setLoggedIn(false);
             })
     }
@@ -131,8 +91,6 @@ export default function App(props) {
                 setIsRegResOpen(true);
                 console.log("зарегались");
                 setInfo('Зарегистрировались, Класс')
-                handleLogin(email, password); /*######*/
-                setCurrentUser(res); /*######*/
             })
             .catch((err) => {
                     console.log('Не зарегистрировались :( ' + err.toString());
@@ -148,8 +106,7 @@ export default function App(props) {
         console.log('UD: ' + userData.name);
         apiAuth.submitProfile(userData.name, userData.email/*, userData.password*/)
             .then(data => {
-                setCurrentUser(data); /*######*/
-                /*closeAllPopups()*/
+                setCurrentUser(data);
             })
             .catch((err) => {
                 setInfo('Не получилось изменить данные')
@@ -162,30 +119,13 @@ export default function App(props) {
         console.log("I was so close...")
         setIsEditProfilePopupOpen(false);
         setIsRegResOpen(false);
-        //setLoggedIn(false);
-        // history.push("/");
     }
 
-
-//out off
     function handleSignOut() {
         console.log("logout");
         localStorage.removeItem('token');
-        /*######*/  //  setCurrentUser({});
-        /*######*/ //  currentUserContext = false;
-        // /*######*/ //      setEmail("");
         setLoggedIn(false);
-        // history.push("/");
     }
-
-    /*  checkBoxShortMovies* тумблер в чекбоксе/*/
-/*
-    const [checkBoxShortMovies, setCheckBoxShortMovies] = useState(false);
-
-    function handleCheckBoxShortMovies() {
-        setCheckBoxShortMovies(checkBoxShortMovies);
-    }
-*/
 
     return (
         <>
@@ -203,7 +143,8 @@ export default function App(props) {
                             />
 
                             <Route exact={true} path="/sign-up"
-                                   component={() => (<SignUpPage handleRegister={handleRegister}/>)}
+                                   component={() => (<SignUpPage handleRegister={handleRegister}
+                                   info={info}/>)}
                             />
                             {/*регистрация */}
 
@@ -227,8 +168,11 @@ export default function App(props) {
                                 component={ProfilePage}
                                 loggedIn={loggedIn}
                                 signOut={handleSignOut}
+                                infoSuccess={infoSuccess}
+                                setInfo={setInfo}
                                 handleUpdateProfile={handleUpdateProfile}
-                             //   handleSubmitProfile={handleSubmitProfile} /*#####*/
+
+
                             />
                             <Route path=''>
                                 <NotFound_404/>
@@ -236,8 +180,6 @@ export default function App(props) {
 
                         </Switch>
                     }
-
-                    {/*    <MenuPopup isOpen={props.isOpen} onClose={props.onClose} />*/}
                 </CurrentUserContext.Provider>
             </BrowserRouter>
         </>

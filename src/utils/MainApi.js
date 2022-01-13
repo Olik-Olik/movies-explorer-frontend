@@ -2,8 +2,11 @@
 
   class MainApi {
       constructor(arr) {
-          /*       /!*  const BASE_URL = 'https:/
-                 /diplomfront.nomoredomains.work*!/*/
+    /*  const BASE_URL = 'https://diplomfront.nomoredomains.work*/
+
+
+
+
           this._address = arr.address;
           this._headers = arr.headers;
       }

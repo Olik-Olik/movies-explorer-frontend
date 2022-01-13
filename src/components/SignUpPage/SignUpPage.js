@@ -8,7 +8,8 @@ function SignUpPage(props){
         <>
             <SignUpHeader/>
             <main>
-            <Register handleRegister={props.handleRegister}/>
+            <Register handleRegister={props.handleRegister}
+            info={props.info}/>
             </main>
         </>)}
 

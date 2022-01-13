@@ -6,7 +6,6 @@ import '../Footer.css';
 import '../SignInPage/SignInHeader.css';
 import '../../index.css';
 import {useHistory} from "react-router-dom";
-import {regex} from "react-admin";
 
 function Register(props) {
     const history = useHistory();
@@ -17,7 +16,8 @@ function Register(props) {
     const [infoEmail, setInfoEmail] = useState('');
     const [valid, setValid] = useState(false);
     const [info, setInfo] = useState('');
-    const buttonClassNameAppearDisabled = `${!valid ? "auth__form-login-submit-button" : "auth__form-login-submit-button_hidden"}`
+   // const [infoSuccess, setInfoSuccess] = useState(false);
+ //   const buttonClassNameAppearDisabled = `${!valid ? "auth__form-login-submit-button" : "auth__form-login-submit-button_hidden"}`
 
     function handleChangeName(evt) {
         if (evt.target.value.length < 2 || evt.target.value.length > 30) {
@@ -29,7 +29,7 @@ function Register(props) {
     }
 
     function handleChangeEmail(evt) {
-        const lala = /((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,20})/
+        const lala = /\S+@\S+\.\S+/
         if (evt.target.value.length > 2 && (evt.target.value.match(lala) )) {
             setInfoEmail('');
         } else {
@@ -49,10 +49,9 @@ function Register(props) {
 
     function handleSubmitRegister(evt) {
         evt.preventDefault();
-        if (name || email || password) {
-            return;
+        if (name && email && password) {
+            props.handleRegister(name, email, password)
         }
-        props.handleRegister(name, email, password);
     }
 
   /*  useEffect(() => {
@@ -68,6 +67,7 @@ function Register(props) {
     return (
         <>
             <div className="auth">
+                <div className="setinfo__error">{props.info}</div>
                 {/*  <div className="auth__form-login">*/}
                 <form onSubmit={handleSubmitRegister}
                       className="auth__form-login">
@@ -130,24 +130,24 @@ function Register(props) {
                     {/*причем-то невалидном кнопка не должна быть видна/активна*/}
                     <div
                        className="auth__login-signin">
-                        <button className={buttonClassNameAppearDisabled}
-                                 //   "auth__form-login-submit-button"
+                       {/* <button className={buttonClassNameAppearDisabled}*/}
+                        <button className=  "auth__form-login-submit-button"
                                 type="submit"
-                                disabled={!valid}
+                             /*   disabled={!valid}*/
                         >Зарегистрироваться
                         </button>
                     </div>
                 </form>
                 <div className="auth__login-signup-container">
 
-                    <div className="auth__login-signin">
+                    <a href="/sign-in" className="auth__login-signin">
                         <div className="auth__login-signup-Do_Register auth__signup-link">
                             Уже зарегистрированы?
                         </div>
 
                         <p className="auth__login-signup-Do_Register auth__signup-link auth__signup-link-color">Войти
                         </p>
-                    </div>
+                    </a>
                 </div>
 
             </div>

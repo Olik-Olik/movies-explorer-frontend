@@ -15,7 +15,6 @@ function ResultMainSearch(props) {
     }
 
     function handleCheckbox(evt) {
-        //evt.preventDefault();
         console.log('SM: ' + evt.target.checked);
         setShortMeter(evt.target.checked);
     }

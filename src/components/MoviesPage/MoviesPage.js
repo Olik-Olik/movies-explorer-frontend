@@ -9,11 +9,11 @@ import apiMovies from "./../../utils/MoviesApi";
 import Footer from "../Footer";
 import {CurrentUserContext} from "../../utils/context/CurrentUserContext";
 import apiAuth from "../../utils/MainApi";
-
+import {urlAllFilm} from "../../utils/constants";
 
 function MoviesPages(props) {
     /* дублироание кода! в константы! */
-    const urlAllFilm = 'https://api.nomoreparties.co';
+  //  const urlAllFilm = 'https://api.nomoreparties.co';
     const [isLoading, setLoading] = useState(true);
     const [loadedCards, setLoadedCards] = useState([]);
     const [searchCriteriaData, setSearchCriteriaData] = useState({ doSearch: false,
@@ -45,7 +45,7 @@ function MoviesPages(props) {
     useEffect(() => {
         console.log('Effect searchCriteriaData: ' + searchCriteriaData.toString());
         setLoadedCards(loadedCards);
-    }, [searchCriteriaData])
+    }, [searchCriteriaData, searchCriteriaData.doSearch, searchCriteriaData.keyWord, searchCriteriaData.shortMeter])
 
 
     function setSearchCriteria(keyWord, shortMeter){

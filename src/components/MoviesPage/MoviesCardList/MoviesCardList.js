@@ -6,6 +6,7 @@ import MovieCard from "../Card/MovieCard";
 import Preloader from "../../Preloader";
 import getExpandWidth from "../../MoviesPage/MoviesCardList/currentWindowWidth";
 import ResultMainMore from "../ResultMainMore/ResultMainMore";
+import {FILM_DURATION} from '../../../utils/constants';
 
 function MoviesCardList(props) {
     const [allCards, setAllCards] = useState(null);
@@ -56,12 +57,13 @@ function MoviesCardList(props) {
     }, [allCards])
 
     useEffect(() => {
+        console.log('UF: [props.searchCriteria]');
         if (props.searchCriteria.doSearch){
             console.log('Filter cards...');
             let searchResult = [];
             props.loadedCards.forEach(function (value){
-                if ((props.searchCriteria.shortMeter && value.duration <= 40)
-                    && (props.searchCriteria.keyWord &&
+                if ((props.searchCriteria.shortMeter === true && value.duration <= FILM_DURATION /*40*/)
+                    || (props.searchCriteria.keyWord.length > 0 &&
                         ( (value.nameRU && value.nameRU.includes(props.searchCriteria.keyWord)) || ( value.nameEN && value.nameEN.includes(props.searchCriteria.keyWord)))
                     )) {
                     console.log('Seach hit!');
@@ -79,17 +81,18 @@ function MoviesCardList(props) {
             setShownAmount(0);
             _showLimitedCards();
         }
-    }, [props.searchCriteria.doSearch])
+    }, [props.searchCriteria, props.searchCriteria.doSearch, props.keyWord, props.shortMeter])
 
     useEffect(() =>{
+        console.log('UF: []');
         if (props.searchCriteria.doSearch){
             console.log('Filter cards...');
             let searchResult = [];
             props.loadedCards.forEach(function (value){
                 //console.log("VD: " + value.duration);
-                if ((props.searchCriteria.shortMeter && value.duration <= 40)
-                    && (props.searchCriteria.keyWord &&
-                    ( (value.nameRU.includes(props.searchCriteria.keyWord)) || (value.nameEN.includes(props.searchCriteria.keyWord)))
+                if ((props.searchCriteria.shortMeter === true && value.duration <= FILM_DURATION)
+                    || (props.searchCriteria.keyWord.length > 0 &&
+                     ((value.nameRU && value.nameRU.includes(props.searchCriteria.keyWord)) || ( value.nameEN && value.nameEN.includes(props.searchCriteria.keyWord)))
                 )) {
                     console.log('Seach hit!');
                     searchResult.push(value);
