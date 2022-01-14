@@ -2,6 +2,7 @@ import  {useEffect, useState} from "react";
 import {BrowserRouter, Route, Switch, useHistory, Redirect} from 'react-router-dom';
 import './index.css';
 import AboutPage from "./components/AboutPage/AboutPage";
+import AboutPageAuth from "./components/AboutPage/AboutPageAuth";
 import MoviesPage from "./components/MoviesPage/MoviesPage";
 import NotFound_404 from "./components/NotFoundError/NotFound_404";
 import SavedMoviesPages from "./components/SavedMoviesPage/SavedMoviesPage";
@@ -11,6 +12,7 @@ import SignInPage from "./components/SignInPage/SignInPage";
 import apiAuth from "./utils/MainApi";
 import ProtectedRoute from "./components/ProtectedRoute";
 import {CurrentUserContext} from './utils/context/CurrentUserContext';
+import Preloader from "./components/Preloader";
 
 export default function App(props) {
     const [currentUser, setCurrentUser] = useState({});
@@ -45,6 +47,10 @@ export default function App(props) {
                     setLoggedIn(false);
                     setIsLoading(false);
                     setEmail('');
+
+                    localStorage.removeItem("token");
+                    localStorage.removeItem(currentUser);
+
                 })
 
         } else {
@@ -52,6 +58,10 @@ export default function App(props) {
             setLoggedIn(false);
             setIsLoading(false);
             setEmail('');
+
+            localStorage.removeItem("token");
+            localStorage.removeItem(currentUser);
+
         }
     }
 
@@ -123,8 +133,13 @@ export default function App(props) {
 
     function handleSignOut() {
         console.log("logout");
-        localStorage.removeItem('token');
+        localStorage.removeItem('movies')
+        localStorage.removeItem("token");
+        setIsEditProfilePopupOpen(false);
+        setIsRegResOpen(false);
+ /*       localStorage.removeItem(currentUser);
         setLoggedIn(false);
+        setCurrentUser({});*/
     }
 
     return (
@@ -138,15 +153,25 @@ export default function App(props) {
                             <Route exact={true} path="/"
                                    component={AboutPage}/>
 
-                            <Route exact={true} path="/sign-in"
-                                   component={() => (<SignInPage handleLogin={handleLogin}/>)}
+                         {/*   <Route exact={true} path="/auth"
+                                   component={AboutPageAuth}/>*/}
+
+                            <ProtectedRoute
+                                exact={true}
+                                path="/auth"
+                                component={AboutPageAuth}
+                                loggedIn={loggedIn}/>
+
+                            <Route exact={true}
+                                   path="/sign-in"
+                                   component={() => (<SignInPage handleLogin={handleLogin}
+                                   info={info}/>)}
                             />
 
                             <Route exact={true} path="/sign-up"
                                    component={() => (<SignUpPage handleRegister={handleRegister}
                                    info={info}/>)}
                             />
-                            {/*регистрация */}
 
                             <ProtectedRoute
                                 exact={true}
@@ -171,8 +196,6 @@ export default function App(props) {
                                 infoSuccess={infoSuccess}
                                 setInfo={setInfo}
                                 handleUpdateProfile={handleUpdateProfile}
-
-
                             />
                             <Route path=''>
                                 <NotFound_404/>
