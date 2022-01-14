@@ -134,7 +134,7 @@ class MainApi {
   }
    const apiAuth = new MainApi({
         address: BASE_URL,
-      /*  address: "http://localhost:3627/api",*/
+       /* address: "http://localhost:3627/api",*/
         headers: {'Content-Type': 'application/json'}
     });
 

@@ -12,7 +12,7 @@ function MovieCard(props) {
 
     function handleDelete() {
         console.log("Удаление");
-        apiAuth.deleteMovie(props.cardData.id).then(() => {
+        apiAuth.deleteMovie(props.cardData.movieId).then(() => {
             props.cardData.isLiked = false;
             setLikeMe(props.cardData.isLiked);
         })
