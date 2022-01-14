@@ -7,7 +7,7 @@ import Footer from "../Footer";
 import apiAuth from "../../utils/MainApi";
 import {urlAllFilm} from "../../utils/constants";
 function SavedMoviesPages(props) {
-    /* дублироание кода! в константы! */
+
  //   const urlAllFilm = 'https://api.nomoreparties.co';
 
     const [isLoading, setLoading] = useState(true);

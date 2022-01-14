@@ -8,13 +8,15 @@ import '../../index.css';
 import SignInHeader from "./SignInHeader";
 import Login from "./Login";
 import Footer from "../Footer";
+import Register from "../SignUpPage/Register";
 
 function SignInPage(props){
     return (
         <>
             <SignInHeader/>
             <main>
-            <Login handleLogin={props.handleLogin}/>
+            <Login handleLogin={props.handleLogin}
+                   info={props.info}/>
             </main>
             <Footer/>
         </>)}

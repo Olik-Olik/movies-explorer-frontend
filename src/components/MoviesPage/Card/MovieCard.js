@@ -63,13 +63,11 @@ function MovieCard(props) {
         }
     }
 
-/*
     useEffect(() => {
-        /!*console.log('Toggle like!');*!/
+        /*console.log('Toggle like!');*/
         //setLikeMe(props.cardData.isLiked);
         }
     ,[likeMe])
-*/
 
     return (
         <>

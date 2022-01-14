@@ -63,7 +63,7 @@ function MoviesPages(props) {
 
     return (
         <>
-            <HeaderSavedFilms/>
+            <HeaderSavedFilms />
             <main>
                 <ResultMainSearch setSearchCriteria={setSearchCriteria}/>
                 {!isLoading && <MoviesCardList

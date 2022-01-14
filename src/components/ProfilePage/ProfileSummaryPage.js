@@ -26,6 +26,11 @@ function ProfileSummaryPage(props) {
             email: email,
         })
     }
+    function handleSignOut() {
+        console.log("logout");
+        localStorage.removeItem('movies')
+        localStorage.removeItem("token");
+    }
 
     function onUpdateName(evt) {
         setName(evt.target.value)
@@ -59,15 +64,18 @@ function ProfileSummaryPage(props) {
                                maxLength="30" minLength="2"/></div>
 
                 </div>
-                <div className="result__edit-nondecoration">
+                <button className="result__edit-nondecoration">
                     <div className="result__edit"
                          onClick={handleSubmitProfile}
                     >Редактировать
+
                     </div>
-                </div>
-                <a href="/" className="result__edit-nondecoration">
-                    <div className="result__exit ">Выйти из аккаунта</div>
-                </a>
+                </button>
+
+           {/*     <a href="/" className="result__edit-nondecoration">*/}
+                <button onClick={handleSignOut}  className="result__exit ">
+                    Выйти из аккаунта
+                </button>
 
             </div>
         </form>

@@ -7,7 +7,10 @@ export const widthExpandMap = {
     320: { initialAmount: 4, moreAmount:2},
     0: { initialAmount: 4, moreAmount:2},
 }
-export const  BASE_URL = 'https://diplomfront.nomoredomains.work/api';
-export const BEATFILM = 'https://api.nomoreparties.co/beatfilm-movies';
 export const FILM_DURATION = 40;
+export const BEATFILM = 'https://api.nomoreparties.co/beatfilm-movies';
 export    const urlAllFilm = 'https://api.nomoreparties.co';
+
+export const  BASE_URL = 'https://diplomback.nomoredomains.work/api';
+
+

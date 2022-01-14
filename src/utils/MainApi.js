@@ -4,9 +4,6 @@ class MainApi {
       constructor(arr) {
     /*  const BASE_URL = 'https://diplomfront.nomoredomains.work*/
 
-
-
-
           this._address = arr.address;
           this._headers = arr.headers;
       }
@@ -136,8 +133,8 @@ class MainApi {
 
   }
    const apiAuth = new MainApi({
-        address: BASE_URL,
-        /*address: "http://localhost:3627/api",*/
+  /*      address: BASE_URL,*/
+        address: "http://localhost:3627/api",
         headers: {'Content-Type': 'application/json'}
     });
 
