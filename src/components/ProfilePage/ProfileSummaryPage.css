@@ -10,6 +10,7 @@
     cursor: pointer;
 }
 .result__exit{
+    background-color: #202020;
     padding: 0;
     border: 0;
 }

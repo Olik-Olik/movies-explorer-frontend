@@ -55,7 +55,7 @@ function SavedMoviesPages(props) {
 
     return (
         <>
-            <HeaderSavedFilms/>
+            <HeaderSavedFilms handleSignOut={props.handleSignOut}/>
             <main>
                 <ResultMainSearch setSearchCriteria={setSearchCriteria}/>
                 {!isLoading && <MoviesCardList

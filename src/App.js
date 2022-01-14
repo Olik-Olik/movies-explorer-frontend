@@ -184,7 +184,7 @@ export default function App(props) {
                                 exact={true}
                                 path="/saved-movies"
                                 component={SavedMoviesPages}
-                                signOut={handleSignOut}
+                                handleSignOut={handleSignOut}
                                 loggedIn={loggedIn}
                             />
 
@@ -192,7 +192,7 @@ export default function App(props) {
                                 exact={true} path="/profile"
                                 component={ProfilePage}
                                 loggedIn={loggedIn}
-                                signOut={handleSignOut}
+                                handleSignOut={handleSignOut}
                                 infoSuccess={infoSuccess}
                                 setInfo={setInfo}
                                 handleUpdateProfile={handleUpdateProfile}
