@@ -1,7 +1,8 @@
-.result{
+.result {
     background-color: #202020;
 }
-.result__edit-nondecoration{
+
+.result__edit-nondecoration {
     text-decoration: none;
     color: #FFFFFF;
     text-decoration: none;
@@ -9,12 +10,14 @@
     border: none;
     cursor: pointer;
 }
-.result__exit{
+
+.result__exit {
     background-color: #202020;
     padding: 0;
     border: 0;
 }
-.result{
+
+.result {
     height: 100vw;
     background-color: #202020;
     width: 100%;
@@ -24,40 +27,40 @@
     box-sizing: border-box;
 }
 
-.result__title{
-  /*  padding-top: 160px;*/
-display: flex;
-width: 100%;
-max-width: 204px;
-color: white;
-font-style: normal;
-font-weight: 500;
-font-family: 'Inter', serif;
-Font-size: 24px;
-Line-height: 29px;
-align-items: center;
-position: relative;
-margin: 0 auto;
-flex-direction: column;
-justify-content: center;
+.result__title {
+    display: flex;
+    width: 100%;
+    max-width: 204px;
+    color: white;
+    font-style: normal;
+    font-weight: 500;
+    font-family: 'Inter', serif;
+    Font-size: 24px;
+    Line-height: 29px;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
 }
+
 /*имя*/
-.result__name{
-    max-width:141px;
+.result__name {
+    max-width: 141px;
     max-height: 14px;
     font-family: 'Inter', serif;;
     font-weight: 500;
     font-size: 11px;
     line-height: 13px;
     text-align: left;
-    color:#FFFFFF;
+    color: #FFFFFF;
     padding-top: 120px;
     padding-bottom: 16px;
 }
-.result__email{
-    /*color:yellow;*/
+
+.result__email {
     padding-top: 16px;
-    max-width:288px;
+    max-width: 288px;
     max-height: 14px;
     font-family: 'Inter', serif;;
     font-weight: 500;
@@ -65,12 +68,12 @@ justify-content: center;
     line-height: 13px;
     text-align: left;
     vertical-align: Top;
-    color:#FFFFFF;
+    color: #FFFFFF;
     padding-bottom: 16px;
 
 }
 
-.result__name-name{
+.result__name-name {
     align-items: baseline;
     display: flex;
     justify-content: space-between;
@@ -79,7 +82,8 @@ justify-content: center;
     cursor: pointer;
     border-bottom: 1px solid #424242;
 }
-.result__email-email{
+
+.result__email-email {
     align-items: baseline;
     display: flex;
     justify-content: space-between;
@@ -88,7 +92,8 @@ justify-content: center;
     cursor: pointer;
     padding: 0 0 16px 0;
 }
-.result__email-password{
+
+.result__email-password {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #424242;
@@ -98,7 +103,8 @@ justify-content: center;
     cursor: pointer;
     padding: 0 0 16px 0;
 }
-.result__edit{
+
+.result__edit {
     padding-top: 210px;
     padding-bottom: 16px;
     width: 410px;
@@ -111,7 +117,8 @@ justify-content: center;
 
     flex-direction: column;
 }
-.result__exit{
+
+.result__exit {
     color: #EE3465;
     display: flex;
     width: 410px;
@@ -124,24 +131,25 @@ justify-content: center;
     justify-content: center;
     font-weight: 400;
     padding-top: 0;
-   /* padding-bottom: 102px;*/
 }
 
-.result__input-email{
+.result__input-email {
     font-size: 11px;
 
 }
-.result__input-name{
-padding-bottom: 16px;
+
+.result__input-name {
+    padding-bottom: 16px;
 }
 
-.result__input-name{
+.result__input-name {
     background-color: #202020;
     color: #FFFFFF;
     border: none;
     text-align: end;
 }
-.result__input-email{
+
+.result__input-email {
     background-color: #202020;
     color: #FFFFFF;
     border: none;
@@ -149,34 +157,40 @@ padding-bottom: 16px;
 }
 
 
-@media  (min-width: 768px) and (max-width: 900px){
-    .header{
+@media (min-width: 768px) and (max-width: 900px) {
+    .header {
         padding-top: 18px;
         padding-left: 30px;
     }
-    .result__title{
+
+    .result__title {
         padding-top: 160px;
 
     }
-    .result__name{
+
+    .result__name {
         padding-top: 93px;
 
     }
 
-    .result__name-name{
+    .result__name-name {
         max-width: 410px;
 
     }
-    .result__email-email{
+
+    .result__email-email {
         max-width: 410px;
     }
-    .result__edit{
+
+    .result__edit {
         max-width: 410px;
         padding-top: 180px;
     }
-    .result__exit{
+
+    .result__exit {
         max-width: 410px;
     }
+
     .header__name_saved-film {
         visibility: hidden;
     }
@@ -187,12 +201,11 @@ padding-bottom: 16px;
 
     .header__user {
         display: none;
-        /*visibility: hidden;*/
     }
 }
 
 
-@media screen  and (min-width: 320px) and (max-width: 767px){
+@media screen  and (min-width: 320px) and (max-width: 767px) {
     .header__name_saved-film {
         visibility: hidden;
     }
@@ -205,39 +218,45 @@ padding-bottom: 16px;
         visibility: hidden;
     }
 
-    .header__logo{
+    .header__logo {
         color: #FFFFFF;
         width: 40px;
         height: 40px;
     }
+
     .result__name {
         padding-top: 80px;
     }
-    .result__edit{
+
+    .result__edit {
         padding-top: 349px;
         padding-bottom: 16px;
     }
-    .result{
+
+    .result {
         padding-left: 25px;
         padding-right: 25px;
     }
-    .result__name-name{
+
+    .result__name-name {
         max-width: 250px;
         height: 112px;
         padding-bottom: 0;
     }
-    .result__email-email{
+
+    .result__email-email {
         max-width: 250px;
 
     }
-    .result__edit{
+
+    .result__edit {
         max-width: 250px;
         padding-top: 379px;
     }
-    .result__exit{
+
+    .result__exit {
         max-width: 250px;
         background-color: #202020;
     }
 }
-
 

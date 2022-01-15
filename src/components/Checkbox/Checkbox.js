@@ -3,14 +3,15 @@ import './Checkbox.css';
 import '../../index.css';
 
 function Checkbox(props) {
-return(
-<div className ="tumb" >
-    <input
-        type="checkbox"
-        onChange={props.handleCheckbox}
-    />
-</div>
-)
+    return (
+        <div className="tumb">
+            <input
+                type="checkbox"
+                onChange={props.handleCheckbox}
+                checked={props.shortMeter} /**/
+            />
+        </div>
+    )
 }
-export default Checkbox;
 
+export default Checkbox;

@@ -19,7 +19,7 @@ class ApiMovies {
         return fetch(this._address,
             {
                 method: 'GET',
-                headers: { ... this._headers,}
+                headers: {...this._headers,}
             })
             .then((response) => this._handleResponse(response));
     }

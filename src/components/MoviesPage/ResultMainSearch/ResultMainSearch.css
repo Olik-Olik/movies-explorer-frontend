@@ -11,7 +11,6 @@
     Top: 74px;
     background-color: #202020;
     padding: 0 70px;
-
 }
 
 /*Строка поиска*/
@@ -81,15 +80,6 @@
     align-items: center;
 }
 
-.result_main_search_icon_smalltube {
-/*    background: url('../../images/smalltumb.svg') no-repeat center;*/
-    /* color: #C4C4C4;*/
-    /* box-sizing: border-box;*/
-/*    width: 36px;
-    height: 20px;
-    padding: 25px 10px;*/
-}
-
 .result_main_search_icon_shortfilm {
     color: #FFFFFF;
     Font-style: normal;
@@ -99,20 +89,17 @@
     padding: 27px 30px 30px 0;
 }
 
-.result_main_search__value {
-}
-
 .correct {
     display: flex;
 }
-.result_main_search_icon_smalltube{
+
+.result_main_search_icon_smalltube {
     height: 0;
     padding-left: 16px;
-  /*  padding-top: 46px;*/
     padding-right: 0;
-   /* padding-left: 0;*/
     padding-bottom: 0;
 }
+
 { /*Линия между смоллтубом и Найти*/
 }
 .result_main_search_icon_line {
@@ -131,6 +118,7 @@
 .find-line-icon {
     display: flex;
 }
+
 /*Голубая кнопка Найти*/
 .result_main_search__button_find {
     cursor: pointer;
@@ -142,30 +130,27 @@
     background: url('../../images/find.svg') no-repeat center;
     box-sizing: border-box;
     border: none;
-  /*  left: 21.35px;*/
     font-size: 11px;
     line-height: 18px;
     align-items: Center;
     vertical-align: Top;
 }
-.mobile{
+
+.mobile {
     visibility: hidden;
 }
-.decktop{
+
+.decktop {
 
 }
-@media screen and (min-width: 594px) and (max-width: 768px){
-    .result_main_search{
+
+@media screen and (min-width: 594px) and (max-width: 768px) {
+    .result_main_search {
         padding-left: 30px;
         padding-right: 30px;
     }
+}
 
-    }
-    .icon-shortfilm {
-     /*   height: 0;
-        width: 0;
-        padding: 0;*/
-    }
 
 @media screen and (max-width: 593px) {
     .result_main_search {
@@ -173,11 +158,13 @@
         padding-bottom: 200px;
         padding-left: 10px;
         padding-right: 10px;
-      /*  height: 70px;*/
     }
-    .result_main_search_icon_line{
+
+    .result_main_search_icon_line {
         padding-right: 19px;
-        padding-left: 19px;}
+        padding-left: 19px;
+    }
+
     .result_main_search_icon_line {
         visibility: hidden;
 
@@ -203,22 +190,25 @@
         justify-content: center;
         padding-top: 46px;
     }
-    .decktop{
+
+    .decktop {
         display: none;
     }
-.result_main_search_icon_smalltube{
-    padding-top: 46px;
-    padding-right: 0;
-    padding-left: 0;
-    padding-bottom: 0;
-}
+
+    .result_main_search_icon_smalltube {
+        padding-top: 46px;
+        padding-right: 0;
+        padding-left: 0;
+        padding-bottom: 0;
+    }
 }
 
 @media screen and (max-width: 344px) {
     .result_main_search_icon__lupa {
         display: none;
     }
-    .result_main_search_icon_film{
+
+    .result_main_search_icon_film {
         padding-left: 19px;
         Line-height: 20px;
         font-size: 14px;

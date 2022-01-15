@@ -1,14 +1,14 @@
-.techs{
+.techs {
     background-color: #272727;
     box-sizing: border-box;
-   /* background-color: #202020;*/
     width: 100%;
     padding: 0 70px;
     padding-top: 100px;
     font-family: 'Inter', serif;
     padding-bottom: 16px;
 }
-.techs__title_small{
+
+.techs__title_small {
     width: 100%;
     max-width: 1140px;
     font-family: 'Inter', serif;
@@ -19,12 +19,13 @@
     text-align: Left;
     color: #FFFFFF;
     display: flex;
-    border-bottom: 1px solid  #DADADA;
-    padding-bottom:  23px;
+    border-bottom: 1px solid #DADADA;
+    padding-bottom: 23px;
     letter-spacing: -0.04em;
 }
+
 /*7 технологий*/
-.techs__title{
+.techs__title {
     text-align: center;
     width: 100%;
     max-width: 1140px;
@@ -35,14 +36,14 @@
     line-height: 58px;
     vertical-align: Top;
     color: #FFFFFF;
-  /*  background-color: #272727;*/
     display: flex;
     justify-content: center;
     padding-top: 90px;
-    padding-bottom:  26px;
+    padding-bottom: 26px;
     letter-spacing: -0.04em;
 }
-.techs__body{
+
+.techs__body {
     text-align: center;
     width: 100%;
     font-family: 'Inter', serif;
@@ -50,7 +51,6 @@
     font-style: normal;
     vertical-align: Top;
     color: #FFFFFF;
-   /* background-color: #272727;*/
     display: flex;
     justify-content: center;
     letter-spacing: -0.04em;
@@ -60,7 +60,7 @@
     padding-bottom: 100px;
 }
 
-.techs__button{
+.techs__button {
     background-color: #303030;
     margin: 0;
     padding: 0;
@@ -73,11 +73,11 @@
     border: none;
     min-height: 57px;
 }
-.tech__button{
+
+.tech__button {
     width: 100%;
     margin: 0;
     display: grid;
-    /*justify-items: center;*/
     grid-column-gap: 10px;
     grid-template-columns: repeat(auto-fit, 84px);
     height: 57px;
@@ -90,23 +90,25 @@
     justify-content: center;
     gap: 10px;
 }
-@media  (min-width: 801px) and(max-width: 1023px){
-    .techs{
+
+@media (min-width: 801px) and(max-width: 1023px) {
+    .techs {
         background-color: #272727;
         padding-right: 50px;
         padding-left: 50px;
         padding-top: 90px;
-
     }
 }
+
 @media screen and (min-width: 621px) and (max-width: 800px) {
-    .techs{
+    .techs {
         box-sizing: border-box;
         width: 100%;
         padding: 0 50px;
         padding-bottom: 90px;
     }
-    .techs__title{
+
+    .techs__title {
         margin-bottom: 0;
         padding-bottom: 80px;
         margin-top: 0;
@@ -119,41 +121,42 @@
         Font-size: 11px;
         Line-height: 18px;
     }
-    .techs__title_small{
+
+    .techs__title_small {
         margin-top: 0;
         padding-top: 22px;
     }
 }
 
-
 @media screen and (min-width: 200px) and (max-width: 660px) {
-.techs{
-    background-color: #202020;
-    padding-top: 1px;
-    padding-left: 18px;
-    padding-right: 18px;
-/* padding-bottom: 70px;*/
-    min-height: 651px;
-    padding-bottom: 240px;
+    .techs {
+        background-color: #202020;
+        padding-top: 1px;
+        padding-left: 18px;
+        padding-right: 18px;
+        min-height: 651px;
+        padding-bottom: 240px;
 
-}
-.techs__title {
-    padding-top: 30px;
-    margin-bottom: 0;
-    font-family: 'Inter', serif;
-    font-weight: 400;
-    font-size: 30px;
-    Letter-spacing: -0.04em;
-    Line-height: 36px;
-    padding-bottom: 24px;
+    }
 
-}
+    .techs__title {
+        padding-top: 30px;
+        margin-bottom: 0;
+        font-family: 'Inter', serif;
+        font-weight: 400;
+        font-size: 30px;
+        Letter-spacing: -0.04em;
+        Line-height: 36px;
+        padding-bottom: 24px;
+    }
+
     .techs__title_small {
         Font-size: 18px;
         Line-height: 22px;
-        border-bottom: 1px solid  #000000;
+        border-bottom: 1px solid #000000;
     }
-    .techs__body{
+
+    .techs__body {
         Font-size: 11px;
         Line-height: 16px;
         max-width: 292px;
@@ -161,12 +164,13 @@
         padding-bottom: 50px;
         margin: 0 auto;
     }
+
     .tech__button {
         min-height: 57px;
         grid-template-columns: repeat(2, 84px);
-
     }
-    .techs__button{
+
+    .techs__button {
         font-size: 12px;
         line-height: 15px;
     }

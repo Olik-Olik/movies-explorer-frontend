@@ -1,7 +1,5 @@
 import React from "react";
 import './Header.css';
-/*import logo from '../images/logo.svg';
-import Image_world from "../images/Image_world.svg";*/
 import '../index.css';
 import Logo from "./Logo";
 

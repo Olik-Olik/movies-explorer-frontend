@@ -11,7 +11,6 @@ function SignUpHeader(props) {
         <header className=" header__signup header__signin">
             <a href = "/" className=" header__logo_welcome">
                 <div className="header__logo {/*header__logo_welcome*/}">
-
                         <img className="headerLogo" src={logo} alt="Logo"/>
                 </div></a>
                 <p className="header__welcome ">Добро пожаловать!

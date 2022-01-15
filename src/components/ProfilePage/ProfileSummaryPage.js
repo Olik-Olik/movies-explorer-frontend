@@ -26,6 +26,7 @@ function ProfileSummaryPage(props) {
             email: email,
         })
     }
+
     function handleSignOut() {
         console.log("logout");
         localStorage.removeItem('movies')
@@ -68,12 +69,10 @@ function ProfileSummaryPage(props) {
                     <div className="result__edit"
                          onClick={handleSubmitProfile}
                     >Редактировать
-
                     </div>
                 </button>
-
-           {/*     <a href="/" className="result__edit-nondecoration">*/}
-                <button onClick={handleSignOut}  className="result__exit ">
+                {/*     <a href="/" className="result__edit-nondecoration">*/}
+                <button onClick={handleSignOut} className="result__exit ">
                     Выйти из аккаунта
                 </button>
 
@@ -81,4 +80,5 @@ function ProfileSummaryPage(props) {
         </form>
     )
 }
+
 export default ProfileSummaryPage;

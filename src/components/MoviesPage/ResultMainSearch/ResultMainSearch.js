@@ -2,11 +2,12 @@ import './ResultMainSearch.css';
 import '../../../index.css';
 import Checkbox from "../../Checkbox/Checkbox";
 import React, {useState} from "react";
-
+import  '../../../components/SignUpPage/Register.css';
 function ResultMainSearch(props) {
 
     const [keyWord, setKeyWord] = useState('');
     const [shortMeter, setShortMeter] = useState(false);
+    const [info, setInfo] = useState('');
 
     function handleSearchField(evt) {
         evt.preventDefault();
@@ -28,11 +29,14 @@ function ResultMainSearch(props) {
     return (
 
         <form className="result_main_search" /*onSubmit={handleSubmit}*/>
+
+            <div className="setinfo__error">{props.info}</div> {/**/}
+
             <div className="result_main_search__conteiner">
                 <div className="lupa-film">
                     <div className="result_main_search_icon"/>
                     <div className="result_main_search_icon__lupa"/>
-                    <div name="form__input_film">
+                    <div className="form__input_film">
                         <input type='text'
                                name="search"
                                value={keyWord}
@@ -40,7 +44,10 @@ function ResultMainSearch(props) {
                                placeholder='Кино'
                                className="result_main_search_icon_film"
                                required
-                               maxLength="40" minLength="2"/>
+                          /*     maxLength="40" minLength="2"*/
+                        />
+                        <div className="setinfo__error">{info}</div> {/**/}
+
                     </div>
                 </div>
                 <div className="correct">

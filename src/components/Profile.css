@@ -1,5 +1,4 @@
 .profile{
-
     background-color: #202020;
     width: 100%;
     max-width: 1280px;
@@ -7,7 +6,6 @@
     display: flex;
     justify-content: center;
     padding: 0 70px;
-
 }
 .profile__title{
     background-color: #202020;
@@ -38,7 +36,6 @@
     border-bottom: 1px solid white;
 }
 .profile__email{
-
     padding-top: 16px;
     max-width: 396px;
     max-height: 14px;
@@ -50,16 +47,11 @@
     vertical-align: Top;
     color:#FFFFFF;
     padding-bottom: 16px;
-
-}
-.profile__name-email{
-
 }
 
 .profile__name-name{
     display: flex;
     justify-content: space-between;
-/*    border-bottom: 1px solid white;*/
     align-items: baseline;
 }
 .profile__email-email{
@@ -75,13 +67,13 @@
     color: #EE3465;
     display: flex;
     justify-content: space-between;
-  /*  border-bottom: 1px solid #424242;*/ /*111*/
     width: 396px;
     font-size: 14px;
     align-items: flex-start;
     cursor: pointer;
     padding: 0 0 10px 0;
 }
+
 .profile__edit{
     padding-top: 220px;
     width: 410px;
@@ -91,6 +83,7 @@
     font-weight: 500;
     font-size: 13px;
 }
+
 .profile__exit{
    color: #EE3465;
     padding-top: 20px;

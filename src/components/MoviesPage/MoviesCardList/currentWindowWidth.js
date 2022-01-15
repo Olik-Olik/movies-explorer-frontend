@@ -1,18 +1,10 @@
-/*const widthExpandMap = {
-    1280: { initialAmount: 12, moreAmount:4},
-    768: { initialAmount: 8, moreAmount:2},
-    320: { initialAmount: 4, moreAmount:2},
-    0: { initialAmount: 4, moreAmount:2},
-}*/
 import {widthExpandMap} from "../../../utils/constants";
 
 function getWindowWidth() {
     const {innerWidth: width} = window;
     return width;
 }
-
-let  changeWithSetTimeOut = setTimeout(() => getWindowWidth(window.innerWidth), 1000);
-
+//let  changeWithSetTimeOut = setTimeout(() => getWindowWidth(window.innerWidth), 1000);
     export default function getExpandWidth() {
         const width = getWindowWidth();
         const ewKeys = Object.keys(widthExpandMap).reverse();

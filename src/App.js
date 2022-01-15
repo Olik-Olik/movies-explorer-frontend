@@ -1,5 +1,5 @@
 import  {useEffect, useState} from "react";
-import {BrowserRouter, Route, Switch, useHistory, Redirect} from 'react-router-dom';
+import {BrowserRouter, Route, Switch,} from 'react-router-dom';
 import './index.css';
 import AboutPage from "./components/AboutPage/AboutPage";
 import AboutPageAuth from "./components/AboutPage/AboutPageAuth";
@@ -12,7 +12,6 @@ import SignInPage from "./components/SignInPage/SignInPage";
 import apiAuth from "./utils/MainApi";
 import ProtectedRoute from "./components/ProtectedRoute";
 import {CurrentUserContext} from './utils/context/CurrentUserContext';
-import Preloader from "./components/Preloader";
 
 export default function App(props) {
     const [currentUser, setCurrentUser] = useState({});
@@ -117,6 +116,7 @@ export default function App(props) {
         apiAuth.submitProfile(userData.name, userData.email/*, userData.password*/)
             .then(data => {
                 setCurrentUser(data);
+                setInfo('получилось изменить данные, Класс')
             })
             .catch((err) => {
                 setInfo('Не получилось изменить данные')
@@ -153,9 +153,6 @@ export default function App(props) {
                             <Route exact={true} path="/"
                                    component={AboutPage}/>
 
-                         {/*   <Route exact={true} path="/auth"
-                                   component={AboutPageAuth}/>*/}
-
                             <ProtectedRoute
                                 exact={true}
                                 path="/auth"
@@ -168,7 +165,8 @@ export default function App(props) {
                                    info={info}/>)}
                             />
 
-                            <Route exact={true} path="/sign-up"
+                            <Route exact={true}
+                                   path="/sign-up"
                                    component={() => (<SignUpPage handleRegister={handleRegister}
                                    info={info}/>)}
                             />
@@ -186,15 +184,17 @@ export default function App(props) {
                                 component={SavedMoviesPages}
                                 handleSignOut={handleSignOut}
                                 loggedIn={loggedIn}
+                                info={info}
                             />
 
                             <ProtectedRoute
-                                exact={true} path="/profile"
+                                exact={true}
+                                path="/profile"
                                 component={ProfilePage}
                                 loggedIn={loggedIn}
                                 handleSignOut={handleSignOut}
                                 infoSuccess={infoSuccess}
-                                setInfo={setInfo}
+                                info={info}
                                 handleUpdateProfile={handleUpdateProfile}
                             />
                             <Route path=''>

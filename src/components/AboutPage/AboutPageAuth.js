@@ -7,7 +7,7 @@ import '../../index.css';
 import Footer from "../Footer";
 import HeaderAuth from "../HeaderAuth";
 
-function AboutPageAuth(props){
+function AboutPageAuth(props) {
     return (
         <>
             <HeaderAuth/>
@@ -18,5 +18,7 @@ function AboutPageAuth(props){
                 <AboutMe/>
             </main>
             <Footer/>
-        </>)}
+        </>)
+}
+
 export default AboutPageAuth;

@@ -7,7 +7,6 @@ function HeaderAuth(props) {
     return (
         <header className="header">
             <div className="header__logo_auth_exit">
-
                 <a href = "/auth">
                     <img className="logotip" src={logo} alt="Logo"/></a>
 
@@ -20,10 +19,7 @@ function HeaderAuth(props) {
 
                     <div className="header__button">
                         <a href="/profile" className="header__auth akkaunt">Аккаунт</a>
-
                     </div>
-
-
         </header>
     )
 }

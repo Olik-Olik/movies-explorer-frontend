@@ -1,19 +1,14 @@
-import React, {useContext, useEffect, useState} from "react";
-/*import MoviesPages from "./MoviesPages/MoviesPages";*/
-import ResultMainMore from "./ResultMainMore/ResultMainMore";
+import React, {useEffect, useState} from "react";
 import ResultMainSearch from "./ResultMainSearch/ResultMainSearch";
 import MoviesCardList from "./MoviesCardList/MoviesCardList";
 import '../../index.css';
 import HeaderSavedFilms from "./HeaderSavedFilms/HeaderSavedFilms";
 import apiMovies from "./../../utils/MoviesApi";
 import Footer from "../Footer";
-import {CurrentUserContext} from "../../utils/context/CurrentUserContext";
 import apiAuth from "../../utils/MainApi";
 import {urlAllFilm} from "../../utils/constants";
 
 function MoviesPages(props) {
-    /* дублироание кода! в константы! */
-  //  const urlAllFilm = 'https://api.nomoreparties.co';
     const [isLoading, setLoading] = useState(true);
     const [loadedCards, setLoadedCards] = useState([]);
     const [searchCriteriaData, setSearchCriteriaData] = useState({ doSearch: false,
@@ -31,7 +26,6 @@ function MoviesPages(props) {
                         cards.forEach((card) => {
                             card.imageURL = urlAllFilm + card.image.url;
                             card.isLiked = !!savedMovies.some((liked) => {
-/*                                console.log('CardID: ' + card.id);*/
                                 return card.id === liked.movieId;
                             });
                         })

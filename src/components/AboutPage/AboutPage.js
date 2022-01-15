@@ -7,18 +7,19 @@ import '../../index.css';
 
 import Footer from "../Footer";
 import Header from "../Header";
-/*import Project from "./ProjectPage/Project";*/
 
-function AboutPage(props){
+function AboutPage(props) {
     return (
         <>
             <Header/>
             <main>
-            <ProjectPage/>
-            <AboutProject/>
-            <Techs/>
-             <AboutMe/>
+                <ProjectPage/>
+                <AboutProject/>
+                <Techs/>
+                <AboutMe/>
             </main>
             <Footer/>
-            </>)}
+        </>)
+}
+
 export default AboutPage;

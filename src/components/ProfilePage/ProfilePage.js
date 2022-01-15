@@ -10,12 +10,11 @@ import '../../index.css';
 function ProfilePage(props) {
     return(
         <>
-          {/*  <SignInHeader/>*/}
-       {/*     <Header/>*/}
         <HeaderSavedFilms/>
         <main>
         <ProfileSummaryPage handleUpdateProfile={props.handleUpdateProfile}
                             handleSubmitProfile={props.handleSubmitProfile}
+                            info={props.info}
          />
         </main>
         </>

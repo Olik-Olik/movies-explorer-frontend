@@ -1,6 +1,4 @@
-import React from "react";
 
-//props.cardData.duration
 function TimeConvert(min) {
     let hours = Math.trunc(min/60);
     let minutes = min % 60;

@@ -1,0 +1,12 @@
+.info{
+    width: 100vw;
+    color: white;
+    Font-size: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    background-color: #202020;
+    height: 30px;
+    cursor: pointer;
+}

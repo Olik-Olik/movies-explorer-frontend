@@ -5,10 +5,8 @@ import '../Profile.css';
 import '../Footer.css';
 import '../SignInPage/SignInHeader.css';
 import '../../index.css';
-import {useHistory} from "react-router-dom";
 
 function Register(props) {
-    const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
@@ -16,8 +14,8 @@ function Register(props) {
     const [infoEmail, setInfoEmail] = useState('');
     const [valid, setValid] = useState(false);
     const [info, setInfo] = useState('');
-   // const [infoSuccess, setInfoSuccess] = useState(false);
- //   const buttonClassNameAppearDisabled = `${!valid ? "auth__form-login-submit-button" : "auth__form-login-submit-button_hidden"}`
+    // const [infoSuccess, setInfoSuccess] = useState(false);
+    //   const buttonClassNameAppearDisabled = `${!valid ? "auth__form-login-submit-button" : "auth__form-login-submit-button_hidden"}`
 
     function handleChangeName(evt) {
         if (evt.target.value.length < 2 || evt.target.value.length > 30) {
@@ -30,7 +28,7 @@ function Register(props) {
 
     function handleChangeEmail(evt) {
         const lala = /\S+@\S+\.\S+/
-        if (evt.target.value.length > 2 && (evt.target.value.match(lala) )) {
+        if (evt.target.value.length > 2 && (evt.target.value.match(lala))) {
             setInfoEmail('');
         } else {
             setInfoEmail("Введите > 2 символов и вообще, email должен быть похож на email")
@@ -54,21 +52,19 @@ function Register(props) {
         }
     }
 
-  /*  useEffect(() => {
-        if (props.loggedIn) {
-        }
-    }, [props.loggedIn]);*/
+    /*  useEffect(() => {
+          if (props.loggedIn) {
+          }
+      }, [props.loggedIn]);*/
 
     useEffect(() => {
             (name && email && password) ? setValid(true) : setValid(false)
         },
         [name, email, password]);
-    /*если трушно показывать кнопку*/
     return (
         <>
             <div className="auth">
                 <div className="setinfo__error">{props.info}</div>
-                {/*  <div className="auth__form-login">*/}
                 <form onSubmit={handleSubmitRegister}
                       className="auth__form-login">
 
@@ -93,15 +89,12 @@ function Register(props) {
                             <input type='text'
                                    className="auth__form-login-input-email"
                                    name="email"
-                                /*   defaultValue="pochta@newtree.ru"*/
                                    required
                                    maxLength="30" minLength="2"
                                    value={email || ""}
-                                /*  placeholder="Email"*/
-                                   onChange={handleChangeEmail} />
-                                 <div className="setinfo__error">{infoEmail}</div>
+                                   onChange={handleChangeEmail}/>
+                            <div className="setinfo__error">{infoEmail}</div>
                         </form>
-
                     </div>
                     <div className="profile__email-email  profile__email-password">
 
@@ -112,31 +105,26 @@ function Register(props) {
 
                             <input type='password'
                                    name="password"
-                                /*     className="auth__form-login-input-password"*/
                                    className={`auth__form-login-input-password ${info ? "info__error" : ''}`}
                                    required
                                    value={password || ""}
                                    minLength="8" maxLength="30"
                                    onChange={handleChangePassword}
                             />
-
-                      {/*      <div className="setinfo__error profile__email profile__email-password"
-                                 disabled={!valid}> Что-то пошло не так... {info}
-                            </div>*/}
-                                 <div className="setinfo__error">{passwordInfo}</div>
+                            <div className="setinfo__error">{passwordInfo}</div>
                         </form>
 
                     </div>
-                    {/*причем-то невалидном кнопка не должна быть видна/активна*/}
-                    <div
-                       className="auth__login-signin">
-                       {/* <button className={buttonClassNameAppearDisabled}*/}
-                        <button className=  "auth__form-login-submit-button"
-                                type="submit"
-                             /*   disabled={!valid}*/
+                    <button className="auth__form-login-submit-button" type="submit"
                         >Зарегистрироваться
                         </button>
-                    </div>
+
+                    {/* <a href="/movies" className="auth__login-signin">
+                    <div className="auth__form-login-submit-button"  >Зарегистрироваться
+                        </div>
+                    </a>
+                    */}
+
                 </form>
                 <div className="auth__login-signup-container">
 
@@ -144,12 +132,10 @@ function Register(props) {
                         <div className="auth__login-signup-Do_Register auth__signup-link">
                             Уже зарегистрированы?
                         </div>
-
                         <p className="auth__login-signup-Do_Register auth__signup-link auth__signup-link-color">Войти
                         </p>
                     </a>
                 </div>
-
             </div>
         </>
     )

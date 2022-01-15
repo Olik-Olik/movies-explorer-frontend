@@ -39,35 +39,32 @@ function MovieCard(props) {
                 console.log('Saved Film')
             })
                 .catch((err) => {
-                console.log('Не сохраняется :( ' + err.toString());
-            })
+                    console.log('Не сохраняется :( ' + err.toString());
+                })
         } else {
             handleDelete();
         }
     }
 
-    let likeClass = 'like ';/*like_active.svg*/
+    let likeClass = 'like ';
     let likeOnClick = () => {
-        console.log('Fix me!!!')
     };
 
     if (isSavedFilmsPage) {
-        likeClass += props.cardData.isLiked ? 'like__delete' : ''; /*delete.svg*/
+        likeClass += props.cardData.isLiked ? 'like__delete' : '';
         likeOnClick = handleDelete
     } else {
         if (props.cardData.isLiked) {
             likeOnClick = handleDelete;
         } else {
-            likeClass += 'card__container_like_passive'; /*like_passive.svg*/
+            likeClass += 'card__container_like_passive';
             likeOnClick = handleSave;
         }
     }
 
     useEffect(() => {
-        /*console.log('Toggle like!');*/
-        //setLikeMe(props.cardData.isLiked);
         }
-    ,[likeMe])
+        , [likeMe])
 
     return (
         <>
@@ -78,8 +75,6 @@ function MovieCard(props) {
 
                 <div className="combini">
                     <div className="card__container_name">{props.cardData.nameRU || props.cardData.nameEN}</div>
-                    {/*длительность кино линия и время*/}
-
                     <div
                         className={likeClass}
                         onClick={likeOnClick}> </div>
@@ -94,4 +89,3 @@ function MovieCard(props) {
 }
 
 export default MovieCard;
-

@@ -1,28 +1,27 @@
-.landing__container{
+.landing__container {
     margin: 0 auto;
     align-items: center;
     justify-content: center;
     display: flex;
     position: relative;
 }
-.landing{
+
+.landing {
     margin-left: auto;
     margin-right: auto;
     background-color: #073042;
-    /*   padding-top: 82px;
-       padding-bottom: 122px;*/
     padding: 82px 70px 122px 70px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.text{
+
+.text {
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    /* min-height: 14px;*/
     width: 730px;
     margin: 0 auto;
     color: #FFFFFF;
@@ -31,5 +30,4 @@
     font-size: 50px;
     Line-height: 96%;
     font-family: 'Inter', serif;
-  /*  box-sizing: border-box;*/
 }

@@ -1,33 +1,28 @@
-/* Логин*/
-
 import React, {useContext, useState} from 'react';
 
 import '../Profile.css';
 import '../Footer.css';
 import '../../index.css';
-import {Link, useHistory, useLocation} from "react-router-dom";
+import {Link, useHistory,} from "react-router-dom";
 import {CurrentUserContext} from '../../utils/context/CurrentUserContext';
 
 function Login(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const history = useHistory();
-    const location = useLocation();
-    const [emailError, setEmailError] = useState('');
-    let currentUserContext = useContext(CurrentUserContext);
+    const [info, setInfo] = useState('');
 
+    let currentUserContext = useContext(CurrentUserContext);
 
     function handleChangeEmail(evt) {
         const emailValidation = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/i.test(evt.target.value);
 
         if (emailValidation) {
-            setEmailError('Валидный Email :)')
+            setInfo(' ')
         } else {
-            setEmailError('Enter valid Email!')
+            setInfo('Нужен Email похожий на настоящий!')
         }
-
         setEmail(evt.target.value);
-
     }
 
     function handleChangePassword(evt) {
@@ -35,7 +30,6 @@ function Login(props) {
     }
 
     function handleSubmitLogin(evt) {
-
         evt.preventDefault();
         if (!email || !password) {
             return;
@@ -53,10 +47,7 @@ function Login(props) {
                             expires_in: response.expires_in,
                             scope: response.scope },
                     });
-
-
                     console.log('AR');
-
                 }
             )
             .catch((err) => {
@@ -65,20 +56,9 @@ function Login(props) {
         console.log('EF');
     }
 
-
-    /*function handleChangeEmail(evt) {
-        const emailValid = /^([a-z0-9.-]+)@([a-z0-9\-]+)\.([a-z.]{2,})*$/i.test(evt.target.value);
-        if (emailValid) {
-            setEmailError('Valid Email ')
-        } else {
-            setEmailError('Enter valid Email!')
-        }
-    }*/
-
     return (
         <>
-            {/*<SignUpHeader/>*/}
-            <div className="auth">
+            <div className="auth">  <div className="setinfo__error">{props.info}</div>
                 <form
                     onSubmit={handleSubmitLogin}
                     className="profile__email-email">
@@ -89,45 +69,35 @@ function Login(props) {
                                 <input type='text'
                                        className="auth__form-login-input-email"
                                        name="email"
-                                    /*    defaultValue="byka@newtree.ru"*/
                                        required
                                        maxLength="30" minLength="2"
                                        value={email}
-                                    /*  value={email || ""}*/
-                                    /*  placeholder="Email"*/
-                                       onChange={handleChangeEmail}/></div>
+                                       onChange={handleChangeEmail}/>
+                                <div className="setinfo__error">{info}</div>
+                            </div>
                         </label>
                     </div>
 
                     <div className="profile__email-email  profile__email-password">
-
                         <label className="profile__email ">Пароль </label>
-
                         <div className="profile__input-password">
                             <input
                                 className="auth__form-login-input-password profile__input-password"
-                                /*    defaultValue="qwerty"*/
                                 required
                                 minLength="8"
                                 maxLength="30"
                                 name="password"
                                 type="password"
                                 value={password}
-                                /*    value={password || ""}*/
-                                /*  placeholder="Пароль"*/
                                 onChange={handleChangePassword}
                             />
 
                         </div>
-
                     </div>
-                    {/*auth__form-login-submit-button-enter для верного роута*/}
                     {/*sign in*/}
                     <button className="auth__form-login-submit-button auth__form-login-submit-button-enter"
                             type="submit">Войти
                     </button>
-
-                    {/*для верного роута  auth__login-signup-Do_Register-enter*/}
                     <div className="auth__login-signup-container">
 
                         {/*sign-up*/}
@@ -143,8 +113,6 @@ function Login(props) {
                             </div>
                             </div>
                         </Link>
-
-
                     </div>
                 </form>
             </div>

@@ -1,17 +1,22 @@
 import React, {useEffect, useState} from "react";
 import ResultMainSearch from "../MoviesPage/ResultMainSearch/ResultMainSearch";
 import MoviesCardList from "../MoviesPage/MoviesCardList/MoviesCardList";
+import  '../../components/SavedMoviesPage/SavedMoviesPage.css';
 import '../../index.css';
 import HeaderSavedFilms from "../MoviesPage/HeaderSavedFilms/HeaderSavedFilms";
 import Footer from "../Footer";
 import apiAuth from "../../utils/MainApi";
 import {urlAllFilm} from "../../utils/constants";
+import Checkbox from "../Checkbox/Checkbox";
+
 function SavedMoviesPages(props) {
 
  //   const urlAllFilm = 'https://api.nomoreparties.co';
 
     const [isLoading, setLoading] = useState(true);
     const [loadedCards, setLoadedCards] = useState([]);
+    const [loadedFindCards, setLoadedFindCards] = useState([setLoadedCards]); /**/
+
     const [searchCriteriaData, setSearchCriteriaData] = useState({
         doSearch: false,
         keyWord: '',
@@ -48,6 +53,7 @@ function SavedMoviesPages(props) {
             .catch((err) => console.log('Лайканые киношки не загрузились!: ' + err.toString()))
     }, []);
 
+
     useEffect(() => {
         console.log('Effect searchCriteriaData: ' + searchCriteriaData.toString());
         setLoadedCards(loadedCards);
@@ -58,15 +64,24 @@ function SavedMoviesPages(props) {
             <HeaderSavedFilms handleSignOut={props.handleSignOut}/>
             <main>
                 <ResultMainSearch setSearchCriteria={setSearchCriteria}/>
-                {!isLoading && <MoviesCardList
-                    getSearchCriteria={getSearchCriteria}
-                    searchCriteria={getSearchCriteria()}
-                    loadedCards={loadedCards} /*все карты извне*/
-                />}
+
+          {/**/}    <Checkbox
+                    handleCheckbox={props.handleCheckbox}
+                    shortMeter={props.shortMeter}/>
+
+                { !isLoading ?
+                     <MoviesCardList
+                        getSearchCriteria={getSearchCriteria}
+                        searchCriteria={getSearchCriteria()}
+                        loadedCards={loadedCards}
+                   /**/ handleDelete={props.handleDelete}
+                    />
+                     : ( isLoading &&
+                    <div className = "info">Вы ничего не сохранили</div>)}
+
             </main>
             <Footer/>
         </>
     )
 }
-
 export default SavedMoviesPages;

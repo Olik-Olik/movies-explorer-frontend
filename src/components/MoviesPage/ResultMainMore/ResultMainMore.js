@@ -17,7 +17,6 @@ function ResultMainMore(props){
                         className= "result_main_search_icon_film"
                         >Ещё
                     </button>
-
             </div>
         </form>
     )
