@@ -10,16 +10,39 @@ function MovieCard(props) {
     const [likeMe, setLikeMe] = useState(false);
     const isSavedFilmsPage = useRouteMatch({path: '/saved-movies', exact: true});
 
-    function handleDelete() {
+    const [deleteCard, setDeleteCard] = useState([]);/**//**/
+    const [removing, setRemoving] =useState(false);/**//**/
+
+   /* function handleDelete() {
         console.log("Удаление");
         apiAuth.deleteMovie(props.cardData.movieId).then(() => {
             props.cardData.isLiked = false;
             setLikeMe(props.cardData.isLiked);
+           // setDeleteCard(props.cardData.id); /!*лайки на удаляемых ставим в ревью так было*!/
+          //  setRemoving(true);/!**!/
+
         })
             .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
     }
+*/
+     function handleDelete() {
+         /**/  const token = localStorage.getItem("token");
+            console.log("Удаление");
+            apiAuth.deleteMovie(props.cardData.movieId, token)
+                .then(() => {
+                props.cardData.isLiked = false;
+                setLikeMe(props.cardData.isLiked);
+                setDeleteCard(props.cardData.id); /*лайки на удаляемых ставим в ревью так было*/
+                setRemoving(true);/**/
+              /**/ // const newListAfterDelete = props.cardData.isLiked.filter((card) => !card.movieId  === props.cardData.movieId);
+               // isSavedFilmsPage(newListAfterDelete);
+          //  props.handleIdDeletedCard(id deleted card);
+                })
+                .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
+        }
 
     function handleSave(evt) {
+        /**/ const token = localStorage.getItem("token");
         evt.preventDefault();
         if (!props.cardData.isLiked) {
             apiAuth.saveMovie(
@@ -33,10 +56,12 @@ function MovieCard(props) {
                 props.cardData.nameEN,
                 props.cardData.trailerLink,
                 props.cardData.imageURL,
+           /**/     token
             ).then(() => {
                 props.cardData.isLiked = true;
                 setLikeMe(props.cardData.isLiked);
-                console.log('Saved Film')
+                console.log('Saved Film');
+ /**/          localStorage.getItem(props.cardData.isLiked);
             })
                 .catch((err) => {
                     console.log('Не сохраняется :( ' + err.toString());
@@ -47,20 +72,20 @@ function MovieCard(props) {
     }
 
     let likeClass = 'like ';
-    let likeOnClick = () => {
-    };
+    let likeOnClick = () => {};
 
-    if (isSavedFilmsPage) {
-        likeClass += props.cardData.isLiked ? 'like__delete' : '';
-        likeOnClick = handleDelete
-    } else {
-        if (props.cardData.isLiked) {
-            likeOnClick = handleDelete;
+
+        if (isSavedFilmsPage) {
+            likeClass += props.cardData.isLiked ? 'like__delete' : '';
+            likeOnClick = handleDelete
         } else {
-            likeClass += 'card__container_like_passive';
-            likeOnClick = handleSave;
+            if (props.cardData.isLiked) {
+                likeOnClick = handleDelete;
+            } else {
+                likeClass += 'card__container_like_passive';
+                likeOnClick = handleSave;
+            }
         }
-    }
 
     useEffect(() => {
         }

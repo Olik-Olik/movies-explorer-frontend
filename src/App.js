@@ -137,9 +137,6 @@ export default function App(props) {
         localStorage.removeItem("token");
         setIsEditProfilePopupOpen(false);
         setIsRegResOpen(false);
- /*       localStorage.removeItem(currentUser);
-        setLoggedIn(false);
-        setCurrentUser({});*/
     }
 
     return (

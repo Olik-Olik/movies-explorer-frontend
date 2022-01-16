@@ -8,6 +8,8 @@ import Footer from "../Footer";
 import apiAuth from "../../utils/MainApi";
 import {urlAllFilm} from "../../utils/constants";
 import Checkbox from "../Checkbox/Checkbox";
+import "../../components/SavedMoviesPage/SavedMoviesPage.css"
+import ButtonKnowMore from "../AboutPage/ButtonKnowMore/ButtonKnowMore";
 
 function SavedMoviesPages(props) {
 
@@ -15,7 +17,6 @@ function SavedMoviesPages(props) {
 
     const [isLoading, setLoading] = useState(true);
     const [loadedCards, setLoadedCards] = useState([]);
-    const [loadedFindCards, setLoadedFindCards] = useState([setLoadedCards]); /**/
 
     const [searchCriteriaData, setSearchCriteriaData] = useState({
         doSearch: false,
@@ -47,8 +48,8 @@ function SavedMoviesPages(props) {
                     card.imageURL = card.thumbnail;
                     card.isLiked = true;
                 });
-                setLoadedCards(savedMovies);
-                setLoading(false);
+                setLoadedCards(savedMovies);/**//**/
+                setLoading(false);/**//**/
             })
             .catch((err) => console.log('Лайканые киношки не загрузились!: ' + err.toString()))
     }, []);
@@ -56,7 +57,7 @@ function SavedMoviesPages(props) {
 
     useEffect(() => {
         console.log('Effect searchCriteriaData: ' + searchCriteriaData.toString());
-        setLoadedCards(loadedCards);
+        setLoadedCards(loadedCards);/**//**/
     }, [searchCriteriaData])
 
     return (
@@ -65,18 +66,18 @@ function SavedMoviesPages(props) {
             <main>
                 <ResultMainSearch setSearchCriteria={setSearchCriteria}/>
 
-          {/**/}    <Checkbox
+  {/*            <Checkbox
                     handleCheckbox={props.handleCheckbox}
-                    shortMeter={props.shortMeter}/>
+                    shortMeter={props.shortMeter}/>*/}
 
                 { !isLoading ?
                      <MoviesCardList
                         getSearchCriteria={getSearchCriteria}
                         searchCriteria={getSearchCriteria()}
                         loadedCards={loadedCards}
-                   /**/ handleDelete={props.handleDelete}
+                         handleDelete={props.handleDelete}
                     />
-                     : ( isLoading &&
+                     : (
                     <div className = "info">Вы ничего не сохранили</div>)}
 
             </main>

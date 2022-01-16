@@ -7,6 +7,7 @@ import Preloader from "../../Preloader";
 import getExpandWidth from "../../MoviesPage/MoviesCardList/currentWindowWidth";
 import ResultMainMore from "../ResultMainMore/ResultMainMore";
 import {FILM_DURATION} from '../../../utils/constants';
+import isLowercase from "validator/es/lib/isLowercase";
 
 function MoviesCardList(props) {
     const [allCards, setAllCards] = useState(null);
@@ -66,15 +67,24 @@ function MoviesCardList(props) {
         console.log('UF: [props.searchCriteria]');
         if (props.searchCriteria.doSearch) {
             console.log('Filter cards1...');
-            const searchResult = [];
+            let searchResult = [];
             props.loadedCards.forEach(function (value) {
-                    if (
-           /*      (props.searchCriteria.shortMeter === true && value.duration <= FILM_DURATION) ||*/
+                let keyWord = props.searchCriteria.keyWord;
+                console.log('keyWord ' + keyWord);
+                let key = keyWord.toLowerCase();
+                let nameRU = value.nameRU.toLowerCase();
+                //let nameEN = value.nameEN.toLowerCase();
+
+                console.log('key ' + key);
+                   /* if (
                     (props.searchCriteria.keyWord.length >= 0 &&
-                        (value.nameRU.includes(props.searchCriteria.keyWord
-                            || value.nameEN.includes(props.searchCriteria.keyWord
-                        )))
-                         ))
+                   (value.nameRU.includes(props.searchCriteria.keyWord) || (value.nameEN.includes(props.searchCriteria.keyWord))))
+                  */
+                   if (
+                // (props.searchCriteria.shortMeter === true && value.duration <= FILM_DURATION) ||
+                       (key.length >= 0 &&  ((nameRU.includes(key)  )))
+
+                   )
                 {
                     console.log('Тут только по ключевому слову!');
                     setInfo('написать по ключевому слову');
@@ -95,12 +105,37 @@ function MoviesCardList(props) {
         }
     }, [props.searchCriteria, props.searchCriteria.doSearch, props.keyWord, props.shortMeter])
 
-    useEffect(() => {
+/*    useEffect(() => {
+        console.log('UF: [props.searchCriteria]');
+        if (props.searchCriteria.doSearch) {
+            console.log('Filter cards1...');
+            let searchResultt = [];
+            props.loadedCards.forEach(function (value) {
+                if (
+                     (props.searchCriteria.shortMeter === true && value.duration <= FILM_DURATION))
+                {
+                    console.log('Тут !');
+                    setInfo('написать ');
+                    searchResultt.push(value);
+                }
+            });
+            console.log('Found: ' + searchResultt.length);
+            setAllCards(searchResultt);
+            setShownAmount(0);
+            _showLimitedCards();
+        } else {
+            console.log('NO FILTERS...');
+            console.log('Loaded cards: ' + props.loadedCards.length);
+            setAllCards(props.loadedCards);
+            setShownAmount(0);
+            _showLimitedCards();
+            setInfo('');
+        }
+    }, [])*/
 
-    })
 
 
-    useEffect(() => {
+    /*useEffect(() => {
         console.log('UF: [cards2.]');
         if (props.searchCriteria.doSearch) {
             console.log('Filter cards2...');
@@ -108,20 +143,19 @@ function MoviesCardList(props) {
             props.loadedCards.forEach(function (value) {
 
                 if (
-                    /*      (props.searchCriteria.shortMeter === true && value.duration <= FILM_DURATION) ||*/
+                    /!*      (props.searchCriteria.shortMeter === true && value.duration <= FILM_DURATION) ||*!/
                     (props.searchCriteria.keyWord.length >= 0 &&
                         (value.nameRU.includes(props.searchCriteria.keyWord
-                            || value.nameEN.includes(props.searchCriteria.keyWord
-                            )))
+                            || value.nameEN.includes(props.searchCriteria.keyWord)))
                     ))
 
-                /*if (
+                /!*if (
                     (props.searchCriteria.shortMeter === true && value.duration <= FILM_DURATION)
                     &&
                    (props.searchCriteria.keyWord.length >= 0 &&
                         ((value.nameRU && value.nameRU.includes(props.searchCriteria.keyWord)) || (value.nameEN && value.nameEN.includes(props.searchCriteria.keyWord)))
                     )
-                )*/
+                )*!/
                 {
                     console.log('2 search !');
                     setInfo('написать');
@@ -141,10 +175,11 @@ function MoviesCardList(props) {
 
         }
     }, [])
-
+*/
 
     return (
         <>
+            {showMore && <ResultMainMore handleMoreClick={handleMoreClick}/>}{/*по запросу ревьюера перенесена сюда*/}
             <section className="moviesCard_list" >
 
                 <Suspense fallback={<Preloader/>}>
@@ -161,7 +196,7 @@ function MoviesCardList(props) {
                         ))}
                 </Suspense>
             </section>
-            {showMore && <ResultMainMore handleMoreClick={handleMoreClick}/>}
+          {/*  {showMore && <ResultMainMore handleMoreClick={handleMoreClick}/>}*/}
         </>
     )
 }
