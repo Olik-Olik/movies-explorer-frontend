@@ -16,13 +16,14 @@ function ResultMainSearch(props) {
     }
 
     function handleCheckbox(evt) {
-        console.log('ShortFilm: ' + evt.target.checked);
+        console.log('ShortFilm handleCheckbox: ' + evt.target.checked);
         setShortMeter(evt.target.checked);
+      /*чекбокс короткометражки*/  props.setSearchCriteria(keyWord, shortMeter);
     }
 
     function handleSubmit(evt) {
         evt.preventDefault();
-        console.log('SSC');
+        console.log('handleSubmit');
         props.setSearchCriteria(keyWord, shortMeter);
     }
 
