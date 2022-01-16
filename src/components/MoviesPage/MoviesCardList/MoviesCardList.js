@@ -66,31 +66,20 @@ function MoviesCardList(props) {
     useEffect(() => {
         console.log('UF: [props.searchCriteria]');
         if (props.searchCriteria.doSearch) {
-            console.log('Filter cards1...');
+            console.log('по ключевому слову...');
             let searchResult = [];
             props.loadedCards.forEach(function (value) {
                 let keyWord = props.searchCriteria.keyWord;
                 console.log('keyWord ' + keyWord);
                 let key = keyWord.toLowerCase();
                 let nameRU = value.nameRU.toLowerCase();
-                //let nameEN = value.nameEN.toLowerCase();
-
                 console.log('key ' + key);
-                   /* if (
-                    (props.searchCriteria.keyWord.length >= 0 &&
-                   (value.nameRU.includes(props.searchCriteria.keyWord) || (value.nameEN.includes(props.searchCriteria.keyWord))))
-                  */
-                   if (
-                // (props.searchCriteria.shortMeter === true && value.duration <= FILM_DURATION) ||
-                       (key.length >= 0 &&  ((nameRU.includes(key)  )))
-
-                   )
-                {
-                    console.log('Тут только по ключевому слову!');
-                    setInfo('написать по ключевому слову');
-                    searchResult.push(value);
-                }
+                   if ((key.length >= 0 &&  ((nameRU.includes(key)  ))))
+                { console.log('Тут только по ключевому слову!');
+                 //   setInfo('написать по ключевому слову');
+                    searchResult.push(value); }
             });
+            // (props.searchCriteria.shortMeter === true && value.duration <= FILM_DURATION) ||
             console.log('Found: ' + searchResult.length);
             setAllCards(searchResult);
             setShownAmount(0);
@@ -104,34 +93,37 @@ function MoviesCardList(props) {
              setInfo('');
         }
     }, [props.searchCriteria, props.searchCriteria.doSearch, props.keyWord, props.shortMeter])
-
-/*    useEffect(() => {
+/*________________________________короткометажки___________________________________________________________________________*/
+    useEffect(() => {
+        let box = props.searchCriteria.shortMeter;
         console.log('UF: [props.searchCriteria]');
+
         if (props.searchCriteria.doSearch) {
-            console.log('Filter cards1...');
+            let keyWord = props.searchCriteria.keyWord;
+            console.log('keyWord ' + keyWord);
+            let key = keyWord.toLowerCase();
+            console.log('короткометражки...');
             let searchResultt = [];
             props.loadedCards.forEach(function (value) {
                 if (
-                     (props.searchCriteria.shortMeter === true && value.duration <= FILM_DURATION))
+                  /*  key.length >= 0 &&*/  (box === true || value.duration <= FILM_DURATION))
                 {
-                    console.log('Тут !');
-                    setInfo('написать ');
+                   // console.log('Тут !');
+                   // setInfo('написать');
                     searchResultt.push(value);
                 }
             });
-            console.log('Found: ' + searchResultt.length);
             setAllCards(searchResultt);
             setShownAmount(0);
             _showLimitedCards();
         } else {
-            console.log('NO FILTERS...');
-            console.log('Loaded cards: ' + props.loadedCards.length);
+            console.log('Короткометр: ' + props.loadedCards.length);
             setAllCards(props.loadedCards);
-            setShownAmount(0);
+             setShownAmount(0);
             _showLimitedCards();
-            setInfo('');
+           // setInfo('');
         }
-    }, [])*/
+    }, [props.searchCriteria, props.searchCriteria.doSearch, props.shortMeter])
 
 
 
