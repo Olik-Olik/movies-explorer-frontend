@@ -97,7 +97,7 @@ function MoviesCardList(props) {
     useEffect(() => {
         let box = props.searchCriteria.shortMeter;
         console.log('UF: [props.searchCriteria]');
-
+/*   */
         if (props.searchCriteria.doSearch) {
             let keyWord = props.searchCriteria.keyWord;
             console.log('keyWord ' + keyWord);
