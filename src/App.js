@@ -1,5 +1,5 @@
 import  {useEffect, useState} from "react";
-import {BrowserRouter, Route, Switch,} from 'react-router-dom';
+import {BrowserRouter, Redirect, Route, Switch,} from 'react-router-dom';
 import './index.css';
 import AboutPage from "./components/AboutPage/AboutPage";
 import AboutPageAuth from "./components/AboutPage/AboutPageAuth";
@@ -16,10 +16,12 @@ import {CurrentUserContext} from './utils/context/CurrentUserContext';
 export default function App(props) {
     const [currentUser, setCurrentUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
-    const [loggedIn, setLoggedIn] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(true);/*!!!!!!!!!!*/
     const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
     const [email, setEmail] = useState("");
     const [infoSuccess, setInfoSuccess] = useState(false);
+
+
     const [info, setInfo] = useState('');
     const [isRegResOpen, setIsRegResOpen] = useState(false);
 
@@ -164,7 +166,13 @@ export default function App(props) {
 
                             <Route exact={true}
                                    path="/sign-up"
-                                   component={() => (<SignUpPage handleRegister={handleRegister}
+                                   component={() => (
+                                       <SignUpPage handleRegister={handleRegister}
+
+                                 /*         const [infoSuccessMovie, setInfoSuccessMovie] = setInfoSuccessMovie({redirect: true});
+                                       if(infoSuccessMovie.redirect){ return <Redirect push= to "/movies"/>}*/
+
+
                                    info={info}/>)}
                             />
 

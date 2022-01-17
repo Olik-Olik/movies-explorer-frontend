@@ -8,38 +8,33 @@ import apiAuth from "../../../utils/MainApi";
 function MovieCard(props) {
 
     const [likeMe, setLikeMe] = useState(false);
+    const [isLoading, setLoading] = useState(true);
+
     const isSavedFilmsPage = useRouteMatch({path: '/saved-movies', exact: true});
 
-    const [deleteCard, setDeleteCard] = useState([]);/**//**/
-    const [removing, setRemoving] =useState(false);/**//**/
 
-   /* function handleDelete() {
-        console.log("Удаление");
-        apiAuth.deleteMovie(props.cardData.movieId).then(() => {
-            props.cardData.isLiked = false;
-            setLikeMe(props.cardData.isLiked);
-           // setDeleteCard(props.cardData.id); /!*лайки на удаляемых ставим в ревью так было*!/
-          //  setRemoving(true);/!**!/
-
-        })
-            .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
-    }
-*/
-     function handleDelete() {
+     function handleDelete(item) {
          /**/  const token = localStorage.getItem("token");
             console.log("Удаление");
             apiAuth.deleteMovie(props.cardData.movieId, token)
-                .then(() => {
-                props.cardData.isLiked = false;
-                setLikeMe(props.cardData.isLiked);
-                setDeleteCard(props.cardData.id); /*лайки на удаляемых ставим в ревью так было*/
-                setRemoving(true);/**/
-              /**/ // const newListAfterDelete = props.cardData.isLiked.filter((card) => !card.movieId  === props.cardData.movieId);
-               // isSavedFilmsPage(newListAfterDelete);
-          //  props.handleIdDeletedCard(id deleted card);
-                })
+                .then((vv) => {
+                    props.cardData.isLiked = false;
+                    setLikeMe(props.cardData.isLiked)
+                    console.log(vv);
+                    console.log("Удаление завершено");
+                   setLoading(false);/**//**/
+                   window.location.reload();
+                    }
+                  /* props.getRemoveId(); */
+                    )
+
                 .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
         }
+/*    function getRemoveId(item) {
+        const newListAfterDelete = props.cardData.isLiked.filter((e) => e._id !== item._id)
+        item(newListAfterDelete);
+    }*/
+
 
     function handleSave(evt) {
         /**/ const token = localStorage.getItem("token");
@@ -67,6 +62,10 @@ function MovieCard(props) {
                     console.log('Не сохраняется :( ' + err.toString());
                 })
         } else {
+/*        /!**!/    props.cardData.isLiked = false;
+        /!**!/    setLikeMe(props.cardData.isLiked);
+       /!**!/     console.log('Disliked Film');
+        /!**!/          localStorage.getItem(props.cardData.isLiked);*/
             handleDelete();
         }
     }
@@ -76,7 +75,7 @@ function MovieCard(props) {
 
 
         if (isSavedFilmsPage) {
-            likeClass += props.cardData.isLiked ? 'like__delete' : '';
+            likeClass +=  props.cardData.isLiked ? 'like__delete' : '';
             likeOnClick = handleDelete
         } else {
             if (props.cardData.isLiked) {

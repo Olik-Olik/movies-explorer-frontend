@@ -11,7 +11,8 @@ import {urlAllFilm} from "../../utils/constants";
 function MoviesPages(props) {
     const [isLoading, setLoading] = useState(true);
     const [loadedCards, setLoadedCards] = useState([]);
-    const [searchCriteriaData, setSearchCriteriaData] = useState({ doSearch: false,
+    const [searchCriteriaData, setSearchCriteriaData] = useState({
+        doSearch: false,
         keyWord: '',
         shortMeter: false});
 
@@ -36,14 +37,15 @@ function MoviesPages(props) {
             .catch((err) => console.log('Киношки не загрузились!: ' + err.toString()))
     }, []);
 
-    useEffect(() => {
+    /*useEffect(() => {
         console.log('Effect searchCriteriaData: ' + searchCriteriaData.toString());
         setLoadedCards(loadedCards);
+        console.log(setLoadedCards);
     }, [searchCriteriaData, searchCriteriaData.doSearch, searchCriteriaData.keyWord, searchCriteriaData.shortMeter])
-
+         //    props.searchCriteria, props.searchCriteria.doSearch, props.keyWord, props.shortMeter*/
 
     function setSearchCriteria(keyWord, shortMeter){
-        console.log('setSearchCriteria MP');
+        console.log('keyWord, shortMeter');
         setSearchCriteriaData(
             { doSearch: true,
                     keyWord: keyWord,
@@ -51,7 +53,7 @@ function MoviesPages(props) {
     }
 
     function getSearchCriteria(){
-        console.log('getSearchCriteria');
+        console.log(searchCriteriaData);
         return searchCriteriaData;
     }
 

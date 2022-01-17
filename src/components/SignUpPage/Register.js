@@ -116,9 +116,8 @@ function Register(props) {
 
                     </div>
                     <button className="auth__form-login-submit-button" type="submit"
-                        >Зарегистрироваться
-                        </button>
-
+                            >Зарегистрироваться</button>
+                    <div className="setinfo__error">{info}</div>
                     {/* <a href="/movies" className="auth__login-signin">
                     <div className="auth__form-login-submit-button"  >Зарегистрироваться
                         </div>

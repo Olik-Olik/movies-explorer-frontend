@@ -6,19 +6,19 @@ import  '../../../components/SignUpPage/Register.css';
 function ResultMainSearch(props) {
 
     const [keyWord, setKeyWord] = useState('');
-    const [shortMeter, setShortMeter] = useState(false);
+    const [shortMeter, setShortMeter] = useState(false); /*true*/
     const [info, setInfo] = useState('');
 
     function handleSearchField(evt) {
         evt.preventDefault();
-        console.log('KW: ' + evt.target.value);
-        setKeyWord(evt.target.value)
+        setKeyWord(evt.target.value);
+        props.setSearchCriteria(keyWord, shortMeter);
     }
 
     function handleCheckbox(evt) {
         console.log('ShortFilm handleCheckbox: ' + evt.target.checked);
         setShortMeter(evt.target.checked);
-      /*чекбокс короткометражки*/  props.setSearchCriteria(keyWord, shortMeter);
+      /*чекбокс короткометражки*/  props.setSearchCriteria(keyWord, shortMeter );
     }
 
     function handleSubmit(evt) {
@@ -38,6 +38,7 @@ function ResultMainSearch(props) {
                     <div className="result_main_search_icon"/>
                     <div className="result_main_search_icon__lupa"/>
                     <div className="form__input_film">
+
                         <input type='text'
                                name="search"
                                value={keyWord}
@@ -45,8 +46,9 @@ function ResultMainSearch(props) {
                                placeholder='Кино'
                                className="result_main_search_icon_film"
                                required
-                          /*     maxLength="40" minLength="2"*/
+
                         />
+
                         <div className="setinfo__error">{info}</div> {/**/}
 
                     </div>
@@ -63,7 +65,7 @@ function ResultMainSearch(props) {
                         <div className="icon-shortfilm">
                             <div className="result_main_search_icon_smalltube decktop ">
                                 <Checkbox handleCheckbox={handleCheckbox}
-                                          onClick={handleSubmit}
+                                         /* onClick={handleSubmit}*/
                                 />
                             </div>
                             <div className="result_main_search_icon_shortfilm decktop ">Короткометражки</div>
