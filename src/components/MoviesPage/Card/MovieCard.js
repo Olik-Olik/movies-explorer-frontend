@@ -13,32 +13,52 @@ function MovieCard(props) {
     const isSavedFilmsPage = useRouteMatch({path: '/saved-movies', exact: true});
 
 
-     function handleDelete(item) {
-         /**/  const token = localStorage.getItem("token");
-            console.log("Удаление");
-            apiAuth.deleteMovie(props.cardData.movieId, token)
-                .then((vv) => {
+    function handleDelete() {
+        /**/
+       /* const token = localStorage.getItem("token");*/
+        console.log("Удаление");
+        apiAuth.deleteMovie(props.cardData.id) /*1111*/
+            .then((vv) => {
                     props.cardData.isLiked = false;
                     setLikeMe(props.cardData.isLiked)
                     console.log(vv);
                     console.log("Удаление завершено");
-                   setLoading(false);/**//**/
-                   window.location.reload();
-                    }
-                  /* props.getRemoveId(); */
-                    )
+                    setLoading(false);/**//**/
+                 //   window.location.reload();
+                }
+                /* props.getRemoveId(); */
+            )
 
-                .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
-        }
-/*    function getRemoveId(item) {
-        const newListAfterDelete = props.cardData.isLiked.filter((e) => e._id !== item._id)
-        item(newListAfterDelete);
-    }*/
+            .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
+    }
+    /*    function getRemoveId(item) {
+            const newListAfterDelete = props.cardData.isLiked.filter((e) => e._id !== item._id)
+            item(newListAfterDelete);
+        }*/
 
+    function handleDeleteClick() {
+        /**/
+        /* const token = localStorage.getItem("token");*/
+        console.log("Удаление");
+        apiAuth.deleteMovie(props.cardData.movieId) /*1111*/
+            .then((vv) => {
+                    props.cardData.isLiked = false;
+                    setLikeMe(props.cardData.isLiked)
+                    console.log(vv);
+                    console.log("Удаление завершено");
+                    setLoading(false);/**//**/
+                    window.location.reload();
+                }
+                /* props.getRemoveId(); */
+            )
 
+            .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
+    }
     function handleSave(evt) {
-        /**/ const token = localStorage.getItem("token");
+        /**/
+      /*  const token = localStorage.getItem("token");*/
         evt.preventDefault();
+
         if (!props.cardData.isLiked) {
             apiAuth.saveMovie(
                 props.cardData.country,
@@ -51,44 +71,52 @@ function MovieCard(props) {
                 props.cardData.nameEN,
                 props.cardData.trailerLink,
                 props.cardData.imageURL,
-           /**/     token
+                /**/   /*  token*/
             ).then(() => {
                 props.cardData.isLiked = true;
-                setLikeMe(props.cardData.isLiked);
+                setLikeMe(props.cardData.isLiked);/*поставила */
                 console.log('Saved Film');
- /**/          localStorage.getItem(props.cardData.isLiked);
+                /**/
+                localStorage.getItem(props.cardData.isLiked);
             })
                 .catch((err) => {
                     console.log('Не сохраняется :( ' + err.toString());
                 })
-        } else {
-/*        /!**!/    props.cardData.isLiked = false;
-        /!**!/    setLikeMe(props.cardData.isLiked);
-       /!**!/     console.log('Disliked Film');
-        /!**!/          localStorage.getItem(props.cardData.isLiked);*/
+        } /*else {
+                        props.cardData.isLiked = false;
+                        setLikeMe(props.cardData.isLiked);
+                       console.log('Disliked Film');
+                      localStorage.getItem(props.cardData.isLiked);
             handleDelete();
-        }
+        }*/
     }
 
-    let likeClass = 'like ';
-    let likeOnClick = () => {};
+   /* function handleDeleteClick(){
+        handleDelete(props.cardData.isLiked)
+    }*/
 
+    let likeClass = 'like '; /*серое*/
+    let likeOnClick = () => {
+    };
 
-        if (isSavedFilmsPage) {
-            likeClass +=  props.cardData.isLiked ? 'like__delete' : '';
-            likeOnClick = handleDelete
-        } else {
-            if (props.cardData.isLiked) {
-                likeOnClick = handleDelete;
-            } else {
-                likeClass += 'card__container_like_passive';
-                likeOnClick = handleSave;
-            }
+    if (isSavedFilmsPage) {
+        likeClass += props.cardData.isLiked ? 'like__delete' : '';
+        likeOnClick = handleDeleteClick
+    }
+    else {
+        if (props.cardData.isLiked) {
+            console.log(props.cardData.isLiked);
+            likeClass += 'card__container_like';
+           /* window.location.reload();*/
+            likeOnClick = handleDelete;
+
         }
-
-    useEffect(() => {
+        else {
+            likeClass += 'card__container_like_passive';
+            likeOnClick = handleSave;
+            console.log('red in grey ')
         }
-        , [likeMe])
+    }
 
     return (
         <>
