@@ -7,15 +7,14 @@ import Preloader from "../../Preloader";
 import getExpandWidth from "../../MoviesPage/MoviesCardList/currentWindowWidth";
 import ResultMainMore from "../ResultMainMore/ResultMainMore";
 import {FILM_DURATION} from '../../../utils/constants';
-import isLowercase from "validator/es/lib/isLowercase";
 
 function MoviesCardList(props) {
     const [allCards, setAllCards] = useState(null);
     const [cards, setCards] = useState([]);
     const [shownAmount, setShownAmount] = useState(0);
     const [showMore, setShowMore] = useState(true);
-    const [info, setInfo]= useState('');
-    const [searchedMovies, setSearchedMovies]= useState('');
+    const [info, setInfo] = useState('');
+    const [searchedMovies, setSearchedMovies] = useState('');
 
     function getShowAmount() {
         const expandWidth = getExpandWidth();
@@ -38,8 +37,7 @@ function MoviesCardList(props) {
         if (amountToShow >= res.length) {
             amountToShow = res.length;
             setShowMore(false);
-        }
-        else
+        } else
             setShowMore(true);/**/
         const slicedCards = res.slice(0, amountToShow);
         console.log(slicedCards);
@@ -50,8 +48,9 @@ function MoviesCardList(props) {
     function handleMoreClick() {
         _showLimitedCards()
     }
-/*по слову*/ /**/
-    function handleSearchedWord(evt){
+
+    /*по слову*/ /**/
+    function handleSearchedWord(evt) {
         setSearchedMovies(evt.target.value);
     }
 
@@ -63,29 +62,71 @@ function MoviesCardList(props) {
     }, [allCards])
 
 
-/*
-    useEffect(() => {
-        let box = props.searchCriteria.shortMeter;
-        console.log('UF: [props.searchCriteria]');
-        if (props.searchCriteria.doSearch) {
-            console.log('по ключевому слову...');
-            let searchResult = [];
-            props.loadedCards.forEach(function (value) {
-                let keyWord = props.searchCriteria.keyWord;
-                console.log('keyWord ' + keyWord);
-                let key = keyWord.toLowerCase();
-                let nameRU = value.nameRU.toLowerCase();
-                console.log('key ' + key);
-                if (
-                (box === true || value.duration <= FILM_DURATION) && ( nameRU.includes(key) ))
+    /*
+        useEffect(() => {
+            let box = props.searchCriteria.shortMeter;
+            console.log('UF: [props.searchCriteria]');
+            if (props.searchCriteria.doSearch) {
+                console.log('по ключевому слову...');
+                let searchResult = [];
+                props.loadedCards.forEach(function (value) {
+                    let keyWord = props.searchCriteria.keyWord;
+                    console.log('keyWord ' + keyWord);
+                    let key = keyWord.toLowerCase();
+                    let nameRU = value.nameRU.toLowerCase();
+                    console.log('key ' + key);
+                    if (
+                    (box === true || value.duration <= FILM_DURATION) && ( nameRU.includes(key) ))
 
-                //   if ((key.length >= 0 &&  ((nameRU.includes(key)  ))))
-                { console.log('Тут только по ключевому слову!');
-                 //   setInfo('написать по ключевому слову');
-                    searchResult.push(value); }
-              //  else ( )
+                    //   if ((key.length >= 0 &&  ((nameRU.includes(key)  ))))
+                    { console.log('Тут только по ключевому слову!');
+                     //   setInfo('написать по ключевому слову');
+                        searchResult.push(value); }
+                  //  else ( )
+                });
+                // (props.searchCriteria.shortMeter === true && value.duration <= FILM_DURATION) ||
+                setAllCards(searchResult);
+                setShownAmount(0);
+                _showLimitedCards();
+            } else {
+                setAllCards(props.loadedCards);
+                setShownAmount(0);
+                _showLimitedCards();
+                 setInfo('');
+            }
+        }, [props.searchCriteria, props.searchCriteria.doSearch, props.keyWord, props.shortMeter])*/
+
+    useEffect(() => {
+        //setAllCards(props.loadedCards);
+        let box = props.searchCriteria.shortMeter;
+//        let searchResultt = [];
+        let searchResult = [];
+        let keyWord = props.searchCriteria.keyWord;
+        let key = keyWord.toLowerCase();
+        if (props.searchCriteria.doSearch) {
+            console.log('Key: ' + key + ":" + key.length);
+            props.loadedCards.forEach(function (value) {
+                let nameRU = value.nameRU.toLowerCase();
+                let hasKeyWord = nameRU.includes(key);
+                let isShortMeter = value.duration <= FILM_DURATION;
+
+                if (((key.length > 0 && hasKeyWord === true) && (box === true && isShortMeter === true))
+                    || (box === false && (key.length > 0 && hasKeyWord === true))
+                    || (key.length <= 0 && box === true && isShortMeter === true)
+                    || (box === false && key.length <= 0)
+                )
+                {
+                    searchResult.push(value);
+                }
             });
-            // (props.searchCriteria.shortMeter === true && value.duration <= FILM_DURATION) ||
+/*
+            searchResultt.forEach(function (value) {
+                let nameRU = value.nameRU.toLowerCase();
+                if (nameRU.includes(key)) {
+                    searchResult.push(value);
+                }
+            });
+*/
             setAllCards(searchResult);
             setShownAmount(0);
             _showLimitedCards();
@@ -93,47 +134,9 @@ function MoviesCardList(props) {
             setAllCards(props.loadedCards);
             setShownAmount(0);
             _showLimitedCards();
-             setInfo('');
-        }
-    }, [props.searchCriteria, props.searchCriteria.doSearch, props.keyWord, props.shortMeter])*/
-
-    useEffect(() => {
-        //setAllCards(props.loadedCards);
-        let box = props.searchCriteria.shortMeter;
-        let searchResultt = [];
-        let searchResult = [];
-        let keyWord = props.searchCriteria.keyWord;
-        let key = keyWord.toLowerCase();
-        if (props.searchCriteria.doSearch) {
-
-            props.loadedCards.forEach(function (value) {
-                let nameRU = value.nameRU.toLowerCase();
-                if (
-                    ( nameRU.includes(key) &&  (box === true || value.duration <= FILM_DURATION)   )
-                )
-                {
-                  //  setInfo('написать');
-                    searchResultt.push(value);
-                }
-                else  if ( nameRU.includes(key))
-                    searchResult.push(value)
-               // console.log("t" +searchResult);
-            }
-
-            );
-            setAllCards(searchResultt);
-            setShownAmount(0);
-            _showLimitedCards();
-        } else {
-             setAllCards(props.loadedCards);
-             setShownAmount(0);
-            _showLimitedCards();
-             setInfo('Ничего не найдено');
+            setInfo('Ничего не найдено');
         }
     }, [props.searchCriteria, props.searchCriteria.doSearch, props.keyWord, props.shortMeter])
-
-
-
 
 
     /*useEffect(() => {
@@ -180,7 +183,7 @@ function MoviesCardList(props) {
 
     return (
         <>
-            <section className="moviesCard_list" >
+            <section className="moviesCard_list">
                 <Suspense fallback={<Preloader/>}>
                     {cards &&
                         cards.map((card) => (
