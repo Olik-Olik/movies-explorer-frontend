@@ -38,7 +38,7 @@ function Login(props) {
         }
         props.handleLogin(email, password)
             .then((response) => {
-                    console.log('BR');
+                    console.log('Сабмит логин ');
                     currentUserContext = true;
                     history.push({
                         pathname: '/movies',
@@ -93,7 +93,6 @@ function Login(props) {
                                 value={password}
                                 onChange={handleChangePassword}
                             />
-
                         </div>
                     </div>
                     {/*sign in*/}

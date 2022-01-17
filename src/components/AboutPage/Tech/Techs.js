@@ -12,13 +12,13 @@ function Techs(props) {
                 проекте. </p>
 
             <div className="tech__button">
-                <button className="techs__button" onClick={'{/* не тыкабельна*/}'}>HTML</button>
-                <button className="techs__button" onClick={'{/* не тыкабельна */}'}>CSS</button>
-                <button className=" techs__button" onClick={'{/* не тыкабельна */}'}>JS</button>
-                <button className=" techs__button" onClick={' не тыкабельна'}>React</button>
-                <button className="techs__button" onClick={' не тыкабельна'}>Git</button>
-                <button className="techs__button" onClick={' не тыкабельна '}>Express.js</button>
-                <button className=" techs__button" onClick={' не тыкабельна'}>mongoDB</button>
+                <button className="techs__button" >HTML</button>
+                <button className="techs__button" >CSS</button>
+                <button className=" techs__button" >JS</button>
+                <button className=" techs__button" >React</button>
+                <button className="techs__button" >Git</button>
+                <button className="techs__button" >Express.js</button>
+                <button className=" techs__button" >mongoDB</button>
             </div>
         </section>)
 }
