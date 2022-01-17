@@ -83,7 +83,8 @@ export default function App(props) {
                 setLoggedIn(true);
                 console.log('Залогинились !');
                 setInfo('Залогинились !');
-                 return res;
+                return res;
+
             })
             .catch((err) => {
                 if (err.status === 401 ){setInfo('указанные имя пользователя и пароль не верны')}
@@ -97,12 +98,17 @@ export default function App(props) {
     function handleRegister(name, email, password) {
         return apiAuth
             .register(name, email, password)
-            .then((res) => {
+            .then(() => {
+
                 setInfoSuccess(true);
                 setIsRegResOpen(true);
                 console.log("зарегались");
-                setInfo('Зарегистрировались, Класс')
-            })
+                setInfo('Зарегистрировались, Класс');
+                console.log(email + password);
+                //handleLogin(email, password);
+
+            }
+            )
             .catch((err) => {
                     console.log('Не зарегистрировались :( ' + err.toString());
                     setInfoSuccess(false);
@@ -168,7 +174,7 @@ export default function App(props) {
                                    path="/sign-up"
                                    component={() => (
                                        <SignUpPage handleRegister={handleRegister}
-
+                                                   handleLogin={handleLogin}
                                  /*         const [infoSuccessMovie, setInfoSuccessMovie] = setInfoSuccessMovie({redirect: true});
                                        if(infoSuccessMovie.redirect){ return <Redirect push= to "/movies"/>}*/
 

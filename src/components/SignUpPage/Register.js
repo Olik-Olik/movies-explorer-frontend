@@ -1,5 +1,6 @@
 /* РЕГИСТРАЦИЯ*/
 import React, {useEffect, useState} from 'react';
+import {useHistory} from "react-router-dom";
 import './Register.css';
 import '../Profile.css';
 import '../Footer.css';
@@ -7,6 +8,7 @@ import '../SignInPage/SignInHeader.css';
 import '../../index.css';
 
 function Register(props) {
+    const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
@@ -48,14 +50,31 @@ function Register(props) {
     function handleSubmitRegister(evt) {
         evt.preventDefault();
         if (name && email && password) {
-            props.handleRegister(name, email, password)
+            props.handleRegister(name, email, password).then(() => {
+                props.handleLogin(email, password).then((response) => {
+                    console.log('Сабмит логин reg');
+                    history.push({
+                        pathname: '/movies',
+                        state: {
+                            authenticated: true,
+                            access_token: response.access_token,
+                            token_type: response.token_type,
+                            expires_in: response.expires_in,
+                            scope: response.scope },
+                    });
+                    console.log('ARR');
+                })
+            }).catch((err) => console.log('Фокус не удался!: ' + err.toString()))
         }
     }
 
-    /*  useEffect(() => {
+      useEffect(() => {
           if (props.loggedIn) {
+              setEmail("");
+              setPassword("");
           }
-      }, [props.loggedIn]);*/
+      }, [props.loggedIn]);
+
 
     useEffect(() => {
             (name && email && password) ? setValid(true) : setValid(false)
@@ -71,58 +90,52 @@ function Register(props) {
                     <label className="label__input profile-name"> Имя
                     </label>
 
-                    <form name="form__input_name">
+                    <div name="form__input_name">
                         <input type='text'
                                className="profile__input-name auth__form-login-input-email"
                                name="name"
-                               value={name || ""}
+                               value={name}
                                required
                                maxLength="30"
                                minLength="2"
                                onChange={handleChangeName}/>
                         <div className="setinfo__error">{info}</div>
-                    </form>
+                    </div>
 
                     <div className="profile__email-email ">
                         <label className="label__input profile__email"> E-mail</label>
-                        <form name="profile__input-email">
+                        <div className="profile__input-email">
                             <input type='text'
                                    className="auth__form-login-input-email"
                                    name="email"
                                    required
                                    maxLength="30" minLength="2"
-                                   value={email || ""}
+                                   value={email }
                                    onChange={handleChangeEmail}/>
                             <div className="setinfo__error">{infoEmail}</div>
-                        </form>
+                        </div>
                     </div>
                     <div className="profile__email-email  profile__email-password">
 
                         <label className="profile__email"> Пароль
                         </label>
 
-                        <form name="profile__input-password">
-
+                        <div className="profile__input-password">
                             <input type='password'
-                                   name="password"
+                                  // name="password"
                                    className={`auth__form-login-input-password ${info ? "info__error" : ''}`}
                                    required
-                                   value={password || ""}
+                                   value={password }
                                    minLength="8" maxLength="30"
                                    onChange={handleChangePassword}
                             />
                             <div className="setinfo__error">{passwordInfo}</div>
-                        </form>
-
+                        </div>
                     </div>
                     <button className="auth__form-login-submit-button" type="submit"
-                            >Зарегистрироваться</button>
+                    >Зарегистрироваться
+                    </button>
                     <div className="setinfo__error">{info}</div>
-                    {/* <a href="/movies" className="auth__login-signin">
-                    <div className="auth__form-login-submit-button"  >Зарегистрироваться
-                        </div>
-                    </a>
-                    */}
 
                 </form>
                 <div className="auth__login-signup-container">
@@ -139,5 +152,4 @@ function Register(props) {
         </>
     )
 }
-
 export default Register;
