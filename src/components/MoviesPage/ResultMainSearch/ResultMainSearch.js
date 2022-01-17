@@ -12,13 +12,13 @@ function ResultMainSearch(props) {
     function handleSearchField(evt) {
         evt.preventDefault();
         setKeyWord(evt.target.value);
-        props.setSearchCriteria(keyWord, shortMeter);
+        //props.setSearchCriteria(keyWord, shortMeter);
     }
 
     function handleCheckbox(evt) {
         console.log('ShortFilm handleCheckbox: ' + evt.target.checked);
         setShortMeter(evt.target.checked);
-      /*чекбокс короткометражки*/  props.setSearchCriteria(keyWord, shortMeter );
+      /*чекбокс короткометражки*/  props.setSearchCriteria(keyWord, evt.target.checked );
     }
 
     function handleSubmit(evt) {
@@ -65,6 +65,7 @@ function ResultMainSearch(props) {
                         <div className="icon-shortfilm">
                             <div className="result_main_search_icon_smalltube decktop ">
                                 <Checkbox handleCheckbox={handleCheckbox}
+                                          shortMeter={shortMeter}
                                          /* onClick={handleSubmit}*/
                                 />
                             </div>
@@ -75,7 +76,8 @@ function ResultMainSearch(props) {
             </div>
             <div className="icon-shortfilm mobile">
                 <div className="result_main_search_icon_smalltube mobile">
-                    <Checkbox handleCheckbox={handleCheckbox}/>
+                    <Checkbox handleCheckbox={handleCheckbox}
+                              shortMeter={shortMeter} />
                 </div>
                 <div className="result_main_search_icon_shortfilm mobile">Короткометражки</div>
             </div>

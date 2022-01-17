@@ -97,6 +97,7 @@ function MoviesCardList(props) {
         }, [props.searchCriteria, props.searchCriteria.doSearch, props.keyWord, props.shortMeter])*/
 
     useEffect(() => {
+        console.log("Effect of search chenge!");
         //setAllCards(props.loadedCards);
         let box = props.searchCriteria.shortMeter;
 //        let searchResultt = [];
