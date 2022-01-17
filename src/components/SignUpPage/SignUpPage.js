@@ -9,7 +9,7 @@ function SignUpPage(props){
             <SignUpHeader/>
             <main>
             <Register handleRegister={props.handleRegister}
-
+                      handleLogin={props.handleLogin}
                 info={props.info}/>
             </main>
         </>)}
