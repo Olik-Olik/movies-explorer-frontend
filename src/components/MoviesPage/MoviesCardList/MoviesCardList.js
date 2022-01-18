@@ -81,6 +81,7 @@ function MoviesCardList(props) {
                     || (box === false && key.length <= 0)
                 ) {
                     searchResult.push(value);
+
                 }
             });
             setAllCards(searchResult);
@@ -90,7 +91,7 @@ function MoviesCardList(props) {
             setAllCards(props.loadedCards);
             setShownAmount(0);
             _showLimitedCards();
-            setInfo('Ничего не найдено');
+            setInfo('Ничего не найдено. Введите другое значение.');
         }
     }, [props.searchCriteria, props.searchCriteria.doSearch, props.keyWord, props.shortMeter])
 
