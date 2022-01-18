@@ -10,6 +10,8 @@ import {urlAllFilm} from "../../utils/constants";
 import Checkbox from "../Checkbox/Checkbox";
 import "../../components/SavedMoviesPage/SavedMoviesPage.css"
 import ButtonKnowMore from "../AboutPage/ButtonKnowMore/ButtonKnowMore";
+import Preloader from "../Preloader";
+import  { Suspense } from "react";
 
 function SavedMoviesPages(props) {
 
@@ -65,7 +67,8 @@ function SavedMoviesPages(props) {
             <HeaderSavedFilms handleSignOut={props.handleSignOut}/>
             <main>
                 <ResultMainSearch setSearchCriteria={setSearchCriteria}/>
-                { !isLoading &&
+
+                { isLoading ? <Preloader/>:
                      <MoviesCardList
                         getSearchCriteria={getSearchCriteria}
                         searchCriteria={getSearchCriteria()}

@@ -2,14 +2,14 @@ import React, {lazy, Suspense, useEffect, useState,} from "react";
 import '../../MoviesPage/Card/Card.css';
 import './MoviesCardList.css'
 import '../Card/MovieCard';
-//import MovieCard from "../Card/MovieCard";
+import MovieCard from "../Card/MovieCard";
 import Preloader from "../../Preloader";
 import getExpandWidth from "../../MoviesPage/MoviesCardList/currentWindowWidth";
 import ResultMainMore from "../ResultMainMore/ResultMainMore";
 import {FILM_DURATION} from '../../../utils/constants';
 
 
-const MovieCard = lazy(() => (import('../Card/MovieCard')), 500);
+// const MovieCard = lazy(() => (import('../Card/MovieCard')), 500);
 
 //const ResultMainMore = lazy(() =>import('../Card/MovieCard'));
 
@@ -99,10 +99,8 @@ function MoviesCardList(props) {
         <>
             <section className="moviesCard_list">
 
-                <Suspense fallback={<Preloader/>}>
-
                     {cards.length > 0 ? (
-                    cards &&
+                        cards &&
                         cards.map((card) => (
                             <MovieCard
                                 key={card.id}
@@ -111,16 +109,17 @@ function MoviesCardList(props) {
                                 duration={card.duration}
                                 info={info}
                             />)
-                          )
-                           ): ( <div className="setinfo__error">{info} </div>)
+                        )
+                    ) : (<div className="setinfo__error">{info}</div>)
                     }
-                </Suspense>
+
             </section>
-            {showMore && <ResultMainMore handleMoreClick={handleMoreClick}/>}
+            {showMore === 0 ? (
+                    (showMore && <ResultMainMore handleMoreClick={handleMoreClick}/>))
+                : (" ")}
         </>
     )
 }
-
 export default MoviesCardList;
 
 

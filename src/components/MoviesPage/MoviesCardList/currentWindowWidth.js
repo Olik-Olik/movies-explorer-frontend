@@ -4,7 +4,8 @@ function getWindowWidth() {
     const {innerWidth: width} = window;
     return width;
 }
-//let  changeWithSetTimeOut = setTimeout(() => getWindowWidth(window.innerWidth), 1000);
+
+
     export default function getExpandWidth() {
         const width = getWindowWidth();
         const ewKeys = Object.keys(widthExpandMap).reverse();

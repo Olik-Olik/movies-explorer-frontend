@@ -7,6 +7,8 @@ import apiMovies from "./../../utils/MoviesApi";
 import Footer from "../Footer";
 import apiAuth from "../../utils/MainApi";
 import {urlAllFilm} from "../../utils/constants";
+import Preloader from "../Preloader";
+import  { Suspense } from "react";
 
 function MoviesPages(props) {
     const [isLoading, setLoading] = useState(true);
@@ -16,8 +18,7 @@ function MoviesPages(props) {
         keyWord: '',
         shortMeter: false});
 
-    /*отображение всех карт*/
-    useEffect(() => {
+    function getMovies(){
         apiMovies.getAllAboutMovies()
             .then((cards) => {
                 console.log('Киношки загрузились корректно!');
@@ -33,8 +34,11 @@ function MoviesPages(props) {
                         setLoadedCards(cards);
                         setLoading(false);
                     } )
-            })
-            .catch((err) => console.log('Киношки не загрузились!: ' + err.toString()))
+            }).catch((err) => console.log('Киношки не загрузились!: ' + err.toString()))
+    }
+    /*отображение всех карт*/
+    useEffect(() => {
+        setTimeout(getMovies,500);
     }, []);
 
     /*useEffect(() => {
@@ -61,12 +65,15 @@ function MoviesPages(props) {
         <>
             <HeaderSavedFilms />
             <main>
+
                 <ResultMainSearch setSearchCriteria={setSearchCriteria}/>
-                {!isLoading && <MoviesCardList
+          {/*      <Suspense fallback={<Preloader/>}>*/}
+                {isLoading ? <Preloader/> : <MoviesCardList
                     getSearchCriteria={getSearchCriteria}
                     searchCriteria={getSearchCriteria()}
                     loadedCards={loadedCards} /*все карты извне*/
                 />}
+        {/*        </Suspense>*/}
             </main>
             <Footer/>
         </>
