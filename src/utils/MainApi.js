@@ -1,3 +1,5 @@
+import { BASE_URL} from "./constants";
+
 class MainApi {
       constructor(arr) {
           this._address = arr.address;
@@ -18,6 +20,7 @@ class MainApi {
           }
       }
 
+
       checkToken = () => {
           this.handleToken();
           console.log(this._headers);
@@ -29,7 +32,7 @@ class MainApi {
               .then((response) => this._handleResponse(response));
       }
 
-      submitProfile = (name, email) => {
+      submitProfile = (name, email/*, password*/) => {
           this.handleToken();
           return fetch(`${this._address}/users/me`, {
               method: 'PATCH',
@@ -37,10 +40,13 @@ class MainApi {
               body: JSON.stringify({
                   'name': name,
                   'email': email,
+                  /*password: password,*/
               })
           })
               .then((response) => this._handleResponse(response));
       }
+
+
 
       register = (name, email, password) => {
           return fetch(`${this._address}/signup`,
@@ -55,6 +61,7 @@ class MainApi {
               })
               .then((response) => this._handleResponse(response));
       }
+
 
       login = (email, password) => {
           return fetch(`${this._address}/signin`, {
@@ -77,6 +84,7 @@ class MainApi {
               })
               .then((response) => this._handleResponse(response))
       }
+
 
       /*GET MOVIES*/
       getSaveMovies = () => {
@@ -120,7 +128,7 @@ class MainApi {
   }
    const apiAuth = new MainApi({
         address: BASE_URL,
-      /*  address: "http://localhost:3627/api",*/
+    /*    address: "http://localhost:3627/api",*/
         headers: {'Content-Type': 'application/json'}
     });
 
