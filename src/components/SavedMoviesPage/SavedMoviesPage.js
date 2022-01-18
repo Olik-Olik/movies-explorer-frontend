@@ -65,20 +65,14 @@ function SavedMoviesPages(props) {
             <HeaderSavedFilms handleSignOut={props.handleSignOut}/>
             <main>
                 <ResultMainSearch setSearchCriteria={setSearchCriteria}/>
-
-  {/*            <Checkbox
-                    handleCheckbox={props.handleCheckbox}
-                    shortMeter={props.shortMeter}/>*/}
-
-                { !isLoading ?
+                { !isLoading &&
                      <MoviesCardList
                         getSearchCriteria={getSearchCriteria}
                         searchCriteria={getSearchCriteria()}
                         loadedCards={loadedCards}
                          handleDelete={props.handleDelete}
                     />
-                     : (
-                    <div className = "info">Вы ничего не сохранили</div>)}
+                 }
 
             </main>
             <Footer/>

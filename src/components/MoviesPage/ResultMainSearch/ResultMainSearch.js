@@ -66,7 +66,6 @@ function ResultMainSearch(props) {
                             <div className="result_main_search_icon_smalltube decktop ">
                                 <Checkbox handleCheckbox={handleCheckbox}
                                           shortMeter={shortMeter}
-                                         /* onClick={handleSubmit}*/
                                 />
                             </div>
                             <div className="result_main_search_icon_shortfilm decktop ">Короткометражки</div>
