@@ -90,7 +90,7 @@ function Register(props) {
                     <label className="label__input profile-name"> Имя
                     </label>
 
-                    <div name="form__input_name">
+                    <div className="form__input_name">
                         <input type='text'
                                className="profile__input-name auth__form-login-input-email"
                                name="name"
