@@ -33,8 +33,10 @@ function ProfileSummaryPage(props) {
     function handleSignOut() {
         console.log("logout");
         localStorage.removeItem('movies')
-        localStorage.removeItem("token");
         localStorage.removeItem("jwt");
+        localStorage.removeItem("token");
+        localStorage.removeItem("password");
+        localStorage.clear();
     }
 
     function onUpdateName(evt) {
@@ -74,7 +76,6 @@ function ProfileSummaryPage(props) {
                          onClick={handleSubmitProfile}
                     >Редактировать
                 </button>
-                {/*     <a href="/" className="result__edit-nondecoration">*/}
                 <button onClick={handleSignOut} className="result__exit ">
                     Выйти из аккаунта
                 </button>

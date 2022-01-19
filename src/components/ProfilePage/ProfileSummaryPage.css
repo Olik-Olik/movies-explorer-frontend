@@ -229,7 +229,8 @@
     }
 
     .result__edit {
-        padding-top: 349px;
+        margin-top: 340px;
+        padding-top: 319px;
         padding-bottom: 16px;
     }
 
@@ -251,7 +252,8 @@
 
     .result__edit {
         max-width: 250px;
-        padding-top: 379px;
+        padding-top: 19px;
+        margin-top:350px;
     }
 
     .result__edit:disabled{

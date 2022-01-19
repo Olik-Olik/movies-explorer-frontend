@@ -2,7 +2,8 @@ import './ResultMainSearch.css';
 import '../../../index.css';
 import Checkbox from "../../Checkbox/Checkbox";
 import React, {useState} from "react";
-import  '../../../components/SignUpPage/Register.css';
+import '../../../components/SignUpPage/Register.css';
+
 function ResultMainSearch(props) {
 
     const [keyWord, setKeyWord] = useState('');
@@ -18,7 +19,8 @@ function ResultMainSearch(props) {
     function handleCheckbox(evt) {
         console.log('ShortFilm handleCheckbox: ' + evt.target.checked);
         setShortMeter(evt.target.checked);
-      /*чекбокс короткометражки*/  props.setSearchCriteria(keyWord, evt.target.checked );
+        /*чекбокс короткометражки*/
+        props.setSearchCriteria(keyWord, evt.target.checked);
     }
 
     function handleSubmit(evt) {
@@ -31,7 +33,8 @@ function ResultMainSearch(props) {
 
         <form className="result_main_search" /*onSubmit={handleSubmit}*/>
 
-            <div className="setinfo__error">{props.info}</div> {/**/}
+            <div className="setinfo__error">{props.info}</div>
+            {/**/}
 
             <div className="result_main_search__conteiner">
                 <div className="lupa-film">
@@ -46,11 +49,9 @@ function ResultMainSearch(props) {
                                placeholder='Кино'
                                className="result_main_search_icon_film"
                                required
-
                         />
-
-                        <div className="setinfo__error">{info}</div> {/**/}
-
+                        <div className="setinfo__error">{info}</div>
+                        {/**/}
                     </div>
                 </div>
                 <div className="correct">
@@ -76,7 +77,7 @@ function ResultMainSearch(props) {
             <div className="icon-shortfilm mobile">
                 <div className="result_main_search_icon_smalltube mobile">
                     <Checkbox handleCheckbox={handleCheckbox}
-                              shortMeter={shortMeter} />
+                              shortMeter={shortMeter}/>
                 </div>
                 <div className="result_main_search_icon_shortfilm mobile">Короткометражки</div>
             </div>

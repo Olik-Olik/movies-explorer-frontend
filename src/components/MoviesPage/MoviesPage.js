@@ -18,6 +18,12 @@ function MoviesPages(props) {
         keyWord: '',
         shortMeter: false});
 
+    if (localStorage.getItem('keyWord') > 0 ) {
+
+        let key =  localStorage.getItem('keyWord',JSON.stringify(props.key));
+
+    }
+
     function getMovies(){
         apiMovies.getAllAboutMovies()
             .then((cards) => {
@@ -56,6 +62,8 @@ function MoviesPages(props) {
                     shortMeter: shortMeter})
     }
 
+
+
     function getSearchCriteria(){
         console.log(searchCriteriaData);
         return searchCriteriaData;
@@ -67,13 +75,11 @@ function MoviesPages(props) {
             <main>
 
                 <ResultMainSearch setSearchCriteria={setSearchCriteria}/>
-          {/*      <Suspense fallback={<Preloader/>}>*/}
-                {isLoading ? <Preloader/> : <MoviesCardList
+                    {isLoading ? <Preloader/> : <MoviesCardList
                     getSearchCriteria={getSearchCriteria}
                     searchCriteria={getSearchCriteria()}
                     loadedCards={loadedCards} /*все карты извне*/
                 />}
-        {/*        </Suspense>*/}
             </main>
             <Footer/>
         </>

@@ -26,6 +26,8 @@ function SavedMoviesPages(props) {
         shortMeter: false
     });
 
+
+
     function setSearchCriteria(keyWord, shortMeter) {
         console.log('setSearchCriteria SMP');
         setSearchCriteriaData(

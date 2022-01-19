@@ -20,7 +20,12 @@ function MoviesCardList(props) {
     const [shownAmount, setShownAmount] = useState(0);
     const [showMore, setShowMore] = useState(true);
     const [info, setInfo] = useState('');
+
+    /*для хранения в локалстораге*/
     const [searchedMovies, setSearchedMovies] = useState('');
+    const [inputKey, setInputKey] = useState('');
+    const [inputShortMeter, setInputShortMeter] = useState(false);
+
 
     function getShowAmount() {
         const expandWidth = getExpandWidth();
@@ -68,6 +73,10 @@ function MoviesCardList(props) {
         let searchResult = [];
         let keyWord = props.searchCriteria.keyWord;
         let key = keyWord.toLowerCase();
+     /*2222*/
+        let allCards = localStorage.getItem('allCards');
+/*если он искал уже фильмы => */
+
         if (props.searchCriteria.doSearch) {
             console.log('Key: ' + key + ":" + key.length);
             props.loadedCards.forEach(function (value) {
@@ -83,17 +92,43 @@ function MoviesCardList(props) {
                     searchResult.push(value);
 
                 }
-            });
-            setAllCards(searchResult);
+            }
+            );
+            setAllCards(searchResult); /*найденные*/
+ /*222*/    localStorage.setItem('searchedMovies',JSON.stringify(searchResult));
+            localStorage.setItem('keyWord',JSON.stringify(key));
+            localStorage.setItem('shortMeter',JSON.stringify(box));
+
             setShownAmount(0);
             _showLimitedCards();
         } else {
-            setAllCards(props.loadedCards);
+        /*222*/  setAllCards(props.loadedCards);/* max набор*/
             setShownAmount(0);
             _showLimitedCards();
             setInfo('Ничего не найдено. Введите другое значение.');
         }
     }, [props.searchCriteria, props.searchCriteria.doSearch, props.keyWord, props.shortMeter])
+
+    /*useEffect(() =>{
+        localStorage.getItem('key').length > 0
+       setInputKey(JSON.parse(localStorage.getItem('key')))
+   },[])
+*/
+    useEffect(() =>{
+       const storageKey = localStorage.getItem('key')
+        if (storageKey === true)
+        setInputKey(JSON.parse(localStorage.getItem('key')))
+        setInputShortMeter(JSON.parse(localStorage.getItem('box')))
+        console.log("InputShortMeter", inputShortMeter)
+        console.log( "ShortMeter" , props.shortMeter)
+    },[])
+
+    /*useEffect(() =>{
+        const storageShortMeter = localStorage.getItem('box')
+        if (storageShortMeter === true)
+            setInputShortMeter(JSON.parse(localStorage.getItem('box')))
+    },[])
+*/
 
     return (
         <>

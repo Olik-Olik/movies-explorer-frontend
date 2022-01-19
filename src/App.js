@@ -54,7 +54,6 @@ export default function App(props) {
                     setLoggedIn(false);
                     setIsLoading(false);
                     setEmail('');
-
                     localStorage.removeItem("token");
                     localStorage.removeItem(currentUser);
 
@@ -157,6 +156,8 @@ export default function App(props) {
         localStorage.removeItem('movies')
         localStorage.removeItem("jwt");
         localStorage.removeItem("token");
+        localStorage.removeItem("password");
+        localStorage.clear();
         setIsEditProfilePopupOpen(false);
         setIsRegResOpen(false);
     }
