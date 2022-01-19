@@ -98,8 +98,7 @@ function MoviesCardList(props) {
     return (
         <>
             <section className="moviesCard_list">
-
-                    {cards.length > 0 ? (
+                    {cards.length >= 0 ? (
                         cards &&
                         cards.map((card) => (
                             <MovieCard
@@ -114,9 +113,9 @@ function MoviesCardList(props) {
                     }
 
             </section>
-            {showMore === 0 ? (
-                    (showMore && <ResultMainMore handleMoreClick={handleMoreClick}/>))
-                : (" ")}
+
+            {showMore && <ResultMainMore handleMoreClick={handleMoreClick}/>}
+
         </>
     )
 }
