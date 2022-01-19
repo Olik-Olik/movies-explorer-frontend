@@ -21,10 +21,10 @@ function MoviesCardList(props) {
     const [showMore, setShowMore] = useState(true);
     const [info, setInfo] = useState('');
 
-    /*для хранения в локалстораге*/
+/*    /!*для хранения в локалстораге*!/
     const [searchedMovies, setSearchedMovies] = useState('');
     const [inputKey, setInputKey] = useState('');
-    const [inputShortMeter, setInputShortMeter] = useState(false);
+    const [inputShortMeter, setInputShortMeter] = useState(false);*/
 
 
     function getShowAmount() {
@@ -109,26 +109,7 @@ function MoviesCardList(props) {
         }
     }, [props.searchCriteria, props.searchCriteria.doSearch, props.keyWord, props.shortMeter])
 
-    /*useEffect(() =>{
-        localStorage.getItem('key').length > 0
-       setInputKey(JSON.parse(localStorage.getItem('key')))
-   },[])
-*/
-    useEffect(() =>{
-       const storageKey = localStorage.getItem('key')
-        if (storageKey === true)
-        setInputKey(JSON.parse(localStorage.getItem('key')))
-        setInputShortMeter(JSON.parse(localStorage.getItem('box')))
-        console.log("InputShortMeter", inputShortMeter)
-        console.log( "ShortMeter" , props.shortMeter)
-    },[])
 
-    /*useEffect(() =>{
-        const storageShortMeter = localStorage.getItem('box')
-        if (storageShortMeter === true)
-            setInputShortMeter(JSON.parse(localStorage.getItem('box')))
-    },[])
-*/
 
     return (
         <>

@@ -1,7 +1,7 @@
 import './ResultMainSearch.css';
 import '../../../index.css';
 import Checkbox from "../../Checkbox/Checkbox";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import '../../../components/SignUpPage/Register.css';
 
 function ResultMainSearch(props) {
@@ -9,6 +9,11 @@ function ResultMainSearch(props) {
     const [keyWord, setKeyWord] = useState('');
     const [shortMeter, setShortMeter] = useState(false); /*true*/
     const [info, setInfo] = useState('');
+
+    /*для хранения в локалстораге*/
+    const [searchedMovies, setSearchedMovies] = useState('');
+    const [inputKey, setInputKey] = useState('');
+    const [inputShortMeter, setInputShortMeter] = useState(false);
 
     function handleSearchField(evt) {
         evt.preventDefault();
@@ -28,6 +33,28 @@ function ResultMainSearch(props) {
         console.log('handleSubmit');
         props.setSearchCriteria(keyWord, shortMeter);
     }
+
+    /*useEffect(() =>{
+       localStorage.getItem('key').length > 0
+      setInputKey(JSON.parse(localStorage.getItem('key')))
+  },[])
+*/
+    useEffect(() =>{
+        const storageKey = localStorage.getItem('key')
+        if (storageKey === true)
+            setInputKey(JSON.parse(localStorage.getItem('key')))
+            setInputShortMeter(JSON.parse(localStorage.getItem('box')))
+
+        console.log("InputShortMeter", inputShortMeter)
+        console.log( "ShortMeter" , props.shortMeter)
+    },[])
+
+    /*useEffect(() =>{
+        const storageShortMeter = localStorage.getItem('box')
+        if (storageShortMeter === true)
+            setInputShortMeter(JSON.parse(localStorage.getItem('box')))
+    },[])
+*/
 
     return (
 
@@ -67,6 +94,7 @@ function ResultMainSearch(props) {
                             <div className="result_main_search_icon_smalltube decktop ">
                                 <Checkbox handleCheckbox={handleCheckbox}
                                           shortMeter={shortMeter}
+                                          checked={inputShortMeter}
                                 />
                             </div>
                             <div className="result_main_search_icon_shortfilm decktop ">Короткометражки</div>
@@ -77,7 +105,9 @@ function ResultMainSearch(props) {
             <div className="icon-shortfilm mobile">
                 <div className="result_main_search_icon_smalltube mobile">
                     <Checkbox handleCheckbox={handleCheckbox}
-                              shortMeter={shortMeter}/>
+                              shortMeter={shortMeter}
+
+                    />
                 </div>
                 <div className="result_main_search_icon_shortfilm mobile">Короткометражки</div>
             </div>
