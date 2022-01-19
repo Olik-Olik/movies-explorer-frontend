@@ -39,7 +39,9 @@ function Login(props) {
         props.handleLogin(email, password)
             .then((response) => {
                     console.log('Сабмит логин ');
+/*
                     currentUserContext = true;
+*/
                     history.push({
                         pathname: '/movies',
                         state: {

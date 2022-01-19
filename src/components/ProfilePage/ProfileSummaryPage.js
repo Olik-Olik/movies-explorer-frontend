@@ -4,13 +4,14 @@ import '../Profile.css';
 import '../SignUpPage/SignUpHeader.css';
 import '../Header.css';
 import '../Footer.css';
-
+import { CurrentUserContext } from "../../utils/context/CurrentUserContext";
 import '../../index.css';
 import apiAuth from "../../utils/MainApi";
 
 function ProfileSummaryPage(props) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const { currentUser } = React.useContext(CurrentUserContext);
 
     useEffect(() => {
         apiAuth.checkToken().then((res) => {
@@ -18,6 +19,8 @@ function ProfileSummaryPage(props) {
             setEmail(res.email)
         })
     }, []);
+
+    console.log("currentUser", currentUser)
 
     function handleSubmitProfile(evt) {
         evt.preventDefault();
@@ -31,6 +34,7 @@ function ProfileSummaryPage(props) {
         console.log("logout");
         localStorage.removeItem('movies')
         localStorage.removeItem("token");
+        localStorage.removeItem("jwt");
     }
 
     function onUpdateName(evt) {
@@ -65,11 +69,10 @@ function ProfileSummaryPage(props) {
                                maxLength="30" minLength="2"/></div>
 
                 </div>
-                <button className="result__edit-nondecoration">
-                    <div className="result__edit"
+                <span>{props.info}</span>
+                <button className="result__edit-nondecoration result__edit" disabled={currentUser.name === name && currentUser.email === email}
                          onClick={handleSubmitProfile}
                     >Редактировать
-                    </div>
                 </button>
                 {/*     <a href="/" className="result__edit-nondecoration">*/}
                 <button onClick={handleSignOut} className="result__exit ">

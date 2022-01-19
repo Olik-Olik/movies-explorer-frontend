@@ -1,5 +1,5 @@
-import  {useEffect, useState} from "react";
-import {BrowserRouter, Redirect, Route, Switch,} from 'react-router-dom';
+import {useEffect, useState} from "react";
+import {BrowserRouter, Route, Switch,} from 'react-router-dom';
 import './index.css';
 import AboutPage from "./components/AboutPage/AboutPage";
 import AboutPageAuth from "./components/AboutPage/AboutPageAuth";
@@ -24,11 +24,17 @@ export default function App(props) {
 
     const [info, setInfo] = useState('');
     const [isRegResOpen, setIsRegResOpen] = useState(false);
+    const [active, setActive] = useState(false); /*Эта тема про активность формы*/
+
+    const contextValue = {currentUser, setCurrentUser}
 
     const checkToken = () => {
-        setTimeout(()=> {
-            setLoggedIn(true);
-            setIsLoading(false);},3000);
+        setTimeout(() => {
+            /*
+                        setLoggedIn(true);
+            */
+            setIsLoading(false);
+        }, 3000);
     }
 
     function hukUseEffectToken() {
@@ -39,7 +45,7 @@ export default function App(props) {
                 .then((res) => {
                     console.log('Ответ есть!');
                     setLoggedIn(true);
-                    setCurrentUser(currentUser);
+                    setCurrentUser(res);
                     setEmail(res.email);
                     setIsLoading(false);
                 })
@@ -87,27 +93,31 @@ export default function App(props) {
 
             })
             .catch((err) => {
-                if (err.status === 401 ){setInfo('указанные имя пользователя и пароль не верны')}
-                else
-                {setInfo('Не залогинились !');}
+                if (err.status === 401) {
+                    setInfo('указанные имя пользователя и пароль не верны')
+                } else {
+                    setInfo('Не залогинились !');
+                }
                 console.log('Не залогинились :( ' + err.toString());
                 setLoggedIn(false);
             })
     }
+
+    console.log("LoggedIn", loggedIn)
 
     function handleRegister(name, email, password) {
         return apiAuth
             .register(name, email, password)
             .then(() => {
 
-                setInfoSuccess(true);
-                setIsRegResOpen(true);
-                console.log("зарегались");
-                setInfo('Зарегистрировались, Класс');
-                console.log(email + password);
-                //handleLogin(email, password);
+                    setInfoSuccess(true);
+                    setIsRegResOpen(true);
+                    console.log("зарегались");
+                    setInfo('Зарегистрировались, Класс');
+                    console.log(email + password);
+                    //handleLogin(email, password);
 
-            }
+                }
             )
             .catch((err) => {
                     console.log('Не зарегистрировались :( ' + err.toString());
@@ -124,7 +134,10 @@ export default function App(props) {
         apiAuth.submitProfile(userData.name, userData.email/*, userData.password*/)
             .then(data => {
                 setCurrentUser(data);
-                setInfo('получилось изменить данные, Класс')
+                setInfo('Получилось изменить данные')
+                setTimeout(() => {
+                    setInfo('')
+                }, 3000)
             })
             .catch((err) => {
                 setInfo('Не получилось изменить данные')
@@ -142,6 +155,7 @@ export default function App(props) {
     function handleSignOut() {
         console.log("logout");
         localStorage.removeItem('movies')
+        localStorage.removeItem("jwt");
         localStorage.removeItem("token");
         setIsEditProfilePopupOpen(false);
         setIsRegResOpen(false);
@@ -150,15 +164,18 @@ export default function App(props) {
     return (
         <>
             <BrowserRouter /*history={history}*/>
-                <CurrentUserContext.Provider value={currentUser}>
+                <CurrentUserContext.Provider value={contextValue}>
 
                     {!isLoading &&
                         <Switch>
 
-                            <Route exact={true} path="/"
-                                   component={AboutPage}/>
+                            <Route exact={true}
+                                   path="/"
+                                   component={loggedIn ? AboutPageAuth : AboutPage}/>
 
-                            <ProtectedRoute
+                            {/*  {loggedIn ? <AboutPage> : <AboutPageAuth>}*/}
+
+                             <ProtectedRoute
                                 exact={true}
                                 path="/auth"
                                 component={AboutPageAuth}
@@ -166,21 +183,20 @@ export default function App(props) {
 
                             <Route exact={true}
                                    path="/sign-in"
-                                   component={() => (<SignInPage handleLogin={handleLogin}
-                                   info={info}/>)}
-                            />
+                                   component={() => (!loggedIn ? <SignInPage
+                                           handleLogin={handleLogin}
+                                           info={info}/>
+                                            : <MoviesPage/>)}
+                                             />
+
 
                             <Route exact={true}
                                    path="/sign-up"
-                                   component={() => (
-                                       <SignUpPage handleRegister={handleRegister}
-                                                   handleLogin={handleLogin}
-                                 /*         const [infoSuccessMovie, setInfoSuccessMovie] = setInfoSuccessMovie({redirect: true});
-                                       if(infoSuccessMovie.redirect){ return <Redirect push= to "/movies"/>}*/
-
-
-                                   info={info}/>)}
-                            />
+                                   component={() => (!loggedIn ? <SignUpPage handleRegister={handleRegister}
+                                                                             handleLogin={handleLogin}
+                                                                             info={info}/>
+                                                                            : <MoviesPage/>)}
+                                                                            />
 
                             <ProtectedRoute
                                 exact={true}

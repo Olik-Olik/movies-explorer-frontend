@@ -254,6 +254,10 @@
         padding-top: 379px;
     }
 
+    .result__edit:disabled{
+        opacity: .5;
+    }
+
     .result__exit {
         max-width: 250px;
         background-color: #202020;

@@ -5,4 +5,4 @@ export default CurrentUserContext;
 */
 
 
-export const CurrentUserContext = createContext(false);
+export const CurrentUserContext = createContext();
