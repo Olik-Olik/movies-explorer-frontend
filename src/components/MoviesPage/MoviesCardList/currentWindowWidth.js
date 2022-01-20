@@ -11,7 +11,7 @@ function getWindowWidth() {
         const ewKeys = Object.keys(widthExpandMap).reverse();
         for (const key of ewKeys) {
             if (width >= key) {
-                console.log('ret: ' + widthExpandMap[key].initialAmount);
+             //   console.log('ret: ' + widthExpandMap[key].initialAmount);
                 return widthExpandMap[key];
             }
         }

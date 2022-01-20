@@ -1,9 +1,8 @@
-import React, {lazy, Suspense, useEffect, useState,} from "react";
+import React, {useEffect, useState,} from "react";
 import '../../MoviesPage/Card/Card.css';
 import './MoviesCardList.css'
 import '../Card/MovieCard';
 import MovieCard from "../Card/MovieCard";
-import Preloader from "../../Preloader";
 import getExpandWidth from "../../MoviesPage/MoviesCardList/currentWindowWidth";
 import ResultMainMore from "../ResultMainMore/ResultMainMore";
 import {FILM_DURATION} from '../../../utils/constants';
@@ -21,15 +20,16 @@ function MoviesCardList(props) {
     const [showMore, setShowMore] = useState(true);
     const [info, setInfo] = useState('');
 
-/*    /!*для хранения в локалстораге*!/
+    /*  /!* для хранения в localStorage *!/*/
+
     const [searchedMovies, setSearchedMovies] = useState('');
     const [inputKey, setInputKey] = useState('');
-    const [inputShortMeter, setInputShortMeter] = useState(false);*/
+    const [inputShortMeter, setInputShortMeter] = useState(false);
 
 
     function getShowAmount() {
         const expandWidth = getExpandWidth();
-        console.log('EW: ' + expandWidth.toString());
+        //  console.log('EW: ' + expandWidth.toString());
         if (shownAmount === 0) {
             console.log('ret 0:' + expandWidth.initialAmount)
             return expandWidth.initialAmount;
@@ -67,44 +67,45 @@ function MoviesCardList(props) {
 
 
     useEffect(() => {
-        console.log("Effect of search chenge!");
+        console.log("Effect of search change!");
         let box = props.searchCriteria.shortMeter;
         let searchResult = [];
         let keyWord = props.searchCriteria.keyWord;
         let key = keyWord.toLowerCase();
-     /*2222*/
-        let allCards = localStorage.getItem('allCards');
-/*если он искал уже фильмы => */
 
         if (props.searchCriteria.doSearch) {
             console.log('Key: ' + key + ":" + key.length);
             props.loadedCards.forEach(function (value) {
-                let nameRU = value.nameRU.toLowerCase();
-                let hasKeyWord = nameRU.includes(key);
-                let isShortMeter = value.duration <= FILM_DURATION;
+                    let nameRU = value.nameRU.toLowerCase();
+                    let hasKeyWord = nameRU.includes(key);
+                    let isShortMeter = value.duration <= FILM_DURATION;
 
-                if (((key.length > 0 && hasKeyWord === true) && (box === true && isShortMeter === true))
-                    || (box === false && (key.length > 0 && hasKeyWord === true))
-                    || (key.length <= 0 && box === true && isShortMeter === true)
-                    || (box === false && key.length <= 0)
-                ) {
-                    searchResult.push(value);
-
+                    if (((key.length > 0 && hasKeyWord === true) && (box === true && isShortMeter === true))
+                        || (box === false && (key.length > 0 && hasKeyWord === true))
+                        || (key.length <= 0 && box === true && isShortMeter === true)
+                        || (box === false && key.length <= 0)
+                    ) {
+                        searchResult.push(value);
+                    }
                 }
-      /*1111*/   /*     if (key.length <= 0) { setInfo('Ничего не найдено')}
-             else if ( keyWord === false) { setInfo('Введите слово для поиска ')}*/
-
-            }
             );
             setAllCards(searchResult); /*найденные*/
- /*222*/    localStorage.setItem('searchedMovies',JSON.stringify(searchResult));
-            localStorage.setItem('keyWord',JSON.stringify(key));
-            localStorage.setItem('shortMeter',JSON.stringify(box));
+
+            localStorage.setItem('searchedMovies', JSON.stringify(searchResult));
+            localStorage.setItem('keyWord', JSON.stringify((key)));
+            localStorage.setItem('shortMeter', (box));
 
             setShownAmount(0);
             _showLimitedCards();
         } else {
-  /*222*/   setAllCards(props.loadedCards);/* max набор*/
+
+            const getStorageKeyWord = localStorage.getItem('keyWord')
+            if (getStorageKeyWord.length !== 0) {
+                setAllCards(JSON.parse(localStorage.getItem('searchedMovies')))
+            }else{
+                setAllCards(props.loadedCards);/* max набор*/
+            }
+
             setShownAmount(0);
             _showLimitedCards();
             setInfo('Ничего не найдено. Введите другое значение.');
@@ -112,24 +113,23 @@ function MoviesCardList(props) {
     }, [props.searchCriteria, props.searchCriteria.doSearch, props.keyWord, props.shortMeter])
 
 
-
     return (
         <>
             <section className="moviesCard_list">
 
-                    {cards.length > 0 ? (
-                        cards &&
-                        cards.map((card) => (
-                            <MovieCard
-                                key={card.id}
-                                cardData={card}
-                                name={card.name}
-                                duration={card.duration}
-                                info={info}
-                            />)
-                        )
-                    ) : (<div className="setinfo__error">{info}</div>)
-                    }
+                {cards.length > 0 ? (
+                    cards &&
+                    cards.map((card) => (
+                        <MovieCard
+                            key={card.id}
+                            cardData={card}
+                            name={card.name}
+                            duration={card.duration}
+                            info={info}
+                        />)
+                    )
+                ) : (<div className="setinfo__error">{info}</div>)
+                }
 
             </section>
 
@@ -138,6 +138,5 @@ function MoviesCardList(props) {
         </>
     )
 }
+
 export default MoviesCardList;
-
-

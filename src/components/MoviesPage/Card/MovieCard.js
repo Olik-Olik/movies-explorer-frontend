@@ -41,8 +41,8 @@ function MovieCard(props) {
             .then((vv) => {
                     props.cardData.isLiked = false;
                     setLikeMe(props.cardData.isLiked)
-                    console.log(vv);
-                    console.log("Удаление завершено");
+                  //  console.log(vv);
+                  //  console.log("Удаление завершено");
                     setLoading(false);/**//**/
                     window.location.reload();
                 }
@@ -92,14 +92,13 @@ function MovieCard(props) {
         if (props.cardData.isLiked) {
             console.log(props.cardData.isLiked);
             likeClass += 'card__container_like';
-           /* window.location.reload();*/
             likeOnClick = handleDelete;
 
         }
         else {
             likeClass += 'card__container_like_passive';
             likeOnClick = handleSave;
-            console.log('red in grey ')
+
         }
     }
 

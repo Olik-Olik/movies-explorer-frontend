@@ -49,16 +49,15 @@ function SavedMoviesPages(props) {
                     card.imageURL = card.thumbnail;
                     card.isLiked = true;
                 });
-                setLoadedCards(savedMovies);/**//**/
-                setLoading(false);/**//**/
+                setLoadedCards(savedMovies);
+                setLoading(false);
             })
             .catch((err) => console.log('Лайканые киношки не загрузились!: ' + err.toString()))
     }, []);
 
 
     useEffect(() => {
-        console.log('Effect searchCriteriaData: ' + searchCriteriaData.toString());
-        setLoadedCards(loadedCards);/**//**/
+        setLoadedCards(loadedCards);
     }, [searchCriteriaData])
 
     return (
@@ -69,8 +68,8 @@ function SavedMoviesPages(props) {
 
                 { isLoading ? <Preloader/>:
                      <MoviesCardList
-                        getSearchCriteria={getSearchCriteria}
-                        searchCriteria={getSearchCriteria()}
+                      getSearchCriteria={getSearchCriteria}
+                      searchCriteria={getSearchCriteria()}
                         loadedCards={loadedCards}
                          handleDelete={props.handleDelete}
                          info={props.info}

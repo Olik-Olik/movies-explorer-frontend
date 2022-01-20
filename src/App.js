@@ -157,9 +157,14 @@ export default function App(props) {
         localStorage.removeItem("jwt");
         localStorage.removeItem("token");
         localStorage.removeItem("password");
+        localStorage.removeItem('searchedMovies');
+        localStorage.removeItem('keyWord');
+        localStorage.removeItem('shortMeter');
         localStorage.clear();
         setIsEditProfilePopupOpen(false);
         setIsRegResOpen(false);
+
+
     }
 
     return (

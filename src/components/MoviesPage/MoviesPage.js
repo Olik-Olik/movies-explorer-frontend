@@ -18,7 +18,6 @@ function MoviesPages(props) {
         keyWord: '',
         shortMeter: false});
 
-
     function getMovies(){
         apiMovies.getAllAboutMovies()
             .then((cards) => {
@@ -44,26 +43,30 @@ function MoviesPages(props) {
 
 
     function setSearchCriteria(keyWord, shortMeter){
-        console.log('keyWord, shortMeter');
+        console.log('keyWord' ,keyWord,  'shortMeter',shortMeter );
         setSearchCriteriaData(
             { doSearch: true,
                     keyWord: keyWord,
                     shortMeter: shortMeter})
     }
 
-
-
     function getSearchCriteria(){
-        console.log(searchCriteriaData);
+        console.log("getsearchCriteria",searchCriteriaData);
         return searchCriteriaData;
     }
+
+
 
     return (
         <>
             <HeaderSavedFilms />
             <main>
 
-                <ResultMainSearch setSearchCriteria={setSearchCriteria}/>
+                <ResultMainSearch
+
+                    setSearchCriteria={setSearchCriteria}/>
+
+
           {/*      <Suspense fallback={<Preloader/>}>*/}
                 {isLoading ? <Preloader/> : <MoviesCardList
                     getSearchCriteria={getSearchCriteria}

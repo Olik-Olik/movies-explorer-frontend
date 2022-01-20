@@ -32,33 +32,24 @@ function ResultMainSearch(props) {
         evt.preventDefault();
         console.log('handleSubmit');
         props.setSearchCriteria(keyWord, shortMeter);
+        console.log('keyWord', keyWord);
     }
 
-    /*useEffect(() =>{
-       localStorage.getItem('key').length > 0
-      setInputKey(JSON.parse(localStorage.getItem('key')))
-  },[])
-*/
-    useEffect(() =>{
-        const storageKey = localStorage.getItem('key')
-        if (storageKey === true)
-            setInputKey(JSON.parse(localStorage.getItem('key')))
-            setInputShortMeter(JSON.parse(localStorage.getItem('box')))
 
-        console.log("InputShortMeter", inputShortMeter)
-        console.log( "ShortMeter" , props.shortMeter)
-    },[])
+    useEffect(() => {
+        const getStorageKeyWord = localStorage.getItem('keyWord')
+        if (getStorageKeyWord.length !== 0) {
+            setKeyWord(JSON.parse(localStorage.getItem('keyWord')))
+            setShortMeter(JSON.parse(localStorage.getItem('shortMeter')))
 
-    /*useEffect(() =>{
-        const storageShortMeter = localStorage.getItem('box')
-        if (storageShortMeter === true)
-            setInputShortMeter(JSON.parse(localStorage.getItem('box')))
-    },[])
-*/
+            console.log("getStorageKeyWord", getStorageKeyWord)
+        }
+    }, [])
+
 
     return (
 
-        <form className="result_main_search" /*onSubmit={handleSubmit}*/>
+        <form className="result_main_search" >
 
             <div className="setinfo__error">{props.info}</div>
             {/**/}
@@ -94,7 +85,7 @@ function ResultMainSearch(props) {
                             <div className="result_main_search_icon_smalltube decktop ">
                                 <Checkbox handleCheckbox={handleCheckbox}
                                           shortMeter={shortMeter}
-                                     /*     checked={inputShortMeter}*/
+                                    /*     checked={inputShortMeter}*/
 
                                 />
                             </div>
@@ -107,7 +98,7 @@ function ResultMainSearch(props) {
                 <div className="result_main_search_icon_smalltube mobile">
                     <Checkbox handleCheckbox={handleCheckbox}
                               shortMeter={shortMeter}
-                         /*     checked={inputShortMeter}*/
+                        /*     checked={inputShortMeter}*/
 
                     />
                 </div>
