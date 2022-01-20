@@ -15,8 +15,6 @@ import  { Suspense } from "react";
 
 function SavedMoviesPages(props) {
 
- //   const urlAllFilm = 'https://api.nomoreparties.co';
-
     const [isLoading, setLoading] = useState(true);
     const [loadedCards, setLoadedCards] = useState([]);
 
@@ -25,7 +23,6 @@ function SavedMoviesPages(props) {
         keyWord: '',
         shortMeter: false
     });
-
 
 
     function setSearchCriteria(keyWord, shortMeter) {
@@ -76,6 +73,7 @@ function SavedMoviesPages(props) {
                         searchCriteria={getSearchCriteria()}
                         loadedCards={loadedCards}
                          handleDelete={props.handleDelete}
+                         info={props.info}
                     />
                  }
 

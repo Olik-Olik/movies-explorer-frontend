@@ -204,6 +204,7 @@ export default function App(props) {
                                 path="/movies"
                                 component={MoviesPage}
                                 loggedIn={loggedIn}
+                                info={info}
                             />
 
                             <ProtectedRoute

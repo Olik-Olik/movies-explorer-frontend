@@ -8,7 +8,8 @@ function Checkbox(props) {
             <input
                 type="checkbox"
                 onChange={props.handleCheckbox}
-               /* checked={props.shortMeter} /!**!/*/
+                checked={props.shortMeter} /**/
+         /*       onClick={props.handleSubmit}*/
             />
         </div>
     )

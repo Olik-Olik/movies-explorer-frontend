@@ -4,6 +4,10 @@
     background-color: #202020;
 }
 
+.nothing{
+    color: white;
+    size: 15px;
+}
 .result_main_search {
     box-sizing: border-box;
     width: 100%;

@@ -94,7 +94,8 @@ function ResultMainSearch(props) {
                             <div className="result_main_search_icon_smalltube decktop ">
                                 <Checkbox handleCheckbox={handleCheckbox}
                                           shortMeter={shortMeter}
-                                          checked={inputShortMeter}
+                                     /*     checked={inputShortMeter}*/
+
                                 />
                             </div>
                             <div className="result_main_search_icon_shortfilm decktop ">Короткометражки</div>
@@ -106,6 +107,7 @@ function ResultMainSearch(props) {
                 <div className="result_main_search_icon_smalltube mobile">
                     <Checkbox handleCheckbox={handleCheckbox}
                               shortMeter={shortMeter}
+                         /*     checked={inputShortMeter}*/
 
                     />
                 </div>

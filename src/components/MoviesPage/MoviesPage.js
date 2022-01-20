@@ -18,11 +18,6 @@ function MoviesPages(props) {
         keyWord: '',
         shortMeter: false});
 
-    if (localStorage.getItem('keyWord') > 0 ) {
-
-        let key =  localStorage.getItem('keyWord',JSON.stringify(props.key));
-
-    }
 
     function getMovies(){
         apiMovies.getAllAboutMovies()
@@ -47,12 +42,6 @@ function MoviesPages(props) {
         setTimeout(getMovies,500);
     }, []);
 
-    /*useEffect(() => {
-        console.log('Effect searchCriteriaData: ' + searchCriteriaData.toString());
-        setLoadedCards(loadedCards);
-        console.log(setLoadedCards);
-    }, [searchCriteriaData, searchCriteriaData.doSearch, searchCriteriaData.keyWord, searchCriteriaData.shortMeter])
-         //    props.searchCriteria, props.searchCriteria.doSearch, props.keyWord, props.shortMeter*/
 
     function setSearchCriteria(keyWord, shortMeter){
         console.log('keyWord, shortMeter');
@@ -75,11 +64,13 @@ function MoviesPages(props) {
             <main>
 
                 <ResultMainSearch setSearchCriteria={setSearchCriteria}/>
-                    {isLoading ? <Preloader/> : <MoviesCardList
+          {/*      <Suspense fallback={<Preloader/>}>*/}
+                {isLoading ? <Preloader/> : <MoviesCardList
                     getSearchCriteria={getSearchCriteria}
                     searchCriteria={getSearchCriteria()}
                     loadedCards={loadedCards} /*все карты извне*/
                 />}
+        {/*        </Suspense>*/}
             </main>
             <Footer/>
         </>

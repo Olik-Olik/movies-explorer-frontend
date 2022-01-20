@@ -60,7 +60,6 @@ function MoviesCardList(props) {
         _showLimitedCards()
     }
 
-
     /*фтльтрованных*/
     useEffect(() => {
         _showLimitedCards();
@@ -92,6 +91,9 @@ function MoviesCardList(props) {
                     searchResult.push(value);
 
                 }
+      /*1111*/   /*     if (key.length <= 0) { setInfo('Ничего не найдено')}
+             else if ( keyWord === false) { setInfo('Введите слово для поиска ')}*/
+
             }
             );
             setAllCards(searchResult); /*найденные*/
@@ -102,7 +104,7 @@ function MoviesCardList(props) {
             setShownAmount(0);
             _showLimitedCards();
         } else {
-        /*222*/  setAllCards(props.loadedCards);/* max набор*/
+  /*222*/   setAllCards(props.loadedCards);/* max набор*/
             setShownAmount(0);
             _showLimitedCards();
             setInfo('Ничего не найдено. Введите другое значение.');
@@ -114,7 +116,8 @@ function MoviesCardList(props) {
     return (
         <>
             <section className="moviesCard_list">
-                    {cards.length >= 0 ? (
+
+                    {cards.length > 0 ? (
                         cards &&
                         cards.map((card) => (
                             <MovieCard
