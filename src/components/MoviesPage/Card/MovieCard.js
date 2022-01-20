@@ -34,16 +34,12 @@ function MovieCard(props) {
 
 
     function handleDeleteClick() {
-        /**/
-        /* const token = localStorage.getItem("token");*/
         console.log("Удаление");
-        apiAuth.deleteMovie(props.cardData.movieId) /*1111*/
+        apiAuth.deleteMovie(props.cardData.movieId)
             .then((vv) => {
                     props.cardData.isLiked = false;
                     setLikeMe(props.cardData.isLiked)
-                  //  console.log(vv);
-                  //  console.log("Удаление завершено");
-                    setLoading(false);/**//**/
+                    setLoading(false);
                     window.location.reload();
                 }
             )
@@ -51,8 +47,6 @@ function MovieCard(props) {
             .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
     }
     function handleSave(evt) {
-        /**/
-      /*  const token = localStorage.getItem("token");*/
         evt.preventDefault();
 
         if (!props.cardData.isLiked) {

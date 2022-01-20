@@ -20,16 +20,8 @@ function MoviesCardList(props) {
     const [showMore, setShowMore] = useState(true);
     const [info, setInfo] = useState('');
 
-    /*  /!* для хранения в localStorage *!/*/
-
-    const [searchedMovies, setSearchedMovies] = useState('');
-    const [inputKey, setInputKey] = useState('');
-    const [inputShortMeter, setInputShortMeter] = useState(false);
-
-
     function getShowAmount() {
         const expandWidth = getExpandWidth();
-        //  console.log('EW: ' + expandWidth.toString());
         if (shownAmount === 0) {
             console.log('ret 0:' + expandWidth.initialAmount)
             return expandWidth.initialAmount;

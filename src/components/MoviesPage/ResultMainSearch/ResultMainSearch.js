@@ -10,15 +10,9 @@ function ResultMainSearch(props) {
     const [shortMeter, setShortMeter] = useState(false); /*true*/
     const [info, setInfo] = useState('');
 
-    /*для хранения в локалстораге*/
-    const [searchedMovies, setSearchedMovies] = useState('');
-    const [inputKey, setInputKey] = useState('');
-    const [inputShortMeter, setInputShortMeter] = useState(false);
-
     function handleSearchField(evt) {
         evt.preventDefault();
         setKeyWord(evt.target.value);
-        //props.setSearchCriteria(keyWord, shortMeter);
     }
 
     function handleCheckbox(evt) {
@@ -34,7 +28,6 @@ function ResultMainSearch(props) {
         props.setSearchCriteria(keyWord, shortMeter);
         console.log('keyWord', keyWord);
     }
-
 
     useEffect(() => {
         const getStorageKeyWord = localStorage.getItem('keyWord')

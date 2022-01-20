@@ -8,7 +8,6 @@ import Footer from "../Footer";
 import apiAuth from "../../utils/MainApi";
 import {urlAllFilm} from "../../utils/constants";
 import Preloader from "../Preloader";
-import  { Suspense } from "react";
 
 function MoviesPages(props) {
     const [isLoading, setLoading] = useState(true);
@@ -41,7 +40,6 @@ function MoviesPages(props) {
         setTimeout(getMovies,500);
     }, []);
 
-
     function setSearchCriteria(keyWord, shortMeter){
         console.log('keyWord' ,keyWord,  'shortMeter',shortMeter );
         setSearchCriteriaData(
@@ -55,8 +53,6 @@ function MoviesPages(props) {
         return searchCriteriaData;
     }
 
-
-
     return (
         <>
             <HeaderSavedFilms />
@@ -66,14 +62,11 @@ function MoviesPages(props) {
 
                     setSearchCriteria={setSearchCriteria}/>
 
-
-          {/*      <Suspense fallback={<Preloader/>}>*/}
                 {isLoading ? <Preloader/> : <MoviesCardList
                     getSearchCriteria={getSearchCriteria}
                     searchCriteria={getSearchCriteria()}
                     loadedCards={loadedCards} /*все карты извне*/
                 />}
-        {/*        </Suspense>*/}
             </main>
             <Footer/>
         </>

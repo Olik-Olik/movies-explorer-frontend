@@ -24,15 +24,11 @@ export default function App(props) {
 
     const [info, setInfo] = useState('');
     const [isRegResOpen, setIsRegResOpen] = useState(false);
-    const [active, setActive] = useState(false); /*Эта тема про активность формы*/
 
     const contextValue = {currentUser, setCurrentUser}
 
     const checkToken = () => {
         setTimeout(() => {
-            /*
-                        setLoggedIn(true);
-            */
             setIsLoading(false);
         }, 3000);
     }
@@ -56,7 +52,6 @@ export default function App(props) {
                     setEmail('');
                     localStorage.removeItem("token");
                     localStorage.removeItem(currentUser);
-
                 })
 
         } else {
@@ -64,10 +59,8 @@ export default function App(props) {
             setLoggedIn(false);
             setIsLoading(false);
             setEmail('');
-
             localStorage.removeItem("token");
             localStorage.removeItem(currentUser);
-
         }
     }
 
@@ -144,7 +137,6 @@ export default function App(props) {
             })
     }
 
-
     function closeAllPopups() {
         console.log("I was so close...")
         setIsEditProfilePopupOpen(false);
@@ -163,8 +155,6 @@ export default function App(props) {
         localStorage.clear();
         setIsEditProfilePopupOpen(false);
         setIsRegResOpen(false);
-
-
     }
 
     return (
