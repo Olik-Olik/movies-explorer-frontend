@@ -12,6 +12,7 @@ function ResultMainSearch(props) {
 
     function handleSearchField(evt) {
         evt.preventDefault();
+        console.log('keyWord', evt.target.value);
         setKeyWord(evt.target.value);
     }
 
@@ -25,15 +26,18 @@ function ResultMainSearch(props) {
     function handleSubmit(evt) {
         evt.preventDefault();
         console.log('handleSubmit');
+        localStorage.setItem('keyWord', JSON.stringify((keyWord)));
+        localStorage.setItem('shortMeter', (shortMeter));
+
         props.setSearchCriteria(keyWord, shortMeter);
         console.log('keyWord', keyWord);
     }
 
     useEffect(() => {
         const getStorageKeyWord = localStorage.getItem('keyWord')
-        if (getStorageKeyWord.length !== 0) {
-            setKeyWord(JSON.parse(localStorage.getItem('keyWord')))
-            setShortMeter(JSON.parse(localStorage.getItem('shortMeter')))
+        if (getStorageKeyWord && getStorageKeyWord.length !== 0) {
+            setKeyWord(JSON.parse(getStorageKeyWord));
+            setShortMeter(JSON.parse(localStorage.getItem('shortMeter')));
 
             console.log("getStorageKeyWord", getStorageKeyWord)
         }

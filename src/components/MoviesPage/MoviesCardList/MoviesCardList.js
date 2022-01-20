@@ -81,26 +81,29 @@ function MoviesCardList(props) {
                     }
                 }
             );
-            setAllCards(searchResult); /*найденные*/
-
             localStorage.setItem('searchedMovies', JSON.stringify(searchResult));
-            localStorage.setItem('keyWord', JSON.stringify((key)));
-            localStorage.setItem('shortMeter', (box));
+            //localStorage.setItem('keyWord', JSON.stringify((key)));
+            //localStorage.setItem('shortMeter', (box));
+
+            setAllCards(searchResult); /*найденные*/
 
             setShownAmount(0);
             _showLimitedCards();
         } else {
 
-            const getStorageKeyWord = localStorage.getItem('keyWord')
-            if (getStorageKeyWord.length !== 0) {
-                setAllCards(JSON.parse(localStorage.getItem('searchedMovies')))
+            const savedSearchedMovies = localStorage.getItem('searchedMovies')
+            if (savedSearchedMovies && savedSearchedMovies.length !== 0) {
+                const parsedCards = JSON.parse(savedSearchedMovies);
+                if (parsedCards && parsedCards.length === 0) {
+                    setInfo('Ничего не найдено.');
+                }
+                setAllCards(parsedCards);
             }else{
                 setAllCards(props.loadedCards);/* max набор*/
             }
-
             setShownAmount(0);
             _showLimitedCards();
-            setInfo('Ничего не найдено. Введите другое значение.');
+
         }
     }, [props.searchCriteria, props.searchCriteria.doSearch, props.keyWord, props.shortMeter])
 
