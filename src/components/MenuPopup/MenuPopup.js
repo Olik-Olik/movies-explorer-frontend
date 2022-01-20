@@ -22,12 +22,12 @@ function MenuPopup(props) {
                             <div className="{popup__akkaunt  mobile-main mobile-visibility">Главная
                             </div>
                         </a>
-                        <a href="/movies" className="popup__name_saved-film popup__film " >
-                            <div className="popup__name_saved-film mobile-visibility ">Фильмы</div>
+                        <a href="/movies"  >
+                            <button className="popup__name_saved-film  ">Фильмы</button>
                         </a>
 
-                        <a href="/saved-movies" {/*className="disabled"*/} >
-                            <button className="popup__auth mobile-visibility mobile-saved-films {/*disabled*/}">Сохраненные фильмы</button>
+                        <a href="/saved-movies"  >
+                            <button className="popup__auth mobile-visibility mobile-saved-films ">Сохраненные фильмы</button>
                         </a>
                     </div>
                 </div>

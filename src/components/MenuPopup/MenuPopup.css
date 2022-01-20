@@ -27,7 +27,6 @@
 }
 
 .popup__combine-image {
-    padding-bottom: 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -85,9 +84,8 @@
 
 .popup__auth {
     text-decoration: none;
-  /*  margin-top: 12px;
-    margin-bottom: 39px;*/
-    margin-top: 10px;
+    margin-top: 12px;
+    margin-bottom: 39px;
     background-color: transparent;
     border: none;
     Font-size: 18px;
@@ -95,9 +93,6 @@
     color: #FFFFFF;
 }
 
-.dissabled{
-    pointer-events: none;
-}
 .popup__name_saved-film {
     Font-family: 'Inter', serif;
     Font-size: 18px;
@@ -121,7 +116,6 @@
 }
 
 .mobile-visibility {
-    margin-top: 0;
     visibility: initial;
     font-family: 'Inter', serif;
     text-decoration: none;
@@ -146,9 +140,7 @@
     text-decoration: none;
 }
 
-
 .popup__container-image {
-    margin-bottom: 46px;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -157,8 +149,6 @@
 }
 
 .popup-correct {
-    width: 200px;
-    padding-bottom: 35px;
     display: flex;
     flex-direction: column;
     align-items: center;
