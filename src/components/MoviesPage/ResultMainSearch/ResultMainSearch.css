@@ -130,8 +130,10 @@
     left: 0;
     margin-right: 0;
     width: 80px;
+
     position: relative;
     background: url('../../images/find.svg') no-repeat center;
+    transform: scale(0.8, 0.8);
     box-sizing: border-box;
     border: none;
     font-size: 11px;
