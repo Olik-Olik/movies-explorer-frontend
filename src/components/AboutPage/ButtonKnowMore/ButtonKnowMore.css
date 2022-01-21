@@ -1,5 +1,4 @@
-
-.button__main{
+.button__main {
     border-radius: 3px;
     display: flex;
     background-color: #073042;
@@ -15,11 +14,12 @@
     justify-content: center;
     cursor: pointer;
 }
+
 @media screen and (min-width: 200px) and (max-width: 500px) {
     .button__main {
         font-family: 'Inter', serif;
         font-weight: 500;
-    Font-size: 12px;
-    Line-height: 16px;
+        Font-size: 12px;
+        Line-height: 16px;
     }
-    }
+}

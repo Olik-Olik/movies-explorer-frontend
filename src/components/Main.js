@@ -14,8 +14,6 @@ import Card from './ResultMain/Movies';
 import Movies from '../components/ResultMain/Movies';
 import MoviesCardList from './MoviesPage/MoviesCardList/MoviesCardList';
 import Profile from '../components/Profile';
-import SignUp from './ProfilePage/RezultRegister';
-import Register from './SignUpPage/Register';
 import SignUpHeader from './SignUpPage/SignUpHeader';
 import HeaderRezultLoginWelcome from './SignInPage/SignInHeader';
 import ButtonKnowMore from './AboutPage/ButtonKnowMore/ButtonKnowMore';
@@ -31,7 +29,6 @@ import '../components/Header.css';
 import '../components/Footer.css';
 import '../components/Main.css';
 import '../components/Checkbox/Checkbox.css';
-/*import './AboutPage/AboutMe/AboutMe.css';*/
 import './AboutPage/AboutProject/AboutProject.css';
 import './MoviesPage/ResultMainSearch/ResultMainSearch.css';
 import './MoviesPage/ResultMainMore/ResultMainMore.css';
@@ -78,17 +75,12 @@ import './AboutPage/BeginPage/BurgerMenu/Burger.css';
     </MoviesCardList>
     <Profile>
     </Profile>
-   {/* <Login>
-    </Login>*/}
     <SignUpHeader>
     </SignUpHeader>
 <SignUpHeader>
 </SignUpHeader>
     <HeaderRezultLoginWelcome>
     </HeaderRezultLoginWelcome>
-
-    <Register>
-    </Register>
     <Checkbox/>
 
 </>)}

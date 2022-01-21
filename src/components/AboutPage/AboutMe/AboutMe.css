@@ -88,7 +88,7 @@
 }
 
 .aboutMe__connect {
-   /* padding-left: 0;*/
+    /* padding-left: 0;*/
     width: 100%;
     background-color: #202020;
     padding: 0 70px 100px 0;
@@ -186,15 +186,16 @@
     padding-top: 20px;
     border-bottom: 1px solid #424242;
 }
-.aboutMeLinkStaticAnotherStyle{
-   border-bottom: none;
+
+.aboutMeLinkStaticAnotherStyle {
+    border-bottom: none;
 }
+
 .aboutMe__strelka {
     display: contents;
     width: 29px;
     height: 60px;
 }
-
 
 
 @media screen and (min-width: 200px) and (max-width: 620px) {
@@ -265,7 +266,6 @@
     }
 
     .aboutMeLinkStatic {
-      /*  height: 10px;*/
         font-family: 'Inter', serif;;
         font-weight: 400;
         letter-spacing: -0.04em;
@@ -295,51 +295,43 @@
         Letter-spacing: -0.04em;
         padding-bottom: 23px;
     }
-.aboutMe__main{
-    padding-top: 90px;
-    padding-bottom: 0;
-}
-.aboutMe__myName{
-    Font-size: 40px;
-    Line-height: 40px;
-    padding-top: 66px;
-    padding-bottom: 16px;
-}
-    .aboutMe__work{
+
+    .aboutMe__main {
+        padding-top: 90px;
+        padding-bottom: 0;
+    }
+
+    .aboutMe__myName {
+        Font-size: 40px;
+        Line-height: 40px;
+        padding-top: 66px;
+        padding-bottom: 16px;
+    }
+
+    .aboutMe__work {
         padding-top: 0;
         padding-bottom: 20px;
     }
-    .aboutMeTitleAbout{
+
+    .aboutMeTitleAbout {
         font-size: 12px;
-        /* padding-right: 0; */
         Line-height: 18px;
-       max-width: 364px;
+        max-width: 364px;
         max-height: 108px;
         padding-bottom: 87px;
     }
-    .aboutMe__connect{
+
+    .aboutMe__connect {
         padding-bottom: 90px;
         padding-top: 0;
         padding-left: 0;
         padding-right: 0;
     }
-    .aboutMe__portfolio{
+
+    .aboutMe__portfolio {
         padding-top: 0;
         padding-left: 0;
         padding-right: 0;
         padding-bottom: 30px;
     }
-    /*.aboutMeLinkStatic {
-        font-family: 'Inter', serif;;
-        font-weight: 400;
-        letter-spacing: -0.04em;
-        line-height: 50px;
-        font-size: 28px;
-    }*/
-    .links{
-      /*  padding-bottom: 0;*/
-    }
-
 }
-
-

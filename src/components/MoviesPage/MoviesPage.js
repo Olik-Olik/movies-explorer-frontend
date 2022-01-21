@@ -1,65 +1,76 @@
 import React, {useEffect, useState} from "react";
-/*import MoviesPages from "./MoviesPages/MoviesPages";*/
-import ResultMainMore from "./ResultMainMore/ResultMainMore";
-import MovieCard from "./Card/MovieCard";
 import ResultMainSearch from "./ResultMainSearch/ResultMainSearch";
 import MoviesCardList from "./MoviesCardList/MoviesCardList";
-import Preloader from "../Preloader";
 import '../../index.css';
-
-import Footer from "../Footer";
-import Header from "../Header";
 import HeaderSavedFilms from "./HeaderSavedFilms/HeaderSavedFilms";
-import {render} from "react-dom";
+import apiMovies from "./../../utils/MoviesApi";
+import Footer from "../Footer";
+import apiAuth from "../../utils/MainApi";
+import {urlAllFilm} from "../../utils/constants";
+import Preloader from "../Preloader";
 
-/*
-class MoviesPages extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { isLoading: true }
-    }
-    componentDidMount() {
-        this.setState({isLoading: false})
-    }
-    render() {
-        return(
-            { this.state.isLoading ? ( <Preloader/> ): <MoviesCardList/>}
-            <HeaderSavedFilms/>
-            <ResultMainSearch/>
-            <MoviesCardList/>
-            <ResultMainMore/>
-            <Footer/>
-    }
-    }
-export default MoviesPages;*/
+function MoviesPages(props) {
+    const [isLoading, setLoading] = useState(true);
+    const [loadedCards, setLoadedCards] = useState([]);
+    const [searchCriteriaData, setSearchCriteriaData] = useState({
+        doSearch: false,
+        keyWord: '',
+        shortMeter: false});
 
-function MoviesPages(props){
-    const [isLoading, setLoading] = useState(false);
-
-  /*  useEffect(() => {
-        console.log("Load finished!");
-        //setLoading(false);
-    }, [isLoading]);*/
-
+    function getMovies(){
+        apiMovies.getAllAboutMovies()
+            .then((cards) => {
+                console.log('Киношки загрузились корректно!');
+                apiAuth.getSaveMovies()
+                    .then((savedMovies)=> {
+                        console.log('Лайки загрузились корректно!');
+                        cards.forEach((card) => {
+                            card.imageURL = urlAllFilm + card.image.url;
+                            card.isLiked = !!savedMovies.some((liked) => {
+                                return card.id === liked.movieId;
+                            });
+                        })
+                        setLoadedCards(cards);
+                        setLoading(false);
+                    } )
+            }).catch((err) => console.log('Киношки не загрузились!: ' + err.toString()))
+    }
+    /*отображение всех карт*/
     useEffect(() => {
-        const loading = () =>{
-            setLoading(false);}
-        window.addEventListener("load", loading )
-    }, [])
+        setTimeout(getMovies,500);
+    }, []);
 
+    function setSearchCriteria(keyWord, shortMeter){
+        console.log('keyWord' ,keyWord,  'shortMeter',shortMeter );
+        setSearchCriteriaData(
+            { doSearch: true,
+                    keyWord: keyWord,
+                    shortMeter: shortMeter})
+    }
+
+    function getSearchCriteria(){
+        console.log("getsearchCriteria",searchCriteriaData);
+        return searchCriteriaData;
+    }
 
     return (
         <>
-            <HeaderSavedFilms/>
+            <HeaderSavedFilms />
             <main>
-                <ResultMainSearch/>
-<MoviesCardList/>
-             {/*   {isLoading ? (
-                    <Preloader/>) : (<MoviesCardList loading = {setLoading} />)}*/}
-                <ResultMainMore/>
-            </main>
-        </>
-    )}
 
+                <ResultMainSearch
+
+                    setSearchCriteria={setSearchCriteria}/>
+
+                {isLoading ? <Preloader/> : <MoviesCardList
+                    getSearchCriteria={getSearchCriteria}
+                    searchCriteria={getSearchCriteria()}
+                    loadedCards={loadedCards} /*все карты извне*/
+                />}
+            </main>
+            <Footer/>
+        </>
+    )
+}
 
 export default MoviesPages;

@@ -13,14 +13,12 @@ function SignInHeader(props) {
         <header className=" header__signin header__signup">
             <a href = "/" className="header__logo_welcome">
             <div className="header__logo ">
-
                     <img className="headerLogo " src={logo} alt="Logo"/>
             </div>
             </a>
-            <p className="header__welcome">Рады видеть!
+            <p className="header__welcome">Рады видеть!{props.name}
             </p>
         </header>
-
     )
 }
 export default SignInHeader;

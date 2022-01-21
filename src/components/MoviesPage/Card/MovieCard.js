@@ -1,71 +1,121 @@
-import React, {useState,} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useRouteMatch} from 'react-router-dom';
 import '../Card/Card.css';
 import TimeConvert from '../../../utils/TimeConvert/TimeConvert';
 import '../../../index.css';
+import apiAuth from "../../../utils/MainApi";
+
 function MovieCard(props) {
 
-    const urlAllFilm = 'https://api.nomoreparties.co';
+    const [likeMe, setLikeMe] = useState(false);
+    const [isLoading, setLoading] = useState(true);
 
-    const [isDelete, setIsDelete] = useState(false);
-    const [isLiked, setIsLiked] = useState(false);
-    const isLikedSavedFilms = useRouteMatch({path: '/saved-movies', exact: true});
+    const isSavedFilmsPage = useRouteMatch({path: '/saved-movies', exact: true});
 
-    function toggleLike() {
-        setIsLiked(!isLiked);
+
+    function handleDelete() {
+        /**/
+       /* const token = localStorage.getItem("token");*/
+        console.log("Удаление");
+        apiAuth.deleteMovie(props.cardData.id) /*1111*/
+            .then((vv) => {
+                    props.cardData.isLiked = false;
+                    setLikeMe(props.cardData.isLiked)
+                    console.log(vv);
+                    console.log("Удаление завершено");
+                    setLoading(false);/**//**/
+                  //  window.location.reload();
+                }
+            )
+            .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
     }
-    function handleSave(){
-       props.isSave(props.cardData);
+
+
+    function handleDeleteClick() {
+        console.log("Удаление");
+        apiAuth.deleteMovie(props.cardData.movieId)
+            .then((vv) => {
+                /*   const cardSaved  = savedMovies.filter((e)=>e._id!==movieId);
+                     const newCardSaved  = savedMovies.filter((e)=>e._id!==movieId);
+                     setSavedMovies(cardSaved);*/
+                /*   })*/
+                    props.cardData.isLiked = false;
+                    setLikeMe(props.cardData.isLiked)
+                    setLoading(false);
+                    window.location.reload();
+                }
+            )
+            .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
     }
-    function handleDelete(evt){
-        props.isDelete(props.cardData);
+    function handleSave(evt) {
+        evt.preventDefault();
+
+        if (!props.cardData.isLiked) {
+            apiAuth.saveMovie(
+                props.cardData.country,
+                props.cardData.director,
+                props.cardData.duration,
+                props.cardData.year,
+                props.cardData.description,
+                props.cardData.id,
+                props.cardData.nameRU,
+                props.cardData.nameEN,
+                props.cardData.trailerLink,
+                props.cardData.imageURL,
+            ).then(() => {
+                props.cardData.isLiked = true;
+                setLikeMe(props.cardData.isLiked);/*поставила */
+               // console.log('Saved Film',props.cardData.isLiked );
+                /**/
+                localStorage.getItem(props.cardData.isLiked);
+            })
+                .catch((err) => {
+                    console.log('Не сохраняется :( ' + err.toString());
+                })
+        }
     }
-function handleLike(){
-   if (!isLiked){
-       handleSave({
-           country: props.cardData.country,
-           director: props.cardData.director,
-           duration: props.cardData.duration,
-           year: props.cardData.year,
-           description: props.cardData.description,
-           movieId: props.cardData.movieId,
-           nameRU:props.cardData.nameRU,
-           nameEN: props.cardData.nameEN,
-           thumbnail: props.cardData.thumbnail,
-           image:  props.cardData.image.url,
-           trailer: props.cardData.trailerLink,
-       })
-   }
-}
-const likeButton = `${isLiked ? "card__container_like_active" : "card__container_like_passive"}` ;
-        {/*   {`${isLikedSavedFilms ? "like__delete" : ''}`} onClick={toggleLike}`*/}
+
+    let likeClass = 'like '; /*серое*/
+    let likeOnClick = () => {
+    };
+
+    if (isSavedFilmsPage) {
+        likeClass += props.cardData.isLiked ? 'like__delete' : '';
+        likeOnClick = handleDeleteClick
+    }
+    else {
+        if (props.cardData.isLiked) {
+            console.log(props.cardData.isLiked);
+            likeClass += 'card__container_like';
+            likeOnClick = handleDelete;
+
+        }
+        else {
+            likeClass += 'card__container_like_passive';
+            likeOnClick = handleSave;
+
+        }
+    }
+
     return (
-        <form className="card__container">
-            <a target="_blank" rel="noopener noreferrer"
-               className="card__image" href={props.cardData.trailerLink}>
-                <img alt="Постер киношки" className="card__image" src={urlAllFilm + props.cardData.image.url}/></a>
+        <>
+            <form className="card__container">
+                <a target="_blank" rel="noopener noreferrer"
+                   className="card__image" href={props.cardData.trailerLink}>
+                    <img alt="Постер киношки" className="card__image" src={props.cardData.imageURL}/></a>
 
-            <div className="combini">
-                <div className="card__container_name">{props.cardData.nameRU || props.cardData.nameEN}</div>
-                {/*длительность кино линия и время*/}
-{/*
-                <button className={`like card__container_like_passive ${isLiked ? "card__container_like_active" && props.isSave: ''}`} onClick={props.isSave ? handleDelete : handleSave} >
-                    {`${isLikedSavedFilms ? "like__delete" : ''}`} onClick={toggleLike}`
-                    {`${isLikedSavedFilms ? '' : 'SAVE ME'}`}
-                </button>
-*/}
-                <button className = {likeButton} onClick={props.isSave ? handleDelete : handleSave}>
+                <div className="combini">
+                    <div className="card__container_name">{props.cardData.nameRU || props.cardData.nameEN}</div>
+                    <div
+                        className={likeClass}
+                        onClick={likeOnClick}> </div>
+                </div>
+                <div className="card__container_time_line"/>
+                <div className="card__container_line"/>
+                <p className="card__container_time">{TimeConvert(props.cardData.duration)}</p>
 
-                </button>
-
-
-            </div>
-            <div className="card__container_time_line"/>
-            <div className="card__container_line"/>
-            <p className="card__container_time">{TimeConvert(props.cardData.duration)}</p>
-
-        </form>
-
+            </form>
+        </>
     )
 }
 

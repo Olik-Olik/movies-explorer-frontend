@@ -1,87 +1,133 @@
-import React, {useEffect, useState, Component, Suspense, lazy, }  from "react";
-import componentDidMount from 'react';
-import  '../../MoviesPage/Card/Card.css';
+import React, {useEffect, useState,} from "react";
+import '../../MoviesPage/Card/Card.css';
 import './MoviesCardList.css'
 import '../Card/MovieCard';
 import MovieCard from "../Card/MovieCard";
-import apiMovies from "../../../utils/MoviesApi";
-import Preloader from "../../Preloader";
-
-import useWindowWidth from "../MoviesCardList/currentWindowWidth";
-
-function MoviesCardList(props){
-   const [cards, setCards] = useState([]);
-
-    const [isRenderRow, setIsRenderRow] =useState(0);
-    const [isRenderMoreRow, setIsRenderMoreRow] =useState(0);
-
-    const moviesRow1280 = 12;
-    const moviesRowMore1280=4;
-    const moviesRow768 = 8;
-    const moviesRowMore768 = 2;
-    const moviesRow320 = 4;
-    const moviesRowMore320 = 2;
-    const moviesNothing = 0;
+import getExpandWidth from "../../MoviesPage/MoviesCardList/currentWindowWidth";
+import ResultMainMore from "../ResultMainMore/ResultMainMore";
+import {FILM_DURATION} from '../../../utils/constants';
+import {useRouteMatch} from "react-router-dom";
 
 
-    let currentWindowWidth = useWindowWidth();
+function MoviesCardList(props) {
+    const [allCards, setAllCards] = useState(null);
+    const [cards, setCards] = useState([]);
+    const [shownAmount, setShownAmount] = useState(0);
+    const [showMore, setShowMore] = useState(true);
+    const [info, setInfo] = useState('');
 
+    const isSavedFilmsPage = useRouteMatch({path: '/saved-movies', exact: true});
 
-    const MovieCard = lazy(() => import('../Card/MovieCard')); /* для прелоадера */
+    function getShowAmount() {
+        const expandWidth = getExpandWidth();
+        if (shownAmount === 0) {
+            console.log('ret 0:' + expandWidth.initialAmount)
+            return expandWidth.initialAmount;
+        }
+        return shownAmount + expandWidth.moreAmount;
+    }
+
+    function _showLimitedCards() {
+        if (!allCards) {
+            return
+        }
+        const res = allCards;
+        console.log(getExpandWidth());
+        let amountToShow = getShowAmount();
+        console.log('ATSH ' + amountToShow);
+        if (amountToShow >= res.length) {
+            amountToShow = res.length;
+            setShowMore(false);
+        } else
+            setShowMore(true);/**/
+        const slicedCards = res.slice(0, amountToShow);
+        console.log(slicedCards);
+        setCards(slicedCards);
+        setShownAmount(amountToShow);
+    }
+
+    function handleMoreClick() {
+        _showLimitedCards()
+    }
+
+    /*фтльтрованных*/
+    useEffect(() => {
+        _showLimitedCards();
+    }, [allCards])
+
 
     useEffect(() => {
-                        apiMovies.getAllAboutMovies()
-                            .then((res) => {
-                                    console.log(res);
-                                    setCards(res)
-                                console.log('Киношки загрузились корректно!')
-                            })
-                            .catch((err) => console.log('Киношки не загрузились!: ' + err.toString()))
- }, []);
+        let box = props.searchCriteria.shortMeter;
+        let searchResult = [];
+        let keyWord = props.searchCriteria.keyWord;
+        let key = keyWord.toLowerCase();
 
-useEffect(() => {
-        if (currentWindowWidth >= 1280) {
-            setIsRenderRow(moviesRow1280); setIsRenderMoreRow(moviesRowMore1280)
+        if (props.searchCriteria.doSearch) {
+            console.log('Key: ' + key + ":" + key.length);
+            props.loadedCards.forEach(function (value) {
+                    let nameRU = value.nameRU.toLowerCase();
+                    let hasKeyWord = nameRU.includes(key);
+                    let isShortMeter = value.duration <= FILM_DURATION;
+
+                    if (((key.length > 0 && hasKeyWord === true) && (box === true && isShortMeter === true))
+                        || (box === false && (key.length > 0 && hasKeyWord === true))
+                        || (key.length <= 0 && box === true && isShortMeter === true)
+                        || (box === false && key.length <= 0)
+                    ) {
+                        searchResult.push(value);
+                    }
+                }
+            );
+            localStorage.setItem('searchedMovies', JSON.stringify(searchResult));
+            //localStorage.setItem('keyWord', JSON.stringify((key)));
+            //localStorage.setItem('shortMeter', (box));
+            if (searchResult && searchResult.length === 0) {
+                setInfo('Ничего не найдено.');
+            }
+            setAllCards(searchResult); /*найденные*/
+            setShownAmount(0);
+            _showLimitedCards();
+        } else {
+            const savedSearchedMovies = localStorage.getItem('searchedMovies')
+            if (!isSavedFilmsPage && savedSearchedMovies && savedSearchedMovies.length !== 0) {
+                const parsedCards = JSON.parse(savedSearchedMovies);
+                if (parsedCards && parsedCards.length === 0) {
+                    setInfo('Ничего не найдено.');
+                }
+                 setAllCards(parsedCards);
+                //  setAllCards(searchResult); /*33333*/
+            }else{
+                setAllCards(props.loadedCards);/* max набор*/
+            }
+            setShownAmount(0);
+            _showLimitedCards();
+
         }
+    }, [props.searchCriteria, props.searchCriteria.doSearch, props.keyWord, props.shortMeter])
 
-        if (currentWindowWidth >= 768) {
-            setIsRenderRow(moviesRow768); setIsRenderMoreRow(moviesRowMore768)
-        }
+    return (
+        <>
+            <section className="moviesCard_list">
 
-        if (currentWindowWidth >= 320) {
-            setIsRenderRow(moviesRow320); setIsRenderMoreRow(moviesRowMore320)
-        }
-    },
-    [currentWindowWidth],
-)
+                {cards.length > 0 ? (
+                    cards &&
+                    cards.map((card) => (
+                        <MovieCard
+                            key={card.id}
+                            cardData={card}
+                            name={card.name}
+                            duration={card.duration}
+                        />)
+                    )
+                ) : (<div className="setinfo__error">{info}</div>)
+                }
 
-    return(
-    <section className="moviesCard_list">
-      <Suspense fallback={<Preloader/>}>
-       {cards &&
-        cards.map(card => (
-            <MovieCard
-             /*   cardData={card}*/
-            cardData={card}
-            id={card.movieId}
-            name={card.name}
-            duration={card.duration}
+            </section>
 
-            isSave ={props.isSave}
-            setIsSave={props.setIsSave}
-            isDelete={props.isDelete}
-            addMovies={props.addMovies}
-            />
-         ))}
+            {showMore && <ResultMainMore handleMoreClick={handleMoreClick}/>}
 
-        {/*  <button*/}
-
-        </Suspense>
-
-    </section>
-)
-
+        </>
+    )
 }
+
 export default MoviesCardList;
-
-

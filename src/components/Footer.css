@@ -1,5 +1,4 @@
-.footer{
-   /* padding: 0 70px;*/
+.footer {
     background-color: #202020;
     display: flex;
     flex-direction: column;
@@ -8,14 +7,14 @@
     font-family: 'Inter', serif;
     box-sizing: border-box;
 }
-.footer__title{
- /*   width: 100%;*/
+
+.footer__title {
     padding: 0 70px;
     margin: 0;
     border-bottom: 1px solid #424242;
     padding-bottom: 20px;
     padding-top: 20px;
-/*    Учебный проект Яндекс.Практикум х BeatFilm.*/
+    /*    Учебный проект Яндекс.Практикум х BeatFilm.*/
     color: #8B8B8B;
     max-width: 1140px;
     text-align: center;
@@ -24,105 +23,71 @@
     font-size: 13px;
 }
 
-.footer__container-data{
+.footer__container-data {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
 }
-.footer__data{
-   font-size: 13px;
-   line-height: 16px;
+
+.footer__data {
+    font-size: 13px;
+    line-height: 16px;
     padding: 20px 0 20px;
     align-items: flex-start;
     color: #FFFFFF;
 }
-.footer__container{
+
+.footer__container {
     display: flex;
     justify-content: flex-end;
     font-size: 13px;
-   line-height: 16px;
+    line-height: 16px;
     align-items: flex-end;
     margin: 20px;
     text-decoration: none;
 }
 
-.footer__yandex{
+.footer__yandex {
     width: 100%;
-    color:#FFFFFF;
+    color: #FFFFFF;
     max-width: 120px;
     line-height: 16px;
     padding-right: 20px;
     text-decoration: none;
 }
-.footer__yandex:hover{
-   /* opacity: ;*/
-    /*не нашла где*/
+
+.footer__yandex:hover {
 }
 
-.footer__gitHub{
+.footer__gitHub {
     width: 100%;
-    color:#FFFFFF;
+    color: #FFFFFF;
     max-width: 42px;
     line-height: 16px;
     padding-right: 20px;
     text-decoration: none;
 }
+
 .footer__facebook {
     width: 100%;
-    color:#FFFFFF;
+    color: #FFFFFF;
     max-width: 61px;
     line-height: 16px;
     text-decoration: none;
 }
+
 @media screen and (min-width: 200px) and (max-width: 620px) {
-.footer__title{
-    padding-top: 0;
-    Font-size: 12px;
-    Line-height: 15px;
-    padding-right: 0;
-    padding-left: 0;
-
-}
-.footer{
-    padding-top: 79px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-  /*  border-top: 1px solid #424242;*/
-
-}
-
-.footer__container-data {
-    flex-direction: column-reverse;
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
-}
-.footer__container{
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-}
-.footer__gitHub{
-    padding-bottom: 12px;
-    padding-right: 0;
-}
-.footer__yandex{
-    padding-bottom: 12px;
-    padding-right: 0;
-}
-}
-
-@media screen and  (min-width: 621px) and (max-width: 769px) {
-    .footer__title{
+    .footer__title {
+        padding-top: 0;
         Font-size: 12px;
         Line-height: 15px;
         padding-right: 0;
         padding-left: 0;
+
     }
-    .footer{
+
+    .footer {
         padding-top: 79px;
         padding-bottom: 10px;
         padding-left: 10px;
@@ -132,20 +97,61 @@
     .footer__container-data {
         flex-direction: column-reverse;
         display: flex;
-        /* justify-content: space-between; */
         align-items: center;
     }
-    .footer__container{
+
+    .footer__container {
         flex-direction: column;
         align-content: center;
         align-items: center;
         margin-bottom: 30px;
     }
-    .footer__gitHub{
+
+    .footer__gitHub {
         padding-bottom: 12px;
         padding-right: 0;
     }
-    .footer__yandex{
+
+    .footer__yandex {
+        padding-bottom: 12px;
+        padding-right: 0;
+    }
+}
+
+@media screen and  (min-width: 621px) and (max-width: 769px) {
+    .footer__title {
+        Font-size: 12px;
+        Line-height: 15px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .footer {
+        padding-top: 79px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .footer__container-data {
+        flex-direction: column-reverse;
+        display: flex;
+        align-items: center;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .footer__gitHub {
+        padding-bottom: 12px;
+        padding-right: 0;
+    }
+
+    .footer__yandex {
         padding-bottom: 12px;
         padding-right: 0;
     }

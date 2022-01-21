@@ -8,7 +8,10 @@ function SignUpPage(props){
         <>
             <SignUpHeader/>
             <main>
-            <Register/>
+            <Register handleRegister={props.handleRegister}
+                      handleLogin={props.handleLogin}
+                info={props.info}/>
             </main>
         </>)}
+
 export default SignUpPage;

@@ -1,15 +1,19 @@
-/*//этим компонентом защитите роут /, чтобы на него не смогли перейти неавторизованные пользователи
-*/
-import React from 'react';
+import React, {useContext} from 'react';
 import {Redirect, Route} from "react-router-dom";
 
+import {CurrentUserContext} from '../utils/context/CurrentUserContext';
+
 const ProtectedRoute = ({component: Component, ...props}) => {
+    const currentUser = useContext(CurrentUserContext);
+    console.log('In PR ' + props.path);
+    console.log(props.loggedIn);
+    console.log(currentUser);
     return (
-        <Route exact={props.exact} path={props.path}>
-            {() =>
-                props.loggedIn === true ? <Component {...props} /> : <Redirect to="/sign-in"/>
+        <Route exact={props.exact} path={props.path}
+            render = {() =>
+                props.loggedIn === true ? <Component {...props}/> : <Redirect to="/"/>
             }
-        </Route>
+        />
     );
 };
 

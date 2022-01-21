@@ -1,26 +1,32 @@
 .auth {
+   /* height: 78vh;*/
     display: flex;
     align-items: center;
     flex-direction: column;
-   /* width: 100%;*/
-  /*  max-width: 1280px;*/
-   /* padding: 0 70px;*/
     margin: 0 auto;
     color: #FFFFFF;
     background-color: #202020;
 }
-.auth__login-signin{
+
+.auth__login-movies {
     text-decoration: none;
     display: flex;
+    justify-content: center;
 }
-.profile__name{
-     padding-top: 0;
+.auth__login-signin {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.profile__name {
+    padding-top: 0;
     border-bottom: none;
     padding-bottom: 5px;
 }
 
 /*форма input name*/
-.profile__input-name{
+.profile__input-name {
     width: 396px;
     background-color: #202020;
     color: #FFFFFF;
@@ -31,11 +37,10 @@
     padding-bottom: 10px;
     border-bottom: 1px solid #424242;
     border-right-width: 0;
-
 }
 
 .auth__login-welcome {
-/*Заголовок*/
+    /*Заголовок*/
     display: flex;
     max-width: 358px;
     height: 29px;
@@ -49,28 +54,30 @@
     text-align: center;
     color: #FFFFFF;
 }
+
 /* основная форма cо словами  password email*/
 .auth__form-login {
+    size: 10px;
+    font-size: 12px;
     color: #8B8B8B;
     display: flex;
-    width: 396px;
+    max-width: 320px;
     background: none;
     font-weight: 400;
     line-height: 17px;
-    font-size: 14px;
     flex-direction: column;
+    background-color: #202020;
 }
 
-@media screen and (max-width: 320px) {
-    .auth {
-        width: 260px;
-    }
-}
 .auth__form-login-input-email {
+    padding-left: 0;
+    padding-right: 0;
+    height: 27px;
+    padding-bottom: 0;
     border-right-width: 0;
     color: #FFFFFF;
+    background-color: #202020;
     cursor: pointer;
-   /* border-bottom: 1px solid #4285F4;*/
     border-bottom: 1px solid #424242;
     width: 396px;
     font-size: 14px;
@@ -82,20 +89,19 @@
     justify-content: center;
     display: flex;
     margin: 0 auto;
-    background: transparent;
     list-style-type: none;
     text-decoration: none;
-    padding: 0 0 10px 0;
 }
+
 .profile__email-email {
     display: flex;
-    flex-direction: column;}
+    flex-direction: column;
+}
 
-/*!*форма input name*!
-.profile__input-name{
-    background-color: #202020;
-}*/
+
 .auth__form-login-input-password {
+    width: 396px;
+    background-color: #202020;
     font-size: 14px;
     line-height: 17px;
     font-style: normal;
@@ -105,17 +111,21 @@
     flex-direction: column;
     justify-content: center;
     display: flex;
-    background: transparent;
     list-style-type: none;
     text-decoration: none;
     cursor: pointer;
     padding: 0 0 13px 0;
     border: 0;
     -webkit-text-security: disc;
-    text-decoration: none;
+    padding-bottom: 0;
+    height: 30px;
+    border-bottom: 1px solid #424242;
 }
+
 /*Пароль и Почта*/
 .profile__email {
+    width: 266px;
+    height: 14px;
     padding-top: 24px;
     padding-bottom: 5px;
     color: #8B8B8B;
@@ -124,17 +134,20 @@
     font-size: 10px;
     line-height: 12px;
 }
+
 /*Имя*/
-.profile__name{
+.profile__name {
     color: #8B8B8B;
     font-family: 'Inter', serif;;
     font-weight: 400;
     font-size: 10px;
     line-height: 12px;
 }
-.auth__login-signup-Do_Register{
+
+.auth__login-signup-Do_Register {
     text-decoration: none;
 }
+
 .auth__form-login-submit-button {
     width: 396px;
     height: 45px;
@@ -155,8 +168,28 @@
     text-decoration: none;
 }
 
-.auth__signup-link-Do-Register {
+.auth__form-login-submit-button_hidden {
+    width: 396px;
+    height: 45px;
+    line-height: 17px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    border-style: none;
+    margin-top: 152px;
+    margin-bottom: 103px;
+    cursor: pointer;
+    color: white;
+    background: #4285F4;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    display: block;
 
+}
+
+.auth__signup-link-Do-Register {
     text-decoration: none;
     color: #FFFFFF;
     align-self: flex-end;
@@ -194,16 +227,16 @@
     border-style: none;
     justify-content: center;
     font-weight: 400;
-
 }
+
 .auth__signup-link {
+    margin-left: 20px;
     justify-content: center;
     text-decoration: none;
     /*зарегистрироваться*/
     max-width: 300px;
     align-items: normal;
     bottom: 100px;
-
     font-size: 14px;
     line-height: 17px;
     color: #8B8B8B;
@@ -217,47 +250,86 @@
     font-style: normal;
 }
 
-.auth__signup-link-color{
-
-    color:#4285F4;
+.auth__signup-link-color {
+    color: #4285F4;
 }
 
-/*Зарегистрироваться и Войти слепить вместе*/
-.auth__login-signup-container{
-    display:flex;
+/*Зарегистрироваться и Войти  вместе*/
+.auth__login-signup-container {
+    display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
 }
-@media screen and (max-width: 1024px){
-    .auth__form-login-input-email{
-      /*  max-width: 260px;*/
-    }
-    .auth__form-login-input-password{
-  /*      max-width: 260px;*/
-    }
-}
 
-@media screen and (min-width: 620px) and(max-width: 768px){
-    .auth__form-login-input-email{
-      /*  max-width: 260px;*/
-    }
-    .auth__form-login-input-password{
-     /*   max-width: 260px;*/
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+    .auth__form-login-input-email {
+        border-left-width: 0;
+        padding-right: 0;
+        padding-bottom: 10px;
     }
 }
 
- @media screen and (min-width: 320px) and(max-width: 620px){
-    .auth {
-     /*   max-width: 320px;*/
+@media screen and (min-width: 428px) and(max-width: 768px) {
+    .auth__form-login-input-email {
+        max-width: 260px;
+    }
+
+    .auth__form-login-input-password {
+        max-width: 260px;
+    }
+
+    .auth__form-login-submit-button {
+        max-width: 260px;
+    }
 }
-     .auth__form-login-input-email{
-     /*    max-width: 260px;*/
-     }
-     .auth__form-login-input-password{
 
-     }
- }
+@media screen and (max-width: 427px) {
+    .auth__form-login {
+        align-items: center;
+    }
 
+    .auth__form-login-input-email {
+        width: 260px;
+    }
 
+    .auth__form-login-input-password {
+        border-bottom: 1px solid #424242;
+        max-width: 260px;
+    }
 
+    .auth__form-login-submit-button {
+        max-width: 260px;
+    }
+
+    .profile__email-email {
+        align-items: center;
+        width: 320px;
+    }
+
+    .profile-name {
+        width: 266px;
+        height: 14px;
+        padding-top: 24px;
+        padding-bottom: 5px;
+        color: #8B8B8B;
+        font-family: 'Inter', serif;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .info {
+        max-width: 260px;
+    }
+}
+
+.setinfo__error {
+    margin: 0;
+    padding: 0;
+    color: #EE3465;
+    font-weight: 400;
+    font-family: 'Inter', serif;
+    font-size: 10px;
+    line-height: 12.1px;
+}

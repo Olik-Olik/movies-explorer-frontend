@@ -1,147 +1,135 @@
-const BASE_URL = 'http://localhost:3627';
-    class MainApi {
-        constructor(arr) {
+import { BASE_URL} from "./constants";
 
-            /*  const BASE_URL = 'https://diplomfront.nomoredomains.work*/
-            this._address = arr.address;
-            this._headers = arr.headers;
-        }
-        _handleResponse(response) {
-            if (response.ok) {
-                return response.json()
-            } else {
-                return Promise.reject("Ошибка, УПС! " + response.status + ":" + response.statusText);
-            }
-        }
-  /*  #################### users   #####################*/
-  checkToken = (token) => {
-        return fetch(`${this._address}/users/me`, {
-            method: 'GET',
-            headers: {
-                ...this._headers ,
-                'Authorization': `Bearer ${token}`,
-            }
-        })
-            .then((response) => this._handleResponse(response));
-    }
+class MainApi {
+      constructor(arr) {
+          this._address = arr.address;
+          this._headers = arr.headers;
+      }
 
-    updateProfile = (name, email, token) => {
-        return fetch(`${this._address}/users/me`, {
-            method: 'PATCH',
-            headers: {
-                ...this._headers,
-                'Authorization': `Bearer ${token}`,
-            },
-            body: JSON.stringify({
-                name: name,
-                email: email
-            })
-        })
-            .then((response) => this._handleResponse(response));
-    }
+      handleToken() {
+          this._authTocken = localStorage.getItem("token");
+          this._headers.Authorization = `Bearer ${this._authTocken}`;
+      }
+
+      _handleResponse = (response) => {
+          if (response.ok) {
+              return response.json()
+          } else {
+              return Promise.reject(response.status +
+              "Ошибка, УПС! " + response.status + ":" + response.statusText);
+          }
+      }
 
 
-    register = (name, password, email) => {
-        return fetch(`${this._address}/signup`, {
-            headers: { ...this._headers,
-                'Accept': 'application/json',
-            },
-            method: 'POST',
-            body: JSON.stringify({
-                name:name,
-                password: password,
-                email: email
-            }),
-        })
-            .then((response) => this._handleResponse(response))
-    }
+      checkToken = () => {
+          this.handleToken();
+          console.log(this._headers);
+          return fetch(`${this._address}/users/me`, {
+                  method: 'GET',
+                  headers: this._headers,
+              },
+          )
+              .then((response) => this._handleResponse(response));
+      }
 
-    login = (password, email) => {
-        return fetch(`${this._address}/signin`, {
-            method: 'POST',
-            headers: {
-                ... this._headers,
-                'Accept': 'application/json',
-            },
-            body: JSON.stringify({
-                password: password,
-                email: email
-            })
-        })
-            .then((response) => this._handleResponse(response));
-    }
-/*  ####################  MOVIE #####################*/
-/*GET MOVIES*/
-    getSaveMovies = (token) => {
-        return fetch(`${this._address}/movies`, {
-            method: 'GET',
-            headers: {
-               ... this._headers,
-                'Authorization': `Bearer ${token}`,
-            }
-        })
-            .then((response) => this._handleResponse(response));
-    }
-/* POST MOVIE  -заменить дату - перечислить!!!*/
-    saveMovie = ( country,
-                  director,
-                  duration,
-                  year,
-                  description,
-                  movieId,
-                  nameRU,
-                  nameEN,
-                  trailer,
-                  thumbnail,
-                  image,
-              /*    token*/
-    ) => {
-        return fetch(`${this._address}/saved-movies`, {
-            method: 'POST',
-            headers: {
-              ... this._headers,
-                   'Authorization': `Bearer ${token}`,
-            },
-            body: JSON.stringify({
-                    country: country,
-                    director: director,
-                    duration: duration,
-                    year: year,
-                    description: description,
-                    movieId: movieId,
-                    nameRU: nameRU,
-                    nameEN: nameEN,
-                    trailer: trailer,
-                    thumbnail: thumbnail,
-                    image: image,
-            })
-        })
-            .then((response) => this._handleResponse(response));
-    }
+      submitProfile = (name, email/*, password*/) => {
+          this.handleToken();
+          return fetch(`${this._address}/users/me`, {
+              method: 'PATCH',
+              headers: this._headers,
+              body: JSON.stringify({
+                  'name': name,
+                  'email': email,
+                  /*password: password,*/
+              })
+          })
+              .then((response) => this._handleResponse(response));
+      }
 
-  /*DEL MOVIE 1 !!!*/
-    deleteMovie = (data, token) => {
-        return fetch(`${this._address}/saved-movies/${id}`, {
-            method: 'DELETE',
-            headers: {
-              ... this._headers,
-                'Authorization': `Bearer ${token}`,
-            }
-        })
-            .then((response) => this._handleResponse(response));
-    }
-}
-    const apiAuth = new MainApi({
+
+
+      register = (name, email, password) => {
+          return fetch(`${this._address}/signup`,
+              {
+                  headers: this._headers,
+                  method: 'POST',
+                  body: JSON.stringify({
+                      name: name,
+                      email: email,
+                      password: password,
+                  })
+              })
+              .then((response) => this._handleResponse(response));
+      }
+
+
+      login = (email, password) => {
+          return fetch(`${this._address}/signin`, {
+              method: 'POST',
+              headers: this._headers,
+              body: JSON.stringify({
+                  email: email,
+                  password: password,
+              })
+          })
+              .then((response) => this._handleResponse(response))
+      }
+
+      deleteMovie = (movieId) => {
+          this.handleToken();
+          return fetch(`${this._address}/movies/${movieId}`,
+              {
+              headers: this._headers,
+              method: 'DELETE'
+              })
+              .then((response) => this._handleResponse(response))
+      }
+
+
+      /*GET MOVIES*/
+      getSaveMovies = () => {
+          this.handleToken();
+          return fetch(`${this._address}/movies`, {
+              method: 'GET',
+              headers: { ...this._headers,}
+          })
+              .then((response) => this._handleResponse(response));
+      }
+
+      saveMovie = ( country,
+                    director,
+                    duration,
+                    year,
+                    description,
+                    movieId,
+                    nameRU,
+                    nameEN,
+                    trailer,
+                    thumbnail
+      ) => {
+          return fetch(`${this._address}/movies`, {
+              method: 'POST',
+              headers:{...this._headers,},
+              body: JSON.stringify({
+                  country: country,
+                  director: director,
+                  duration: duration,
+                  year: year,
+                  description: description,
+                  movieId: movieId,
+                  nameRU: nameRU,
+                  nameEN: nameEN,
+                  trailer: trailer,
+                  thumbnail: thumbnail
+              })
+          })
+              .then((response) => this._handleResponse(response));
+      }
+  }
+   const apiAuth = new MainApi({
         address: BASE_URL,
+     /*   address: "http://localhost:3627/api",*/
         headers: {'Content-Type': 'application/json'}
     });
 
 export default apiAuth;
-
-/*/signin login+
-* updateProfile
-* /signup register+
-* /users/me+
-* getUser
-* get save del Movies
-* */

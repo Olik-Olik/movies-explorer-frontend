@@ -24,7 +24,7 @@ function HeaderSavedFilms(props) {
         <div className="header__logo-akkaunt">
             <div className="header__logo-films">
                 <div className="header header-color">
-                    <a href="/">
+                    <a href="/auth">
                         <div className="header__logo">
                             <img className="headerLogo" src={logo} alt="Logo"/>
                         </div>
@@ -40,7 +40,6 @@ function HeaderSavedFilms(props) {
                             </a>
                         </div>
                     </div>
-                    {/*header__logo-films*/}
                 </div>
                 <div className= "combo">
                 <a href="/profile">
@@ -51,11 +50,8 @@ function HeaderSavedFilms(props) {
             <MenuPopup isOpen={isMenuOpen}
                 onClose={handleMenuCloseClick}/>
         </div>
-
-
 )
 
 }
 
 export default HeaderSavedFilms;
-

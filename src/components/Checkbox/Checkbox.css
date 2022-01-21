@@ -1,44 +1,43 @@
 body {
     margin: 0;
-    padding:0;
+    padding: 0;
 }
-.tumb{
-    transform: translate(-50%, -50%);
 
+.tumb {
+    transform: translate(-50%, -50%);
 }
-input[type="checkbox"]{
- /*   bottom:10px;*/
+
+input[type="checkbox"] {
     cursor: pointer;
     position: relative;
     width: 36px;
     height: 20px;
-    -webkit-appearance: none; /*для отображения элемента*/
-    background:  #202020;
-    border-radius: 16px;
-    transition: .01s; /*ненавижу долгие переключения*/
-}
-input:checked[type="checkbox"]{
+    -webkit-appearance: none;
     background: #202020;
+    border-radius: 16px;
+    transition: .0001s;
 }
-input[type="checkbox"]:before{
+
+input:checked[type="checkbox"] {
+}
+
+input[type="checkbox"]:before {
     content: '';
     position: absolute;
     width: 16px;
     height: 16px;
     border-radius: 16px;
-    top:0;
-    left:0;
-    background:#3DDC84;
-    transition: 0.01s;
-    transform: scale(1.1); /*, без сжатий и увеличений*/
-}
-input:checked[type="checkbox"]:before{
-    left:18px;
+    background: #3DDC84;
+    top: 2px;
+    transition: .0001s;
 }
 
-@media  (min-width: 320px) and (max-width: 593px ){
-input[type="checkbox"]{
-    bottom:10px;
-}
+input:checked[type="checkbox"]:before {
+    left: 18px;
 }
 
+@media (min-width: 320px) and (max-width: 593px ) {
+    input[type="checkbox"] {
+        bottom: 10px;
+    }
+}
