@@ -70,9 +70,9 @@ function SavedMoviesPages(props) {
                      <MoviesCardList
                       getSearchCriteria={getSearchCriteria}
                       searchCriteria={getSearchCriteria()}
-                        loadedCards={loadedCards}
-                         handleDelete={props.handleDelete}
-                         info={props.info}
+                      loadedCards={loadedCards}
+                      handleDelete={props.handleDelete}
+                      info={props.info}
                     />
                  }
 

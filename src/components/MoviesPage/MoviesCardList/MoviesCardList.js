@@ -6,19 +6,17 @@ import MovieCard from "../Card/MovieCard";
 import getExpandWidth from "../../MoviesPage/MoviesCardList/currentWindowWidth";
 import ResultMainMore from "../ResultMainMore/ResultMainMore";
 import {FILM_DURATION} from '../../../utils/constants';
+import {useRouteMatch} from "react-router-dom";
 
-
-// const MovieCard = lazy(() => (import('../Card/MovieCard')), 500);
-
-//const ResultMainMore = lazy(() =>import('../Card/MovieCard'));
 
 function MoviesCardList(props) {
-    const [isLoading, setLoading] = useState(true);
     const [allCards, setAllCards] = useState(null);
     const [cards, setCards] = useState([]);
     const [shownAmount, setShownAmount] = useState(0);
     const [showMore, setShowMore] = useState(true);
     const [info, setInfo] = useState('');
+
+    const isSavedFilmsPage = useRouteMatch({path: '/saved-movies', exact: true});
 
     function getShowAmount() {
         const expandWidth = getExpandWidth();
@@ -59,7 +57,6 @@ function MoviesCardList(props) {
 
 
     useEffect(() => {
-        console.log("Effect of search change!");
         let box = props.searchCriteria.shortMeter;
         let searchResult = [];
         let keyWord = props.searchCriteria.keyWord;
@@ -84,20 +81,21 @@ function MoviesCardList(props) {
             localStorage.setItem('searchedMovies', JSON.stringify(searchResult));
             //localStorage.setItem('keyWord', JSON.stringify((key)));
             //localStorage.setItem('shortMeter', (box));
-
+            if (searchResult && searchResult.length === 0) {
+                setInfo('Ничего не найдено.');
+            }
             setAllCards(searchResult); /*найденные*/
-
             setShownAmount(0);
             _showLimitedCards();
         } else {
-
             const savedSearchedMovies = localStorage.getItem('searchedMovies')
-            if (savedSearchedMovies && savedSearchedMovies.length !== 0) {
+            if (!isSavedFilmsPage && savedSearchedMovies && savedSearchedMovies.length !== 0) {
                 const parsedCards = JSON.parse(savedSearchedMovies);
                 if (parsedCards && parsedCards.length === 0) {
                     setInfo('Ничего не найдено.');
                 }
-                setAllCards(parsedCards);
+                 setAllCards(parsedCards);
+                //  setAllCards(searchResult); /*33333*/
             }else{
                 setAllCards(props.loadedCards);/* max набор*/
             }
@@ -106,7 +104,6 @@ function MoviesCardList(props) {
 
         }
     }, [props.searchCriteria, props.searchCriteria.doSearch, props.keyWord, props.shortMeter])
-
 
     return (
         <>
@@ -120,7 +117,6 @@ function MoviesCardList(props) {
                             cardData={card}
                             name={card.name}
                             duration={card.duration}
-                            info={info}
                         />)
                     )
                 ) : (<div className="setinfo__error">{info}</div>)

@@ -7,6 +7,7 @@
 }
 
 .moviesCard_list {
+
     padding: 70px 70px 50px 70px;
     margin: 0 auto;
     display: grid;
@@ -22,6 +23,7 @@
 @media (min-width: 571px) and (max-width: 1210px) {
 
     .moviesCard_list {
+
         padding-left: 0;
         padding-right: 0;
         grid-template-columns: repeat(2, auto);
@@ -40,6 +42,7 @@
     }
 
     .moviesCard_list {
+
         padding: 0;
         grid-template-columns: repeat(1, auto);
     }

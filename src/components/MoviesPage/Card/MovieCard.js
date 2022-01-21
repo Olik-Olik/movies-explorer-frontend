@@ -45,7 +45,6 @@ function MovieCard(props) {
                     window.location.reload();
                 }
             )
-
             .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
     }
     function handleSave(evt) {
@@ -66,7 +65,7 @@ function MovieCard(props) {
             ).then(() => {
                 props.cardData.isLiked = true;
                 setLikeMe(props.cardData.isLiked);/*поставила */
-                console.log('Saved Film');
+               // console.log('Saved Film',props.cardData.isLiked );
                 /**/
                 localStorage.getItem(props.cardData.isLiked);
             })
