@@ -24,11 +24,9 @@ function MovieCard(props) {
                     console.log(vv);
                     console.log("Удаление завершено");
                     setLoading(false);/**//**/
-                 //   window.location.reload();
+                  //  window.location.reload();
                 }
-                /* props.getRemoveId(); */
             )
-
             .catch((err) => console.log('Кино не удалилось!: ' + err.toString()))
     }
 
@@ -37,6 +35,10 @@ function MovieCard(props) {
         console.log("Удаление");
         apiAuth.deleteMovie(props.cardData.movieId)
             .then((vv) => {
+                /*   const cardSaved  = savedMovies.filter((e)=>e._id!==movieId);
+                     const newCardSaved  = savedMovies.filter((e)=>e._id!==movieId);
+                     setSavedMovies(cardSaved);*/
+                /*   })*/
                     props.cardData.isLiked = false;
                     setLikeMe(props.cardData.isLiked)
                     setLoading(false);

@@ -14,21 +14,25 @@ function MenuPopup(props) {
                     />
                 </div>
 
+
+
                 <div className= "popup-correct">
+
                 <div className="popup__combine-word">
                     <div className="popup__container-image">
 
-                        <a href="/">
-                            <div className="{popup__akkaunt  mobile-main mobile-visibility">Главная
-                            </div>
-                        </a>
+                        <a href="/" >
+                            <button className="{popup__akkaunt  mobile-main mobile-visibility" disabled= {!props.isOpen}>Главная </button></a>
+
+
                         <a href="/movies"  >
-                            <button className="popup__name_saved-film  ">Фильмы</button>
-                        </a>
+                            <button className="popup__name_saved-film " disabled= {!props.isOpen}>Фильмы</button> </a>
+
 
                         <a href="/saved-movies"  >
-                            <button className="popup__auth mobile-visibility mobile-saved-films ">Сохраненные фильмы</button>
-                        </a>
+                           {/* <button className="popup__auth mobile-visibility mobile-saved-films ">Сохраненные фильмы</button> </a>*/}
+                       {/*     {`popup ${props.isOpen ? "popup_opened" : ""}*/}
+                             <button className=" mobile-visibility" disabled= {!props.isOpen} >Сохраненные фильмы</button> </a>
                     </div>
                 </div>
                 <a href="/profile"> <div className=" mobile-akkaunt">Аккаунт </div></a>

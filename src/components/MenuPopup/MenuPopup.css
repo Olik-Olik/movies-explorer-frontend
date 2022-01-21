@@ -1,5 +1,9 @@
-.popup {
-    position: fixed; /*для подложки прячу попап на видимой части сверху*/
+.popup
+{
+/*    position: absolute;*/
+ /*   display: block;*!*/
+
+    position: fixed;
     user-select: none;
     top: 0;
     bottom: 0;
@@ -13,9 +17,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 70vw;
+    width: 60vw;
     min-height: 100vh;
     transition: visibility 0.5s, opacity 0.5s linear;
+}
+.main{
+    width: 80px;
+    height: 20px;
 }
 
 .popup__film {
@@ -85,7 +93,11 @@
     align-content: center;
 }
 
-.popup__auth {
+.popup__auth,
+.popup__auth::before,
+.popup__auth::after{
+  /*  position: absolute;*/
+    display: block;
     text-decoration: none;
     margin-top: 12px;
     margin-bottom: 39px;
@@ -94,9 +106,17 @@
     Font-size: 18px;
     Line-height: 22px;
     color: #FFFFFF;
+    padding-top: 20px;
+    left: 110px;
 }
 
-.popup__name_saved-film {
+
+.popup__name_saved-film,
+.popup__name_saved-film::before,
+.popup__name_saved-film::after
+{ left: 185px;
+  /*  position: absolute;*/
+  /*  display: block;*/
     border: 0;
     Font-family: 'Inter', serif;
     Font-size: 18px;
@@ -109,6 +129,40 @@
     align-items: center;
     align-content: center;
     background: transparent;
+}
+.popup__name_saved-film:hover{
+    cursor: pointer;
+}
+.popup__name_saved-film::before{
+    content:'';
+    top:-10px;
+}
+.popup__name_saved-film::after{
+    content:'';
+    top:10px;
+}
+.popup__auth:hover{
+    cursor: pointer;
+}
+
+.popup__auth::before{
+    content:'';
+    top:-10px;
+}
+.popup__auth::after{
+    content:'';
+    top:10px;
+}
+.mobile-visibility:hover{
+    cursor: pointer;
+}
+.mobile-visibility::before{
+    content:'';
+    top:-10px;
+}
+.mobile-visibility::after{
+    content:'';
+    top:10px;
 
 }
 
@@ -121,12 +175,24 @@
     position: static;
 }
 
-.mobile-visibility {
+.mobile-visibility,
+.mobile-visibility::before,
+.mobile-visibility::after
+{  /*display: block;
+    position: absolute;*/
+
+ background-color: transparent;
+    border: 0;
     visibility: initial;
     font-family: 'Inter', serif;
     text-decoration: none;
     border: none;
     color: #FFFFFF;
+    height: 41px;
+    width: 211px;
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .mobile-akkaunt {
