@@ -1,7 +1,7 @@
 import React from 'react';
 import '../AboutMe/AboutMe.css';
 import {facebook_url, github_url} from '../../../utils/constants';
-import fotoMe from '../../images/AboutMe/fotoMe.JPG';
+import fotoMe from '../../images/AboutMe/fotoMe.jpg';
 
 import '../../../index.css';
 
@@ -13,14 +13,13 @@ function AboutMe(props) {
                 <div className='aboutMe__descriptionFoto'>
 
                     <div>{/*3 вместе*/}
-                        <div className='aboutMe__myName'>Олик</div>
+                        <div className='aboutMe__myName'>Ольга</div>
                         <div className='aboutMe__work'>Фронтенд-разработчик</div>
-                        <div className='aboutMeTitleAbout'>Я родился и живу в Москве,
-                            закончил МИФИ. Я не люблю слушать музыку,она мешает сосредоточиться. Люблю удобные
-                            стулья.Сейчас увлекаюсь пирожными,
-                            шоколадом и сгущенкой. А еще люблю море и все красивое. Недавно начал кодить и читать
-                            полезные
-                            книжки, с 2021г.
+                        <div className='aboutMeTitleAbout'>Я родилась и живу в Москве,
+                            закончила МИФИ. Работала в IT отделе в фармацевтических компаниях,
+                            PM в телекоммуникационной компании. В 2021 году заинтересовалась web-разработкой.
+                            Люблю азиатскую кухню, путешествовать, заниматься верховой ездой,
+                            играть в гольф, встречаться с друзьями.
                         </div>
                     </div>
 

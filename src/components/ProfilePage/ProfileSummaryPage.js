@@ -53,7 +53,7 @@ function ProfileSummaryPage(props) {
                 <div className="result__name-name">
                     <div className="result__name">Имя:</div>
 
-                    <div name="profile__input-name">
+                    <div className="profile__input-name">
                         <input type='text' className="result__input-name"
                                required value={name}
                                maxLength="30" minLength="2"
@@ -64,7 +64,7 @@ function ProfileSummaryPage(props) {
                 <div className="result__email-email ">
                     <div className="result__email ">E-mail:</div>
 
-                    <div name="profile__input-email">
+                    <div className="profile__input-email">
                         <input type='text' className="result__input-email " name="email"
                                onChange={onUpdateEmail}
                                required value={email}

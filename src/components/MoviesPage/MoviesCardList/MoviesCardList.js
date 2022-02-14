@@ -95,7 +95,6 @@ function MoviesCardList(props) {
                     setInfo('Ничего не найдено.');
                 }
                  setAllCards(parsedCards);
-                //  setAllCards(searchResult); /*33333*/
             }else{
                 setAllCards(props.loadedCards);/* max набор*/
             }
