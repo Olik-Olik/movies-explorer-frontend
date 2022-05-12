@@ -1,4 +1,4 @@
-
+Диплом. Кинопоиск. Fronend.
 diplomfront.nomoredomains.work
 В README.md файл добавьте ссылку на 
 ваш сгенерированный макет 
